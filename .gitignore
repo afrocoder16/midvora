@@ -26,6 +26,7 @@ pnpm-debug.log*
 
 # claude code
 .claude/
+CLAUDE.md
 
 # astro dev logs
 astro-dev-*.log
