@@ -1,0 +1,942 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Midvora - Modern Websites for Local Business">
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" class="hero-section relative overflow-hidden" style="min-height:calc(100vh - 73px);background:#06101f;">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="hero-halo hero-halo-blue"></div>
+    <div class="hero-halo hero-halo-orange"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-vignette"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto flex min-h-[calc(100vh-73px)] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+    <div class="hero-shell grid w-full gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12">
+      <div class="hero-copy max-w-[35rem] py-14 sm:py-16 lg:py-24">
+        <div class="hero-badge inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F96B2B] opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-[#F96B2B]"></span>
+          </span>
+          <span class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.58);">Midwest web design - MN / SD / ND</span>
+        </div>
+
+        <h1 class="hero-headline mt-7 font-display font-bold leading-[0.92] tracking-tight text-white" style="font-size:clamp(2.95rem,7.4vw,6.15rem);">
+          <span class="hero-line">We build the</span>
+          <span class="hero-line">sample site first.</span>
+          <span class="hero-line"><span class="hero-orange-line">You decide</span> after.</span>
+        </h1>
+
+        <p class="hero-sub mt-6 max-w-[32rem] font-sans text-[1rem] leading-relaxed sm:text-[1.06rem]" style="color:rgba(255,255,255,0.56);">
+          Midvora builds a real homepage sample for restaurants, salons, contractors, and local shops in 24 hours so you can judge the work before you spend a dollar.
+        </p>
+
+        <div class="hero-ctas mt-9 flex flex-wrap gap-3.5">
+          <a href="/contact" class="group inline-flex items-center gap-3 rounded-full bg-[#F96B2B] px-7 py-4 font-sans text-sm font-bold text-white shadow-[0_18px_36px_rgba(249,107,43,0.28)] transition-all hover:-translate-y-0.5 hover:opacity-95">
+            Get My Free Sample
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </a>
+          <a href="/services" class="inline-flex items-center gap-3 rounded-full border border-white/10 px-7 py-4 font-sans text-sm font-bold transition-colors hover:border-white/20 hover:bg-white/5 hover:text-white" style="background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.76);">
+            See Pricing
+          </a>
+        </div>
+
+        <div class="hero-proof mt-9 grid grid-cols-3 gap-3 sm:gap-4">
+          <div class="hero-proof-card">
+            <p class="font-display text-[1.9rem] font-bold leading-none text-white">$0</p>
+            <p class="mt-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.36);">Up front</p>
+          </div>
+          <div class="hero-proof-card">
+            <p class="font-display text-[1.9rem] font-bold leading-none text-white">24h</p>
+            <p class="mt-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.36);">Sample ready</p>
+          </div>
+          <div class="hero-proof-card">
+            <p class="font-display text-[1.9rem] font-bold leading-none text-white">5-7</p>
+            <p class="mt-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.36);">Days to launch</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scene-shell flex items-center lg:justify-end">
+        <div class="hero-scene perspective-stage">
+          <div class="guide-plane hero-guide hero-guide-one"></div>
+          <div class="guide-plane hero-guide hero-guide-two"></div>
+          <div class="guide-plane hero-guide hero-guide-three"></div>
+
+          <div class="perspective-card hero-scene-card hero-card-main">
+            <div class="scene-window-bar">
+              <div class="scene-dots">
+                <span class="scene-dot" style="background:#FF5F57;"></span>
+                <span class="scene-dot" style="background:#FFBD2E;"></span>
+                <span class="scene-dot" style="background:#28CA41;"></span>
+              </div>
+              <div class="scene-address">sample.midvora.site</div>
+            </div>
+            <div class="scene-window-body">
+              <div class="scene-hero-panel">
+                <div class="scene-eyebrow">Sample homepage</div>
+                <h3>North Prairie Dental</h3>
+                <p>Family dentistry, urgent visits, and clean calls to action built to look good on phones first.</p>
+                <div class="scene-pill-row">
+                  <span class="scene-primary-pill">Request Appointment</span>
+                  <span class="scene-secondary-pill">Insurance Info</span>
+                </div>
+              </div>
+              <div class="scene-feature-grid">
+                <div class="scene-surface">
+                  <p class="scene-surface-label">Service block</p>
+                  <div class="scene-line" style="width:72%;"></div>
+                  <div class="scene-line scene-line-soft" style="width:54%;"></div>
+                </div>
+                <div class="scene-surface">
+                  <p class="scene-surface-label">Trust content</p>
+                  <div class="scene-line" style="width:64%;"></div>
+                  <div class="scene-line scene-line-soft" style="width:46%;"></div>
+                </div>
+                <div class="scene-surface">
+                  <p class="scene-surface-label">Call to action</p>
+                  <div class="scene-primary-pill scene-primary-pill-compact">Tap to Call</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="perspective-card hero-scene-card hero-card-secondary motion-safe-float">
+            <div class="scene-stack-card">
+              <p class="scene-panel-label">Service flow</p>
+              <div class="scene-list">
+                <div class="scene-list-item">
+                  <span>Hero CTA</span>
+                  <span>01</span>
+                </div>
+                <div class="scene-list-item">
+                  <span>Service cards</span>
+                  <span>02</span>
+                </div>
+                <div class="scene-list-item">
+                  <span>Map + hours</span>
+                  <span>03</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="perspective-card hero-scene-card hero-card-mobile motion-safe-float-alt">
+            <div class="scene-phone">
+              <div class="scene-phone-notch"></div>
+              <p class="scene-panel-label">Mobile preview</p>
+              <div class="scene-phone-card">
+                <div class="scene-line" style="width:68%;"></div>
+                <div class="scene-line scene-line-soft" style="width:48%;"></div>
+                <div class="scene-primary-pill scene-primary-pill-compact mt-3">Call Now</div>
+              </div>
+              <div class="scene-surface mt-3">
+                <div class="scene-line" style="width:58%;"></div>
+                <div class="scene-line scene-line-soft" style="width:74%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="perspective-card hero-scene-card hero-card-launch">
+            <div class="scene-stack-card">
+              <p class="scene-panel-label">Launch path</p>
+              <div class="scene-step-list">
+                <div class="scene-step-row">
+                  <span class="scene-step-number">1</span>
+                  <span>Review build</span>
+                </div>
+                <div class="scene-step-row">
+                  <span class="scene-step-number">2</span>
+                  <span>Request edits</span>
+                </div>
+                <div class="scene-step-row">
+                  <span class="scene-step-number">3</span>
+                  <span>Launch live</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-scene-chip hero-chip-top motion-safe-float">
+            <p class="font-display text-[1.65rem] font-bold leading-none text-white">24h</p>
+            <p class="mt-1 font-sans text-[0.62rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.76);">Sample delivery</p>
+          </div>
+
+          <div class="hero-scene-chip hero-chip-bottom motion-safe-float-alt">
+            <p class="font-display text-[1.55rem] font-bold leading-none text-white">$0</p>
+            <p class="mt-1 font-sans text-[0.62rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.42);">Before approval</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue absolute bottom-7 left-1/2 hidden -translate-x-1/2 items-center gap-3 md:flex">
+    <span class="font-sans text-[0.58rem] font-bold uppercase tracking-[0.22em]">Scroll</span>
+    <div style="height:1px;width:42px;background:linear-gradient(to right,rgba(255,255,255,0.08),rgba(255,255,255,0.42),rgba(255,255,255,0.08));animation:scrollPulse 2s ease-in-out infinite;"></div>
+  </div>
+</section>
+
+<!-- ===================== ORANGE MARQUEE ===================== -->
+<div class="overflow-hidden select-none" style="background:#F96B2B;" aria-hidden="true">
+  <div class="marquee-track flex gap-0 py-3 whitespace-nowrap" style="color:rgba(255,255,255,0.92);font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">
+    {Array.from({length: 10}).map(() => (
+      <>
+        <span class="px-8">24-Hour Free Sample</span>
+        <span style="opacity:0.45;padding:0 4px;">*</span>
+        <span class="px-8">No Payment Until You Love It</span>
+        <span style="opacity:0.45;padding:0 4px;">*</span>
+        <span class="px-8">Live in 7-10 Days</span>
+        <span style="opacity:0.45;padding:0 4px;">*</span>
+        <span class="px-8">Zero-Risk Guarantee</span>
+        <span style="opacity:0.45;padding:0 4px;">*</span>
+        <span class="px-8">MN / SD / ND</span>
+        <span style="opacity:0.45;padding:0 4px;">*</span>
+      </>
+    ))}
+  </div>
+</div>
+
+<!-- ===================== BENTO STATS ===================== -->
+<section id="stats-section" class="bg-[#F8F6F2] py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div class="bento-stat rounded-3xl p-8" style="background:#0A1628;grid-column:span 1;">
+        <p style="color:rgba(255,255,255,0.35);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">Cheaper than agencies</p>
+        <p class="font-display font-bold leading-none" style="font-size:4rem;color:#F96B2B;">
+          <span class="stat-counter" data-target="70" data-suffix="%">0%</span>
+        </p>
+        <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:10px;line-height:1.4;">Less than the market rate for the same quality</p>
+      </div>
+
+      <div class="bento-stat rounded-3xl p-8" style="background:#0054DF;">
+        <p style="color:rgba(255,255,255,0.5);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">Sample delivered in</p>
+        <p class="font-display font-bold text-white leading-none" style="font-size:4rem;">
+          <span class="stat-counter" data-target="24" data-suffix="h">0h</span>
+        </p>
+        <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-top:10px;line-height:1.4;">Real site, not a mockup</p>
+      </div>
+
+      <div class="bento-stat rounded-3xl p-8" style="background:#F96B2B;">
+        <p style="color:rgba(255,255,255,0.6);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">To get started</p>
+        <p class="font-display font-bold text-white leading-none" style="font-size:4rem;">$0</p>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;margin-top:10px;line-height:1.4;">Pay only when you love it</p>
+      </div>
+
+      <div class="bento-stat rounded-3xl p-8" style="background:#111D35;">
+        <p style="color:rgba(255,255,255,0.3);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">Average launch time</p>
+        <p class="font-display font-bold text-white leading-none" style="font-size:3rem;">5-7 <span style="font-size:1.3rem;font-family:'Inter Tight',sans-serif;font-weight:400;opacity:0.5;">days</span></p>
+        <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-top:10px;line-height:1.4;">From approval to fully live</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section id="how-it-works" class="py-28 overflow-hidden" style="background:#06101f;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-20 text-center">
+      <p style="color:#F96B2B;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">THE MIDVORA WAY</p>
+      <h2 class="font-display font-bold text-white" style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;">
+        We do the work first.<br/><span style="color:rgba(255,255,255,0.3);">You decide after.</span>
+      </h2>
+    </div>
+
+    <div id="steps-grid" class="grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div class="step-card relative overflow-hidden rounded-3xl p-10" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);transition:background 0.3s,border-color 0.3s,transform 0.3s;">
+        <div class="font-display absolute top-6 right-7 select-none font-bold leading-none" style="font-size:7rem;color:rgba(255,255,255,0.03);">01</div>
+        <div class="relative z-10">
+          <div class="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl" style="background:rgba(0,84,223,0.14);border:1px solid rgba(0,84,223,0.22);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h3 class="mb-3 font-display text-2xl font-bold text-white">We Find You</h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">We search Google Maps for businesses in your area with outdated or missing websites. No waiting required - we come to you.</p>
+        </div>
+      </div>
+
+      <div class="step-card relative overflow-hidden rounded-3xl p-10" style="background:rgba(249,107,43,0.05);border:1px solid rgba(249,107,43,0.18);transition:background 0.3s,border-color 0.3s,transform 0.3s;">
+        <div class="font-display absolute top-6 right-7 select-none font-bold leading-none" style="font-size:7rem;color:rgba(249,107,43,0.06);">02</div>
+        <div class="relative z-10">
+          <div class="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl" style="background:rgba(249,107,43,0.12);border:1px solid rgba(249,107,43,0.25);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="mb-3 font-display text-2xl font-bold text-white">We Build It Free</h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">Your real business name, photos, and info - we build a live working website in 24 hours. Not a mockup. An actual site with a real URL.</p>
+        </div>
+      </div>
+
+      <div class="step-card relative overflow-hidden rounded-3xl p-10" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);transition:background 0.3s,border-color 0.3s,transform 0.3s;">
+        <div class="font-display absolute top-6 right-7 select-none font-bold leading-none" style="font-size:7rem;color:rgba(255,255,255,0.03);">03</div>
+        <div class="relative z-10">
+          <div class="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl" style="background:rgba(0,84,223,0.14);border:1px solid rgba(0,84,223,0.22);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          </div>
+          <h3 class="mb-3 font-display text-2xl font-bold text-white">You Decide</h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">We send you the link. Love it? We launch it. Do not? Walk away free - we absorb the entire cost. No pressure, no pitch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HONEST PITCH (editorial split) ===================== -->
+<section class="bg-[#F8F6F2] py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-start gap-16 lg:flex-row lg:gap-24">
+      <div class="lg:basis-[44%] lg:sticky lg:top-24">
+        <p style="color:#0054DF;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px;">The honest pitch</p>
+        <h2 class="font-display font-bold leading-[0.92] text-[#0A1628]" style="font-size:clamp(2.8rem,5.5vw,5rem);">
+          Built for<br/>businesses<br/>like <span class="text-[#F96B2B]">yours.</span>
+        </h2>
+        <a href="/contact" class="mt-10 inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-bold text-white transition-all" style="background:#0A1628;">
+          Get Started Free &rarr;
+        </a>
+      </div>
+
+      <div class="pitch-list flex flex-col lg:basis-[56%]">
+        <div class="pitch-item flex items-start gap-7 py-10" style="border-bottom:1px solid rgba(10,22,40,0.09);">
+          <div class="font-display select-none font-bold leading-none" style="font-size:3.8rem;color:rgba(10,22,40,0.07);flex-shrink:0;width:64px;line-height:1;">01</div>
+          <div>
+            <h3 class="mb-2 font-display text-2xl font-bold text-[#0A1628]">We charge 70% less than agencies.</h3>
+            <p class="font-sans text-sm leading-relaxed text-[#6B7280]">The average agency charges $5k-$15k for the same work. We do not have a Manhattan office or 40 account managers charging by the hour.</p>
+          </div>
+        </div>
+
+        <div class="pitch-item flex items-start gap-7 py-10" style="border-bottom:1px solid rgba(10,22,40,0.09);">
+          <div class="font-display select-none font-bold leading-none" style="font-size:3.8rem;color:rgba(249,107,43,0.12);flex-shrink:0;width:64px;line-height:1;">02</div>
+          <div>
+            <h3 class="mb-2 font-display text-2xl font-bold text-[#0A1628]">You see it before you pay a cent.</h3>
+            <p class="font-sans text-sm leading-relaxed text-[#6B7280]">A real, live URL. Your business name on it. Your photos. Your hours. If you hate it, walk away - we absorb the cost entirely, no questions asked.</p>
+          </div>
+        </div>
+
+        <div class="pitch-item flex items-start gap-7 py-10">
+          <div class="font-display select-none font-bold leading-none" style="font-size:3.8rem;color:rgba(10,22,40,0.07);flex-shrink:0;width:64px;line-height:1;">03</div>
+          <div>
+            <h3 class="mb-2 font-display text-2xl font-bold text-[#0A1628]">That is the whole pitch.</h3>
+            <p class="font-sans text-sm leading-relaxed text-[#6B7280]">No 90-minute sales calls. No discovery workshops. No retainers on day one. No contracts. Just a site that works and customers that find you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SAMPLE BREAKDOWN ===================== -->
+<section id="sample-breakdown" class="section-space-tight relative overflow-hidden" style="background:#06101f;">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="hero-halo hero-halo-blue" style="top:-22%;left:-10%;width:36rem;height:28rem;opacity:0.72;"></div>
+    <div class="hero-halo hero-halo-orange" style="bottom:-24%;right:-8%;width:30rem;height:24rem;opacity:0.52;"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:78px 78px;opacity:0.16;"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="sample-breakdown-copy mx-auto mb-14 max-w-3xl text-center lg:mx-0 lg:text-left">
+      <p style="color:#F96B2B;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">24-Hour Sample</p>
+      <h2 class="font-display font-bold text-white leading-[1.0]" style="font-size:clamp(2.4rem,5vw,4.3rem);">
+        What shows up in<br/><span style="color:rgba(255,255,255,0.42);">your free sample</span>
+      </h2>
+      <p class="mt-6 max-w-[40rem] font-sans text-sm leading-relaxed text-white/50 sm:text-base">
+        Midvora proves the value by building first. You get a live working preview that shows the layout, mobile behavior, local search basics, and launch path before any money changes hands.
+      </p>
+    </div>
+
+    <div id="sample-breakdown-grid" class="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
+      <div class="sample-breakdown-preview perspective-stage">
+        <div class="guide-plane sample-guide sample-guide-one"></div>
+        <div class="guide-plane sample-guide sample-guide-two"></div>
+
+        <div class="perspective-card sample-scene-layer sample-card-main">
+          <div class="scene-window-bar">
+            <div class="scene-dots">
+              <span class="scene-dot" style="background:#FF5F57;"></span>
+              <span class="scene-dot" style="background:#FFBD2E;"></span>
+              <span class="scene-dot" style="background:#28CA41;"></span>
+            </div>
+            <div class="scene-address">yourbusiness.midvora.site</div>
+          </div>
+          <div class="scene-window-body">
+            <div class="scene-hero-panel">
+              <div class="scene-eyebrow">Sample preview</div>
+              <h3>Marshall Home Services</h3>
+              <p>Fast repairs, clean pricing, and a homepage that looks trustworthy before the first call.</p>
+              <div class="scene-pill-row">
+                <span class="scene-primary-pill">Book Estimate</span>
+                <span class="scene-secondary-pill">View Services</span>
+              </div>
+            </div>
+            <div class="scene-feature-grid">
+              <div class="scene-surface">
+                <p class="scene-surface-label">Service blocks</p>
+                <div class="scene-line" style="width:75%;"></div>
+                <div class="scene-line scene-line-soft" style="width:58%;"></div>
+              </div>
+              <div class="scene-surface">
+                <p class="scene-surface-label">Mobile CTA</p>
+                <div class="scene-primary-pill scene-primary-pill-compact">Tap to Call</div>
+              </div>
+              <div class="scene-surface">
+                <p class="scene-surface-label">Local search</p>
+                <div class="scene-line" style="width:62%;"></div>
+                <div class="scene-line scene-line-soft" style="width:44%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="perspective-card sample-scene-layer sample-card-map motion-safe-float">
+          <div class="scene-stack-card">
+            <p class="scene-panel-label">Local search basics</p>
+            <div class="scene-list">
+              <div class="scene-list-item">
+                <span>Marshall, MN</span>
+                <span>Map</span>
+              </div>
+              <div class="scene-list-item">
+                <span>Open 8-5</span>
+                <span>Hours</span>
+              </div>
+              <div class="scene-list-item">
+                <span>Phone + form</span>
+                <span>CTA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="perspective-card sample-scene-layer sample-card-launch motion-safe-float-alt">
+          <div class="scene-stack-card">
+            <p class="scene-panel-label">Launch path</p>
+            <div class="scene-step-list">
+              <div class="scene-step-row">
+                <span class="scene-step-number">1</span>
+                <span>Review sample</span>
+              </div>
+              <div class="scene-step-row">
+                <span class="scene-step-number">2</span>
+                <span>Revise + approve</span>
+              </div>
+              <div class="scene-step-row">
+                <span class="scene-step-number">3</span>
+                <span>Go live</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sample-scene-chip sample-chip-top motion-safe-float">
+          <p class="font-display text-[1.65rem] font-bold leading-none text-white">24h</p>
+          <p class="mt-1 font-sans text-[0.62rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.76);">Delivery</p>
+        </div>
+
+        <div class="sample-scene-chip sample-chip-bottom motion-safe-float-alt">
+          <p class="font-display text-[1.55rem] font-bold leading-none text-white">$0</p>
+          <p class="mt-1 font-sans text-[0.62rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.42);">Before approval</p>
+        </div>
+      </div>
+
+      <div class="sample-card-grid grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+        {[
+          {
+            title: 'Your Real Homepage',
+            text: 'Business name, service positioning, photos, and a CTA that looks launch-ready instead of generic.',
+            accent: 'rgba(249,107,43,0.14)',
+            border: 'rgba(249,107,43,0.22)',
+            stroke: '#F96B2B',
+            path: 'M4 19.5V6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5Z M7.5 8h9 M7.5 11h5.5 M7.5 15h9'
+          },
+          {
+            title: 'Mobile-Ready Design',
+            text: 'A phone-first layout with readable copy, tap-friendly buttons, and the core actions front and center.',
+            accent: 'rgba(0,84,223,0.16)',
+            border: 'rgba(0,84,223,0.24)',
+            stroke: '#8EB7FF',
+            path: 'M9 3.5h6A2.5 2.5 0 0 1 17.5 6v12A2.5 2.5 0 0 1 15 20.5H9A2.5 2.5 0 0 1 6.5 18V6A2.5 2.5 0 0 1 9 3.5Z M11 17h2 M9.5 7.5h5'
+          },
+          {
+            title: 'Local Search Basics',
+            text: 'Location-aware service copy, map and hours sections, and a structure that makes sense for nearby search traffic.',
+            accent: 'rgba(255,255,255,0.05)',
+            border: 'rgba(255,255,255,0.08)',
+            stroke: '#F96B2B',
+            path: 'M12 21s6-5.6 6-10.2A6 6 0 0 0 6 10.8C6 15.4 12 21 12 21Zm0-7.4a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2Z'
+          },
+          {
+            title: 'Launch Path',
+            text: 'You review the sample, request revisions, see the price clearly, and only move forward if the site is worth it.',
+            accent: 'rgba(255,255,255,0.05)',
+            border: 'rgba(255,255,255,0.08)',
+            stroke: '#8EB7FF',
+            path: 'M4 12.5 8.2 16.7 20 4.9 M20 10.2v-5h-5 M4 7.8v11.7h11.7'
+          }
+        ].map(card => (
+          <div class="sample-breakdown-card rounded-[26px] p-6 sm:p-7" style={`background:${card.accent};border:1px solid ${card.border};box-shadow:0 20px 40px rgba(0,0,0,0.16);`}>
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl" style={`background:${card.accent};border:1px solid ${card.border};`}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={card.stroke} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d={card.path}/>
+              </svg>
+            </div>
+            <h3 class="mb-3 font-display font-bold text-white" style="font-size:1.65rem;line-height:1.02;">{card.title}</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.5);">{card.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="sample-proof-row mt-10 flex flex-wrap justify-center gap-3 sm:mt-12">
+      {['Delivered in 24 hours','$0 up front','Review before you pay'].map(chip => (
+        <div class="sample-proof-chip rounded-full px-5 py-3 font-sans text-xs font-bold uppercase tracking-[0.14em]" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.64);">
+          {chip}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section id="services-section" class="py-28 bg-[#F8F6F2]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 text-center">
+      <p style="color:#0054DF;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">Transparent Pricing</p>
+      <h2 class="font-display font-bold text-[#0A1628] leading-[1.0]" style="font-size:clamp(2.4rem,5vw,4rem);">
+        Less than you think.<br/><span class="text-[#F96B2B]">Way</span> more than you would expect.
+      </h2>
+    </div>
+
+    <div id="pricing-grid" class="grid grid-cols-1 items-start gap-5 md:grid-cols-3">
+      <div class="pricing-card rounded-3xl p-8" style="background:#fff;border:1px solid rgba(10,22,40,0.08);">
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9CA3AF;margin-bottom:20px;">Starter</p>
+        <p class="font-display font-bold leading-none text-[#0A1628]" style="font-size:3.5rem;">$550</p>
+        <p class="font-sans text-sm text-[#9CA3AF] mt-2 mb-8">5 pages - Live in 7 days</p>
+        <div class="mb-8 flex flex-col gap-3">
+          {['Home + 4 core pages','Mobile responsive','Google Maps embed','Basic on-page SEO','1 round of revisions'].map(f => (
+            <div class="flex items-center gap-3">
+              <div style="width:18px;height:18px;border-radius:50%;background:#F0F4FF;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
+              </div>
+              <span class="font-sans text-sm text-[#374151]">{f}</span>
+            </div>
+          ))}
+        </div>
+        <a href="/contact" class="block rounded-full border border-[#0A1628]/10 bg-[#F8F6F2] py-4 text-center text-sm font-bold text-[#0A1628] transition-all hover:-translate-y-0.5">Get Started</a>
+      </div>
+
+      <div class="pricing-card relative rounded-3xl p-8" style="background:#0A1628;transform:scale(1.05);box-shadow:0 32px 64px rgba(10,22,40,0.22),0 0 0 1px rgba(255,255,255,0.04);">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#F96B2B;color:#fff;font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;white-space:nowrap;">Most Popular</div>
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:20px;">Growth</p>
+        <p class="font-display font-bold text-white leading-none" style="font-size:3.5rem;">$1,200</p>
+        <p class="mt-2 mb-8 font-sans text-sm" style="color:rgba(255,255,255,0.35);">8 pages - Live in 10 days</p>
+        <div class="mb-8 flex flex-col gap-3">
+          {['Everything in Starter','8 custom pages','Full SEO optimization','Google Analytics setup','Blog / news section','3 rounds of revisions','30-day support'].map(f => (
+            <div class="flex items-center gap-3">
+              <div style="width:18px;height:18px;border-radius:50%;background:rgba(249,107,43,0.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
+              </div>
+              <span class="font-sans text-sm text-white/65">{f}</span>
+            </div>
+          ))}
+        </div>
+        <a href="/contact" class="block rounded-full py-4 text-center text-sm font-bold text-white transition-all hover:opacity-90" style="background:#F96B2B;box-shadow:0 8px 24px rgba(249,107,43,0.3);">Get Started Free</a>
+      </div>
+
+      <div class="pricing-card rounded-3xl p-8" style="background:#fff;border:1px solid rgba(10,22,40,0.08);">
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9CA3AF;margin-bottom:20px;">Premium</p>
+        <p class="font-display font-bold leading-none text-[#0A1628]" style="font-size:3.5rem;">$2,500</p>
+        <p class="font-sans text-sm text-[#9CA3AF] mt-2 mb-8">12 pages - Full SEO</p>
+        <div class="mb-8 flex flex-col gap-3">
+          {['Everything in Growth','12+ custom pages','E-commerce ready','Advanced SEO + schema','Custom animations','Unlimited revisions','60-day priority support'].map(f => (
+            <div class="flex items-center gap-3">
+              <div style="width:18px;height:18px;border-radius:50%;background:#F0F4FF;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
+              </div>
+              <span class="font-sans text-sm text-[#374151]">{f}</span>
+            </div>
+          ))}
+        </div>
+        <a href="/contact" class="block rounded-full border border-[#0A1628]/10 bg-[#F8F6F2] py-4 text-center text-sm font-bold text-[#0A1628] transition-all hover:-translate-y-0.5">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INDUSTRIES: Horizontal marquee ===================== -->
+<section id="who-we-help" class="overflow-hidden py-24" style="background:#0A1628;">
+  <div class="max-w-7xl mx-auto mb-14 px-4 text-center sm:px-6 lg:px-8">
+    <p style="color:rgba(255,255,255,0.25);font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">Who We Serve</p>
+    <h2 class="font-display font-bold text-white" style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;">
+      Any business. Any size.<br/><span style="color:rgba(255,255,255,0.28);">Anywhere in the region.</span>
+    </h2>
+  </div>
+
+  <div class="overflow-hidden" style="mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);">
+    <div class="flex gap-4" style="width:max-content;animation:scrollLeft 22s linear infinite;">
+      {[
+        { label: 'Restaurants', path: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7' },
+        { label: 'Salons & Spas', path: 'M6 3a3 3 0 0 1 3 3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1 3-3v11a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1-3 3 3 3 0 0 1-3-3ZM6 20v1M18 20v1' },
+        { label: 'Contractors', path: 'M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2zM10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M4 15v-3a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3' },
+        { label: 'Gyms & Studios', path: 'M6.5 6.5h11M6.5 17.5h11M3 9.5v5M21 9.5v5M1 11.5v1M23 11.5v1' },
+        { label: 'Retail Stores', path: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0' },
+        { label: 'Event Planners', path: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12 2 2 4-4' },
+        { label: 'Med & Dental', path: 'M12 5v14M5 12h14' },
+        { label: 'Auto & Repair', path: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' },
+        { label: 'Restaurants', path: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7' },
+        { label: 'Salons & Spas', path: 'M6 3a3 3 0 0 1 3 3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1 3-3v11a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1-3 3 3 3 0 0 1-3-3ZM6 20v1M18 20v1' },
+        { label: 'Contractors', path: 'M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2zM10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M4 15v-3a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3' },
+        { label: 'Gyms & Studios', path: 'M6.5 6.5h11M6.5 17.5h11M3 9.5v5M21 9.5v5M1 11.5v1M23 11.5v1' },
+        { label: 'Retail Stores', path: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0' },
+        { label: 'Event Planners', path: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12 2 2 4-4' },
+        { label: 'Med & Dental', path: 'M12 5v14M5 12h14' },
+        { label: 'Auto & Repair', path: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' },
+      ].map(item => (
+        <div class="industry-card flex-none flex flex-col items-center gap-3 rounded-2xl px-8 py-6" style="min-width:160px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);transition:background 0.25s,border-color 0.25s,transform 0.25s;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="industry-icon" style="transition:stroke 0.25s;">
+            <path d={item.path}/>
+          </svg>
+          <p class="font-sans text-sm font-semibold whitespace-nowrap text-white">{item.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <p class="mt-10 text-center font-sans text-sm" style="color:rgba(255,255,255,0.2);">Based in Marshall, MN - Serving Minnesota, South Dakota, and North Dakota</p>
+</section>
+
+<!-- ===================== TRUST BADGES ===================== -->
+<section class="bg-[#F8F6F2] py-16">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="mb-10 text-center font-sans text-xs font-bold uppercase tracking-widest text-[#9CA3AF]">Why local businesses trust us</p>
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      {[
+        { mark: 'ZR', label: 'Zero-Risk Promise', sub: 'Do not love it? Pay nothing.' },
+        { mark: '24', label: '24-Hour Sample', sub: 'Live site by tomorrow.' },
+        { mark: 'NC', label: 'No Contracts', sub: 'Month-to-month, always.' },
+        { mark: 'MW', label: 'Local Team', sub: 'Midwest-based, Midwest-built.' },
+      ].map(badge => (
+        <div class="trust-badge rounded-2xl p-6 text-center" style="background:#fff;border:1px solid rgba(10,22,40,0.06);">
+          <span class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full font-sans text-sm font-bold uppercase tracking-[0.14em] text-white" style="background:#0A1628;">{badge.mark}</span>
+          <p class="font-sans text-sm font-bold text-[#0A1628]">{badge.label}</p>
+          <p class="mt-1 font-sans text-xs text-[#9CA3AF]">{badge.sub}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section id="cta-banner" class="relative overflow-hidden py-32" style="background:#06101f;">
+  <div class="pointer-events-none absolute inset-0">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(249,107,43,0.1) 0%,transparent 60%);"></div>
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:36px 36px;"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+    <div class="mb-8 inline-flex items-center gap-2.5 rounded-full px-5 py-2.5" style="background:rgba(249,107,43,0.1);border:1px solid rgba(249,107,43,0.2);">
+      <span class="inline-block h-1.5 w-1.5 rounded-full bg-[#F96B2B] animate-pulse"></span>
+      <span style="color:rgba(249,107,43,0.9);font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">Zero Risk - Free Sample - 24 Hours</span>
+    </div>
+
+    <h2 class="cta-headline mb-6 font-display font-bold leading-[0.9] text-white" style="font-size:clamp(3rem,8vw,6rem);">
+      See your site<br/>before you<br/><span class="text-[#F96B2B]">spend a dollar.</span>
+    </h2>
+
+    <p class="mx-auto mb-10 max-w-lg font-sans leading-relaxed" style="font-size:1.05rem;color:rgba(255,255,255,0.45);">
+      Send us your business name. We will build a live working sample in 24 hours. Free. No strings attached.
+    </p>
+
+    <form id="sample-form" action="/api/sample-request" method="POST" class="flex flex-col gap-3">
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <input
+          type="text"
+          name="businessName"
+          placeholder="Business Name"
+          required
+          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+        />
+        <input
+          type="text"
+          name="businessType"
+          placeholder="Restaurant, Salon, Contractor..."
+          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+        />
+        <input
+          type="text"
+          name="city"
+          placeholder="City, State"
+          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+        />
+        <input
+          type="text"
+          name="contact"
+          placeholder="Email or Phone"
+          required
+          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full rounded-2xl py-5 text-base font-bold transition-all hover:opacity-90"
+        style="background:#F96B2B;color:#fff;box-shadow:0 16px 40px rgba(249,107,43,0.25);"
+      >
+        Build My Free Sample &rarr;
+      </button>
+    </form>
+
+    <p class="mt-5 font-sans text-xs" style="color:rgba(255,255,255,0.22);">
+      Delivered in 24 hours - No payment required - Keep the sample even if you do not move forward
+    </p>
+  </div>
+</section>
+
+
+<!-- ===================== SCRIPTS ===================== -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script is:inline>
+(function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var forceStaticPreview = new URLSearchParams(window.location.search).has('staticPreview');
+
+  function setCounterFinalState() {
+    document.querySelectorAll('.stat-counter').forEach(function (el) {
+      var target = parseInt(el.dataset.target || '0', 10);
+      el.textContent = target + (el.dataset.suffix || '');
+    });
+  }
+
+  if (prefersReducedMotion || forceStaticPreview) {
+    setCounterFinalState();
+    return;
+  }
+
+  var heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  heroTimeline
+    .fromTo('.hero-badge', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55 })
+    .fromTo('.hero-headline', { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.85 }, '-=0.18')
+    .fromTo('.hero-sub', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.45')
+    .fromTo('.hero-ctas', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.65 }, '-=0.38')
+    .fromTo('.hero-proof-card', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08 }, '-=0.26')
+    .fromTo('.hero-guide', { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.08 }, '-=1.05')
+    .fromTo('.hero-scene-card', { opacity: 0, y: 28, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.92, stagger: 0.12 }, '-=0.82')
+    .fromTo('.hero-scene-chip', { opacity: 0, y: 18, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.72, stagger: 0.08 }, '-=0.72');
+
+  var statsAnimated = false;
+  ScrollTrigger.create({
+    trigger: '#stats-section',
+    start: 'top 82%',
+    once: true,
+    onEnter: function () {
+      if (statsAnimated) return;
+      statsAnimated = true;
+
+      gsap.fromTo(
+        '.bento-stat',
+        { opacity: 0, y: 36, scale: 0.97 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.75, ease: 'power2.out', stagger: 0.1 }
+      );
+
+      document.querySelectorAll('.stat-counter').forEach(function (el) {
+        var obj = { val: 0 };
+        gsap.to(obj, {
+          val: parseInt(el.dataset.target || '0', 10),
+          duration: 1.9,
+          ease: 'power2.out',
+          onUpdate: function () {
+            el.textContent = Math.round(obj.val) + (el.dataset.suffix || '');
+          }
+        });
+      });
+    }
+  });
+
+  gsap.fromTo(
+    '#steps-grid > div',
+    { opacity: 0, y: 48 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      ease: 'power3.out',
+      stagger: 0.15,
+      scrollTrigger: { trigger: '#steps-grid', start: 'top 80%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.pitch-item',
+    { opacity: 0, x: -32 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      stagger: 0.18,
+      scrollTrigger: { trigger: '.pitch-list', start: 'top 78%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.sample-breakdown-copy > *',
+    { opacity: 0, y: 20 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.72,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: { trigger: '#sample-breakdown', start: 'top 76%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.sample-guide',
+    { opacity: 0, scale: 0.96 },
+    {
+      opacity: 1,
+      scale: 1,
+      duration: 0.9,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: { trigger: '#sample-breakdown-grid', start: 'top 78%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.sample-scene-layer',
+    { opacity: 0, y: 28, scale: 0.97 },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.9,
+      ease: 'power3.out',
+      stagger: 0.12,
+      scrollTrigger: { trigger: '#sample-breakdown-grid', start: 'top 78%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.sample-scene-chip',
+    { opacity: 0, y: 18, scale: 0.96 },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.68,
+      ease: 'power2.out',
+      stagger: 0.08,
+      scrollTrigger: { trigger: '#sample-breakdown-grid', start: 'top 74%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.sample-breakdown-card',
+    { opacity: 0, y: 24 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.72,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: { trigger: '#sample-breakdown-grid', start: 'top 76%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.sample-proof-chip',
+    { opacity: 0, y: 20 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.55,
+      ease: 'power2.out',
+      stagger: 0.08,
+      scrollTrigger: { trigger: '.sample-proof-row', start: 'top 88%' }
+    }
+  );
+
+  gsap.fromTo(
+    '#pricing-grid > div',
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      stagger: 0.14,
+      scrollTrigger: { trigger: '#pricing-grid', start: 'top 80%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.trust-badge',
+    { opacity: 0, y: 24 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.65,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: { trigger: '.trust-badge', start: 'top 85%' }
+    }
+  );
+
+  gsap.fromTo(
+    '.cta-headline',
+    { opacity: 0, y: 50 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '#cta-banner', start: 'top 80%' }
+    }
+  );
+
+  gsap.fromTo(
+    '#sample-form',
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      delay: 0.2,
+      scrollTrigger: { trigger: '#cta-banner', start: 'top 75%' }
+    }
+  );
+})();
+
+(function () {
+  var form = document.getElementById('sample-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Request received - we will be in touch soon.';
+    btn.disabled = true;
+    btn.style.background = '#22c55e';
+
+    setTimeout(function () {
+      btn.textContent = 'Build My Free Sample ->';
+      btn.disabled = false;
+      btn.style.background = '#F96B2B';
+      form.reset();
+    }, 4000);
+  });
+})();
+</script>
+
+</BaseLayout>

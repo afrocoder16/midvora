@@ -1,0 +1,272 @@
+---
+const navItems = [
+  { href: '/services', label: 'Services', blurb: 'Websites, SEO, photography, and content support.' },
+  { href: '/work', label: 'Work', blurb: 'See the kind of modern local-business sites Midvora builds.' },
+  { href: '/about', label: 'About', blurb: 'A small Midwest team with a build-first sales model.' },
+  { href: '/contact', label: 'Contact', blurb: 'Request a free sample or ask about a launch timeline.' },
+];
+---
+<div class="h-0.5 w-full bg-[#0054DF]"></div>
+<nav
+  data-nav-root
+  class="sticky top-0 z-[60] border-b border-[#0A1628]/10 bg-[#F8F6F2]/92 backdrop-blur-xl"
+>
+  <div class="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[5rem] lg:px-8">
+    <a href="/" class="flex min-w-0 flex-col leading-tight">
+      <span class="font-display text-xl font-bold uppercase tracking-[0.22em] text-[#0A1628] sm:text-[1.55rem]">MIDVORA</span>
+      <span class="font-sans text-[0.68rem] text-[#6B7280] sm:text-xs">From the Midwest. For the World.</span>
+    </a>
+
+    <div class="hidden items-center gap-8 lg:flex">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="font-sans text-sm font-semibold text-[#374151] transition-colors hover:text-[#0054DF]"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a
+        href="/contact"
+        class="nav-mobile-cta inline-flex items-center gap-2 rounded-full border border-[#0A1628]/10 bg-white px-3.5 py-2 font-sans text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[#0A1628] transition-colors hover:border-[#0054DF]/20 hover:text-[#0054DF] lg:hidden"
+      >
+        <span class="hidden sm:inline">Free Sample</span>
+        <span class="sm:hidden">Sample</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+
+      <a
+        href="/contact"
+        class="hidden items-center rounded-full bg-[#F96B2B] px-6 py-3 font-sans text-sm font-bold text-white shadow-[0_18px_36px_rgba(249,107,43,0.24)] transition-opacity hover:opacity-90 lg:inline-flex"
+      >
+        Get Free Sample
+      </a>
+
+      <button
+        type="button"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+        class="nav-toggle flex h-11 w-11 items-center justify-center rounded-full border border-[#0A1628]/10 bg-white text-[#0A1628] transition-colors hover:border-[#0054DF]/20 hover:text-[#0054DF] focus:outline-none focus:ring-2 focus:ring-[#0054DF]/20 lg:hidden"
+      >
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-lines">
+          <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div data-nav-overlay class="nav-overlay lg:hidden" aria-hidden="true"></div>
+
+  <div
+    id="mobile-menu"
+    data-nav-panel
+    class="nav-panel lg:hidden"
+    aria-hidden="true"
+  >
+    <div class="mx-auto max-w-7xl px-4 pb-4 sm:px-6">
+      <div class="nav-panel-shell overflow-hidden rounded-[28px] border border-[#0A1628]/10 bg-[#F8F6F2]">
+        <div class="grid gap-6 p-5 sm:p-6">
+          <div class="rounded-[24px] bg-[#0A1628] px-5 py-5 text-white sm:px-6">
+            <p class="mb-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#8EB7FF]">Build First</p>
+            <h2 class="font-display text-[2rem] font-bold leading-[0.92] text-white sm:text-[2.35rem]">
+              A stronger site,
+              <span class="text-[#F96B2B]">before</span>
+              the sales call.
+            </h2>
+            <p class="mt-3 max-w-[30rem] font-sans text-sm leading-relaxed text-white/62">
+              Midvora builds a real sample homepage in 24 hours so you can judge the work instead of imagining it.
+            </p>
+            <a
+              href="/contact"
+              data-nav-link
+              class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#F96B2B] px-5 py-3 font-sans text-sm font-bold text-white shadow-[0_18px_36px_rgba(249,107,43,0.24)] transition-opacity hover:opacity-90"
+            >
+              Request My Sample
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="grid gap-3 md:grid-cols-2">
+            {navItems.map((item) => (
+              <a
+                href={item.href}
+                data-nav-link
+                class="group rounded-[22px] border border-[#0A1628]/10 bg-white px-5 py-4 transition-transform transition-colors hover:-translate-y-0.5 hover:border-[#0054DF]/18 hover:bg-[#E0EEFF]/28"
+              >
+                <div class="flex items-center justify-between gap-4">
+                  <span class="font-display text-[1.55rem] font-bold leading-none text-[#0A1628]">{item.label}</span>
+                  <span class="font-sans text-xs font-bold uppercase tracking-[0.12em] text-[#0054DF] transition-transform group-hover:translate-x-1">
+                    Open
+                  </span>
+                </div>
+                <p class="mt-2 max-w-[22rem] font-sans text-sm leading-relaxed text-[#6B7280]">{item.blurb}</p>
+              </a>
+            ))}
+          </div>
+
+          <div class="flex flex-wrap gap-3 border-t border-[#0A1628]/10 pt-1">
+            {['Delivered in 24 hours', '$0 to start', 'No contract required'].map((chip) => (
+              <div class="rounded-full border border-[#0A1628]/10 bg-white px-4 py-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.14em] text-[#6B7280]">
+                {chip}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style is:inline>
+  .nav-toggle-lines {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+  }
+
+  .hamburger-line {
+    transform-origin: center;
+    transition: transform 0.28s ease, opacity 0.22s ease;
+  }
+
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 16, 31, 0.16);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+  }
+
+  .nav-panel {
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease,
+      visibility 0.28s ease;
+  }
+
+  .nav-panel-shell {
+    box-shadow: 0 28px 72px rgba(10, 22, 40, 0.16);
+  }
+
+  [data-nav-root].is-open [data-nav-panel] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  [data-nav-root].is-open [data-nav-overlay] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  [data-nav-root].is-open .hamburger-line:nth-child(1) {
+    transform: translateY(0.5rem) rotate(45deg);
+  }
+
+  [data-nav-root].is-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  [data-nav-root].is-open .hamburger-line:nth-child(3) {
+    transform: translateY(-0.5rem) rotate(-45deg);
+  }
+
+  @media (max-width: 399px) {
+    .nav-mobile-cta {
+      padding-inline: 0.875rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-panel,
+    .nav-overlay,
+    .hamburger-line {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-nav-root]');
+    if (!root) return;
+
+    var toggle = root.querySelector('[data-nav-toggle]');
+    var panel = root.querySelector('[data-nav-panel]');
+    var overlay = root.querySelector('[data-nav-overlay]');
+    var links = root.querySelectorAll('[data-nav-link]');
+    var open = false;
+
+    function sync() {
+      root.classList.toggle('is-open', open);
+      document.body.classList.toggle('nav-open', open);
+
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', String(open));
+      }
+
+      if (panel) {
+        panel.setAttribute('aria-hidden', String(!open));
+      }
+
+      if (overlay) {
+        overlay.setAttribute('aria-hidden', String(!open));
+      }
+    }
+
+    function setOpen(next) {
+      open = next;
+      sync();
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        setOpen(!open);
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', function () {
+        setOpen(false);
+      });
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        setOpen(false);
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && open) {
+        setOpen(false);
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 1024 && open) {
+        setOpen(false);
+      }
+    });
+
+    sync();
+  })();
+</script>
