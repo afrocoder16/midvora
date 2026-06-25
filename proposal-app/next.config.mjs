@@ -1,6 +1,14 @@
+import { fileURLToPath } from "node:url";
+import { dirname } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // This app sits inside the Astro repo (two lockfiles). Pin the tracing root to
+  // this folder so Next doesn't infer the parent directory.
+  outputFileTracingRoot: __dirname,
   // @react-pdf/renderer pulls in some node-flavored deps; keep it server-external
   // so it isn't bundled into the client.
   serverExternalPackages: ["@react-pdf/renderer"],
