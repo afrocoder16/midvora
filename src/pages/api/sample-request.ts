@@ -7,12 +7,16 @@ export const GET: APIRoute = () =>
   });
 
 export const POST: APIRoute = async ({ request }) => {
-  const data = await request.formData();
+  const data = await request.json();
   const payload = {
-    businessName: data.get('businessName'),
-    businessType: data.get('businessType'),
-    city: data.get('city'),
-    contact: data.get('contact'),
+    businessName: data.businessName,
+    yourName: data.yourName,
+    businessType: data.businessType,
+    cityState: data.cityState,
+    currentWebsite: data.currentWebsite,
+    email: data.email,
+    phone: data.phone,
+    message: data.message,
   };
 
   console.log('[sample-request] New request received:', payload);

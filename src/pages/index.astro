@@ -4,180 +4,551 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Midvora - Modern Websites for Local Business">
 
 <!-- ===================== HERO ===================== -->
-<section id="hero" class="hero-section relative overflow-hidden" style="min-height:calc(100vh - 73px);background:#06101f;">
+<section id="hero" class="h-new-hero relative overflow-hidden" style="background:#050e1c;">
+
+  <!-- ░░ LAYER 0 — deep atmosphere ░░ -->
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <div class="hero-halo hero-halo-blue"></div>
-    <div class="hero-halo hero-halo-orange"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-vignette"></div>
+    <!-- Primary blue nebula, upper-left -->
+    <div class="h-glow-blue"></div>
+    <!-- Orange ember, lower-right -->
+    <div class="h-glow-orange"></div>
+    <!-- Secondary cold glow, upper-right -->
+    <div class="h-glow-cold"></div>
+    <!-- Fine dot-matrix grid, masked to center -->
+    <div class="h-dotgrid"></div>
+    <!-- Scanline texture overlay -->
+    <div class="h-scanlines"></div>
+    <!-- Diagonal orange slash accent — desktop only -->
+    <div class="h-slash"></div>
   </div>
 
-  <div class="relative z-10 mx-auto flex min-h-[calc(100vh-73px)] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
-    <div class="hero-shell grid w-full gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12">
-      <div class="hero-copy max-w-[35rem] py-14 sm:py-16 lg:py-24">
-        <div class="hero-badge inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-          <span class="relative flex h-2 w-2">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F96B2B] opacity-75"></span>
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-[#F96B2B]"></span>
-          </span>
-          <span class="font-sans text-[0.68rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.58);">Midwest web design - MN / SD / ND</span>
+  <!-- ░░ LAYER 1 — canvas (desktop particle web) ░░ -->
+  <canvas id="hero-canvas" class="h-canvas pointer-events-none absolute inset-0" style="opacity:0.35;"></canvas>
+
+  <!-- ░░ LAYER 2 — content ░░ -->
+  <div class="h-content relative z-10 mx-auto w-full max-w-7xl" style="padding:0 1.25rem;">
+
+    <!-- ══ DESKTOP two-col ══ -->
+    <div class="h-grid" style="min-height:100svh;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:6rem 1rem 5rem;">
+
+      <!-- Left copy -->
+      <div class="h-copy">
+        <div class="h-pill hero-eyebrow">
+          <span class="h-dot-pulse"></span>
+          <span>Midwest Web Design · MN / SD / ND</span>
         </div>
 
-        <h1 class="hero-headline mt-7 font-display font-bold leading-[0.92] tracking-tight text-white" style="font-size:clamp(2.95rem,7.4vw,6.15rem);">
-          <span class="hero-line">We build the</span>
-          <span class="hero-line">sample site first.</span>
-          <span class="hero-line"><span class="hero-orange-line">You decide</span> after.</span>
+        <h1 class="h-headline hero-h1">
+          <span class="h-line-1">Your business</span>
+          <span class="h-line-2">deserves a site</span>
+          <span class="h-line-3">that <em class="h-em">actually</em> works.</span>
         </h1>
 
-        <p class="hero-sub mt-6 max-w-[32rem] font-sans text-[1rem] leading-relaxed sm:text-[1.06rem]" style="color:rgba(255,255,255,0.56);">
-          Midvora builds a real homepage sample for restaurants, salons, contractors, and local shops in 24 hours so you can judge the work before you spend a dollar.
+        <p class="h-sub hero-sub">
+          We build your full homepage sample in&nbsp;24&nbsp;hours, free, live, and real. You only pay when you love it.
         </p>
 
-        <div class="hero-ctas mt-9 flex flex-wrap gap-3.5">
-          <a href="/contact" class="group inline-flex items-center gap-3 rounded-full bg-[#F96B2B] px-7 py-4 font-sans text-sm font-bold text-white shadow-[0_18px_36px_rgba(249,107,43,0.28)] transition-all hover:-translate-y-0.5 hover:opacity-95">
-            Get My Free Sample
-            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+        <div class="h-ctas hero-ctas">
+          <a href="/contact" class="h-btn-primary group">
+            Get my free sample
+            <svg class="h-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="/services" class="inline-flex items-center gap-3 rounded-full border border-white/10 px-7 py-4 font-sans text-sm font-bold transition-colors hover:border-white/20 hover:bg-white/5 hover:text-white" style="background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.76);">
-            See Pricing
-          </a>
+          <a href="#services-section" class="h-btn-ghost">See what we build</a>
         </div>
 
-        <div class="hero-proof mt-9 grid grid-cols-3 gap-3 sm:gap-4">
-          <div class="hero-proof-card">
-            <p class="font-display text-[1.9rem] font-bold leading-none text-white">$0</p>
-            <p class="mt-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.36);">Up front</p>
-          </div>
-          <div class="hero-proof-card">
-            <p class="font-display text-[1.9rem] font-bold leading-none text-white">24h</p>
-            <p class="mt-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.36);">Sample ready</p>
-          </div>
-          <div class="hero-proof-card">
-            <p class="font-display text-[1.9rem] font-bold leading-none text-white">5-7</p>
-            <p class="mt-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em]" style="color:rgba(255,255,255,0.36);">Days to launch</p>
-          </div>
+        <div class="h-stats hero-proof-strip">
+          <div class="h-stat"><span class="h-stat-n">$0</span><span class="h-stat-l">Up front</span></div>
+          <div class="h-stat-sep"></div>
+          <div class="h-stat"><span class="h-stat-n">24h</span><span class="h-stat-l">Sample ready</span></div>
+          <div class="h-stat-sep"></div>
+          <div class="h-stat"><span class="h-stat-n">5–7</span><span class="h-stat-l">Days live</span></div>
         </div>
       </div>
 
-      <div class="hero-scene-shell flex items-center lg:justify-end">
-        <div class="hero-scene perspective-stage">
-          <div class="guide-plane hero-guide hero-guide-one"></div>
-          <div class="guide-plane hero-guide hero-guide-two"></div>
-          <div class="guide-plane hero-guide hero-guide-three"></div>
+      <!-- Right visual: stacked phone + floating cards -->
+      <div class="h-visual hero-visual" style="position:relative;height:560px;">
 
-          <div class="perspective-card hero-scene-card hero-card-main">
-            <div class="scene-window-bar">
-              <div class="scene-dots">
-                <span class="scene-dot" style="background:#FF5F57;"></span>
-                <span class="scene-dot" style="background:#FFBD2E;"></span>
-                <span class="scene-dot" style="background:#28CA41;"></span>
+        <!-- Glow ring behind phone -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(0,84,223,0.28) 0%,transparent 70%);filter:blur(32px);pointer-events:none;"></div>
+
+        <!-- Phone frame -->
+        <div class="h-phone hero-browser" style="position:absolute;top:50%;left:50%;transform:translate(-48%,-50%) rotate(-4deg);">
+          <div class="h-phone-notch"></div>
+          <div class="h-phone-screen">
+            <!-- Mini site preview inside phone -->
+            <div style="background:linear-gradient(150deg,#0054DF,#031e4a);padding:1rem;border-radius:4px 4px 0 0;">
+              <p style="margin:0 0 0.3rem;font:700 0.56rem/1 'Inter Tight',sans-serif;color:rgba(255,255,255,0.55);letter-spacing:0.14em;text-transform:uppercase;">Your sample site</p>
+              <p style="margin:0 0 0.5rem;font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;line-height:1;">Bella Salon &amp; Spa</p>
+              <p style="margin:0 0 0.75rem;font:500 0.68rem/1.4 'Inter Tight',sans-serif;color:rgba(255,255,255,0.62);">Book same-day. Walk-ins welcome.</p>
+              <div style="display:flex;gap:0.4rem;">
+                <span style="background:#F96B2B;color:#fff;border-radius:999px;padding:0.4rem 0.75rem;font:700 0.58rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.06em;">Book Now</span>
+                <span style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.72);border-radius:999px;padding:0.4rem 0.75rem;font:700 0.58rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.06em;">Services</span>
               </div>
-              <div class="scene-address">sample.midvora.site</div>
             </div>
-            <div class="scene-window-body">
-              <div class="scene-hero-panel">
-                <div class="scene-eyebrow">Sample homepage</div>
-                <h3>North Prairie Dental</h3>
-                <p>Family dentistry, urgent visits, and clean calls to action built to look good on phones first.</p>
-                <div class="scene-pill-row">
-                  <span class="scene-primary-pill">Request Appointment</span>
-                  <span class="scene-secondary-pill">Insurance Info</span>
-                </div>
-              </div>
-              <div class="scene-feature-grid">
-                <div class="scene-surface">
-                  <p class="scene-surface-label">Service block</p>
-                  <div class="scene-line" style="width:72%;"></div>
-                  <div class="scene-line scene-line-soft" style="width:54%;"></div>
-                </div>
-                <div class="scene-surface">
-                  <p class="scene-surface-label">Trust content</p>
-                  <div class="scene-line" style="width:64%;"></div>
-                  <div class="scene-line scene-line-soft" style="width:46%;"></div>
-                </div>
-                <div class="scene-surface">
-                  <p class="scene-surface-label">Call to action</p>
-                  <div class="scene-primary-pill scene-primary-pill-compact">Tap to Call</div>
-                </div>
+            <div style="padding:0.7rem;display:flex;flex-direction:column;gap:0.5rem;">
+              {[
+                {w:'72%',s:'0.85'},
+                {w:'55%',s:'0.7'},
+                {w:'88%',s:'0.6'},
+              ].map(r => (
+                <div style={`height:0.4rem;border-radius:999px;background:rgba(255,255,255,0.12);width:${r.w};opacity:${r.s};`}></div>
+              ))}
+              <div style="margin-top:0.25rem;display:flex;justify-content:flex-end;">
+                <span style="background:#F96B2B;color:#fff;border-radius:999px;padding:0.42rem 0.8rem;font:700 0.58rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.06em;">Tap to Call</span>
               </div>
             </div>
           </div>
-
-          <div class="perspective-card hero-scene-card hero-card-secondary motion-safe-float">
-            <div class="scene-stack-card">
-              <p class="scene-panel-label">Service flow</p>
-              <div class="scene-list">
-                <div class="scene-list-item">
-                  <span>Hero CTA</span>
-                  <span>01</span>
-                </div>
-                <div class="scene-list-item">
-                  <span>Service cards</span>
-                  <span>02</span>
-                </div>
-                <div class="scene-list-item">
-                  <span>Map + hours</span>
-                  <span>03</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="perspective-card hero-scene-card hero-card-mobile motion-safe-float-alt">
-            <div class="scene-phone">
-              <div class="scene-phone-notch"></div>
-              <p class="scene-panel-label">Mobile preview</p>
-              <div class="scene-phone-card">
-                <div class="scene-line" style="width:68%;"></div>
-                <div class="scene-line scene-line-soft" style="width:48%;"></div>
-                <div class="scene-primary-pill scene-primary-pill-compact mt-3">Call Now</div>
-              </div>
-              <div class="scene-surface mt-3">
-                <div class="scene-line" style="width:58%;"></div>
-                <div class="scene-line scene-line-soft" style="width:74%;"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="perspective-card hero-scene-card hero-card-launch">
-            <div class="scene-stack-card">
-              <p class="scene-panel-label">Launch path</p>
-              <div class="scene-step-list">
-                <div class="scene-step-row">
-                  <span class="scene-step-number">1</span>
-                  <span>Review build</span>
-                </div>
-                <div class="scene-step-row">
-                  <span class="scene-step-number">2</span>
-                  <span>Request edits</span>
-                </div>
-                <div class="scene-step-row">
-                  <span class="scene-step-number">3</span>
-                  <span>Launch live</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-scene-chip hero-chip-top motion-safe-float">
-            <p class="font-display text-[1.65rem] font-bold leading-none text-white">24h</p>
-            <p class="mt-1 font-sans text-[0.62rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.76);">Sample delivery</p>
-          </div>
-
-          <div class="hero-scene-chip hero-chip-bottom motion-safe-float-alt">
-            <p class="font-display text-[1.55rem] font-bold leading-none text-white">$0</p>
-            <p class="mt-1 font-sans text-[0.62rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(255,255,255,0.42);">Before approval</p>
-          </div>
+          <div class="h-phone-home"></div>
         </div>
+
+        <!-- Floating badge: 24h -->
+        <div class="h-float-badge motion-safe-float" style="position:absolute;top:12%;left:4%;background:#F96B2B;border-radius:16px;padding:0.9rem 1.1rem;box-shadow:0 20px 48px rgba(249,107,43,0.4);">
+          <p style="margin:0;font-family:'Oswald',sans-serif;font-size:1.7rem;font-weight:700;color:#fff;line-height:1;">24h</p>
+          <p style="margin:0.25rem 0 0;font:700 0.55rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.8);">Delivery</p>
+        </div>
+
+        <!-- Floating badge: $0 -->
+        <div class="h-float-badge motion-safe-float-alt" style="position:absolute;bottom:14%;right:3%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);backdrop-filter:blur(16px);border-radius:16px;padding:0.9rem 1.1rem;">
+          <p style="margin:0;font-family:'Oswald',sans-serif;font-size:1.7rem;font-weight:700;color:#fff;line-height:1;">$0</p>
+          <p style="margin:0.25rem 0 0;font:700 0.55rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.45);">To start</p>
+        </div>
+
+        <!-- Floating card: "Live in 5 days" -->
+        <div class="h-float-card motion-safe-float" style="position:absolute;top:10%;right:2%;background:rgba(10,22,40,0.9);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);border-radius:14px;padding:0.75rem 1rem;min-width:130px;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#28CA41;box-shadow:0 0 8px 2px rgba(40,202,65,0.6);flex-shrink:0;"></div>
+            <span style="font:700 0.6rem/1 'Inter Tight',sans-serif;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.12em;">Status</span>
+          </div>
+          <p style="margin:0;font:700 0.85rem/1.2 'Inter Tight',sans-serif;color:#fff;">Live in 5 days</p>
+        </div>
+
+        <!-- Floating card: check marks -->
+        <div class="h-float-card motion-safe-float-alt" style="position:absolute;bottom:18%;left:1%;background:rgba(10,22,40,0.9);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);border-radius:14px;padding:0.75rem 1rem;min-width:148px;">
+          {['Custom design','Mobile ready','SEO ready'].map(t => (
+            <div style="display:flex;align-items:center;gap:0.45rem;margin-bottom:0.35rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#28CA41" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
+              <span style={`font:600 0.7rem/1 'Inter Tight',sans-serif;color:rgba(255,255,255,0.72);`}>{t}</span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
-  </div>
 
-  <div class="hero-scroll-cue absolute bottom-7 left-1/2 hidden -translate-x-1/2 items-center gap-3 md:flex">
-    <span class="font-sans text-[0.58rem] font-bold uppercase tracking-[0.22em]">Scroll</span>
-    <div style="height:1px;width:42px;background:linear-gradient(to right,rgba(255,255,255,0.08),rgba(255,255,255,0.42),rgba(255,255,255,0.08));animation:scrollPulse 2s ease-in-out infinite;"></div>
-  </div>
+    <!-- ══ MOBILE full-bleed layout ══ -->
+    <div class="h-mobile" style="display:flex;flex-direction:column;padding:3.15rem 0 0;">
+
+      <!-- Top: copy -->
+      <div style="padding:0 0.25rem;flex:0 0 auto;">
+        <div class="h-pill hero-eyebrow" style="margin-bottom:1.5rem;">
+          <span class="h-dot-pulse"></span>
+          <span>MN · SD · ND</span>
+        </div>
+
+        <h1 class="h-headline-mob hero-h1">
+          Your<br/>
+          business<br/>
+          deserves<br/>
+          <em class="h-em-mob">better.</em>
+        </h1>
+
+        <p class="h-sub-mob hero-sub" style="margin-top:1.25rem;">
+          We build your full homepage sample in&nbsp;24&nbsp;hours, free. You only pay when you love it.
+        </p>
+
+        <div style="margin-top:1.75rem;display:flex;flex-direction:column;gap:0.75rem;" class="hero-ctas">
+          <a href="/contact" class="h-btn-primary group">
+            Get my free sample
+            <svg class="h-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services-section" class="h-btn-ghost">See what we build</a>
+        </div>
+      </div>
+
+      <!-- Middle: phone + flanking badges in a flex row -->
+      <div class="h-phone-wrap" style="margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;">
+
+        <!-- Left badge: $0 -->
+        <div class="motion-safe-float-alt" style="flex-shrink:0;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);backdrop-filter:blur(16px);border-radius:14px;padding:0.85rem 0.9rem;text-align:center;">
+          <p style="margin:0;font-family:'Oswald',sans-serif;font-size:1.45rem;font-weight:700;color:#fff;line-height:1;">$0</p>
+          <p style="margin:0.2rem 0 0;font:700 0.5rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);">Up front</p>
+        </div>
+
+        <!-- Phone centred -->
+        <div class="h-phone h-phone-mob" style="flex-shrink:0;position:relative;z-index:2;">
+          <div class="h-phone-notch"></div>
+          <div class="h-phone-screen">
+            <div style="background:linear-gradient(150deg,#0054DF,#031e4a);padding:1rem 0.9rem;border-radius:4px 4px 0 0;">
+              <p style="margin:0 0 0.25rem;font:700 0.54rem/1 'Inter Tight',sans-serif;color:rgba(255,255,255,0.5);letter-spacing:0.14em;text-transform:uppercase;">Your sample site</p>
+              <p style="margin:0 0 0.45rem;font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;line-height:1;">Bella Salon &amp; Spa</p>
+              <p style="margin:0 0 0.7rem;font:500 0.66rem/1.4 'Inter Tight',sans-serif;color:rgba(255,255,255,0.6);">Book same-day. Walk-ins welcome.</p>
+              <div style="display:flex;gap:0.35rem;">
+                <span style="background:#F96B2B;color:#fff;border-radius:999px;padding:0.38rem 0.7rem;font:700 0.56rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.06em;">Book Now</span>
+                <span style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.72);border-radius:999px;padding:0.38rem 0.7rem;font:700 0.56rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.06em;">Services</span>
+              </div>
+            </div>
+            <div style="padding:0.65rem 0.7rem;display:flex;flex-direction:column;gap:0.45rem;">
+              {[{w:'70%'},{w:'52%'},{w:'84%'}].map(r => (
+                <div style={`height:0.38rem;border-radius:999px;background:rgba(255,255,255,0.11);width:${r.w};`}></div>
+              ))}
+              <div style="margin-top:0.25rem;display:flex;justify-content:flex-end;">
+                <span style="background:#F96B2B;color:#fff;border-radius:999px;padding:0.38rem 0.75rem;font:700 0.56rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.06em;">Tap to Call</span>
+              </div>
+            </div>
+          </div>
+          <div class="h-phone-home"></div>
+        </div>
+
+        <!-- Right badge: 24h -->
+        <div class="motion-safe-float" style="flex-shrink:0;background:#F96B2B;border-radius:14px;padding:0.85rem 0.9rem;text-align:center;box-shadow:0 16px 36px rgba(249,107,43,0.42);">
+          <p style="margin:0;font-family:'Oswald',sans-serif;font-size:1.45rem;font-weight:700;color:#fff;line-height:1;">24h</p>
+          <p style="margin:0.2rem 0 0;font:700 0.5rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.8);">Delivery</p>
+        </div>
+
+      </div>
+
+      <!-- Bottom: stat strip pinned -->
+      <div class="h-stats-mob hero-proof-strip" style="flex:0 0 auto;padding:1.5rem 0.25rem 2rem;display:flex;align-items:center;gap:0;border-top:1px solid rgba(255,255,255,0.06);margin-top:1.5rem;">
+        <div style="flex:1;text-align:center;">
+          <p style="margin:0;font-family:'Oswald',sans-serif;font-size:1.75rem;font-weight:700;color:#fff;line-height:1;">$0</p>
+          <p style="margin:0.3rem 0 0;font:700 0.55rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.3);">Up front</p>
+        </div>
+        <div style="width:1px;height:2rem;background:rgba(255,255,255,0.1);flex-shrink:0;"></div>
+        <div style="flex:1;text-align:center;">
+          <p style="margin:0;font-family:'Oswald',sans-serif;font-size:1.75rem;font-weight:700;color:#F96B2B;line-height:1;">24h</p>
+          <p style="margin:0.3rem 0 0;font:700 0.55rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.3);">Sample ready</p>
+        </div>
+        <div style="width:1px;height:2rem;background:rgba(255,255,255,0.1);flex-shrink:0;"></div>
+        <div style="flex:1;text-align:center;">
+          <p style="margin:0;font-family:'Oswald',sans-serif;font-size:1.75rem;font-weight:700;color:#fff;line-height:1;">5–7</p>
+          <p style="margin:0.3rem 0 0;font:700 0.55rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.3);">Days live</p>
+        </div>
+      </div>
+
+    </div><!-- end .h-mobile -->
+  </div><!-- end .h-content -->
+
 </section>
+
+<style is:inline>
+/* ── Layout switching: desktop vs mobile ── */
+.h-grid   { display: none; }
+.h-mobile { display: flex; }
+.h-canvas { display: none; }
+.h-slash  { display: none; }
+
+@media (min-width: 1024px) {
+  .h-grid   { display: grid; }
+  .h-mobile { display: none !important; }
+  .h-canvas { display: block; }
+  .h-slash  { display: block; }
+}
+
+@supports not (min-height:100svh) {
+  .h-grid { min-height:100vh !important; }
+}
+
+/* ── Atmosphere glows ── */
+.h-glow-blue {
+  position:absolute;
+  top:-22%;left:-12%;
+  width:72vw;height:72vw;
+  max-width:58rem;max-height:58rem;
+  background:radial-gradient(circle,rgba(0,84,223,0.28) 0%,transparent 60%);
+  filter:blur(60px);
+}
+.h-glow-orange {
+  position:absolute;
+  bottom:-18%;right:-10%;
+  width:56vw;height:56vw;
+  max-width:50rem;max-height:50rem;
+  background:radial-gradient(circle,rgba(249,107,43,0.22) 0%,transparent 60%);
+  filter:blur(56px);
+}
+.h-glow-cold {
+  position:absolute;
+  top:8%;right:-6%;
+  width:40vw;height:40vw;
+  max-width:36rem;max-height:36rem;
+  background:radial-gradient(circle,rgba(142,183,255,0.1) 0%,transparent 65%);
+  filter:blur(48px);
+}
+
+/* ── Dot grid ── */
+.h-dotgrid {
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(ellipse 85% 70% at 50% 38%,black 20%,transparent 100%);
+}
+
+/* ── Scanlines (very subtle) ── */
+.h-scanlines {
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.06) 3px,rgba(0,0,0,0.06) 4px);
+  pointer-events:none;
+}
+
+/* ── Diagonal slash accent ── */
+.h-slash {
+  position:absolute;
+  top:-8%;right:3%;
+  width:3px;
+  height:130%;
+  background:linear-gradient(180deg,transparent 0%,rgba(249,107,43,0.6) 30%,rgba(249,107,43,0.8) 55%,rgba(249,107,43,0.3) 80%,transparent 100%);
+  transform:rotate(18deg);
+  transform-origin:top center;
+  filter:blur(1px);
+}
+.h-slash::before {
+  content:'';
+  position:absolute;
+  top:0;left:-12px;
+  width:28px;height:100%;
+  background:linear-gradient(180deg,transparent 0%,rgba(249,107,43,0.12) 30%,rgba(249,107,43,0.18) 55%,rgba(249,107,43,0.06) 80%,transparent 100%);
+  filter:blur(8px);
+}
+
+/* ── Eyebrow pill ── */
+.h-pill {
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.05);
+  padding:0.45rem 1rem;
+  font:700 0.62rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.52);
+  backdrop-filter:blur(8px);
+}
+.h-dot-pulse {
+  display:inline-block;
+  position:relative;
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#F96B2B;
+  flex-shrink:0;
+}
+.h-dot-pulse::before {
+  content:'';
+  position:absolute;
+  inset:-3px;
+  border-radius:50%;
+  background:rgba(249,107,43,0.5);
+  animation:heroPing 1.8s ease-in-out infinite;
+}
+@keyframes heroPing {
+  0%,100%{transform:scale(1);opacity:0.7;}
+  60%{transform:scale(2.2);opacity:0;}
+}
+
+/* ── Desktop headline ── */
+.h-headline {
+  margin:1.5rem 0 0;
+  font-family:'Oswald',sans-serif;
+  font-weight:700;
+  line-height:0.88;
+  letter-spacing:-0.01em;
+  font-size:clamp(3.6rem,5.8vw,6.4rem);
+  color:#fff;
+}
+.h-line-1,.h-line-2,.h-line-3 { display:block; }
+.h-em {
+  font-style:normal;
+  background:linear-gradient(100deg,#F96B2B 0%,#ff9255 60%,#ffc07a 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ── Desktop sub ── */
+.h-sub {
+  margin-top:1.5rem;
+  font:500 1.05rem/1.65 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.5);
+  max-width:32rem;
+}
+
+/* ── Buttons ── */
+.h-btn-primary {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.6rem;
+  border-radius:999px;
+  background:#F96B2B;
+  padding:1.05rem 2rem;
+  font:700 0.9rem/1 'Inter Tight',sans-serif;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 24px 48px rgba(249,107,43,0.35),0 4px 16px rgba(249,107,43,0.25);
+  transition:opacity 0.2s,transform 0.2s;
+}
+.h-btn-primary:hover { opacity:0.92;transform:translateY(-2px); }
+.h-btn-arrow {
+  width:15px;height:15px;
+  transition:transform 0.2s;
+}
+.h-btn-primary:hover .h-btn-arrow { transform:translateX(3px); }
+.h-btn-ghost {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.14);
+  background:rgba(255,255,255,0.04);
+  padding:1.05rem 2rem;
+  font:600 0.9rem/1 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.68);
+  text-decoration:none;
+  transition:border-color 0.2s,background 0.2s,color 0.2s;
+  backdrop-filter:blur(8px);
+}
+.h-btn-ghost:hover { border-color:rgba(255,255,255,0.28);background:rgba(255,255,255,0.08);color:#fff; }
+
+/* ── Desktop CTA row ── */
+.h-ctas {
+  margin-top:2.25rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.85rem;
+}
+
+/* ── Desktop stats ── */
+.h-stats {
+  margin-top:2.75rem;
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+.h-stat { display:flex;flex-direction:column;gap:0.3rem; }
+.h-stat-n {
+  font-family:'Oswald',sans-serif;
+  font-size:2rem;font-weight:700;
+  color:#fff;line-height:1;
+}
+.h-stat-l {
+  font:700 0.58rem/1 'Inter Tight',sans-serif;
+  text-transform:uppercase;letter-spacing:0.16em;
+  color:rgba(255,255,255,0.28);
+}
+.h-stat-sep {
+  width:1px;height:2.5rem;
+  background:rgba(255,255,255,0.1);
+  flex-shrink:0;
+}
+
+/* ── Phone frame ── */
+.h-phone {
+  width:220px;
+  border-radius:32px;
+  background:#0b1527;
+  border:2px solid rgba(255,255,255,0.16);
+  box-shadow:0 60px 120px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.06),inset 0 1px 0 rgba(255,255,255,0.08);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.h-phone-mob { width:min(220px,62vw); }
+.h-phone-notch {
+  width:60px;height:5px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.18);
+  margin:0.65rem auto 0.5rem;
+  flex-shrink:0;
+}
+.h-phone-screen {
+  flex:1;
+  background:#0d1933;
+}
+.h-phone-home {
+  width:40px;height:4px;border-radius:999px;
+  background:rgba(255,255,255,0.22);
+  margin:0.55rem auto 0.65rem;
+  flex-shrink:0;
+}
+
+/* ── Floating badges / cards ── */
+.h-float-badge,.h-float-card { pointer-events:none; }
+
+/* ── Mobile headline ── */
+.h-headline-mob {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;
+  font-size:clamp(3.4rem,14.5vw,5rem);
+  line-height:0.87;
+  letter-spacing:-0.01em;
+  color:#fff;
+}
+.h-em-mob {
+  font-style:normal;
+  background:linear-gradient(100deg,#F96B2B 0%,#ff9a6c 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.h-sub-mob {
+  font:500 0.95rem/1.6 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.5);
+}
+
+/* ── Mobile phone wrap ── */
+.h-phone-wrap { min-height:360px; }
+</style>
+
+<script is:inline>
+/* ── Desktop particle web on canvas ── */
+(function () {
+  var canvas = document.getElementById('hero-canvas');
+  if (!canvas || window.innerWidth < 1024) return;
+  var ctx = canvas.getContext('2d');
+  var W, H, pts;
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  var count = 55;
+  pts = Array.from({length: count}, function () {
+    return {
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+    };
+  });
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(142,183,255,0.55)';
+      ctx.fill();
+      for (var j = i + 1; j < pts.length; j++) {
+        var q = pts[j];
+        var dx = p.x - q.x, dy = p.y - q.y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 140) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = 'rgba(0,84,223,' + (0.18 * (1 - dist / 140)) + ')';
+          ctx.lineWidth = 0.7;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
 
 <!-- ===================== ORANGE MARQUEE ===================== -->
 <div class="overflow-hidden select-none" style="background:#F96B2B;" aria-hidden="true">
@@ -199,133 +570,362 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </div>
 
-<!-- ===================== BENTO STATS ===================== -->
-<section id="stats-section" class="bg-[#F8F6F2] py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      <div class="bento-stat rounded-3xl p-8" style="background:#0A1628;grid-column:span 1;">
-        <p style="color:rgba(255,255,255,0.35);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">Cheaper than agencies</p>
-        <p class="font-display font-bold leading-none" style="font-size:4rem;color:#F96B2B;">
+<!-- ===================== STATS — Glass Cards on Beige ===================== -->
+<section id="stats-section" class="stats-section relative overflow-hidden py-16 sm:py-20 lg:py-24" style="background:#EDE8D0;">
+  <!-- subtle beige texture overlays -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:-15%;left:-8%;width:36rem;height:28rem;background:radial-gradient(circle,rgba(249,107,43,0.07) 0%,transparent 65%);filter:blur(40px);"></div>
+    <div style="position:absolute;bottom:-10%;right:-5%;width:32rem;height:24rem;background:radial-gradient(circle,rgba(0,84,223,0.06) 0%,transparent 65%);filter:blur(40px);"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(10,22,40,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,22,40,0.04) 1px,transparent 1px);background-size:52px 52px;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="stats-intro mx-auto mb-8 max-w-2xl text-center sm:mb-10">
+      <p style="color:#0054DF;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">The instant proof</p>
+      <h2 class="font-display font-bold text-[#0A1628]" style="font-size:clamp(2.15rem,7vw,3.7rem);line-height:1.0;">
+        The numbers that make
+        <span class="text-[#F96B2B]">the offer real.</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-[34rem] font-sans text-sm leading-relaxed text-[#6B7280] sm:text-base">
+        No vague promises. Faster delivery, lower cost, and zero-risk approval all show up before the first invoice.
+      </p>
+    </div>
+
+    <div class="stats-grid grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- 70% -->
+      <div class="bento-stat stat-glass-card group relative overflow-hidden rounded-[28px] p-8" style="background:rgba(255,255,255,0.72);border:1px solid rgba(10,22,40,0.08);box-shadow:0 8px 32px rgba(10,22,40,0.1),0 2px 8px rgba(10,22,40,0.06),inset 0 1px 0 rgba(255,255,255,0.9);backdrop-filter:blur(16px);">
+        <div style="position:absolute;top:-20px;right:-16px;width:100px;height:100px;background:radial-gradient(circle,rgba(249,107,43,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#F96B2B,transparent);opacity:0.8;border-radius:28px 28px 0 0;"></div>
+        <p style="color:rgba(10,22,40,0.4);font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:18px;">Cheaper than agencies</p>
+        <p class="font-display font-bold leading-none" style="font-size:4.5rem;color:#F96B2B;">
           <span class="stat-counter" data-target="70" data-suffix="%">0%</span>
         </p>
-        <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:10px;line-height:1.4;">Less than the market rate for the same quality</p>
+        <p style="color:rgba(10,22,40,0.45);font-size:0.78rem;margin-top:14px;line-height:1.5;">Less than agency rates for the same quality output</p>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(249,107,43,0.18),transparent);"></div>
       </div>
 
-      <div class="bento-stat rounded-3xl p-8" style="background:#0054DF;">
-        <p style="color:rgba(255,255,255,0.5);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">Sample delivered in</p>
-        <p class="font-display font-bold text-white leading-none" style="font-size:4rem;">
+      <!-- 24h -->
+      <div class="bento-stat stat-glass-card group relative overflow-hidden rounded-[28px] p-8" style="background:#0054DF;border:1px solid rgba(0,84,223,0.6);box-shadow:0 8px 32px rgba(0,84,223,0.28),0 2px 8px rgba(0,84,223,0.16),inset 0 1px 0 rgba(255,255,255,0.14);">
+        <div style="position:absolute;top:-20px;right:-16px;width:100px;height:100px;background:radial-gradient(circle,rgba(255,255,255,0.18) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);border-radius:28px 28px 0 0;"></div>
+        <p style="color:rgba(255,255,255,0.62);font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:18px;">Sample delivered in</p>
+        <p class="font-display font-bold text-white leading-none" style="font-size:4.5rem;">
           <span class="stat-counter" data-target="24" data-suffix="h">0h</span>
         </p>
-        <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-top:10px;line-height:1.4;">Real site, not a mockup</p>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.78rem;margin-top:14px;line-height:1.5;">A real working site, not a mockup or wireframe</p>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);"></div>
       </div>
 
-      <div class="bento-stat rounded-3xl p-8" style="background:#F96B2B;">
-        <p style="color:rgba(255,255,255,0.6);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">To get started</p>
-        <p class="font-display font-bold text-white leading-none" style="font-size:4rem;">$0</p>
-        <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;margin-top:10px;line-height:1.4;">Pay only when you love it</p>
+      <!-- $0 -->
+      <div class="bento-stat stat-glass-card group relative overflow-hidden rounded-[28px] p-8" style="background:#F96B2B;border:1px solid rgba(249,107,43,0.5);box-shadow:0 8px 32px rgba(249,107,43,0.28),0 2px 8px rgba(249,107,43,0.16),inset 0 1px 0 rgba(255,255,255,0.16);">
+        <div style="position:absolute;top:-20px;right:-16px;width:100px;height:100px;background:radial-gradient(circle,rgba(255,255,255,0.18) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);border-radius:28px 28px 0 0;"></div>
+        <p style="color:rgba(255,255,255,0.7);font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:18px;">To get started</p>
+        <p class="font-display font-bold text-white leading-none" style="font-size:4.5rem;">$0</p>
+        <p style="color:rgba(255,255,255,0.65);font-size:0.78rem;margin-top:14px;line-height:1.5;">Pay only after you review and love the site</p>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);"></div>
       </div>
 
-      <div class="bento-stat rounded-3xl p-8" style="background:#111D35;">
-        <p style="color:rgba(255,255,255,0.3);font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">Average launch time</p>
-        <p class="font-display font-bold text-white leading-none" style="font-size:3rem;">5-7 <span style="font-size:1.3rem;font-family:'Inter Tight',sans-serif;font-weight:400;opacity:0.5;">days</span></p>
-        <p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-top:10px;line-height:1.4;">From approval to fully live</p>
+      <!-- 5-7 days -->
+      <div class="bento-stat stat-glass-card group relative overflow-hidden rounded-[28px] p-8" style="background:#0A1628;border:1px solid rgba(255,255,255,0.06);box-shadow:0 8px 32px rgba(10,22,40,0.28),0 2px 8px rgba(10,22,40,0.18),inset 0 1px 0 rgba(255,255,255,0.06);">
+        <div style="position:absolute;top:-20px;right:-16px;width:100px;height:100px;background:radial-gradient(circle,rgba(142,183,255,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(142,183,255,0.4),transparent);border-radius:28px 28px 0 0;"></div>
+        <p style="color:rgba(255,255,255,0.32);font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:18px;">Average launch time</p>
+        <p class="font-display font-bold text-white leading-none" style="font-size:3.6rem;">5–7 <span style="font-size:1.1rem;font-family:'Inter Tight',sans-serif;font-weight:400;opacity:0.45;">days</span></p>
+        <p style="color:rgba(255,255,255,0.35);font-size:0.78rem;margin-top:14px;line-height:1.5;">From your approval to fully live on the web</p>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(142,183,255,0.12),transparent);"></div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ===================== HOW IT WORKS ===================== -->
-<section id="how-it-works" class="py-28 overflow-hidden" style="background:#06101f;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-20 text-center">
+<!-- ===================== HOW IT WORKS — 3D Perspective ===================== -->
+<section id="how-it-works" class="how-it-works-section relative overflow-hidden" style="background:#06101f;padding:7rem 0 9rem;">
+  <!-- ambient glows -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:10%;left:10%;width:32rem;height:24rem;background:radial-gradient(circle,rgba(0,84,223,0.18) 0%,transparent 60%);filter:blur(48px);"></div>
+    <div style="position:absolute;top:15%;left:50%;transform:translateX(-50%);width:28rem;height:20rem;background:radial-gradient(circle,rgba(249,107,43,0.14) 0%,transparent 60%);filter:blur(48px);"></div>
+    <div style="position:absolute;top:10%;right:10%;width:30rem;height:24rem;background:radial-gradient(circle,rgba(0,84,223,0.16) 0%,transparent 60%);filter:blur(48px);"></div>
+    <!-- floor grid perspective illusion -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:55%;background-image:linear-gradient(rgba(0,84,223,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,84,223,0.06) 1px,transparent 1px);background-size:60px 60px;mask-image:perspective(400px) rotateX(55deg);-webkit-mask-image:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 100%);transform-origin:bottom center;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- heading -->
+    <div class="steps-intro mb-20 text-center">
       <p style="color:#F96B2B;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">THE MIDVORA WAY</p>
       <h2 class="font-display font-bold text-white" style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;">
-        We do the work first.<br/><span style="color:rgba(255,255,255,0.3);">You decide after.</span>
+        We do the work first.<br/><span style="color:rgba(255,255,255,0.28);">You decide after.</span>
       </h2>
     </div>
 
-    <div id="steps-grid" class="grid grid-cols-1 gap-5 md:grid-cols-3">
-      <div class="step-card relative overflow-hidden rounded-3xl p-10" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);transition:background 0.3s,border-color 0.3s,transform 0.3s;">
-        <div class="font-display absolute top-6 right-7 select-none font-bold leading-none" style="font-size:7rem;color:rgba(255,255,255,0.03);">01</div>
-        <div class="relative z-10">
-          <div class="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl" style="background:rgba(0,84,223,0.14);border:1px solid rgba(0,84,223,0.22);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </div>
-          <h3 class="mb-3 font-display text-2xl font-bold text-white">We Find You</h3>
-          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">We search Google Maps for businesses in your area with outdated or missing websites. No waiting required - we come to you.</p>
+    <!-- 3D card stage — perspective container -->
+    <div id="steps-grid" style="display:none;gap:2rem;perspective:1200px;perspective-origin:50% 60%;" class="steps-desktop md:grid md:grid-cols-3">
+
+      <!-- STEP 01 — tilted left -->
+      <div class="step-card" style="transform:rotateY(12deg) rotateX(4deg) translateZ(0px);transform-style:preserve-3d;transition:transform 0.4s cubic-bezier(.22,.68,0,1.2),box-shadow 0.4s;position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(145deg,rgba(14,26,50,0.98),rgba(8,16,32,0.95));border:1px solid rgba(0,84,223,0.22);box-shadow:0 40px 80px rgba(0,0,0,0.5),12px 20px 40px rgba(0,84,223,0.1),-1px -1px 0 rgba(255,255,255,0.04) inset;">
+        <!-- top shimmer edge simulating 3D face -->
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(0,84,223,0.0),rgba(142,183,255,0.7),rgba(0,84,223,0.0));"></div>
+        <!-- left edge highlight (3D side illusion) -->
+        <div style="position:absolute;top:0;left:0;bottom:0;width:2px;background:linear-gradient(180deg,rgba(142,183,255,0.5),rgba(0,84,223,0.1));"></div>
+        <!-- floating number block — raised 3D element -->
+        <div style="position:absolute;top:-18px;right:24px;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#0054DF,#0A3BA8);box-shadow:0 12px 32px rgba(0,84,223,0.5),0 4px 0 rgba(0,40,140,0.8),0 0 0 1px rgba(142,183,255,0.2);display:flex;align-items:center;justify-content:center;transform:translateZ(20px);">
+          <span class="font-display font-bold text-white" style="font-size:1.4rem;letter-spacing:0.02em;text-shadow:0 2px 8px rgba(0,0,0,0.4);">01</span>
         </div>
+        <div style="padding:2.5rem 2rem 2rem;">
+          <!-- icon -->
+          <div style="width:52px;height:52px;border-radius:16px;background:rgba(0,84,223,0.12);border:1px solid rgba(0,84,223,0.28);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 0 24px rgba(0,84,223,0.2);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8EB7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-white" style="font-size:1.65rem;margin-bottom:0.75rem;">We Find You</h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">We search Google Maps for local businesses with outdated or missing websites. No waiting. We come to you first.</p>
+          <!-- bottom glow line -->
+          <div style="margin-top:1.75rem;height:1px;background:linear-gradient(90deg,rgba(0,84,223,0.5),rgba(0,84,223,0.05));"></div>
+          <div style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#0054DF;box-shadow:0 0 8px 2px rgba(0,84,223,0.8);"></div>
+            <span style="color:rgba(142,183,255,0.6);font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Step one</span>
+          </div>
+        </div>
+        <!-- shadow plane beneath card (3D floor shadow illusion) -->
+        <div style="position:absolute;bottom:-18px;left:10%;right:10%;height:18px;background:radial-gradient(ellipse,rgba(0,84,223,0.28) 0%,transparent 70%);filter:blur(8px);pointer-events:none;"></div>
       </div>
 
-      <div class="step-card relative overflow-hidden rounded-3xl p-10" style="background:rgba(249,107,43,0.05);border:1px solid rgba(249,107,43,0.18);transition:background 0.3s,border-color 0.3s,transform 0.3s;">
-        <div class="font-display absolute top-6 right-7 select-none font-bold leading-none" style="font-size:7rem;color:rgba(249,107,43,0.06);">02</div>
-        <div class="relative z-10">
-          <div class="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl" style="background:rgba(249,107,43,0.12);border:1px solid rgba(249,107,43,0.25);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3 class="mb-3 font-display text-2xl font-bold text-white">We Build It Free</h3>
-          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">Your real business name, photos, and info - we build a live working website in 24 hours. Not a mockup. An actual site with a real URL.</p>
+      <!-- STEP 02 — center, raised, forward -->
+      <div class="step-card" style="transform:rotateY(0deg) rotateX(2deg) translateZ(40px) translateY(-16px);transform-style:preserve-3d;transition:transform 0.4s cubic-bezier(.22,.68,0,1.2),box-shadow 0.4s;position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(145deg,rgba(30,16,8,0.98),rgba(18,9,4,0.96));border:1px solid rgba(249,107,43,0.35);box-shadow:0 60px 100px rgba(0,0,0,0.6),0 0 60px rgba(249,107,43,0.12),0 0 0 1px rgba(249,107,43,0.06),-1px -1px 0 rgba(255,255,255,0.03) inset;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(249,107,43,0.0),rgba(249,107,43,0.9),rgba(249,107,43,0.0));"></div>
+        <div style="position:absolute;top:0;left:0;bottom:0;width:2px;background:linear-gradient(180deg,rgba(249,107,43,0.5),rgba(249,107,43,0.08));"></div>
+        <!-- "Most important step" label -->
+        <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);background:rgba(249,107,43,0.15);border:1px solid rgba(249,107,43,0.28);border-radius:999px;padding:3px 12px;white-space:nowrap;">
+          <span style="color:rgba(249,107,43,0.9);font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">The magic step</span>
         </div>
+        <!-- floating number block -->
+        <div style="position:absolute;top:-18px;right:24px;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#F96B2B,#C44A12);box-shadow:0 12px 32px rgba(249,107,43,0.55),0 4px 0 rgba(140,45,5,0.8),0 0 0 1px rgba(255,180,130,0.2);display:flex;align-items:center;justify-content:center;transform:translateZ(20px);">
+          <span class="font-display font-bold text-white" style="font-size:1.4rem;letter-spacing:0.02em;text-shadow:0 2px 8px rgba(0,0,0,0.4);">02</span>
+        </div>
+        <div style="padding:2.75rem 2rem 2rem;">
+          <div style="width:52px;height:52px;border-radius:16px;background:rgba(249,107,43,0.14);border:1px solid rgba(249,107,43,0.35);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 0 28px rgba(249,107,43,0.28);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-white" style="font-size:1.65rem;margin-bottom:0.75rem;">We Build It Free</h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.5);">Your real name, photos, and info: a live working website in 24 hours. Not a mockup. An actual site with a real URL.</p>
+          <div style="margin-top:1.75rem;height:1px;background:linear-gradient(90deg,rgba(249,107,43,0.6),rgba(249,107,43,0.05));"></div>
+          <div style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#F96B2B;box-shadow:0 0 8px 2px rgba(249,107,43,0.8);"></div>
+            <span style="color:rgba(249,107,43,0.65);font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Step two</span>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:-22px;left:5%;right:5%;height:22px;background:radial-gradient(ellipse,rgba(249,107,43,0.3) 0%,transparent 70%);filter:blur(10px);pointer-events:none;"></div>
       </div>
 
-      <div class="step-card relative overflow-hidden rounded-3xl p-10" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);transition:background 0.3s,border-color 0.3s,transform 0.3s;">
-        <div class="font-display absolute top-6 right-7 select-none font-bold leading-none" style="font-size:7rem;color:rgba(255,255,255,0.03);">03</div>
-        <div class="relative z-10">
-          <div class="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl" style="background:rgba(0,84,223,0.14);border:1px solid rgba(0,84,223,0.22);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-          </div>
-          <h3 class="mb-3 font-display text-2xl font-bold text-white">You Decide</h3>
-          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">We send you the link. Love it? We launch it. Do not? Walk away free - we absorb the entire cost. No pressure, no pitch.</p>
+      <!-- STEP 03 — tilted right -->
+      <div class="step-card" style="transform:rotateY(-12deg) rotateX(4deg) translateZ(0px);transform-style:preserve-3d;transition:transform 0.4s cubic-bezier(.22,.68,0,1.2),box-shadow 0.4s;position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(145deg,rgba(14,26,50,0.98),rgba(8,16,32,0.95));border:1px solid rgba(0,84,223,0.22);box-shadow:0 40px 80px rgba(0,0,0,0.5),-12px 20px 40px rgba(0,84,223,0.1),-1px -1px 0 rgba(255,255,255,0.04) inset;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(0,84,223,0.0),rgba(142,183,255,0.7),rgba(0,84,223,0.0));"></div>
+        <div style="position:absolute;top:0;right:0;bottom:0;width:2px;background:linear-gradient(180deg,rgba(142,183,255,0.5),rgba(0,84,223,0.1));"></div>
+        <!-- floating number block -->
+        <div style="position:absolute;top:-18px;right:24px;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#0054DF,#0A3BA8);box-shadow:0 12px 32px rgba(0,84,223,0.5),0 4px 0 rgba(0,40,140,0.8),0 0 0 1px rgba(142,183,255,0.2);display:flex;align-items:center;justify-content:center;transform:translateZ(20px);">
+          <span class="font-display font-bold text-white" style="font-size:1.4rem;letter-spacing:0.02em;text-shadow:0 2px 8px rgba(0,0,0,0.4);">03</span>
         </div>
+        <div style="padding:2.5rem 2rem 2rem;">
+          <div style="width:52px;height:52px;border-radius:16px;background:rgba(0,84,223,0.12);border:1px solid rgba(0,84,223,0.28);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 0 24px rgba(0,84,223,0.2);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8EB7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-white" style="font-size:1.65rem;margin-bottom:0.75rem;">You Decide</h3>
+          <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.42);">We send you the link. Love it? We launch it. Don't? Walk away free. We absorb the entire cost. No pressure, no pitch.</p>
+          <div style="margin-top:1.75rem;height:1px;background:linear-gradient(90deg,rgba(0,84,223,0.5),rgba(0,84,223,0.05));"></div>
+          <div style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#0054DF;box-shadow:0 0 8px 2px rgba(0,84,223,0.8);"></div>
+            <span style="color:rgba(142,183,255,0.6);font-size:0.62rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">Step three</span>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:-18px;left:10%;right:10%;height:18px;background:radial-gradient(ellipse,rgba(0,84,223,0.28) 0%,transparent 70%);filter:blur(8px);pointer-events:none;"></div>
       </div>
     </div>
+
+    <!-- Mobile fallback — simple stacked cards -->
+    <div class="steps-mobile-list flex flex-col gap-5 md:hidden">
+      {[
+        { n:'01', title:'We Find You', color:'#0054DF', border:'rgba(0,84,223,0.22)', text:'We search Google Maps for local businesses with outdated or missing websites. No waiting. We come to you first.', icon:'<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>', stroke:'#8EB7FF' },
+        { n:'02', title:'We Build It Free', color:'#F96B2B', border:'rgba(249,107,43,0.28)', text:'Your real name, photos, and info: a live working website in 24 hours. Not a mockup. An actual site with a real URL.', icon:'<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>', stroke:'#F96B2B' },
+        { n:'03', title:'You Decide', color:'#0054DF', border:'rgba(0,84,223,0.22)', text:"We send you the link. Love it? We launch it. Don't? Walk away free. We absorb the entire cost.", icon:'<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>', stroke:'#8EB7FF' },
+      ].map(s => (
+        <div class="step-card relative overflow-hidden rounded-[24px] p-7" style={`background:rgba(255,255,255,0.03);border:1px solid ${s.border};box-shadow:0 20px 48px rgba(0,0,0,0.3);`}>
+          <div style={`position:absolute;top:-14px;right:20px;width:52px;height:52px;border-radius:14px;background:${s.color};box-shadow:0 8px 20px ${s.color}55,0 3px 0 ${s.color}99;display:flex;align-items:center;justify-content:center;`}>
+            <span class="font-display font-bold text-white" style="font-size:1.1rem;">{s.n}</span>
+          </div>
+          <div style="padding-top:1.5rem;">
+            <h3 class="font-display font-bold text-white mb-3" style="font-size:1.5rem;">{s.title}</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color:rgba(255,255,255,0.44);">{s.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
+
+  <style is:inline>
+    @media (min-width: 768px) {
+      .steps-desktop { display: grid !important; }
+      .steps-mobile-list { display: none !important; }
+    }
+  </style>
+
+  <!-- interactive 3D tilt script -->
+  <script is:inline>
+  (function(){
+    var cards = document.querySelectorAll('#how-it-works .step-card');
+    cards.forEach(function(card, i) {
+      var base = i === 1
+        ? 'rotateY(0deg) rotateX(2deg) translateZ(40px) translateY(-16px)'
+        : i === 0
+          ? 'rotateY(12deg) rotateX(4deg) translateZ(0px)'
+          : 'rotateY(-12deg) rotateX(4deg) translateZ(0px)';
+
+      card.addEventListener('mouseenter', function() {
+        if (window.innerWidth < 768) return;
+        var tilt = i === 0 ? 'rotateY(6deg) rotateX(2deg) translateZ(20px)'
+          : i === 1 ? 'rotateY(0deg) rotateX(0deg) translateZ(60px) translateY(-22px)'
+          : 'rotateY(-6deg) rotateX(2deg) translateZ(20px)';
+        card.style.transform = tilt;
+        card.style.zIndex = '10';
+      });
+
+      card.addEventListener('mousemove', function(e) {
+        if (window.innerWidth < 768) return;
+        var rect = card.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        var dx = (e.clientX - cx) / rect.width;
+        var dy = (e.clientY - cy) / rect.height;
+        var baseX = i === 1 ? 0 : 4;
+        var baseY = i === 0 ? 12 : i === 1 ? 0 : -12;
+        var baseZ = i === 1 ? 40 : 0;
+        var baseYt = i === 1 ? -16 : 0;
+        card.style.transform =
+          'rotateY(' + (baseY - dx * 6) + 'deg) ' +
+          'rotateX(' + (baseX + dy * 4) + 'deg) ' +
+          'translateZ(' + (baseZ + 24) + 'px) ' +
+          'translateY(' + (baseYt - 8) + 'px)';
+      });
+
+      card.addEventListener('mouseleave', function() {
+        if (window.innerWidth < 768) return;
+        card.style.transform = base;
+        card.style.zIndex = '';
+      });
+    });
+  })();
+  </script>
 </section>
 
-<!-- ===================== HONEST PITCH (editorial split) ===================== -->
-<section class="bg-[#F8F6F2] py-28">
+<!-- ===================== HONEST PITCH — Split + Proof Card ===================== -->
+<section class="pitch-section overflow-hidden bg-[#F8F6F2] py-20 sm:py-24 lg:py-28">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-start gap-16 lg:flex-row lg:gap-24">
-      <div class="lg:basis-[44%] lg:sticky lg:top-24">
-        <p style="color:#0054DF;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px;">The honest pitch</p>
-        <h2 class="font-display font-bold leading-[0.92] text-[#0A1628]" style="font-size:clamp(2.8rem,5.5vw,5rem);">
-          Built for<br/>businesses<br/>like <span class="text-[#F96B2B]">yours.</span>
-        </h2>
-        <a href="/contact" class="mt-10 inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-bold text-white transition-all" style="background:#0A1628;">
-          Get Started Free &rarr;
-        </a>
+    <div class="flex flex-col items-start gap-16 lg:flex-row lg:gap-20">
+
+      <!-- LEFT: sticky heading + floating proof card -->
+      <div class="pitch-lead flex flex-col gap-8 lg:basis-[42%] lg:sticky lg:top-24">
+        <div>
+          <p style="color:#0054DF;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px;">The honest pitch</p>
+          <h2 class="font-display font-bold leading-[0.92] text-[#0A1628]" style="font-size:clamp(2.8rem,5.5vw,5rem);">
+            Built for<br/>businesses<br/>like <span class="text-[#F96B2B]">yours.</span>
+          </h2>
+          <a href="/contact" class="pitch-lead-cta mt-8 inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-0.5" style="background:#0A1628;box-shadow:0 16px 40px rgba(10,22,40,0.18);">
+            Get Started Free &rarr;
+          </a>
+        </div>
+
+        <!-- Floating proof card -->
+        <div class="pitch-proof-card relative overflow-hidden rounded-[24px] p-7" style="background:#0A1628;box-shadow:0 32px 72px rgba(10,22,40,0.2),0 0 0 1px rgba(255,255,255,0.05);max-width:340px;">
+          <div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:radial-gradient(circle,rgba(249,107,43,0.2) 0%,transparent 70%);pointer-events:none;"></div>
+          <p style="color:rgba(255,255,255,0.36);font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:18px;">Why it works</p>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+              <div style="flex-shrink:0;width:52px;height:52px;border-radius:16px;background:rgba(249,107,43,0.14);border:1px solid rgba(249,107,43,0.28);display:flex;align-items:center;justify-content:center;">
+                <span class="font-display font-bold text-white" style="font-size:1.2rem;">$0</span>
+              </div>
+              <div>
+                <p class="font-sans font-semibold text-white" style="font-size:0.85rem;">Zero up front</p>
+                <p style="color:rgba(255,255,255,0.38);font-size:0.72rem;margin-top:2px;">No payment before you approve</p>
+              </div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+            <div class="flex items-center gap-4">
+              <div style="flex-shrink:0;width:52px;height:52px;border-radius:16px;background:rgba(0,84,223,0.14);border:1px solid rgba(0,84,223,0.28);display:flex;align-items:center;justify-content:center;">
+                <span class="font-display font-bold text-white" style="font-size:1.1rem;">70%</span>
+              </div>
+              <div>
+                <p class="font-sans font-semibold text-white" style="font-size:0.85rem;">Less than agencies</p>
+                <p style="color:rgba(255,255,255,0.38);font-size:0.72rem;margin-top:2px;">Same quality, fraction of the cost</p>
+              </div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+            <div class="flex items-center gap-4">
+              <div style="flex-shrink:0;width:52px;height:52px;border-radius:16px;background:rgba(142,183,255,0.1);border:1px solid rgba(142,183,255,0.2);display:flex;align-items:center;justify-content:center;">
+                <span class="font-display font-bold text-white" style="font-size:1.1rem;">24h</span>
+              </div>
+              <div>
+                <p class="font-sans font-semibold text-white" style="font-size:0.85rem;">Live sample tomorrow</p>
+                <p style="color:rgba(255,255,255,0.38);font-size:0.72rem;margin-top:2px;">Real URL, real site, real business</p>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(249,107,43,0.4),transparent);"></div>
+        </div>
       </div>
 
-      <div class="pitch-list flex flex-col lg:basis-[56%]">
-        <div class="pitch-item flex items-start gap-7 py-10" style="border-bottom:1px solid rgba(10,22,40,0.09);">
-          <div class="font-display select-none font-bold leading-none" style="font-size:3.8rem;color:rgba(10,22,40,0.07);flex-shrink:0;width:64px;line-height:1;">01</div>
-          <div>
-            <h3 class="mb-2 font-display text-2xl font-bold text-[#0A1628]">We charge 70% less than agencies.</h3>
-            <p class="font-sans text-sm leading-relaxed text-[#6B7280]">The average agency charges $5k-$15k for the same work. We do not have a Manhattan office or 40 account managers charging by the hour.</p>
+      <!-- RIGHT: pitch rows as styled cards -->
+      <div class="pitch-list flex flex-col gap-4 lg:basis-[58%]">
+
+        <div class="pitch-item group relative overflow-hidden rounded-[22px] p-8 transition-all" style="background:#fff;border:1px solid rgba(10,22,40,0.07);box-shadow:0 4px 24px rgba(10,22,40,0.05);">
+          <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,#F96B2B,rgba(249,107,43,0.2));border-radius:0 0 0 22px;"></div>
+          <div class="pitch-item-body flex items-start gap-6 pl-3">
+            <div style="flex-shrink:0;width:44px;height:44px;border-radius:14px;background:rgba(249,107,43,0.08);border:1px solid rgba(249,107,43,0.18);display:flex;align-items:center;justify-content:center;">
+              <span class="font-display font-bold" style="font-size:1rem;color:#F96B2B;">01</span>
+            </div>
+            <div>
+              <h3 class="mb-2 font-display font-bold text-[#0A1628]" style="font-size:1.35rem;">We charge 70% less than agencies.</h3>
+              <p class="font-sans text-sm leading-relaxed text-[#6B7280]">The average agency charges $5k–$15k for the same work. We don't have a Manhattan office or 40 account managers billing by the hour.</p>
+            </div>
           </div>
+          <div class="pitch-item-glow" style="position:absolute;inset:0;border-radius:22px;border:1px solid rgba(249,107,43,0);transition:border-color 0.3s;pointer-events:none;"></div>
         </div>
 
-        <div class="pitch-item flex items-start gap-7 py-10" style="border-bottom:1px solid rgba(10,22,40,0.09);">
-          <div class="font-display select-none font-bold leading-none" style="font-size:3.8rem;color:rgba(249,107,43,0.12);flex-shrink:0;width:64px;line-height:1;">02</div>
-          <div>
-            <h3 class="mb-2 font-display text-2xl font-bold text-[#0A1628]">You see it before you pay a cent.</h3>
-            <p class="font-sans text-sm leading-relaxed text-[#6B7280]">A real, live URL. Your business name on it. Your photos. Your hours. If you hate it, walk away - we absorb the cost entirely, no questions asked.</p>
+        <div class="pitch-item group relative overflow-hidden rounded-[22px] p-8 transition-all" style="background:#fff;border:1px solid rgba(10,22,40,0.07);box-shadow:0 4px 24px rgba(10,22,40,0.05);">
+          <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,#0054DF,rgba(0,84,223,0.2));border-radius:0 0 0 22px;"></div>
+          <div class="pitch-item-body flex items-start gap-6 pl-3">
+            <div style="flex-shrink:0;width:44px;height:44px;border-radius:14px;background:rgba(0,84,223,0.08);border:1px solid rgba(0,84,223,0.18);display:flex;align-items:center;justify-content:center;">
+              <span class="font-display font-bold" style="font-size:1rem;color:#0054DF;">02</span>
+            </div>
+            <div>
+              <h3 class="mb-2 font-display font-bold text-[#0A1628]" style="font-size:1.35rem;">You see it before you pay a cent.</h3>
+              <p class="font-sans text-sm leading-relaxed text-[#6B7280]">A real, live URL. Your business name on it. Your photos. Your hours. If you hate it, walk away. We absorb the cost entirely, no questions asked.</p>
+            </div>
           </div>
+          <div class="pitch-item-glow" style="position:absolute;inset:0;border-radius:22px;border:1px solid rgba(0,84,223,0);transition:border-color 0.3s;pointer-events:none;"></div>
         </div>
 
-        <div class="pitch-item flex items-start gap-7 py-10">
-          <div class="font-display select-none font-bold leading-none" style="font-size:3.8rem;color:rgba(10,22,40,0.07);flex-shrink:0;width:64px;line-height:1;">03</div>
-          <div>
-            <h3 class="mb-2 font-display text-2xl font-bold text-[#0A1628]">That is the whole pitch.</h3>
-            <p class="font-sans text-sm leading-relaxed text-[#6B7280]">No 90-minute sales calls. No discovery workshops. No retainers on day one. No contracts. Just a site that works and customers that find you.</p>
+        <div class="pitch-item group relative overflow-hidden rounded-[22px] p-8 transition-all" style="background:#fff;border:1px solid rgba(10,22,40,0.07);box-shadow:0 4px 24px rgba(10,22,40,0.05);">
+          <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,rgba(10,22,40,0.4),rgba(10,22,40,0.1));border-radius:0 0 0 22px;"></div>
+          <div class="pitch-item-body flex items-start gap-6 pl-3">
+            <div style="flex-shrink:0;width:44px;height:44px;border-radius:14px;background:rgba(10,22,40,0.05);border:1px solid rgba(10,22,40,0.12);display:flex;align-items:center;justify-content:center;">
+              <span class="font-display font-bold" style="font-size:1rem;color:#0A1628;">03</span>
+            </div>
+            <div>
+              <h3 class="mb-2 font-display font-bold text-[#0A1628]" style="font-size:1.35rem;">That is the whole pitch.</h3>
+              <p class="font-sans text-sm leading-relaxed text-[#6B7280]">No 90-minute sales calls. No discovery workshops. No retainers on day one. No contracts. Just a site that works and customers that find you.</p>
+            </div>
           </div>
+          <div class="pitch-item-glow" style="position:absolute;inset:0;border-radius:22px;border:1px solid rgba(10,22,40,0);transition:border-color 0.3s;pointer-events:none;"></div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== SAMPLE BREAKDOWN ===================== -->
-<section id="sample-breakdown" class="section-space-tight relative overflow-hidden" style="background:#06101f;">
+<section id="sample-breakdown" class="sample-breakdown-section section-space-tight relative overflow-hidden" style="background:#06101f;">
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
     <div class="hero-halo hero-halo-blue" style="top:-22%;left:-10%;width:36rem;height:28rem;opacity:0.72;"></div>
     <div class="hero-halo hero-halo-orange" style="bottom:-24%;right:-8%;width:30rem;height:24rem;opacity:0.52;"></div>
@@ -343,7 +943,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </div>
 
-    <div id="sample-breakdown-grid" class="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
+    <div id="sample-breakdown-grid" class="sample-breakdown-grid grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
       <div class="sample-breakdown-preview perspective-stage">
         <div class="guide-plane sample-guide sample-guide-one"></div>
         <div class="guide-plane sample-guide sample-guide-two"></div>
@@ -495,137 +1095,498 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </section>
 
-<!-- ===================== PRICING ===================== -->
-<section id="services-section" class="py-28 bg-[#F8F6F2]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-16 text-center">
-      <p style="color:#0054DF;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">Transparent Pricing</p>
-      <h2 class="font-display font-bold text-[#0A1628] leading-[1.0]" style="font-size:clamp(2.4rem,5vw,4rem);">
-        Less than you think.<br/><span class="text-[#F96B2B]">Way</span> more than you would expect.
+<!-- ===================== WHAT WE BUILD ===================== -->
+<section id="services-section" class="what-we-build-section bg-[#F8F6F2] py-24">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+    <div class="what-we-build-header">
+      <p class="text-xs font-bold tracking-widest text-[#0054DF] uppercase mb-4">WHAT WE BUILD</p>
+      <h2 class="font-display font-bold text-[#0A1628] leading-[1.05]" style="font-size:clamp(2.2rem,5vw,3.6rem);">
+        Everything your business needs<br/>to get found online.
+      </h2>
+      <p class="mx-auto mt-5 max-w-[42rem] font-sans text-base leading-relaxed text-[#6B7280]">
+        Websites, Google setup, QR menus, photography, SEO, and monthly care, built for local businesses that want to stop losing customers to competitors with better online presence.
+      </p>
+    </div>
+
+    <div class="what-we-build-cards grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
+
+      <!-- Card 1: Websites -->
+      <div class="build-card bg-white rounded-2xl p-8 border border-gray-100 hover:-translate-y-1 transition-transform duration-300 shadow-sm text-left">
+        <div class="build-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-[#0A1628] mt-4">Websites that work</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">Fast, mobile-friendly websites built for restaurants, salons, contractors, and local businesses. Custom design, not templates. Live in days, not months.</p>
+      </div>
+
+      <!-- Card 2: Tools -->
+      <div class="build-card bg-white rounded-2xl p-8 border border-gray-100 hover:-translate-y-1 transition-transform duration-300 shadow-sm text-left">
+        <div class="build-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-[#0A1628] mt-4">Tools that help</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">Online ordering, QR menus, booking links, Google Maps, contact forms, and content updates your team can manage from their phone.</p>
+      </div>
+
+      <!-- Card 3: Growth -->
+      <div class="build-card bg-white rounded-2xl p-8 border border-gray-100 hover:-translate-y-1 transition-transform duration-300 shadow-sm text-left">
+        <div class="build-card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-[#0A1628] mt-4">Growth after launch</h3>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed">Google Business Profile setup, SEO, social media starter kits, review management, security monitoring, and monthly maintenance.</p>
+      </div>
+
+    </div>
+
+    <div class="what-we-build-cta mt-12">
+      <p class="text-lg font-semibold text-[#0A1628]">Websites starting at $299. No hidden fees. No hourly rates.</p>
+      <a href="/services" class="inline-block bg-[#F96B2B] text-white font-bold px-8 py-4 rounded-full mt-4 hover:opacity-90 transition-opacity duration-200 shadow-[0_12px_28px_rgba(249,107,43,0.28)]">
+        See what&rsquo;s included &rarr;
+      </a>
+      <p class="text-sm text-gray-400 mt-3">
+        Or skip straight to your <a href="#cta-banner" class="underline underline-offset-2 hover:text-[#0054DF] transition-colors">free sample</a>. We&rsquo;ll build it before you pay.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.what-we-build-header', {
+    scrollTrigger: { trigger: '#services-section', start: 'top 80%' },
+    opacity: 0, y: 30, duration: 0.8, ease: 'power2.out',
+  });
+
+  gsap.from('.build-card', {
+    scrollTrigger: { trigger: '.what-we-build-cards', start: 'top 80%' },
+    opacity: 0, y: 40, duration: 0.8, ease: 'power2.out', stagger: 0.15,
+  });
+
+  gsap.from('.what-we-build-cta', {
+    scrollTrigger: { trigger: '.what-we-build-cta', start: 'top 85%' },
+    opacity: 0, y: 24, duration: 0.7, ease: 'power2.out',
+  });
+})();
+</script>
+
+<!-- ===================== WHO WE SERVE — 3D Mind Map Network ===================== -->
+<section id="who-we-help" class="who-help-section relative overflow-hidden" style="background:#0A1628;padding:5rem 0 4rem;">
+  <!-- Deep space starfield background -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,84,223,0.08) 0%,transparent 65%);"></div>
+    <div id="mindmap-starfield" style="position:absolute;inset:0;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <p style="color:rgba(0,84,223,0.7);font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;">Who We Serve</p>
+      <h2 class="font-display font-bold text-white" style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;">
+        Any business. Any size.<br/><span style="color:rgba(255,255,255,0.25);">Anywhere in the region.</span>
       </h2>
     </div>
 
-    <div id="pricing-grid" class="grid grid-cols-1 items-start gap-5 md:grid-cols-3">
-      <div class="pricing-card rounded-3xl p-8" style="background:#fff;border:1px solid rgba(10,22,40,0.08);">
-        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9CA3AF;margin-bottom:20px;">Starter</p>
-        <p class="font-display font-bold leading-none text-[#0A1628]" style="font-size:3.5rem;">$550</p>
-        <p class="font-sans text-sm text-[#9CA3AF] mt-2 mb-8">5 pages - Live in 7 days</p>
-        <div class="mb-8 flex flex-col gap-3">
-          {['Home + 4 core pages','Mobile responsive','Google Maps embed','Basic on-page SEO','1 round of revisions'].map(f => (
-            <div class="flex items-center gap-3">
-              <div style="width:18px;height:18px;border-radius:50%;background:#F0F4FF;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
-              </div>
-              <span class="font-sans text-sm text-[#374151]">{f}</span>
-            </div>
-          ))}
-        </div>
-        <a href="/contact" class="block rounded-full border border-[#0A1628]/10 bg-[#F8F6F2] py-4 text-center text-sm font-bold text-[#0A1628] transition-all hover:-translate-y-0.5">Get Started</a>
-      </div>
-
-      <div class="pricing-card relative rounded-3xl p-8" style="background:#0A1628;transform:scale(1.05);box-shadow:0 32px 64px rgba(10,22,40,0.22),0 0 0 1px rgba(255,255,255,0.04);">
-        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#F96B2B;color:#fff;font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;white-space:nowrap;">Most Popular</div>
-        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:20px;">Growth</p>
-        <p class="font-display font-bold text-white leading-none" style="font-size:3.5rem;">$1,200</p>
-        <p class="mt-2 mb-8 font-sans text-sm" style="color:rgba(255,255,255,0.35);">8 pages - Live in 10 days</p>
-        <div class="mb-8 flex flex-col gap-3">
-          {['Everything in Starter','8 custom pages','Full SEO optimization','Google Analytics setup','Blog / news section','3 rounds of revisions','30-day support'].map(f => (
-            <div class="flex items-center gap-3">
-              <div style="width:18px;height:18px;border-radius:50%;background:rgba(249,107,43,0.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
-              </div>
-              <span class="font-sans text-sm text-white/65">{f}</span>
-            </div>
-          ))}
-        </div>
-        <a href="/contact" class="block rounded-full py-4 text-center text-sm font-bold text-white transition-all hover:opacity-90" style="background:#F96B2B;box-shadow:0 8px 24px rgba(249,107,43,0.3);">Get Started Free</a>
-      </div>
-
-      <div class="pricing-card rounded-3xl p-8" style="background:#fff;border:1px solid rgba(10,22,40,0.08);">
-        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#9CA3AF;margin-bottom:20px;">Premium</p>
-        <p class="font-display font-bold leading-none text-[#0A1628]" style="font-size:3.5rem;">$2,500</p>
-        <p class="font-sans text-sm text-[#9CA3AF] mt-2 mb-8">12 pages - Full SEO</p>
-        <div class="mb-8 flex flex-col gap-3">
-          {['Everything in Growth','12+ custom pages','E-commerce ready','Advanced SEO + schema','Custom animations','Unlimited revisions','60-day priority support'].map(f => (
-            <div class="flex items-center gap-3">
-              <div style="width:18px;height:18px;border-radius:50%;background:#F0F4FF;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
-              </div>
-              <span class="font-sans text-sm text-[#374151]">{f}</span>
-            </div>
-          ))}
-        </div>
-        <a href="/contact" class="block rounded-full border border-[#0A1628]/10 bg-[#F8F6F2] py-4 text-center text-sm font-bold text-[#0A1628] transition-all hover:-translate-y-0.5">Get Started</a>
-      </div>
+    <!-- Canvas mind map — desktop -->
+    <div id="mindmap-wrap" class="hidden md:block relative mx-auto" style="height:600px;max-width:1100px;">
+      <canvas id="mindmap-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+      <div id="mindmap-nodes" style="position:absolute;inset:0;pointer-events:none;"></div>
     </div>
-  </div>
-</section>
 
-<!-- ===================== INDUSTRIES: Horizontal marquee ===================== -->
-<section id="who-we-help" class="overflow-hidden py-24" style="background:#0A1628;">
-  <div class="max-w-7xl mx-auto mb-14 px-4 text-center sm:px-6 lg:px-8">
-    <p style="color:rgba(255,255,255,0.25);font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">Who We Serve</p>
-    <h2 class="font-display font-bold text-white" style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;">
-      Any business. Any size.<br/><span style="color:rgba(255,255,255,0.28);">Anywhere in the region.</span>
-    </h2>
-  </div>
-
-  <div class="overflow-hidden" style="mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);">
-    <div class="flex gap-4" style="width:max-content;animation:scrollLeft 22s linear infinite;">
+    <!-- Mobile fallback -->
+    <div class="who-help-mobile-grid mt-4 grid grid-cols-2 gap-3 md:hidden">
       {[
-        { label: 'Restaurants', path: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7' },
-        { label: 'Salons & Spas', path: 'M6 3a3 3 0 0 1 3 3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1 3-3v11a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1-3 3 3 3 0 0 1-3-3ZM6 20v1M18 20v1' },
-        { label: 'Contractors', path: 'M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2zM10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M4 15v-3a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3' },
-        { label: 'Gyms & Studios', path: 'M6.5 6.5h11M6.5 17.5h11M3 9.5v5M21 9.5v5M1 11.5v1M23 11.5v1' },
-        { label: 'Retail Stores', path: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0' },
-        { label: 'Event Planners', path: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12 2 2 4-4' },
-        { label: 'Med & Dental', path: 'M12 5v14M5 12h14' },
-        { label: 'Auto & Repair', path: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' },
-        { label: 'Restaurants', path: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7' },
-        { label: 'Salons & Spas', path: 'M6 3a3 3 0 0 1 3 3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1 3-3v11a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1-3 3 3 3 0 0 1-3-3ZM6 20v1M18 20v1' },
-        { label: 'Contractors', path: 'M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2zM10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M4 15v-3a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3' },
-        { label: 'Gyms & Studios', path: 'M6.5 6.5h11M6.5 17.5h11M3 9.5v5M21 9.5v5M1 11.5v1M23 11.5v1' },
-        { label: 'Retail Stores', path: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0' },
-        { label: 'Event Planners', path: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12 2 2 4-4' },
-        { label: 'Med & Dental', path: 'M12 5v14M5 12h14' },
-        { label: 'Auto & Repair', path: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' },
-      ].map(item => (
-        <div class="industry-card flex-none flex flex-col items-center gap-3 rounded-2xl px-8 py-6" style="min-width:160px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);transition:background 0.25s,border-color 0.25s,transform 0.25s;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="industry-icon" style="transition:stroke 0.25s;">
-            <path d={item.path}/>
-          </svg>
-          <p class="font-sans text-sm font-semibold whitespace-nowrap text-white">{item.label}</p>
+        {label:'Restaurants',icon:'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7',c:'#F96B2B'},
+        {label:'Salons & Spas',icon:'M6 3a3 3 0 0 1 3 3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1 3-3v11a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1-3 3 3 3 0 0 1-3-3ZM6 20v1M18 20v1',c:'#8EB7FF'},
+        {label:'Contractors',icon:'M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2zM10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M4 15v-3a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3',c:'#F96B2B'},
+        {label:'Gyms & Studios',icon:'M6.5 6.5h11M6.5 17.5h11M3 9.5v5M21 9.5v5M1 11.5v1M23 11.5v1',c:'#8EB7FF'},
+        {label:'Retail Stores',icon:'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0',c:'#F96B2B'},
+        {label:'Event Planners',icon:'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12 2 2 4-4',c:'#8EB7FF'},
+        {label:'Med & Dental',icon:'M12 5v14M5 12h14',c:'#F96B2B'},
+        {label:'Auto & Repair',icon:'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z',c:'#8EB7FF'},
+      ].map(n=>(
+        <div class="industry-card industry-mobile-card" style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(0,84,223,0.18);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={n.c} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={n.icon}/></svg>
+          <span class="font-sans font-semibold text-white" style="font-size:0.78rem;">{n.label}</span>
         </div>
       ))}
     </div>
+
+    <p class="mt-10 text-center font-sans text-sm" style="color:rgba(255,255,255,0.16);">Based in Marshall, MN — Serving Minnesota, South Dakota, and North Dakota</p>
   </div>
 
-  <p class="mt-10 text-center font-sans text-sm" style="color:rgba(255,255,255,0.2);">Based in Marshall, MN - Serving Minnesota, South Dakota, and North Dakota</p>
+  <style is:inline>
+    @keyframes twinkle {
+      0%,100%{opacity:0.1;transform:scale(1);}
+      50%{opacity:0.45;transform:scale(1.5);}
+    }
+    .mm-node-card {
+      position:absolute;
+      transform-origin:center center;
+      pointer-events:auto;
+      cursor:default;
+      transition:filter 0.2s;
+    }
+    .mm-node-card:hover {
+      filter:brightness(1.3);
+      z-index:100!important;
+    }
+  </style>
+
+  <script is:inline>
+  (function(){
+    /* ── starfield ── */
+    var sf = document.getElementById('mindmap-starfield');
+    if (sf) {
+      for (var i=0;i<90;i++){
+        var s=document.createElement('div');
+        var sz=Math.random()*2+0.5;
+        s.style.cssText='position:absolute;border-radius:50%;background:#fff;width:'+sz+'px;height:'+sz+'px;top:'+(Math.random()*100)+'%;left:'+(Math.random()*100)+'%;animation:twinkle '+(Math.random()*4+2)+'s ease-in-out infinite;animation-delay:'+(Math.random()*4)+'s;';
+        sf.appendChild(s);
+      }
+    }
+
+    if (window.innerWidth < 768) return;
+
+    var wrap  = document.getElementById('mindmap-wrap');
+    var canvas= document.getElementById('mindmap-canvas');
+    var nodesEl = document.getElementById('mindmap-nodes');
+    if (!wrap||!canvas||!nodesEl) return;
+
+    /* ── resize canvas to physical pixels ── */
+    function resizeCanvas(){
+      var dpr=window.devicePixelRatio||1;
+      var w=wrap.offsetWidth, h=wrap.offsetHeight;
+      canvas.width=w*dpr; canvas.height=h*dpr;
+      canvas.style.width=w+'px'; canvas.style.height=h+'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    var ctx=canvas.getContext('2d');
+    resizeCanvas();
+
+    /* ── nodes: fixed screen positions as % of canvas W/H ── */
+    /* px/py = 0..1 fractions, computed once after canvas size known */
+    var NODES=[
+      /* hub — dead center */
+      {id:'hub',   label:'MIDVORA',       px:0.50, py:0.50, color:'#0054DF', hub:true,  icon:''},
+      /* inner ring — 8 nodes evenly on a circle r≈0.22 */
+      {id:'rest',  label:'Restaurants',   px:0.28, py:0.26, color:'#F96B2B', icon:'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7'},
+      {id:'salon', label:'Salons & Spas', px:0.50, py:0.18, color:'#8EB7FF', icon:'M6 3a3 3 0 0 1 3 3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1 3-3v11a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1-3 3 3 3 0 0 1-3-3ZM6 20v1M18 20v1'},
+      {id:'cont',  label:'Contractors',   px:0.72, py:0.26, color:'#F96B2B', icon:'M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2zM10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M4 15v-3a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3'},
+      {id:'gym',   label:'Gyms & Studios',px:0.78, py:0.50, color:'#8EB7FF', icon:'M6.5 6.5h11M6.5 17.5h11M3 9.5v5M21 9.5v5M1 11.5v1M23 11.5v1'},
+      {id:'retail',label:'Retail Stores', px:0.72, py:0.74, color:'#8EB7FF', icon:'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0'},
+      {id:'event', label:'Event Planners',px:0.50, py:0.82, color:'#F96B2B', icon:'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm4 12 2 2 4-4'},
+      {id:'med',   label:'Med & Dental',  px:0.28, py:0.74, color:'#8EB7FF', icon:'M12 5v14M5 12h14'},
+      {id:'auto',  label:'Auto & Repair', px:0.22, py:0.50, color:'#F96B2B', icon:'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'},
+      /* outer ring — 8 sub-nodes near canvas edges */
+      {id:'cafe',  label:'Cafes',         px:0.09, py:0.18, color:'#F96B2B', small:true, icon:'M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3'},
+      {id:'barber',label:'Barbershops',   px:0.50, py:0.05, color:'#8EB7FF', small:true, icon:'M6 3a3 3 0 0 1 3 3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1 3-3v11a3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1-3 3 3 3 0 0 1-3-3ZM6 20v1M18 20v1'},
+      {id:'hvac',  label:'HVAC',          px:0.91, py:0.18, color:'#F96B2B', small:true, icon:'M13 2 3 14h9l-1 8 10-12h-9l1-8z'},
+      {id:'elec',  label:'Electricians',  px:0.96, py:0.50, color:'#8EB7FF', small:true, icon:'M12 2v20M2 12h20'},
+      {id:'photo', label:'Photography',   px:0.91, py:0.82, color:'#8EB7FF', small:true, icon:'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z'},
+      {id:'land',  label:'Landscaping',   px:0.50, py:0.95, color:'#F96B2B', small:true, icon:'M12 22V12M12 12C12 12 7 9 7 5a5 5 0 0 1 10 0c0 4-5 7-5 7z'},
+      {id:'well',  label:'Wellness',      px:0.09, py:0.82, color:'#8EB7FF', small:true, icon:'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'},
+      {id:'food',  label:'Food Trucks',   px:0.04, py:0.50, color:'#F96B2B', small:true, icon:'M1 3h15v13H1zM16 8h4l3 3v5h-7V8z'},
+    ];
+
+    /* ── edges ── */
+    var EDGES=[
+      /* hub → inner ring */
+      ['hub','rest'],['hub','salon'],['hub','cont'],['hub','gym'],
+      ['hub','retail'],['hub','event'],['hub','med'],['hub','auto'],
+      /* inner ring loop */
+      ['rest','salon'],['salon','cont'],['cont','gym'],['gym','retail'],
+      ['retail','event'],['event','med'],['med','auto'],['auto','rest'],
+      /* inner → outer */
+      ['rest','cafe'],['salon','barber'],['cont','hvac'],['gym','elec'],
+      ['retail','photo'],['event','land'],['med','well'],['auto','food'],
+    ];
+
+    /* ── pulse state per edge ── */
+    var pulses=EDGES.map(function(){
+      return {t:Math.random(), speed:0.0016+Math.random()*0.0012};
+    });
+
+    /* ── compute fixed screen coords once ── */
+    function computePositions(){
+      var W=wrap.offsetWidth, H=wrap.offsetHeight;
+      NODES.forEach(function(n){
+        n.sx=n.px*W;
+        n.sy=n.py*H;
+      });
+    }
+    computePositions();
+    window.addEventListener('resize', function(){ resizeCanvas(); computePositions(); });
+
+    /* build HTML node cards once */
+    var cardEls={};
+    NODES.forEach(function(n){
+      var el=document.createElement('div');
+      el.className='mm-node-card';
+      if(n.hub){
+        el.innerHTML='<div style="width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 36% 34%,rgba(0,84,223,0.95),rgba(3,15,60,0.98));box-shadow:0 0 60px rgba(0,84,223,0.8),0 0 120px rgba(0,84,223,0.3),inset 3px 3px 14px rgba(142,183,255,0.35);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;"><span style=\'font-family:"Oswald",sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.16em;color:#fff;\'>MIDVORA</span><span style=\'font-size:0.52rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;\'>MN·SD·ND</span></div>';
+      } else {
+        var rgb=n.color==='#F96B2B'?'249,107,43':n.color==='#8EB7FF'?'142,183,255':'0,84,223';
+        var pad=n.small?'9px 13px':'12px 18px';
+        var fsize=n.small?'0.68rem':'0.78rem';
+        var isize=n.small?'15':'18';
+        var iconSvg=n.icon?('<path d="'+n.icon+'"/>'):'<circle cx="12" cy="12" r="4"/>';
+        el.innerHTML='<div style="display:flex;align-items:center;gap:9px;padding:'+pad+';border-radius:16px;background:rgba(10,20,50,0.92);border:1px solid rgba('+rgb+',0.45);box-shadow:0 4px 24px rgba(0,0,0,0.6),0 0 12px rgba('+rgb+',0.12),inset 0 1px 0 rgba(255,255,255,0.08);backdrop-filter:blur(12px);white-space:nowrap;"><div style=\'width:32px;height:32px;border-radius:10px;background:rgba('+rgb+',0.18);border:1px solid rgba('+rgb+',0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;\'><svg width="'+isize+'" height="'+isize+'" viewBox="0 0 24 24" fill="none" stroke="'+n.color+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+iconSvg+'</svg></div><span style=\'font-family:"Inter Tight",sans-serif;font-weight:700;color:#fff;font-size:'+fsize+';\'>'+n.label+'</span></div>';
+      }
+      nodesEl.appendChild(el);
+      cardEls[n.id]=el;
+    });
+
+    /* ── main loop ── */
+    function draw(){
+      var W=canvas.width/(window.devicePixelRatio||1);
+      var H=canvas.height/(window.devicePixelRatio||1);
+
+      ctx.clearRect(0,0,W,H);
+
+      /* draw edges */
+      EDGES.forEach(function(e,i){
+        var na=NODES.find(function(n){return n.id===e[0];});
+        var nb=NODES.find(function(n){return n.id===e[1];});
+        if(!na||!nb)return;
+        var isHub=e[0]==='hub'||e[1]==='hub';
+        var ax=na.sx, ay=na.sy, bx=nb.sx, by=nb.sy;
+
+        /* lines are invisible — only pulse dots travel */
+
+        /* traveling pulse dot */
+        var p=pulses[i];
+        p.t+=p.speed;
+        if(p.t>1)p.t=0;
+        var dotX=ax+(bx-ax)*p.t;
+        var dotY=ay+(by-ay)*p.t;
+        var pcolor=isHub?'rgba(80,160,255,':'rgba(249,130,60,';
+        var gr=ctx.createRadialGradient(dotX,dotY,0,dotX,dotY,10);
+        gr.addColorStop(0,pcolor+'1)');
+        gr.addColorStop(0.4,pcolor+'0.4)');
+        gr.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.beginPath();
+        ctx.arc(dotX,dotY,10,0,Math.PI*2);
+        ctx.fillStyle=gr;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(dotX,dotY,3,0,Math.PI*2);
+        ctx.fillStyle=isHub?'rgba(180,220,255,1)':'rgba(255,190,130,1)';
+        ctx.fill();
+      });
+
+      /* draw node halos */
+      NODES.forEach(function(n){
+        if(n.hub){
+          var hg=ctx.createRadialGradient(n.sx,n.sy,0,n.sx,n.sy,80);
+          hg.addColorStop(0,'rgba(0,84,223,0.22)');
+          hg.addColorStop(1,'rgba(0,84,223,0)');
+          ctx.beginPath();
+          ctx.arc(n.sx,n.sy,80,0,Math.PI*2);
+          ctx.fillStyle=hg;
+          ctx.fill();
+        } else {
+          var rgb=n.color==='#F96B2B'?'249,107,43':'142,183,255';
+          var ng=ctx.createRadialGradient(n.sx,n.sy,0,n.sx,n.sy,28);
+          ng.addColorStop(0,'rgba('+rgb+',0.16)');
+          ng.addColorStop(1,'rgba('+rgb+',0)');
+          ctx.beginPath();
+          ctx.arc(n.sx,n.sy,28,0,Math.PI*2);
+          ctx.fillStyle=ng;
+          ctx.fill();
+        }
+      });
+
+      /* position HTML cards — centered on their coords */
+      NODES.forEach(function(n){
+        var el=cardEls[n.id];
+        if(!el)return;
+        el.style.left=n.sx+'px';
+        el.style.top=n.sy+'px';
+        el.style.transform='translate(-50%,-50%)';
+        el.style.opacity='1';
+        el.style.zIndex=n.hub?'50':'10';
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  })();
+  </script>
 </section>
 
-<!-- ===================== TRUST BADGES ===================== -->
-<section class="bg-[#F8F6F2] py-16">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p class="mb-10 text-center font-sans text-xs font-bold uppercase tracking-widest text-[#9CA3AF]">Why local businesses trust us</p>
-    <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-      {[
-        { mark: 'ZR', label: 'Zero-Risk Promise', sub: 'Do not love it? Pay nothing.' },
-        { mark: '24', label: '24-Hour Sample', sub: 'Live site by tomorrow.' },
-        { mark: 'NC', label: 'No Contracts', sub: 'Month-to-month, always.' },
-        { mark: 'MW', label: 'Local Team', sub: 'Midwest-based, Midwest-built.' },
-      ].map(badge => (
-        <div class="trust-badge rounded-2xl p-6 text-center" style="background:#fff;border:1px solid rgba(10,22,40,0.06);">
-          <span class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full font-sans text-sm font-bold uppercase tracking-[0.14em] text-white" style="background:#0A1628;">{badge.mark}</span>
-          <p class="font-sans text-sm font-bold text-[#0A1628]">{badge.label}</p>
-          <p class="mt-1 font-sans text-xs text-[#9CA3AF]">{badge.sub}</p>
+<!-- ===================== TRUST BADGES — 3D Flip Cards ===================== -->
+<section class="trust-section relative overflow-hidden py-20 sm:py-24" style="background:#0A1628;border-top:1px solid rgba(255,255,255,0.04);">
+  <!-- dark to slightly lighter gradient -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,84,223,0.3),transparent);"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center top,rgba(0,84,223,0.06) 0%,transparent 60%);"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:44px 44px;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="mb-4 text-center font-sans text-xs font-bold uppercase tracking-widest" style="color:rgba(255,255,255,0.22);">Why local businesses trust us</p>
+    <h2 class="font-display font-bold text-white text-center mb-14" style="font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.1;">The promise behind every project.</h2>
+
+    <div class="grid gap-4 md:hidden">
+      <div class="trust-mobile-card rounded-[24px] p-5" style="background:linear-gradient(145deg,rgba(249,107,43,0.18),rgba(255,255,255,0.03));border:1px solid rgba(249,107,43,0.24);box-shadow:0 20px 48px rgba(0,0,0,0.22);">
+        <div class="flex items-center gap-4">
+          <div style="width:56px;height:56px;border-radius:18px;background:rgba(249,107,43,0.14);border:1px solid rgba(249,107,43,0.3);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="font-display text-[1.28rem] font-bold leading-none text-white">Zero-Risk Promise</p>
+            <p class="mt-1 font-sans text-[0.72rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(249,107,43,0.82);">$0 if you do not love it</p>
+          </div>
         </div>
-      ))}
+        <p class="mt-4 font-sans text-[0.95rem] leading-relaxed" style="color:rgba(255,255,255,0.58);">We absorb 100% of the build cost if the sample does not feel worth launching.</p>
+      </div>
+
+      <div class="trust-mobile-card rounded-[24px] p-5" style="background:linear-gradient(145deg,rgba(0,84,223,0.2),rgba(255,255,255,0.03));border:1px solid rgba(0,84,223,0.24);box-shadow:0 20px 48px rgba(0,0,0,0.22);">
+        <div class="flex items-center gap-4">
+          <div style="width:56px;height:56px;border-radius:18px;background:rgba(0,84,223,0.14);border:1px solid rgba(0,84,223,0.3);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8EB7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <p class="font-display text-[1.28rem] font-bold leading-none text-white">24-Hour Sample</p>
+            <p class="mt-1 font-sans text-[0.72rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(142,183,255,0.82);">Real URL, real business</p>
+          </div>
+        </div>
+        <p class="mt-4 font-sans text-[0.95rem] leading-relaxed" style="color:rgba(255,255,255,0.58);">Your business name, photos, and actual homepage structure show up fast enough to judge the work honestly.</p>
+      </div>
+
+      <div class="trust-mobile-card rounded-[24px] p-5" style="background:linear-gradient(145deg,rgba(142,183,255,0.16),rgba(255,255,255,0.03));border:1px solid rgba(142,183,255,0.2);box-shadow:0 20px 48px rgba(0,0,0,0.22);">
+        <div class="flex items-center gap-4">
+          <div style="width:56px;height:56px;border-radius:18px;background:rgba(142,183,255,0.12);border:1px solid rgba(142,183,255,0.24);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8EB7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </div>
+          <div>
+            <p class="font-display text-[1.28rem] font-bold leading-none text-white">No Contracts</p>
+            <p class="mt-1 font-sans text-[0.72rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(142,183,255,0.82);">Month-to-month by default</p>
+          </div>
+        </div>
+        <p class="mt-4 font-sans text-[0.95rem] leading-relaxed" style="color:rgba(255,255,255,0.58);">No lock-ins, cancellation traps, or fine print hiding behind the launch conversation.</p>
+      </div>
+
+      <div class="trust-mobile-card rounded-[24px] p-5" style="background:linear-gradient(145deg,rgba(249,107,43,0.12),rgba(255,255,255,0.03));border:1px solid rgba(249,107,43,0.18);box-shadow:0 20px 48px rgba(0,0,0,0.22);">
+        <div class="flex items-center gap-4">
+          <div style="width:56px;height:56px;border-radius:18px;background:rgba(249,107,43,0.12);border:1px solid rgba(249,107,43,0.24);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <p class="font-display text-[1.28rem] font-bold leading-none text-white">Local Team</p>
+            <p class="mt-1 font-sans text-[0.72rem] font-bold uppercase tracking-[0.14em]" style="color:rgba(249,107,43,0.82);">Marshall, MN built</p>
+          </div>
+        </div>
+        <p class="mt-4 font-sans text-[0.95rem] leading-relaxed" style="color:rgba(255,255,255,0.58);">We build for real Midwest businesses and the way their customers actually browse on phones.</p>
+      </div>
+    </div>
+
+    <div class="hidden grid-cols-1 gap-6 md:grid md:grid-cols-2 lg:grid-cols-4">
+
+      <!-- ZR — Zero Risk -->
+      <div class="trust-badge trust-flip-card" style="height:220px;perspective:800px;cursor:pointer;" tabindex="0" aria-label="Zero-Risk Promise">
+        <div class="trust-flip-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,.2,.2,1);">
+          <!-- Front -->
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.09);box-shadow:0 20px 60px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:1.5rem;">
+            <div style="width:60px;height:60px;border-radius:20px;background:linear-gradient(135deg,rgba(249,107,43,0.2),rgba(249,107,43,0.06));border:1px solid rgba(249,107,43,0.3);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(249,107,43,0.15);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <p class="font-display font-bold text-white text-center" style="font-size:1.15rem;">Zero-Risk Promise</p>
+            <p style="color:rgba(255,255,255,0.35);font-size:0.7rem;text-align:center;font-family:'Inter Tight',sans-serif;">Hover to see the guarantee</p>
+          </div>
+          <!-- Back -->
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#F96B2B,#C44A12);border:1px solid rgba(249,107,43,0.4);box-shadow:0 20px 60px rgba(249,107,43,0.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:1.75rem;">
+            <p class="font-display font-bold text-white text-center" style="font-size:2.2rem;line-height:1;">$0</p>
+            <p class="font-display font-bold text-white text-center" style="font-size:0.9rem;opacity:0.9;">If you don't love it</p>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.72rem;text-align:center;font-family:'Inter Tight',sans-serif;line-height:1.5;">We absorb 100% of the build cost. No invoice. No awkward conversation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 24h -->
+      <div class="trust-badge trust-flip-card" style="height:220px;perspective:800px;cursor:pointer;" tabindex="0" aria-label="24-Hour Sample">
+        <div class="trust-flip-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,.2,.2,1);">
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.09);box-shadow:0 20px 60px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:1.5rem;">
+            <div style="width:60px;height:60px;border-radius:20px;background:linear-gradient(135deg,rgba(0,84,223,0.2),rgba(0,84,223,0.06));border:1px solid rgba(0,84,223,0.3);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(0,84,223,0.15);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8EB7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <p class="font-display font-bold text-white text-center" style="font-size:1.15rem;">24-Hour Sample</p>
+            <p style="color:rgba(255,255,255,0.35);font-size:0.7rem;text-align:center;font-family:'Inter Tight',sans-serif;">Hover to see what you get</p>
+          </div>
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#0054DF,#0A3BA8);border:1px solid rgba(0,84,223,0.4);box-shadow:0 20px 60px rgba(0,84,223,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:1.75rem;">
+            <p class="font-display font-bold text-white text-center" style="font-size:2.2rem;line-height:1;">24h</p>
+            <p class="font-display font-bold text-white text-center" style="font-size:0.9rem;opacity:0.9;">Live site, real URL</p>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.72rem;text-align:center;font-family:'Inter Tight',sans-serif;line-height:1.5;">Your business name. Your photos. A real working homepage, by tomorrow.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NC — No Contracts -->
+      <div class="trust-badge trust-flip-card" style="height:220px;perspective:800px;cursor:pointer;" tabindex="0" aria-label="No Contracts">
+        <div class="trust-flip-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,.2,.2,1);">
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.09);box-shadow:0 20px 60px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:1.5rem;">
+            <div style="width:60px;height:60px;border-radius:20px;background:linear-gradient(135deg,rgba(142,183,255,0.15),rgba(142,183,255,0.04));border:1px solid rgba(142,183,255,0.2);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(142,183,255,0.1);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8EB7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            </div>
+            <p class="font-display font-bold text-white text-center" style="font-size:1.15rem;">No Contracts</p>
+            <p style="color:rgba(255,255,255,0.35);font-size:0.7rem;text-align:center;font-family:'Inter Tight',sans-serif;">Hover to see the terms</p>
+          </div>
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,rgba(20,30,60,0.98),rgba(10,18,44,0.98));border:1px solid rgba(142,183,255,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:1.75rem;">
+            <p class="font-display font-bold text-white text-center" style="font-size:1.6rem;line-height:1;">Month-to-month</p>
+            <p class="font-display font-bold text-center" style="font-size:0.9rem;color:rgba(142,183,255,0.9);">Always.</p>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.72rem;text-align:center;font-family:'Inter Tight',sans-serif;line-height:1.5;">Cancel anytime. No lock-ins, no cancellation fees, no fine print to read.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MW — Local Team -->
+      <div class="trust-badge trust-flip-card" style="height:220px;perspective:800px;cursor:pointer;" tabindex="0" aria-label="Local Team">
+        <div class="trust-flip-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(.4,.2,.2,1);">
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.09);box-shadow:0 20px 60px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:1.5rem;">
+            <div style="width:60px;height:60px;border-radius:20px;background:linear-gradient(135deg,rgba(249,107,43,0.15),rgba(249,107,43,0.04));border:1px solid rgba(249,107,43,0.25);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(249,107,43,0.1);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <p class="font-display font-bold text-white text-center" style="font-size:1.15rem;">Local Team</p>
+            <p style="color:rgba(255,255,255,0.35);font-size:0.7rem;text-align:center;font-family:'Inter Tight',sans-serif;">Hover to see where we are</p>
+          </div>
+          <div style="position:absolute;inset:0;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,rgba(30,14,4,0.98),rgba(20,8,2,0.98));border:1px solid rgba(249,107,43,0.3);box-shadow:0 20px 60px rgba(249,107,43,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:1.75rem;">
+            <p class="font-display font-bold text-white text-center" style="font-size:1.3rem;line-height:1.1;">Marshall, MN</p>
+            <p class="font-display font-bold text-center" style="font-size:0.9rem;color:rgba(249,107,43,0.9);">Midwest-built.</p>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.72rem;text-align:center;font-family:'Inter Tight',sans-serif;line-height:1.5;">We know MN, SD, and ND. Real people, real phones, real Midwesterners.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <style is:inline>
+    @keyframes twinkle {
+      0%,100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+    .trust-flip-card:hover .trust-flip-inner,
+    .trust-flip-card:focus .trust-flip-inner {
+      transform: rotateY(180deg);
+    }
+  </style>
 </section>
 
 <!-- ===================== CTA ===================== -->
-<section id="cta-banner" class="relative overflow-hidden py-32" style="background:#06101f;">
+<section id="cta-banner" class="cta-section relative overflow-hidden py-20 sm:py-24 lg:py-32" style="background:#06101f;">
   <div class="pointer-events-none absolute inset-0">
     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(249,107,43,0.1) 0%,transparent 60%);"></div>
     <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:36px 36px;"></div>
@@ -637,59 +1598,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <span style="color:rgba(249,107,43,0.9);font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;">Zero Risk - Free Sample - 24 Hours</span>
     </div>
 
-    <h2 class="cta-headline mb-6 font-display font-bold leading-[0.9] text-white" style="font-size:clamp(3rem,8vw,6rem);">
-      See your site<br/>before you<br/><span class="text-[#F96B2B]">spend a dollar.</span>
-    </h2>
+      <h2 class="cta-headline mb-6 font-display font-bold leading-[0.9] text-white" style="font-size:clamp(3rem,8vw,6rem);">
+        See your site<br/>before you<br/><span class="text-[#F96B2B]">spend a dollar.</span>
+      </h2>
 
-    <p class="mx-auto mb-10 max-w-lg font-sans leading-relaxed" style="font-size:1.05rem;color:rgba(255,255,255,0.45);">
-      Send us your business name. We will build a live working sample in 24 hours. Free. No strings attached.
-    </p>
+      <p class="mx-auto mb-8 max-w-lg font-sans leading-relaxed" style="font-size:1.05rem;color:rgba(255,255,255,0.45);">
+        Send us your business name. We will build a live working sample in 24 hours. Free. No strings attached.
+      </p>
 
-    <form id="sample-form" action="/api/sample-request" method="POST" class="flex flex-col gap-3">
-      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <input
-          type="text"
-          name="businessName"
-          placeholder="Business Name"
-          required
-          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
-        />
-        <input
-          type="text"
-          name="businessType"
-          placeholder="Restaurant, Salon, Contractor..."
-          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
-        />
-        <input
-          type="text"
-          name="city"
-          placeholder="City, State"
-          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
-        />
-        <input
-          type="text"
-          name="contact"
-          placeholder="Email or Phone"
-          required
-          class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
-        />
+      <div class="cta-proof-grid mb-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+        {['Delivered in 24 hours', '$0 before approval', 'Real live sample'].map((proof) => (
+          <div class="rounded-2xl px-4 py-3 font-sans text-[0.7rem] font-bold uppercase tracking-[0.14em]" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.62);">
+            {proof}
+          </div>
+        ))}
       </div>
-      <button
-        type="submit"
-        class="w-full rounded-2xl py-5 text-base font-bold transition-all hover:opacity-90"
-        style="background:#F96B2B;color:#fff;box-shadow:0 16px 40px rgba(249,107,43,0.25);"
-      >
-        Build My Free Sample &rarr;
-      </button>
-    </form>
 
-    <p class="mt-5 font-sans text-xs" style="color:rgba(255,255,255,0.22);">
-      Delivered in 24 hours - No payment required - Keep the sample even if you do not move forward
-    </p>
+      <form id="sample-form" class="cta-form flex flex-col gap-3">
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <input
+            type="text"
+            name="businessName"
+            placeholder="Business Name"
+            required
+            class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+          />
+          <input
+            type="text"
+            name="businessType"
+            placeholder="Restaurant, Salon, Contractor..."
+            class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+          />
+          <input
+            type="text"
+            name="city"
+            placeholder="City, State"
+            class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+          />
+          <input
+            type="text"
+            name="contact"
+            placeholder="Email or Phone"
+            required
+            class="rounded-2xl px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors"
+            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full rounded-2xl py-5 text-base font-bold transition-all hover:opacity-90"
+          style="background:#F96B2B;color:#fff;box-shadow:0 16px 40px rgba(249,107,43,0.25);"
+        >
+          Build My Free Sample &rarr;
+        </button>
+      </form>
+
+      <p class="mt-5 font-sans text-xs" style="color:rgba(255,255,255,0.22);">
+        Delivered in 24 hours - No payment required - Keep the sample even if you do not move forward
+      </p>
   </div>
 </section>
 
@@ -722,14 +1691,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   var heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
   heroTimeline
-    .fromTo('.hero-badge', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55 })
-    .fromTo('.hero-headline', { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.85 }, '-=0.18')
-    .fromTo('.hero-sub', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.45')
-    .fromTo('.hero-ctas', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.65 }, '-=0.38')
-    .fromTo('.hero-proof-card', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08 }, '-=0.26')
-    .fromTo('.hero-guide', { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.08 }, '-=1.05')
-    .fromTo('.hero-scene-card', { opacity: 0, y: 28, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.92, stagger: 0.12 }, '-=0.82')
-    .fromTo('.hero-scene-chip', { opacity: 0, y: 18, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.72, stagger: 0.08 }, '-=0.72');
+    .fromTo('.hero-eyebrow',     { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55 })
+    .fromTo('.hero-h1',          { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.9 }, '-=0.1')
+    .fromTo('.hero-sub',         { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
+    .fromTo('.hero-ctas',        { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.65 }, '-=0.4')
+    .fromTo('.hero-proof-strip', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55 }, '-=0.35')
+    .fromTo('.hero-visual',      { opacity: 0, x: 30, scale: 0.96 }, { opacity: 1, x: 0, scale: 1, duration: 1.1, ease: 'power2.out' }, '-=1.0')
+    .fromTo('.h-float-badge,.h-float-card', { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.6, stagger: 0.12 }, '-=0.5');
 
   var statsAnimated = false;
   ScrollTrigger.create({
@@ -919,22 +1887,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 })();
 
 (function () {
+  var scrollTarget = new URLSearchParams(window.location.search).get('scrollTo');
+  if (scrollTarget) {
+    var scrollToRequestedSection = function () {
+      var target = document.getElementById(scrollTarget);
+      if (!target) return;
+      window.setTimeout(function () {
+        target.scrollIntoView({ block: 'start' });
+      }, 80);
+    };
+
+    if (document.readyState === 'complete') {
+      scrollToRequestedSection();
+    } else {
+      window.addEventListener('load', scrollToRequestedSection, { once: true });
+    }
+  }
+
   var form = document.getElementById('sample-form');
   if (!form) return;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Request received - we will be in touch soon.';
-    btn.disabled = true;
-    btn.style.background = '#22c55e';
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
 
-    setTimeout(function () {
-      btn.textContent = 'Build My Free Sample ->';
-      btn.disabled = false;
-      btn.style.background = '#F96B2B';
-      form.reset();
-    }, 4000);
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'e7f6edce-9410-45b7-a058-a03f661f953b',
+        subject: 'New Free Sample Request — Midvora (Homepage)',
+        from_name: data.businessName,
+        businessName: data.businessName,
+        businessType: data.businessType,
+        city: data.city,
+        contact: data.contact,
+      }),
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (json.success) {
+          btn.textContent = 'Request received. We\'ll be in touch soon!';
+          btn.style.background = '#22c55e';
+          form.reset();
+          setTimeout(function () {
+            btn.textContent = 'Build My Free Sample →';
+            btn.disabled = false;
+            btn.style.background = '#F96B2B';
+          }, 5000);
+        } else {
+          throw new Error('fail');
+        }
+      })
+      .catch(function () {
+        btn.textContent = 'Something went wrong. Call (507) 530-4837';
+        btn.style.background = '#EF4444';
+        setTimeout(function () {
+          btn.textContent = 'Build My Free Sample →';
+          btn.disabled = false;
+          btn.style.background = '#F96B2B';
+        }, 5000);
+      });
   });
 })();
 </script>

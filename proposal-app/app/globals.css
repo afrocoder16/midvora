@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn/ui semantic tokens, tuned to the Midvora palette.
+       Primary = brand blue (#0054DF). Accent ring matches it. */
+    --background: 0 0% 100%;
+    --foreground: 215 60% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 60% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 60% 10%;
+
+    --primary: 219 100% 44%;            /* #0054DF */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 33% 96%;            /* near cream */
+    --secondary-foreground: 215 60% 12%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 16 95% 57%;               /* brand orange #F96B2B */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 219 100% 44%;
+
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}

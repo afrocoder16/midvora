@@ -2,10 +2,1664 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Services & Pricing — Midvora">
-  <div class="flex items-center justify-center min-h-[60vh]">
-    <div class="text-center">
-      <h1 class="font-display font-bold text-4xl text-[#0A1628] tracking-wide uppercase mb-4">Coming Soon</h1>
-      <p class="font-sans text-[#6B7280]">Services & Pricing — Phase 2</p>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════════ -->
+<section class="svc-hero relative overflow-hidden">
+
+  <!-- Background layers -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <!-- Cream base + subtle noise texture -->
+    <div class="svc-hero-noise"></div>
+    <!-- Blue accent top-right -->
+    <div style="position:absolute;top:-20%;right:-8%;width:52vw;height:52vw;max-width:40rem;max-height:40rem;background:radial-gradient(circle,rgba(0,84,223,0.09) 0%,transparent 65%);filter:blur(64px);"></div>
+    <!-- Orange warmth bottom-left -->
+    <div style="position:absolute;bottom:-14%;left:-5%;width:44vw;height:44vw;max-width:36rem;max-height:36rem;background:radial-gradient(circle,rgba(249,107,43,0.1) 0%,transparent 65%);filter:blur(56px);"></div>
+  </div>
+
+  <div class="svc-hero-inner relative z-10 mx-auto max-w-5xl px-5 sm:px-8">
+
+    <!-- Eyebrow -->
+    <div class="svc-hero-eyebrow">
+      <span class="svc-blink-dot"></span>
+      <span>Simple, Honest Pricing</span>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="svc-hero-headline">
+      <span class="svc-h1-line">Less than</span>
+      <span class="svc-h1-line">you think.</span>
+      <span class="svc-h1-line"><span class="svc-hero-accent">Way more</span> than</span>
+      <span class="svc-h1-line">you'd expect.</span>
+    </h1>
+
+    <!-- Sub -->
+    <p class="svc-hero-sub">
+      Every price is upfront. No hourly rates. No surprises.<br class="hidden sm:block"/>
+      You know exactly what you're paying before we start.
+    </p>
+
+    <!-- Price showcase row — the "different" element vs work page -->
+    <div class="svc-price-row">
+      <div class="svc-price-pill svc-pp-blue">
+        <span class="svc-pp-amount">$299</span>
+        <span class="svc-pp-label">Starter</span>
+      </div>
+      <div class="svc-price-connector" aria-hidden="true">→</div>
+      <div class="svc-price-pill svc-pp-orange">
+        <span class="svc-pp-amount">$650</span>
+        <span class="svc-pp-label">Growth</span>
+      </div>
+      <div class="svc-price-connector" aria-hidden="true">→</div>
+      <div class="svc-price-pill svc-pp-dark">
+        <span class="svc-pp-amount">$1,200</span>
+        <span class="svc-pp-label">Premium</span>
+      </div>
+    </div>
+
+    <!-- No contracts guarantee line -->
+    <p class="svc-hero-guarantee">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Free sample first · No payment until you approve · No contracts
+    </p>
+
+    <!-- Scroll cue (hidden mobile) -->
+    <div class="svc-scroll-cue" aria-hidden="true">
+      <div class="svc-scroll-line"></div>
+      <span>Scroll to explore</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — WEBSITE PACKAGES
+═══════════════════════════════════════════════ -->
+<section id="svc-packages" class="svc-packages relative overflow-hidden" style="background:#fff;padding:7rem 0 8rem;">
+
+  <!-- Background texture -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(0,84,223,0.04) 1px,transparent 1px);background-size:32px 32px;"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="svc-section-head text-center">
+      <p class="svc-eyebrow">Website Packages</p>
+      <h2 class="svc-section-h2">Pick your starting point.</h2>
+      <p class="svc-section-sub">Every package starts with a free sample, zero risk, no payment until you approve.</p>
+    </div>
+
+    <div class="svc-pkg-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem;align-items:start;">
+
+      <!-- CARD 1: Starter -->
+      <div class="svc-pkg-card">
+        <div class="svc-pkg-tag" style="background:rgba(0,84,223,0.1);color:#0054DF;">Get Online</div>
+        <div class="svc-pkg-price-row">
+          <span class="svc-pkg-price">$299</span>
+          <span class="svc-pkg-cycle">one-time</span>
+        </div>
+        <p class="svc-pkg-name">Starter</p>
+        <p class="svc-pkg-desc">Perfect for new businesses that need to get online fast with a clean, professional look.</p>
+        <ul class="svc-pkg-list">
+          {[
+            'Custom 5-page website',
+            'Mobile-ready on all phones',
+            'Contact form + Google Maps',
+            'SSL security included',
+            'Google Business Profile setup — FREE',
+            'Live in 7 days',
+          ].map(f => (
+            <li class="svc-pkg-item svc-check-blue">
+              <svg class="svc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="svc-pkg-cta" style="background:#0A1628;color:#fff;">Get Free Sample</a>
+      </div>
+
+      <!-- CARD 2: Growth (featured) -->
+      <div class="svc-pkg-card svc-pkg-featured" style="position:relative;margin-top:-1.5rem;">
+        <div class="svc-popular-badge">Most Popular</div>
+        <div class="svc-pkg-tag" style="background:rgba(249,107,43,0.1);color:#F96B2B;">Grow Faster</div>
+        <div class="svc-pkg-price-row">
+          <span class="svc-pkg-price" style="color:#F96B2B;">$650</span>
+          <span class="svc-pkg-cycle">one-time</span>
+        </div>
+        <p class="svc-pkg-name">Growth</p>
+        <p class="svc-pkg-desc">For restaurants, salons, and service businesses ready to take orders and bookings online.</p>
+        <ul class="svc-pkg-list">
+          {[
+            'Everything in Starter',
+            'Up to 8 pages',
+            'Online ordering (Square / Toast)',
+            'Update menu from your phone',
+            'English + Spanish language option',
+            'SEO management — FREE 3 months',
+            'Live in 10 days',
+          ].map(f => (
+            <li class="svc-pkg-item svc-check-orange">
+              <svg class="svc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="svc-pkg-cta" style="background:#F96B2B;color:#fff;">Get Free Sample</a>
+      </div>
+
+      <!-- CARD 3: Premium -->
+      <div class="svc-pkg-card">
+        <div class="svc-pkg-tag" style="background:#0A1628;color:#fff;">Go All In</div>
+        <div class="svc-pkg-price-row">
+          <span class="svc-pkg-price">$1,200</span>
+          <span class="svc-pkg-cycle">one-time</span>
+        </div>
+        <p class="svc-pkg-name">Premium</p>
+        <p class="svc-pkg-desc">For established businesses ready to dominate their local market with a full digital presence.</p>
+        <ul class="svc-pkg-list">
+          {[
+            'Everything in Growth',
+            'Up to 12 pages',
+            'Interactive features + loyalty cards',
+            'Your own admin panel',
+            'Photography session included',
+            'Advanced SEO + analytics',
+            'FREE 3 months SEO + review management',
+          ].map(f => (
+            <li class="svc-pkg-item svc-check-blue">
+              <svg class="svc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="svc-pkg-cta" style="background:#0A1628;color:#fff;">Get Free Sample</a>
+      </div>
+
     </div>
   </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — ADD-ONS (3D tilt cards)
+═══════════════════════════════════════════════ -->
+<section class="svc-addons relative overflow-hidden" style="background:#F0F4FF;padding:7rem 0 8rem;">
+
+  <!-- Decorative blobs -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:-8%;right:-4%;width:32rem;height:32rem;background:radial-gradient(circle,rgba(0,84,223,0.1) 0%,transparent 65%);filter:blur(48px);"></div>
+    <div style="position:absolute;bottom:-6%;left:-3%;width:28rem;height:28rem;background:radial-gradient(circle,rgba(249,107,43,0.1) 0%,transparent 65%);filter:blur(48px);"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="svc-section-head text-center">
+      <p class="svc-eyebrow">Power It Up</p>
+      <h2 class="svc-section-h2">Add what you need.<br/>Skip what you don't.</h2>
+    </div>
+
+    <div class="svc-addon-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;">
+      {[
+        { icon: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z', name: 'Google Business Profile', price: '$125', color: '#0054DF' },
+        { icon: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.5 2h9a5.5 5.5 0 0 1 5.5 5.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z', name: 'Social Media Kit', price: '$175', color: '#F96B2B' },
+        { icon: 'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z', name: 'Photography Session', price: '$249', color: '#0054DF' },
+        { icon: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5', name: 'Logo & Brand Kit', price: '$300', color: '#F96B2B' },
+        { icon: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 10H2M12 10v9', name: 'Email Marketing Setup', price: '$175', color: '#0054DF' },
+        { icon: 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z', name: 'QR Code Menu', price: '$49', color: '#F96B2B' },
+        { icon: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z', name: 'Event Website', price: '$250', color: '#0054DF' },
+        { icon: 'M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 5.99 5.99l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z', name: 'Call Tracking Setup', price: '$99', color: '#F96B2B' },
+      ].map((a, i) => (
+        <div class="svc-addon-card addon-tilt" data-index={i}>
+          <div class="svc-addon-icon" style={`background:rgba(${a.color === '#0054DF' ? '0,84,223' : '249,107,43'},0.1);`}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={a.color} stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d={a.icon}/>
+            </svg>
+          </div>
+          <p class="svc-addon-name">{a.name}</p>
+          <p class="svc-addon-price" style={`color:${a.color};`}>{a.price}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — MONTHLY CARE (dark, glowing)
+═══════════════════════════════════════════════ -->
+<section class="svc-care relative overflow-hidden" style="background:#050e1c;padding:7rem 0 8rem;">
+
+  <!-- Animated orbs -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="svc-orb svc-orb-1"></div>
+    <div class="svc-orb svc-orb-2"></div>
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;opacity:0.4;"></div>
+  </div>
+
+  <!-- Rotating ring decoration -->
+  <div class="svc-ring-wrap pointer-events-none" aria-hidden="true">
+    <div class="svc-ring svc-ring-1"></div>
+    <div class="svc-ring svc-ring-2"></div>
+    <div class="svc-ring svc-ring-3"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-5xl px-5 sm:px-8">
+    <div class="svc-section-head text-center">
+      <p class="svc-eyebrow" style="color:#F96B2B;">Keep It Running</p>
+      <h2 class="svc-section-h2" style="color:#fff;">We don't just build it.<br/>We take care of it.</h2>
+      <p class="svc-section-sub" style="color:rgba(255,255,255,0.45);">Your website works 24/7. So does our monitoring.</p>
+    </div>
+
+    <div class="svc-care-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3.5rem;max-width:52rem;margin-left:auto;margin-right:auto;">
+
+      <!-- Basic Care -->
+      <div class="svc-care-card">
+        <p class="svc-care-name">Basic Care</p>
+        <div class="svc-care-price-row">
+          <span class="svc-care-price">$25</span>
+          <span class="svc-care-mo">/mo</span>
+        </div>
+        <ul class="svc-care-list">
+          {[
+            'Website maintenance + updates',
+            'Security monitoring + patches',
+            'Backups + uptime monitoring',
+            'Content changes (text, photos, hours)',
+          ].map(f => (
+            <li class="svc-care-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8EB7FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="svc-care-cta svc-care-cta-ghost">Get started</a>
+      </div>
+
+      <!-- Full Care -->
+      <div class="svc-care-card svc-care-featured">
+        <div class="svc-care-glow" aria-hidden="true"></div>
+        <p class="svc-care-name">Full Care</p>
+        <div class="svc-care-price-row">
+          <span class="svc-care-price" style="color:#F96B2B;">$99</span>
+          <span class="svc-care-mo">/mo</span>
+        </div>
+        <ul class="svc-care-list">
+          {[
+            'Everything in Basic Care',
+            'SEO management + monthly reports',
+            'Social media management',
+            'Review monitoring + responses',
+            'Google Business Profile optimization',
+          ].map(f => (
+            <li class="svc-care-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="svc-care-cta svc-care-cta-orange">Get started</a>
+      </div>
+
+    </div>
+
+    <p class="text-center" style="color:rgba(255,255,255,0.32);font:500 0.82rem/1 'Inter Tight',sans-serif;margin-top:2rem;letter-spacing:0.06em;">No contracts. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — BUNDLE DEALS
+═══════════════════════════════════════════════ -->
+<section class="svc-bundles relative overflow-hidden" style="background:#F8F6F2;padding:7rem 0 8rem;">
+
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(10,22,40,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(10,22,40,0.03) 1px,transparent 1px);background-size:48px 48px;"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="svc-section-head text-center">
+      <p class="svc-eyebrow">Bundle &amp; Save</p>
+      <h2 class="svc-section-h2">Get more. Pay less.</h2>
+      <p class="svc-section-sub">Combine services and save, everything you need in one shot.</p>
+    </div>
+
+    <div class="svc-bundle-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;">
+
+      <!-- Bundle 1 -->
+      <div class="svc-bundle-card">
+        <p class="svc-bundle-name">Get Online</p>
+        <p class="svc-bundle-includes">Starter website + Google Business Profile setup</p>
+        <div class="svc-bundle-price-row">
+          <span class="svc-bundle-price">$449</span>
+          <span class="svc-bundle-save">Save $75</span>
+        </div>
+        <a href="/contact" class="svc-bundle-link" style="color:#0054DF;">Get started &rarr;</a>
+      </div>
+
+      <!-- Bundle 2 (featured) -->
+      <div class="svc-bundle-card svc-bundle-featured">
+        <div class="svc-bundle-top-accent"></div>
+        <p class="svc-bundle-name">Digital Storefront</p>
+        <p class="svc-bundle-includes">Growth website + GBP + photography + QR menu</p>
+        <div class="svc-bundle-price-row">
+          <span class="svc-bundle-price" style="color:#F96B2B;">$999</span>
+          <span class="svc-bundle-save">Save $175</span>
+        </div>
+        <a href="/contact" class="svc-bundle-link" style="color:#F96B2B;">Get started &rarr;</a>
+      </div>
+
+      <!-- Bundle 3 (dark) -->
+      <div class="svc-bundle-card svc-bundle-dark">
+        <div class="svc-bundle-dark-glow" aria-hidden="true"></div>
+        <p class="svc-bundle-name" style="color:#fff;">Full Digital Presence</p>
+        <p class="svc-bundle-includes" style="color:rgba(255,255,255,0.55);">Premium site + GBP + social kit + photos + logo + email</p>
+        <div class="svc-bundle-price-row">
+          <span class="svc-bundle-price" style="color:#fff;">$2,200</span>
+          <span class="svc-bundle-save" style="background:rgba(74,222,128,0.15);color:#4ade80;">Save $224</span>
+        </div>
+        <a href="/contact" class="svc-bundle-link" style="color:#F96B2B;">Get started &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — PREMIUM SERVICES (3D marquee style)
+═══════════════════════════════════════════════ -->
+<section class="svc-premium relative overflow-hidden" style="background:#fff;padding:7rem 0 8rem;">
+
+  <!-- Subtle gradient top -->
+  <div class="pointer-events-none absolute top-0 left-0 right-0" style="height:200px;background:linear-gradient(to bottom,rgba(240,244,255,0.8),transparent);" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto max-w-5xl px-5 sm:px-8">
+    <div class="svc-section-head text-center">
+      <p class="svc-eyebrow">Going Bigger?</p>
+      <h2 class="svc-section-h2">For businesses<br/>that need more.</h2>
+    </div>
+
+    <div class="svc-premium-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3.5rem;max-width:52rem;margin-left:auto;margin-right:auto;">
+      {[
+        { name: 'Custom Web App', price: '$2,000–$5,000', desc: 'Booking systems, dashboards, inventory tools, and custom workflows built for your exact process.' },
+        { name: 'E-Commerce Store', price: '$1,500–$3,000', desc: 'Full online store with payments, shipping, inventory, and a beautiful shopping experience.' },
+        { name: 'Cybersecurity Audit', price: '$300–$2,500', desc: 'Security assessment from a Masters-level specialist. Know your vulnerabilities before attackers do.' },
+        { name: 'Mobile App', price: 'Custom quote', desc: 'iPhone + Android apps for your business: loyalty, ordering, booking, or anything you need.' },
+      ].map(s => (
+        <div class="svc-premium-card">
+          <div class="svc-premium-inner">
+            <p class="svc-premium-name">{s.name}</p>
+            <p class="svc-premium-price">{s.price}</p>
+            <p class="svc-premium-desc">{s.desc}</p>
+          </div>
+          <div class="svc-premium-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center" style="color:#9CA3AF;font:500 0.85rem/1 'Inter Tight',sans-serif;margin-top:2.5rem;">
+      All custom projects start with a free consultation call.
+      <a href="/contact" style="color:#0054DF;font-weight:700;text-decoration:underline;text-underline-offset:3px;margin-left:0.25rem;">Book a call &rarr;</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7 — FAQ (animated accordion)
+═══════════════════════════════════════════════ -->
+<section class="svc-faq relative" style="background:#F8F6F2;padding:7rem 0 8rem;">
+
+  <div class="mx-auto max-w-2xl px-5 sm:px-8">
+    <div class="svc-section-head text-center" style="margin-bottom:3.5rem;">
+      <p class="svc-eyebrow">Questions</p>
+      <h2 class="svc-section-h2">Everything you<br/>want to know.</h2>
+    </div>
+
+    <div class="svc-faq-list" id="faq-list">
+      {[
+        {
+          q: 'How fast can you build my website?',
+          a: 'Most websites are live in 5–10 days depending on the package. We can do rush delivery in under 5 days for an additional fee.',
+        },
+        {
+          q: 'Do I own my website?',
+          a: 'Yes. You own everything: the domain, the hosting account, the code, the content. We set it all up under your name.',
+        },
+        {
+          q: 'What if I don\'t like the design?',
+          a: 'We build you a free sample first. If you don\'t like it, you owe us nothing. If you move forward, revisions are included in every package.',
+        },
+        {
+          q: 'Do I need to know anything technical?',
+          a: 'Not at all. We handle everything. If you can text and use Google, you can manage your website. We even set up Google Sheets so you can update your menu from your phone.',
+        },
+        {
+          q: 'What areas do you serve?',
+          a: 'We\'re based in Marshall, Minnesota and serve businesses across Minnesota, South Dakota, and North Dakota. We can work with businesses anywhere. Most of our communication is by phone, text, and email.',
+        },
+        {
+          q: 'What happens after my site is live?',
+          a: 'We offer monthly care plans starting at $25/mo for maintenance and security. Or we can hand you the keys and you manage it yourself, your choice.',
+        },
+      ].map((item, i) => (
+        <div class="svc-faq-item" data-faq={i}>
+          <button class="svc-faq-q" type="button" aria-expanded="false">
+            <span>{item.q}</span>
+            <svg class="svc-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="svc-faq-body">
+            <p class="svc-faq-a">{item.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FLOATING BUTTON
+═══════════════════════════════════════════════ -->
+<button id="byo-float-btn" aria-label="Build your own package" onclick="document.getElementById('build-your-own').scrollIntoView({behavior:'smooth'})">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+  Build your own &rarr;
+</button>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION — BUILD YOUR OWN
+═══════════════════════════════════════════════ -->
+<section id="build-your-own" class="byo-section relative overflow-hidden">
+
+  <!-- Background -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(10,22,40,0.04) 1px,transparent 1px);background-size:28px 28px;"></div>
+    <div style="position:absolute;top:-10%;right:-5%;width:40vw;height:40vw;max-width:32rem;background:radial-gradient(circle,rgba(0,84,223,0.08) 0%,transparent 65%);filter:blur(56px);"></div>
+    <div style="position:absolute;bottom:-8%;left:-4%;width:36vw;height:36vw;max-width:28rem;background:radial-gradient(circle,rgba(249,107,43,0.07) 0%,transparent 65%);filter:blur(48px);"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-3xl px-5 sm:px-8">
+
+    <!-- Header -->
+    <div class="byo-header text-center">
+      <p class="byo-eyebrow">Need something different?</p>
+      <h2 class="byo-headline">Build exactly what your<br/>business needs.</h2>
+      <p class="byo-subhead">Start with a base and add only what matters. Nothing more, nothing less.</p>
+    </div>
+
+    <!-- ── STEP 1: Base ── -->
+    <div class="byo-step byo-step-1">
+      <p class="byo-step-label">Step 1</p>
+      <h3 class="byo-step-title">Choose your website base</h3>
+
+      <div class="byo-base-grid">
+        {[
+          { price: 149,  name: 'Landing page',  desc: '1–3 pages. Simple, fast online presence.' },
+          { price: 295,  name: 'Standard site',  desc: '5 pages. The most popular starting point.', default: true },
+          { price: 495,  name: 'Full site',       desc: '8+ pages. For businesses with a lot to show.' },
+        ].map(opt => (
+          <div class={`byo-base-card ${opt.default ? 'byo-selected' : ''}`} data-price={opt.price} data-type="base">
+            <div class="byo-base-radio"><span class="byo-radio-inner"></span></div>
+            <p class="byo-base-price">${opt.price}</p>
+            <p class="byo-base-name">{opt.name}</p>
+            <p class="byo-base-desc">{opt.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── STEP 2: Features ── -->
+    <div class="byo-step byo-step-2">
+      <p class="byo-step-label">Step 2</p>
+      <h3 class="byo-step-title">Add what you need</h3>
+      <p class="byo-step-sub">Skip what you don't. Every feature is optional.</p>
+
+      <div class="byo-feat-grid">
+        {[
+          { name: 'Online ordering',         price: 150, note: 'Square / Toast' },
+          { name: 'Google Business Profile', price: 125, note: 'GBP setup' },
+          { name: 'Photography session',     price: 249, note: 'Pro photos' },
+          { name: 'QR code menu',            price: 49,  note: 'Scan to view' },
+          { name: 'Instagram feed',          price: 50,  note: 'Auto-updates' },
+          { name: 'Blog section',            price: 100, note: 'News + posts' },
+          { name: 'Bilingual (EN + ES)',       price: 100, note: 'Full Spanish' },
+          { name: 'Logo & brand kit',        price: 300, note: 'Custom identity' },
+          { name: 'Email marketing',         price: 175, note: 'Campaigns' },
+          { name: 'Social media kit',        price: 175, note: 'Templates' },
+        ].map(feat => (
+          <div class="byo-feat-card" data-price={feat.price} data-type="feature">
+            <div class="byo-feat-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg></div>
+            <div class="byo-feat-text">
+              <p class="byo-feat-name">{feat.name}</p>
+              <p class="byo-feat-note">{feat.note}</p>
+            </div>
+            <span class="byo-feat-price">+${feat.price}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── STEP 3: Monthly care ── -->
+    <div class="byo-step byo-step-3">
+      <p class="byo-step-label">Step 3</p>
+      <h3 class="byo-step-title">Choose your monthly care</h3>
+      <p class="byo-step-sub">Optional. No contracts. Cancel anytime.</p>
+
+      <div class="byo-care-grid">
+        {[
+          { price: 0,  label: '$0/mo',   name: 'No plan',    desc: "I'll manage it myself.", default: true },
+          { price: 25, label: '$25/mo',  name: 'Basic care', desc: 'Maintenance + security monitoring.' },
+          { price: 99, label: '$99/mo',  name: 'Full care',  desc: 'SEO + social + reviews + GBP.' },
+        ].map(opt => (
+          <div class={`byo-care-card ${opt.default ? 'byo-selected' : ''}`} data-price={opt.price} data-type="care">
+            <div class="byo-base-radio"><span class="byo-radio-inner"></span></div>
+            <p class="byo-base-price">{opt.label}</p>
+            <p class="byo-base-name">{opt.name}</p>
+            <p class="byo-base-desc">{opt.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── Comparison nudge ── -->
+    <div class="byo-nudge">
+      <p class="byo-nudge-text">Before you go custom, check if a package already covers what you need.</p>
+      <div class="byo-nudge-grid">
+        <div class="byo-nudge-card" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
+          <p class="byo-nudge-name">Starter — $299</p>
+          <p class="byo-nudge-inc">Includes GBP + QR menu free</p>
+        </div>
+        <div class="byo-nudge-card byo-nudge-featured" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
+          <p class="byo-nudge-name">Growth — $650</p>
+          <p class="byo-nudge-inc">Includes photos + social media free</p>
+        </div>
+        <div class="byo-nudge-card" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
+          <p class="byo-nudge-name">Premium — $1,200</p>
+          <p class="byo-nudge-inc">Includes everything free</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Sticky total bar ── -->
+<div id="byo-bar" class="byo-bar" aria-live="polite">
+  <div class="byo-bar-inner">
+    <div class="byo-bar-left">
+      <p class="byo-bar-label">Your package</p>
+      <div class="byo-bar-total-row">
+        <span class="byo-bar-total" id="byo-total-display">$295</span>
+        <span class="byo-bar-monthly" id="byo-monthly-display" style="display:none;"></span>
+      </div>
+    </div>
+    <a id="byo-bar-cta" href="/contact" class="byo-bar-cta">Get my free sample &rarr;</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8 — CTA
+═══════════════════════════════════════════════ -->
+<section class="svc-cta relative overflow-hidden" style="background:#050e1c;padding:6rem 0 7rem;text-align:center;">
+
+  <!-- Dramatic glow -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60vw;height:60vw;max-width:48rem;max-height:48rem;background:radial-gradient(circle,rgba(249,107,43,0.22) 0%,rgba(0,84,223,0.12) 45%,transparent 70%);filter:blur(64px);"></div>
+    <div class="svc-cta-grid"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-3xl px-5">
+    <p class="svc-eyebrow" style="color:#F96B2B;margin-bottom:1.5rem;">Ready to get started?</p>
+    <h2 class="svc-cta-headline">Your free sample is<br/>24 hours away.</h2>
+    <p style="color:rgba(255,255,255,0.48);font:500 1.05rem/1.65 'Inter Tight',sans-serif;max-width:32rem;margin:1.5rem auto 0;">
+      Send us your business info and we'll build your free homepage sample, no payment, no commitment.
+    </p>
+    <div class="svc-cta-btns">
+      <a href="/contact" class="svc-cta-primary">Get My Free Sample</a>
+      <a href="tel:+15075304837" class="svc-cta-ghost">Call (507) 530-4837</a>
+    </div>
+  </div>
+</section>
+
 </BaseLayout>
+
+<!-- ─────────────── CDN scripts ─────────────── -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script is:inline>
+/* ── FAQ accordion ── */
+(function () {
+  document.querySelectorAll('.svc-faq-item').forEach(function (item) {
+    var btn  = item.querySelector('.svc-faq-q');
+    var body = item.querySelector('.svc-faq-body');
+    var chev = item.querySelector('.svc-faq-chevron');
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      /* close all */
+      document.querySelectorAll('.svc-faq-item').forEach(function (el) {
+        el.querySelector('.svc-faq-q').setAttribute('aria-expanded', 'false');
+        el.querySelector('.svc-faq-body').style.maxHeight = '0';
+        el.querySelector('.svc-faq-chevron').style.transform = 'rotate(0deg)';
+        el.classList.remove('svc-faq-open');
+      });
+      if (!open) {
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        chev.style.transform = 'rotate(180deg)';
+        item.classList.add('svc-faq-open');
+      }
+    });
+  });
+})();
+
+/* ── Add-on card 3D tilt ── */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.addon-tilt').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width  - 0.5;
+      var y = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform = 'perspective(600px) rotateY(' + (x * 14) + 'deg) rotateX(' + (-y * 14) + 'deg) translateZ(8px)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(0)';
+    });
+  });
+})();
+
+/* ── GSAP scroll animations ── */
+(function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* hero */
+  var heroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  heroTL
+    .fromTo('.svc-hero-eyebrow', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55 })
+    .fromTo('.svc-h1-line',      { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: 0.85, stagger: 0.1 }, '-=0.1')
+    .fromTo('.svc-hero-sub',     { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.65 }, '-=0.45')
+    .fromTo('.svc-price-pill',   { opacity: 0, y: 20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.12 }, '-=0.3')
+    .fromTo('.svc-hero-guarantee',{ opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45 }, '-=0.2');
+
+  /* section headings */
+  document.querySelectorAll('.svc-section-head').forEach(function (el) {
+    gsap.fromTo(el,
+      { opacity: 0, y: 32 },
+      { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 82%', once: true } }
+    );
+  });
+
+  /* package cards */
+  gsap.fromTo('.svc-pkg-card',
+    { opacity: 0, y: 50, scale: 0.96 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power2.out', stagger: 0.15,
+      scrollTrigger: { trigger: '.svc-pkg-grid', start: 'top 80%', once: true } }
+  );
+
+  /* addon cards */
+  gsap.fromTo('.svc-addon-card',
+    { opacity: 0, y: 36 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', stagger: 0.08,
+      scrollTrigger: { trigger: '.svc-addon-grid', start: 'top 80%', once: true } }
+  );
+
+  /* care cards */
+  gsap.fromTo('.svc-care-card',
+    { opacity: 0, y: 44, scale: 0.97 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.75, ease: 'power2.out', stagger: 0.18,
+      scrollTrigger: { trigger: '.svc-care-grid', start: 'top 80%', once: true } }
+  );
+
+  /* bundle cards */
+  gsap.fromTo('.svc-bundle-card',
+    { opacity: 0, y: 40 },
+    { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', stagger: 0.15,
+      scrollTrigger: { trigger: '.svc-bundle-grid', start: 'top 80%', once: true } }
+  );
+
+  /* premium cards */
+  gsap.fromTo('.svc-premium-card',
+    { opacity: 0, x: -20 },
+    { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out', stagger: 0.12,
+      scrollTrigger: { trigger: '.svc-premium-grid', start: 'top 80%', once: true } }
+  );
+
+  /* faq items */
+  gsap.fromTo('.svc-faq-item',
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.08,
+      scrollTrigger: { trigger: '#faq-list', start: 'top 80%', once: true } }
+  );
+
+  /* cta */
+  gsap.fromTo('.svc-cta-headline',
+    { opacity: 0, y: 36 },
+    { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.svc-cta', start: 'top 75%', once: true } }
+  );
+  gsap.fromTo('.svc-cta-btns',
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', delay: 0.25,
+      scrollTrigger: { trigger: '.svc-cta', start: 'top 75%', once: true } }
+  );
+
+  /* Builder section animations */
+  gsap.fromTo('.byo-header',
+    { opacity: 0, y: 36 },
+    { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out',
+      scrollTrigger: { trigger: '#build-your-own', start: 'top 80%', once: true } }
+  );
+  gsap.fromTo('.byo-step',
+    { opacity: 0, y: 40 },
+    { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', stagger: 0.15,
+      scrollTrigger: { trigger: '.byo-step-1', start: 'top 82%', once: true } }
+  );
+  gsap.fromTo('.byo-nudge',
+    { opacity: 0, y: 28 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+      scrollTrigger: { trigger: '.byo-nudge', start: 'top 85%', once: true } }
+  );
+})();
+
+/* ── Builder state machine ── */
+(function () {
+  var state = { base: 295, features: [], monthly: 0 };
+
+  /* ── Floating button visibility ── */
+  var floatBtn = document.getElementById('byo-float-btn');
+  var byoSection = document.getElementById('build-your-own');
+  var bar = document.getElementById('byo-bar');
+
+  if (floatBtn && byoSection) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        /* hide float btn when section is in view, show sticky bar */
+        floatBtn.style.opacity = e.isIntersecting ? '0' : '1';
+        floatBtn.style.pointerEvents = e.isIntersecting ? 'none' : 'auto';
+        if (bar) {
+          bar.classList.toggle('byo-bar-visible', e.isIntersecting);
+        }
+      });
+    }, { threshold: 0.05 });
+    obs.observe(byoSection);
+  }
+
+  /* ── Render total ── */
+  var totalEl   = document.getElementById('byo-total-display');
+  var monthlyEl = document.getElementById('byo-monthly-display');
+  var ctaEl     = document.getElementById('byo-bar-cta');
+
+  function getTotal() { return state.base + state.features.reduce(function (a, b) { return a + b; }, 0); }
+
+  var currentDisplayed = 295;
+  function updateDisplay() {
+    var target = getTotal();
+    if (typeof gsap !== 'undefined') {
+      gsap.to({ val: currentDisplayed }, {
+        val: target, duration: 0.45, ease: 'power2.out',
+        onUpdate: function () { if (totalEl) totalEl.textContent = '$' + Math.round(this.targets()[0].val); },
+        onComplete: function () { currentDisplayed = target; }
+      });
+    } else {
+      if (totalEl) totalEl.textContent = '$' + target;
+      currentDisplayed = target;
+    }
+    if (monthlyEl) {
+      if (state.monthly > 0) {
+        monthlyEl.textContent = '+ $' + state.monthly + '/mo';
+        monthlyEl.style.display = 'inline';
+      } else {
+        monthlyEl.style.display = 'none';
+      }
+    }
+    if (ctaEl) {
+      ctaEl.href = '/contact?package=custom&total=' + target + '&monthly=' + state.monthly;
+    }
+  }
+
+  /* ── Base selection ── */
+  document.querySelectorAll('.byo-base-card,.byo-care-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var type = card.dataset.type;
+      var price = parseInt(card.dataset.price, 10);
+      var siblings = document.querySelectorAll('[data-type="' + type + '"]');
+      siblings.forEach(function (s) { s.classList.remove('byo-selected'); });
+      card.classList.add('byo-selected');
+      if (type === 'base') state.base = price;
+      if (type === 'care') state.monthly = price;
+      updateDisplay();
+    });
+  });
+
+  /* ── Feature toggles ── */
+  document.querySelectorAll('.byo-feat-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var price = parseInt(card.dataset.price, 10);
+      var active = card.classList.toggle('byo-feat-active');
+      if (active) {
+        state.features.push(price);
+      } else {
+        var idx = state.features.indexOf(price);
+        if (idx > -1) state.features.splice(idx, 1);
+      }
+      updateDisplay();
+    });
+  });
+
+  updateDisplay();
+})();
+</script>
+
+<style is:inline>
+/* ─────────────── HERO ─────────────── */
+.svc-hero {
+  background:#F8F6F2;
+  padding:clamp(5rem,10vw,7rem) 0 clamp(3.5rem,6vw,5.5rem);
+}
+
+/* Subtle noise texture overlay */
+.svc-hero-noise {
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:128px 128px;
+  opacity:0.6;
+  pointer-events:none;
+}
+
+/* Inner wrapper — left-aligned on desktop, centered mobile */
+.svc-hero-inner {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+@media (max-width:767px) {
+  .svc-hero-inner { align-items:center;text-align:center; }
+}
+
+/* Eyebrow pill — navy text on cream */
+.svc-hero-eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:0.55rem;
+  font:700 0.6rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#0054DF;
+  border:1px solid rgba(0,84,223,0.2);
+  background:rgba(0,84,223,0.06);
+  border-radius:999px;
+  padding:0.5rem 1.1rem;
+  margin-bottom:1.75rem;
+}
+.svc-blink-dot {
+  width:6px;height:6px;border-radius:50%;
+  background:#F96B2B;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(249,107,43,0.2);
+  animation:svcBlink 1.8s ease-in-out infinite;
+}
+@keyframes svcBlink {
+  0%,100%{box-shadow:0 0 0 2px rgba(249,107,43,0.25);}
+  50%{box-shadow:0 0 0 6px rgba(249,107,43,0);}
+}
+
+/* Headline — huge, left-aligned, navy */
+.svc-hero-headline {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;
+  font-size:clamp(3rem,8.5vw,7rem);
+  line-height:0.88;
+  letter-spacing:-0.015em;
+  color:#0A1628;
+  margin:0 0 1.75rem;
+}
+.svc-h1-line { display:block; }
+.svc-hero-accent {
+  background:linear-gradient(95deg,#F96B2B 0%,#ff8c55 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* Sub */
+.svc-hero-sub {
+  font:500 1.05rem/1.65 'Inter Tight',sans-serif;
+  color:#6B7280;
+  max-width:34rem;
+  margin:0 0 2.5rem;
+}
+
+/* Price pill row */
+.svc-price-row {
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+@media (max-width:767px) {
+  .svc-price-row { justify-content:center; }
+}
+.svc-price-pill {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  border-radius:16px;
+  padding:0.85rem 1.25rem;
+  min-width:90px;
+  text-align:center;
+  transition:transform 0.2s;
+}
+.svc-price-pill:hover { transform:translateY(-3px); }
+.svc-pp-blue  { background:#0A1628;box-shadow:0 12px 32px rgba(10,22,40,0.2); }
+.svc-pp-orange{ background:#F96B2B;box-shadow:0 12px 32px rgba(249,107,43,0.3); }
+.svc-pp-dark  { background:#0A1628;box-shadow:0 12px 32px rgba(10,22,40,0.2); }
+.svc-pp-amount {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:1.6rem;line-height:1;color:#fff;
+}
+.svc-pp-label {
+  font:700 0.52rem/1 'Inter Tight',sans-serif;
+  text-transform:uppercase;letter-spacing:0.14em;
+  color:rgba(255,255,255,0.5);
+  margin-top:0.3rem;
+}
+.svc-price-connector {
+  font:700 1.1rem/1 'Inter Tight',sans-serif;
+  color:rgba(10,22,40,0.2);
+  flex-shrink:0;
+}
+
+/* Guarantee line */
+.svc-hero-guarantee {
+  display:flex;align-items:center;gap:0.55rem;
+  font:600 0.8rem/1.4 'Inter Tight',sans-serif;
+  color:#9CA3AF;
+  margin:0;
+}
+.svc-hero-guarantee svg { flex-shrink:0;color:#0054DF; }
+@media (max-width:767px) {
+  .svc-hero-guarantee { justify-content:center;text-align:center; }
+}
+
+/* Scroll cue — hidden on mobile */
+.svc-scroll-cue {
+  display:flex;align-items:center;gap:0.75rem;
+  margin-top:2.75rem;
+  color:rgba(10,22,40,0.28);
+  font:700 0.52rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.2em;text-transform:uppercase;
+}
+@media (max-width:767px) {
+  .svc-scroll-cue { display:none; }
+}
+.svc-scroll-line {
+  width:1px;height:32px;
+  background:linear-gradient(to bottom,rgba(10,22,40,0.04),rgba(10,22,40,0.28));
+  animation:svcScrollPulse 2s ease-in-out infinite;
+}
+@keyframes svcScrollPulse {
+  0%,100%{opacity:0.3;transform:scaleY(1);}
+  50%{opacity:1;transform:scaleY(1.15);}
+}
+
+/* ─────────────── SHARED SECTION ATOMS ─────────────── */
+.svc-eyebrow {
+  font:700 0.62rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#0054DF;
+  display:block;
+  margin-bottom:1rem;
+}
+.svc-section-h2 {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;
+  font-size:clamp(2rem,4.5vw,3.4rem);
+  line-height:1;
+  color:#0A1628;
+  margin:0 0 1rem;
+}
+.svc-section-sub {
+  font:500 1rem/1.6 'Inter Tight',sans-serif;
+  color:#9CA3AF;
+  max-width:32rem;
+  margin:0 auto;
+}
+
+/* ─────────────── PACKAGE CARDS ─────────────── */
+.svc-pkg-card {
+  background:#fff;
+  border-radius:24px;
+  padding:2rem 1.75rem;
+  border:1px solid #E5E7EB;
+  display:flex;flex-direction:column;gap:0;
+  transition:transform 0.28s,box-shadow 0.28s;
+  box-shadow:0 4px 24px rgba(10,22,40,0.06);
+}
+.svc-pkg-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 24px 56px rgba(10,22,40,0.12);
+}
+.svc-pkg-featured {
+  border:2px solid #F96B2B;
+  box-shadow:0 8px 40px rgba(249,107,43,0.18);
+}
+.svc-popular-badge {
+  position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:#F96B2B;color:#fff;
+  font:700 0.6rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.4rem 1rem;border-radius:999px;
+  white-space:nowrap;
+  box-shadow:0 6px 20px rgba(249,107,43,0.4);
+}
+.svc-pkg-tag {
+  display:inline-block;
+  font:700 0.58rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.38rem 0.8rem;border-radius:999px;
+  margin-bottom:1.25rem;
+  width:fit-content;
+}
+.svc-pkg-price-row {
+  display:flex;align-items:baseline;gap:0.4rem;margin-bottom:0.25rem;
+}
+.svc-pkg-price {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:3.2rem;line-height:1;color:#0A1628;
+}
+.svc-pkg-cycle {
+  font:500 0.8rem/1 'Inter Tight',sans-serif;
+  color:#9CA3AF;
+}
+.svc-pkg-name {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:1.15rem;color:#0A1628;
+  margin:0.5rem 0 0.75rem;
+}
+.svc-pkg-desc {
+  font:500 0.9rem/1.55 'Inter Tight',sans-serif;
+  color:#6B7280;
+  margin-bottom:1.5rem;
+}
+.svc-pkg-list {
+  list-style:none;padding:0;margin:0 0 1.75rem;
+  display:flex;flex-direction:column;gap:0.65rem;
+  flex:1;
+}
+.svc-pkg-item {
+  display:flex;align-items:flex-start;gap:0.55rem;
+  font:500 0.85rem/1.45 'Inter Tight',sans-serif;
+  color:#374151;
+}
+.svc-check {
+  width:16px;height:16px;flex-shrink:0;margin-top:1px;
+}
+.svc-check-blue .svc-check { color:#0054DF; }
+.svc-check-orange .svc-check { color:#F96B2B; }
+.svc-pkg-cta {
+  display:block;text-align:center;
+  border-radius:999px;padding:0.9rem 1.5rem;
+  font:700 0.88rem/1 'Inter Tight',sans-serif;
+  text-decoration:none;
+  transition:opacity 0.2s,transform 0.2s;
+  margin-top:auto;
+}
+.svc-pkg-cta:hover { opacity:0.88;transform:translateY(-1px); }
+
+/* mobile stack */
+@media (max-width:767px) {
+  .svc-pkg-grid { grid-template-columns:1fr !important; }
+  .svc-pkg-featured { margin-top:0 !important; }
+}
+
+/* ─────────────── ADD-ON CARDS ─────────────── */
+.svc-addon-card {
+  background:#fff;
+  border-radius:18px;
+  padding:1.5rem 1.25rem;
+  border:1px solid rgba(10,22,40,0.07);
+  text-align:center;
+  transition:transform 0.22s,box-shadow 0.22s;
+  box-shadow:0 2px 12px rgba(10,22,40,0.05);
+  cursor:default;
+}
+.svc-addon-icon {
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 0.85rem;
+}
+.svc-addon-name {
+  font:700 0.82rem/1.35 'Inter Tight',sans-serif;
+  color:#0A1628;margin:0 0 0.4rem;
+}
+.svc-addon-price {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:1.3rem;
+  margin:0;
+}
+@media (max-width:767px) {
+  .svc-addon-grid { grid-template-columns:repeat(2,1fr) !important; }
+}
+@media (max-width:479px) {
+  .svc-addon-grid { grid-template-columns:1fr 1fr !important; }
+}
+
+/* ─────────────── CARE CARDS ─────────────── */
+.svc-orb {
+  position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;
+}
+.svc-orb-1 {
+  top:-10%;left:-6%;
+  width:50vw;height:50vw;max-width:44rem;max-height:44rem;
+  background:radial-gradient(circle,rgba(0,84,223,0.25) 0%,transparent 65%);
+}
+.svc-orb-2 {
+  bottom:-12%;right:-6%;
+  width:44vw;height:44vw;max-width:38rem;max-height:38rem;
+  background:radial-gradient(circle,rgba(249,107,43,0.18) 0%,transparent 65%);
+}
+
+/* Decorative rings */
+.svc-ring-wrap {
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:800px;height:800px;pointer-events:none;
+}
+.svc-ring {
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.04);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+}
+.svc-ring-1 { width:400px;height:400px;animation:svcSpin 24s linear infinite; }
+.svc-ring-2 { width:580px;height:580px;animation:svcSpin 36s linear infinite reverse; border-color:rgba(0,84,223,0.08); }
+.svc-ring-3 { width:760px;height:760px;animation:svcSpin 52s linear infinite; border-color:rgba(249,107,43,0.05); }
+@keyframes svcSpin { to { transform:translate(-50%,-50%) rotate(360deg); } }
+
+.svc-care-card {
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;padding:2rem 1.75rem;
+  position:relative;overflow:hidden;
+  transition:transform 0.28s;
+}
+.svc-care-card:hover { transform:translateY(-4px); }
+.svc-care-featured {
+  border-color:#F96B2B;
+  box-shadow:0 0 60px rgba(249,107,43,0.12),inset 0 1px 0 rgba(249,107,43,0.1);
+}
+.svc-care-glow {
+  position:absolute;top:-30px;right:-30px;
+  width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle,rgba(249,107,43,0.22) 0%,transparent 70%);
+  filter:blur(20px);pointer-events:none;
+}
+.svc-care-name {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:1.1rem;
+  color:#fff;margin:0 0 0.75rem;
+  text-transform:uppercase;letter-spacing:0.04em;
+}
+.svc-care-price-row { display:flex;align-items:baseline;gap:0.15rem;margin-bottom:1.5rem; }
+.svc-care-price {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:2.6rem;line-height:1;color:#fff;
+}
+.svc-care-mo {
+  font:600 1rem/1 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.38);
+}
+.svc-care-list { list-style:none;padding:0;margin:0 0 1.75rem;display:flex;flex-direction:column;gap:0.7rem; }
+.svc-care-item {
+  display:flex;align-items:flex-start;gap:0.55rem;
+  font:500 0.85rem/1.45 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.6);
+}
+.svc-care-item svg { flex-shrink:0;margin-top:2px; }
+.svc-care-cta {
+  display:block;text-align:center;
+  border-radius:999px;padding:0.85rem;
+  font:700 0.85rem/1 'Inter Tight',sans-serif;
+  text-decoration:none;
+  transition:opacity 0.2s,transform 0.2s;
+}
+.svc-care-cta:hover { opacity:0.88;transform:translateY(-1px); }
+.svc-care-cta-ghost {
+  border:1px solid rgba(255,255,255,0.18);
+  color:rgba(255,255,255,0.72);
+  background:rgba(255,255,255,0.04);
+}
+.svc-care-cta-orange { background:#F96B2B;color:#fff;box-shadow:0 10px 28px rgba(249,107,43,0.3); }
+@media (max-width:639px) {
+  .svc-care-grid { grid-template-columns:1fr !important; }
+}
+
+/* ─────────────── BUNDLE CARDS ─────────────── */
+.svc-bundle-card {
+  background:#fff;border-radius:22px;padding:2rem 1.75rem;
+  border:1px solid #E5E7EB;
+  transition:transform 0.28s,box-shadow 0.28s;
+  box-shadow:0 2px 16px rgba(10,22,40,0.05);
+  position:relative;overflow:hidden;
+}
+.svc-bundle-card:hover { transform:translateY(-5px);box-shadow:0 20px 48px rgba(10,22,40,0.1); }
+.svc-bundle-featured { border:2px solid #F96B2B; }
+.svc-bundle-top-accent {
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#F96B2B,#ff9a6c);
+}
+.svc-bundle-dark {
+  background:#0A1628;
+  border-color:rgba(255,255,255,0.08);
+}
+.svc-bundle-dark-glow {
+  position:absolute;bottom:-20px;right:-20px;
+  width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,84,223,0.25) 0%,transparent 70%);
+  filter:blur(24px);pointer-events:none;
+}
+.svc-bundle-name {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:1.2rem;color:#0A1628;margin:0 0 0.5rem;
+}
+.svc-bundle-includes {
+  font:500 0.85rem/1.5 'Inter Tight',sans-serif;
+  color:#9CA3AF;margin:0 0 1.5rem;
+}
+.svc-bundle-price-row { display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem; }
+.svc-bundle-price {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:2.2rem;line-height:1;color:#0A1628;
+}
+.svc-bundle-save {
+  font:700 0.62rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.08em;text-transform:uppercase;
+  background:#dcfce7;color:#166534;
+  padding:0.3rem 0.65rem;border-radius:999px;
+}
+.svc-bundle-link {
+  font:700 0.85rem/1 'Inter Tight',sans-serif;
+  text-decoration:none;
+  transition:opacity 0.2s;
+}
+.svc-bundle-link:hover { opacity:0.7; }
+@media (max-width:767px) {
+  .svc-bundle-grid { grid-template-columns:1fr !important; }
+}
+
+/* ─────────────── PREMIUM CARDS ─────────────── */
+.svc-premium-card {
+  background:#F8F6F2;
+  border-radius:20px;
+  padding:1.75rem;
+  border:1px solid rgba(10,22,40,0.07);
+  display:flex;align-items:flex-start;gap:1rem;
+  transition:transform 0.24s,box-shadow 0.24s,background 0.24s;
+  cursor:default;
+}
+.svc-premium-card:hover {
+  transform:translateY(-4px) translateX(4px);
+  box-shadow:0 16px 40px rgba(10,22,40,0.1);
+  background:#fff;
+}
+.svc-premium-inner { flex:1; }
+.svc-premium-name {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:1.15rem;color:#0A1628;margin:0 0 0.35rem;
+}
+.svc-premium-price {
+  font:700 0.95rem/1 'Inter Tight',sans-serif;
+  color:#F96B2B;margin:0 0 0.65rem;
+}
+.svc-premium-desc {
+  font:500 0.83rem/1.55 'Inter Tight',sans-serif;
+  color:#6B7280;margin:0;
+}
+.svc-premium-arrow {
+  color:#9CA3AF;flex-shrink:0;margin-top:4px;
+  transition:transform 0.2s,color 0.2s;
+}
+.svc-premium-card:hover .svc-premium-arrow {
+  transform:translate(4px,-2px);
+  color:#0054DF;
+}
+@media (max-width:639px) {
+  .svc-premium-grid { grid-template-columns:1fr !important; }
+}
+
+/* ─────────────── FAQ ─────────────── */
+.svc-faq-list { display:flex;flex-direction:column; }
+.svc-faq-item {
+  border-bottom:1px solid rgba(10,22,40,0.08);
+  transition:background 0.2s;
+  border-radius:0;
+}
+.svc-faq-item.svc-faq-open { background:rgba(0,84,223,0.03);border-radius:12px; }
+.svc-faq-q {
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+  background:none;border:none;cursor:pointer;
+  padding:1.25rem 0.5rem;
+  text-align:left;
+  font:700 1rem/1.4 'Inter Tight',sans-serif;
+  color:#0A1628;
+}
+.svc-faq-chevron {
+  width:18px;height:18px;
+  flex-shrink:0;color:#9CA3AF;
+  transition:transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.svc-faq-body {
+  max-height:0;overflow:hidden;
+  transition:max-height 0.35s cubic-bezier(.4,0,.2,1);
+}
+.svc-faq-a {
+  padding:0 0.5rem 1.25rem;
+  font:500 0.92rem/1.65 'Inter Tight',sans-serif;
+  color:#6B7280;margin:0;
+}
+
+/* ─────────────── CTA ─────────────── */
+.svc-cta-grid {
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:44px 44px;
+  opacity:0.5;
+}
+.svc-cta-headline {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;font-size:clamp(2.2rem,5vw,4rem);
+  line-height:0.96;color:#fff;
+  margin:0 0 0.5rem;
+}
+.svc-cta-btns {
+  display:flex;flex-wrap:wrap;gap:1rem;
+  justify-content:center;margin-top:2.5rem;
+}
+.svc-cta-primary {
+  display:inline-flex;align-items:center;
+  border-radius:999px;background:#F96B2B;
+  padding:1rem 2rem;
+  font:700 0.92rem/1 'Inter Tight',sans-serif;
+  color:#fff;text-decoration:none;
+  box-shadow:0 20px 40px rgba(249,107,43,0.32);
+  transition:opacity 0.2s,transform 0.2s;
+}
+.svc-cta-primary:hover { opacity:0.9;transform:translateY(-2px); }
+.svc-cta-ghost {
+  display:inline-flex;align-items:center;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.22);
+  padding:1rem 2rem;
+  font:700 0.92rem/1 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.78);text-decoration:none;
+  transition:border-color 0.2s,color 0.2s;
+}
+.svc-cta-ghost:hover { border-color:rgba(255,255,255,0.5);color:#fff; }
+
+/* ═══════════════════════════════════════════
+   FLOATING BUTTON
+═══════════════════════════════════════════ */
+#byo-float-btn {
+  position:fixed;
+  bottom:1.5rem;right:1.5rem;
+  z-index:50;
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:#0A1628;color:#fff;
+  border:none;cursor:pointer;
+  font:700 0.82rem/1 'Inter Tight',sans-serif;
+  padding:0.85rem 1.35rem;
+  border-radius:999px;
+  box-shadow:0 8px 32px rgba(10,22,40,0.28),0 2px 8px rgba(10,22,40,0.18);
+  transition:background 0.25s,transform 0.25s,opacity 0.25s;
+  opacity:1;
+}
+#byo-float-btn:hover { background:#F96B2B;transform:translateY(-2px);box-shadow:0 16px 40px rgba(249,107,43,0.32); }
+@media (max-width:639px) {
+  #byo-float-btn { bottom:1rem;right:1rem;font-size:0.72rem;padding:0.65rem 1rem; }
+}
+
+/* ═══════════════════════════════════════════
+   BUILD YOUR OWN SECTION
+═══════════════════════════════════════════ */
+.byo-section {
+  background:#F8F6F2;
+  padding:6rem 0 5rem;
+}
+
+/* Header */
+.byo-eyebrow {
+  display:block;
+  font:700 0.6rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:#0054DF;margin-bottom:1rem;
+}
+.byo-headline {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(2rem,4.5vw,3.2rem);line-height:1;
+  color:#0A1628;margin:0 0 1rem;
+}
+.byo-subhead {
+  font:500 1rem/1.6 'Inter Tight',sans-serif;
+  color:#9CA3AF;max-width:32rem;margin:0 auto;
+}
+.byo-header { margin-bottom:3.5rem; }
+
+/* Step wrapper */
+.byo-step {
+  background:#fff;
+  border-radius:24px;
+  padding:2rem 1.75rem;
+  border:1px solid rgba(10,22,40,0.07);
+  box-shadow:0 2px 16px rgba(10,22,40,0.04);
+  margin-bottom:1.25rem;
+}
+.byo-step-label {
+  font:700 0.6rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:#F96B2B;margin:0 0 0.4rem;
+}
+.byo-step-title {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:1.3rem;color:#0A1628;margin:0 0 0.3rem;
+}
+.byo-step-sub {
+  font:500 0.85rem/1 'Inter Tight',sans-serif;
+  color:#9CA3AF;margin:0 0 1.5rem;
+}
+
+/* ── Base / care card grids ── */
+.byo-base-grid,
+.byo-care-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0.85rem;
+  margin-top:1.25rem;
+}
+@media (max-width:639px) {
+  .byo-base-grid,
+  .byo-care-grid { grid-template-columns:1fr; }
+}
+
+.byo-base-card,
+.byo-care-card {
+  border-radius:16px;padding:1.25rem;
+  border:2px solid #E5E7EB;
+  background:#fff;cursor:pointer;
+  transition:border-color 0.2s,background 0.2s,transform 0.18s;
+  position:relative;
+}
+.byo-base-card:hover,
+.byo-care-card:hover { transform:translateY(-2px); }
+
+/* Radio indicator */
+.byo-base-radio {
+  width:18px;height:18px;border-radius:50%;
+  border:2px solid #D1D5DB;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:0.85rem;
+  transition:border-color 0.2s;
+}
+.byo-radio-inner {
+  width:9px;height:9px;border-radius:50%;
+  background:transparent;
+  transition:background 0.2s;
+}
+.byo-selected .byo-base-radio { border-color:#F96B2B; }
+.byo-selected .byo-radio-inner { background:#F96B2B; }
+.byo-selected {
+  border-color:#F96B2B;
+  background:rgba(249,107,43,0.04);
+}
+
+.byo-base-price {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:1.55rem;line-height:1;color:#0A1628;margin:0 0 0.3rem;
+}
+.byo-base-name {
+  font:700 0.85rem/1 'Inter Tight',sans-serif;
+  color:#0A1628;margin:0 0 0.3rem;
+}
+.byo-base-desc {
+  font:500 0.78rem/1.4 'Inter Tight',sans-serif;
+  color:#9CA3AF;margin:0;
+}
+
+/* ── Feature grid ── */
+.byo-feat-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0.65rem;
+  margin-top:1.25rem;
+}
+@media (min-width:640px) {
+  .byo-feat-grid { grid-template-columns:repeat(3,1fr); }
+}
+
+.byo-feat-card {
+  border-radius:14px;padding:0.9rem 0.85rem;
+  border:2px solid #E5E7EB;background:#F9FAFB;
+  cursor:pointer;
+  display:flex;align-items:center;gap:0.6rem;
+  transition:border-color 0.18s,background 0.18s,transform 0.18s;
+}
+.byo-feat-card:hover { transform:translateY(-1px); }
+.byo-feat-active {
+  border-color:#0054DF;background:rgba(0,84,223,0.05);
+}
+
+/* Checkbox circle */
+.byo-feat-check {
+  width:20px;height:20px;border-radius:50%;flex-shrink:0;
+  border:2px solid #D1D5DB;
+  display:flex;align-items:center;justify-content:center;
+  color:transparent;
+  transition:border-color 0.18s,background 0.18s,color 0.18s;
+}
+.byo-feat-active .byo-feat-check {
+  border-color:#0054DF;background:#0054DF;color:#fff;
+}
+
+.byo-feat-text { flex:1;min-width:0; }
+.byo-feat-name {
+  font:700 0.78rem/1.3 'Inter Tight',sans-serif;
+  color:#0A1628;margin:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.byo-feat-note {
+  font:500 0.65rem/1 'Inter Tight',sans-serif;
+  color:#9CA3AF;margin:0.18rem 0 0;
+}
+.byo-feat-price {
+  font:700 0.78rem/1 'Inter Tight',sans-serif;
+  color:#F96B2B;flex-shrink:0;
+}
+
+/* ── Comparison nudge ── */
+.byo-nudge {
+  margin-top:2.5rem;padding-top:2.5rem;
+  border-top:1px solid rgba(10,22,40,0.08);
+}
+.byo-nudge-text {
+  font:500 0.88rem/1.5 'Inter Tight',sans-serif;
+  color:#9CA3AF;text-align:center;margin:0 0 1rem;
+}
+.byo-nudge-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0.75rem;
+}
+@media (max-width:639px) {
+  .byo-nudge-grid { grid-template-columns:1fr; }
+}
+.byo-nudge-card {
+  background:#fff;border-radius:16px;
+  padding:1rem 1.25rem;
+  border:1.5px solid #E5E7EB;
+  text-align:center;cursor:pointer;
+  transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;
+}
+.byo-nudge-card:hover { transform:translateY(-3px);box-shadow:0 12px 28px rgba(10,22,40,0.1); }
+.byo-nudge-featured { border-color:#F96B2B;box-shadow:0 4px 16px rgba(249,107,43,0.14); }
+.byo-nudge-name {
+  font:700 0.88rem/1.3 'Inter Tight',sans-serif;
+  color:#0A1628;margin:0 0 0.3rem;
+}
+.byo-nudge-inc {
+  font:500 0.72rem/1.4 'Inter Tight',sans-serif;
+  color:#9CA3AF;margin:0;
+}
+
+/* ═══════════════════════════════════════════
+   STICKY TOTAL BAR
+═══════════════════════════════════════════ */
+.byo-bar {
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:49;
+  background:#0A1628;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:1rem 1.5rem;
+  transform:translateY(100%);
+  transition:transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+.byo-bar.byo-bar-visible { transform:translateY(0); }
+
+.byo-bar-inner {
+  max-width:42rem;
+  margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+@media (max-width:639px) {
+  .byo-bar-inner { flex-direction:column;align-items:stretch;gap:0.75rem; }
+}
+
+.byo-bar-label {
+  font:600 0.7rem/1 'Inter Tight',sans-serif;
+  text-transform:uppercase;letter-spacing:0.14em;
+  color:rgba(255,255,255,0.45);margin:0 0 0.3rem;
+}
+.byo-bar-total-row { display:flex;align-items:baseline;gap:0.6rem; }
+.byo-bar-total {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:1.75rem;color:#fff;line-height:1;
+}
+.byo-bar-monthly {
+  font:700 0.82rem/1 'Inter Tight',sans-serif;
+  color:#F96B2B;
+}
+.byo-bar-cta {
+  display:inline-flex;align-items:center;
+  background:#F96B2B;color:#fff;
+  border-radius:999px;padding:0.85rem 1.5rem;
+  font:700 0.88rem/1 'Inter Tight',sans-serif;
+  text-decoration:none;white-space:nowrap;
+  box-shadow:0 8px 24px rgba(249,107,43,0.3);
+  transition:opacity 0.2s,transform 0.2s;
+}
+.byo-bar-cta:hover { opacity:0.9;transform:translateY(-1px); }
+@media (max-width:639px) {
+  .byo-bar-cta { text-align:center;justify-content:center; }
+}
+</style>

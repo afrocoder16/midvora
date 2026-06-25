@@ -6,60 +6,68 @@ const navItems = [
   { href: '/contact', label: 'Contact', blurb: 'Request a free sample or ask about a launch timeline.' },
 ];
 ---
-<div class="h-0.5 w-full bg-[#0054DF]"></div>
 <nav
   data-nav-root
-  class="sticky top-0 z-[60] border-b border-[#0A1628]/10 bg-[#F8F6F2]/92 backdrop-blur-xl"
+  class="sticky top-0 z-[60] -mb-[5.65rem] px-3 pt-4 sm:-mb-[6.2rem] sm:px-5 sm:pt-5"
 >
-  <div class="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-[5rem] lg:px-8">
-    <a href="/" class="flex min-w-0 flex-col leading-tight">
-      <span class="font-display text-xl font-bold uppercase tracking-[0.22em] text-[#0A1628] sm:text-[1.55rem]">MIDVORA</span>
-      <span class="font-sans text-[0.68rem] text-[#6B7280] sm:text-xs">From the Midwest. For the World.</span>
-    </a>
+  <div class="mx-auto max-w-[76rem]">
+    <div
+      class="nav-shell grid h-[4.55rem] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-[999px] px-3 sm:h-[4.8rem] sm:px-4 lg:grid-cols-[11rem_1fr_auto] lg:px-5"
+      style="background:linear-gradient(180deg,rgba(10,18,40,0.66),rgba(6,12,24,0.54));border:1px solid rgba(255,255,255,0.1);"
+    >
+      <a href="/" class="flex min-w-0 items-center">
+        <div class="nav-logo-frame">
+          <img
+            src="/img/new%20logo.png"
+            alt="Midvora"
+            class="nav-logo"
+          />
+        </div>
+      </a>
 
-    <div class="hidden items-center gap-8 lg:flex">
-      {navItems.map((item) => (
+      <div class="hidden items-center justify-center gap-8 lg:flex">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="font-sans text-[0.96rem] font-semibold text-white/80 transition-colors hover:text-white"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <div class="flex items-center justify-end gap-2 sm:gap-3">
         <a
-          href={item.href}
-          class="font-sans text-sm font-semibold text-[#374151] transition-colors hover:text-[#0054DF]"
+          href="/contact"
+          class="nav-mobile-cta hidden items-center gap-2 rounded-full border border-white/14 bg-white/8 px-4 py-2 font-sans text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-white/12 sm:inline-flex lg:hidden"
         >
-          {item.label}
+          Sample
+          <span aria-hidden="true">&rarr;</span>
         </a>
-      ))}
-    </div>
 
-    <div class="flex items-center gap-2 sm:gap-3">
-      <a
-        href="/contact"
-        class="nav-mobile-cta inline-flex items-center gap-2 rounded-full border border-[#0A1628]/10 bg-white px-3.5 py-2 font-sans text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[#0A1628] transition-colors hover:border-[#0054DF]/20 hover:text-[#0054DF] lg:hidden"
-      >
-        <span class="hidden sm:inline">Free Sample</span>
-        <span class="sm:hidden">Sample</span>
-        <span aria-hidden="true">&rarr;</span>
-      </a>
+        <a
+          href="/contact"
+          class="hidden h-11 items-center rounded-full bg-[#F96B2B] px-5 font-sans text-sm font-bold text-white shadow-[0_14px_34px_rgba(249,107,43,0.3)] transition-transform transition-opacity hover:-translate-y-0.5 hover:opacity-95 lg:inline-flex"
+        >
+          Get Free Sample
+        </a>
 
-      <a
-        href="/contact"
-        class="hidden items-center rounded-full bg-[#F96B2B] px-6 py-3 font-sans text-sm font-bold text-white shadow-[0_18px_36px_rgba(249,107,43,0.24)] transition-opacity hover:opacity-90 lg:inline-flex"
-      >
-        Get Free Sample
-      </a>
-
-      <button
-        type="button"
-        data-nav-toggle
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Toggle navigation menu"
-        class="nav-toggle flex h-11 w-11 items-center justify-center rounded-full border border-[#0A1628]/10 bg-white text-[#0A1628] transition-colors hover:border-[#0054DF]/20 hover:text-[#0054DF] focus:outline-none focus:ring-2 focus:ring-[#0054DF]/20 lg:hidden"
-      >
-        <span class="sr-only">Menu</span>
-        <span class="nav-toggle-lines">
-          <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
-          <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
-          <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
-        </span>
-      </button>
+        <button
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+          class="nav-toggle flex h-11 w-11 items-center justify-center rounded-full border border-white/14 bg-white/8 text-white transition-colors hover:bg-white/12 focus:outline-none lg:hidden"
+        >
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle-lines">
+            <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
+            <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
+            <span class="hamburger-line block h-0.5 w-5 rounded-full bg-current"></span>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -73,28 +81,8 @@ const navItems = [
   >
     <div class="mx-auto max-w-7xl px-4 pb-4 sm:px-6">
       <div class="nav-panel-shell overflow-hidden rounded-[28px] border border-[#0A1628]/10 bg-[#F8F6F2]">
-        <div class="grid gap-6 p-5 sm:p-6">
-          <div class="rounded-[24px] bg-[#0A1628] px-5 py-5 text-white sm:px-6">
-            <p class="mb-2 font-sans text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#8EB7FF]">Build First</p>
-            <h2 class="font-display text-[2rem] font-bold leading-[0.92] text-white sm:text-[2.35rem]">
-              A stronger site,
-              <span class="text-[#F96B2B]">before</span>
-              the sales call.
-            </h2>
-            <p class="mt-3 max-w-[30rem] font-sans text-sm leading-relaxed text-white/62">
-              Midvora builds a real sample homepage in 24 hours so you can judge the work instead of imagining it.
-            </p>
-            <a
-              href="/contact"
-              data-nav-link
-              class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#F96B2B] px-5 py-3 font-sans text-sm font-bold text-white shadow-[0_18px_36px_rgba(249,107,43,0.24)] transition-opacity hover:opacity-90"
-            >
-              Request My Sample
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-
-          <div class="grid gap-3 md:grid-cols-2">
+        <div class="grid gap-4 p-5 sm:p-6">
+          <div class="grid gap-3 sm:grid-cols-2">
             {navItems.map((item) => (
               <a
                 href={item.href}
@@ -126,6 +114,27 @@ const navItems = [
 </nav>
 
 <style is:inline>
+  .nav-shell {
+    backdrop-filter: blur(20px);
+    box-shadow:
+      0 18px 44px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-logo-frame {
+    width: 7.2rem;
+    height: 3rem;
+    overflow: hidden;
+  }
+
+  .nav-logo {
+    display: block;
+    height: 5.15rem;
+    width: auto;
+    max-width: none;
+    margin-top: -0.44rem;
+  }
+
   .nav-toggle-lines {
     position: relative;
     display: flex;
@@ -159,10 +168,37 @@ const navItems = [
       opacity 0.28s ease,
       transform 0.28s ease,
       visibility 0.28s ease;
+    max-height: calc(100dvh - 5.5rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-panel-shell {
     box-shadow: 0 28px 72px rgba(10, 22, 40, 0.16);
+  }
+
+  @media (min-width: 640px) {
+    .nav-logo-frame {
+      width: 8.7rem;
+      height: 3.3rem;
+    }
+
+    .nav-logo {
+      height: 6.35rem;
+      margin-top: -0.8rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nav-logo-frame {
+      width: 10.8rem;
+      height: 3.9rem;
+    }
+
+    .nav-logo {
+      height: 7.2rem;
+      margin-top: -0.92rem;
+    }
   }
 
   [data-nav-root].is-open [data-nav-panel] {

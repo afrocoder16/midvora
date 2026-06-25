@@ -2,10 +2,952 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Our Work — Midvora">
-  <div class="flex items-center justify-center min-h-[60vh]">
-    <div class="text-center">
-      <h1 class="font-display font-bold text-4xl text-[#0A1628] tracking-wide uppercase mb-4">Coming Soon</h1>
-      <p class="font-sans text-[#6B7280]">Our Work — Phase 2</p>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════════ -->
+<section class="wk-hero relative overflow-hidden" style="background:#050e1c;min-height:88vh;display:flex;align-items:center;justify-content:center;">
+
+  <canvas id="wk-canvas" class="pointer-events-none absolute inset-0" style="opacity:0.45;"></canvas>
+
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:-18%;left:-8%;width:65vw;height:65vw;max-width:52rem;max-height:52rem;background:radial-gradient(circle,rgba(0,84,223,0.22) 0%,transparent 62%);filter:blur(64px);"></div>
+    <div style="position:absolute;bottom:-14%;right:-6%;width:50vw;height:50vw;max-width:42rem;max-height:42rem;background:radial-gradient(circle,rgba(249,107,43,0.16) 0%,transparent 62%);filter:blur(56px);"></div>
+    <div class="wk-hero-grid"></div>
+    <div class="wk-beam"></div>
+  </div>
+
+  <div class="wk-orbit-ring pointer-events-none" aria-hidden="true">
+    <div class="wk-orbit-dot wk-orbit-dot-1"></div>
+    <div class="wk-orbit-dot wk-orbit-dot-2"></div>
+    <div class="wk-orbit-dot wk-orbit-dot-3"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-4xl px-5 text-center">
+    <div class="wk-eyebrow-pill">
+      <span class="wk-live-dot"></span>
+      <span>Our Work</span>
+    </div>
+    <h1 class="wk-hero-h1">
+      <span class="wk-h1-line">Real businesses.</span>
+      <span class="wk-h1-line wk-h1-accent">Real results.</span>
+    </h1>
+    <p class="wk-hero-sub">
+      Every project starts with a free sample.<br class="hidden md:block"/>
+      Here's what happens when clients say&nbsp;<em class="wk-yes">yes.</em>
+    </p>
+    <div class="wk-hero-stats">
+      <div class="wk-stat-chip wk-stat-chip-blue"><span class="wk-stat-n">24h</span><span class="wk-stat-l">First sample</span></div>
+      <div class="wk-stat-chip wk-stat-chip-orange"><span class="wk-stat-n">$0</span><span class="wk-stat-l">To see it</span></div>
+      <div class="wk-stat-chip wk-stat-chip-ghost"><span class="wk-stat-n">100%</span><span class="wk-stat-l">Custom</span></div>
     </div>
   </div>
+
+  <div class="wk-scroll-cue">
+    <div class="wk-scroll-track"><div class="wk-scroll-thumb"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — FEATURED: LA MICHOACANA ELITE
+═══════════════════════════════════════════════ -->
+<section class="mich-section relative overflow-hidden">
+
+  <!-- Deep dark background with brand-accurate warm cream -->
+  <div class="mich-bg-layer" aria-hidden="true">
+    <div class="mich-glow-pink"></div>
+    <div class="mich-glow-green"></div>
+    <div class="mich-noise"></div>
+  </div>
+
+  <!-- ── TOP: Case Study label ── -->
+  <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="mich-case-label">
+      <div class="mich-case-line"></div>
+      <span>Featured Case Study</span>
+      <div class="mich-case-line"></div>
+    </div>
+  </div>
+
+  <!-- ── HERO BAND: big title + tag ── -->
+  <div class="relative z-10 mich-title-band">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="mich-title-row">
+        <div class="mich-title-left">
+          <div class="mich-project-tag">
+            <span class="mich-tag-dot"></span>
+            Ice Cream Shop
+          </div>
+          <h2 class="mich-title">La Michoacana<br/><em class="mich-title-em">Elite</em></h2>
+          <p class="mich-subtitle">A full-stack interactive experience — bold brand, live ordering, signature drink builder, and bilingual support. Built in 24 hours. Launched in 7 days.</p>
+        </div>
+        <div class="mich-title-right">
+          <div class="mich-stat-block">
+            <div class="mich-stat"><span class="mich-stat-n">7</span><span class="mich-stat-l">Days to launch</span></div>
+            <div class="mich-stat-div"></div>
+            <div class="mich-stat"><span class="mich-stat-n">24h</span><span class="mich-stat-l">Sample delivered</span></div>
+            <div class="mich-stat-div"></div>
+            <div class="mich-stat"><span class="mich-stat-n">$0</span><span class="mich-stat-l">Up front</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCREENSHOT SHOWCASE ── -->
+  <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 mich-screens-wrap">
+
+    <!-- Main hero screenshot — full width, tilted -->
+    <div class="mich-screen-main mich-reveal">
+      <div class="mich-browser-chrome">
+        <div class="mich-dots"><span style="background:#FF5F57"></span><span style="background:#FFBD2E"></span><span style="background:#28CA41"></span></div>
+        <div class="mich-url-bar">Sample Preview</div>
+        <div class="mich-live-badge"><span class="mich-live-dot-green"></span>Sample</div>
+      </div>
+      <div class="mich-screen-img-wrap">
+        <img src="/work/michoacana.png" alt="La Michoacana Elite — hero section" class="mich-screen-img" loading="lazy"/>
+        <div class="mich-screen-shimmer"></div>
+      </div>
+    </div>
+
+    <!-- Three detail shots in a creative asymmetric grid -->
+    <div class="mich-detail-grid">
+
+      <!-- Shot 2: Menu page — large left -->
+      <div class="mich-detail-card mich-detail-large mich-reveal" style="--delay:0.1s">
+        <div class="mich-detail-label">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20"/></svg>
+          Interactive Menu
+        </div>
+        <img src="/work/michoacana2.png" alt="La Michoacana Elite — menu page" class="mich-detail-img" loading="lazy"/>
+        <div class="mich-detail-overlay">
+          <p class="mich-detail-caption">Category filters, live pricing, and a design built around their vibrant brand palette.</p>
+        </div>
+      </div>
+
+      <!-- Right column: two stacked -->
+      <div class="mich-detail-col-right">
+
+        <!-- Shot 3: Drink builder -->
+        <div class="mich-detail-card mich-reveal" style="--delay:0.2s">
+          <div class="mich-detail-label">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Drink Builder
+          </div>
+          <img src="/work/michoacana3.png" alt="La Michoacana Elite — drink builder" class="mich-detail-img" loading="lazy"/>
+          <div class="mich-detail-overlay">
+            <p class="mich-detail-caption">Build-your-own feature with real-time preview and ingredient selection.</p>
+          </div>
+        </div>
+
+        <!-- Shot 4: Spin wheel -->
+        <div class="mich-detail-card mich-reveal" style="--delay:0.3s">
+          <div class="mich-detail-label">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v10l4.5 4.5"/></svg>
+            Pick For Me Wheel
+          </div>
+          <img src="/work/michoacana4.png" alt="La Michoacana Elite — spin wheel feature" class="mich-detail-img" loading="lazy"/>
+          <div class="mich-detail-overlay">
+            <p class="mich-detail-caption">Shake your phone or spin — the wheel picks tonight's craving.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Deliverables strip -->
+    <div class="mich-chips-strip mich-reveal" style="--delay:0.15s">
+      {[
+        { icon: '🎨', label: 'Custom brand design' },
+        { icon: '🍦', label: 'Interactive menu' },
+        { icon: '🎯', label: 'Drink builder' },
+        { icon: '🌀', label: 'Pick For Me wheel' },
+        { icon: '🌐', label: 'Bilingual support' },
+        { icon: '📱', label: 'Mobile-first' },
+        { icon: '🛒', label: 'Online ordering' },
+        { icon: '⚡', label: 'Live in 7 days' },
+      ].map(chip => (
+        <div class="mich-chip">
+          <span class="mich-chip-icon">{chip.icon}</span>
+          <span>{chip.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA row -->
+    <div class="mich-bottom-row mich-reveal" style="--delay:0.2s">
+      <div class="mich-quote">
+        <svg class="mich-quote-icon" viewBox="0 0 40 32" fill="none"><path d="M0 32V20C0 8.667 6.667 2 20 0l2.667 4C16.889 5.333 13.778 8.444 13.333 13.333H20V32H0zm20 0V20C20 8.667 26.667 2 40 0l2.667 4C36.889 5.333 33.778 8.444 33.333 13.333H40V32H20z" fill="currentColor"/></svg>
+        <p>We wanted something as bold and fun as we are. Midvora delivered in a day. We couldn't believe it was ours.</p>
+        <p class="mich-quote-attr">— La Michoacana Elite, Marshall MN</p>
+      </div>
+      <a href="/contact" class="mich-cta-btn">
+        Get your free sample
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — MORE PROJECTS (real screenshots)
+═══════════════════════════════════════════════ -->
+<section class="proj-section relative overflow-hidden" style="background:#0A1628;">
+
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:72px 72px;"></div>
+    <div style="position:absolute;top:-10%;right:-5%;width:40rem;height:32rem;background:radial-gradient(circle,rgba(0,84,223,0.1) 0%,transparent 65%);filter:blur(64px);"></div>
+    <div style="position:absolute;bottom:-8%;left:-4%;width:36rem;height:28rem;background:radial-gradient(circle,rgba(249,107,43,0.08) 0%,transparent 65%);filter:blur(64px);"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-8" style="padding-top:6rem;padding-bottom:7rem;">
+
+    <!-- Section heading -->
+    <div class="proj-head proj-reveal">
+      <p class="proj-eyebrow">More Projects</p>
+      <h2 class="proj-h2">Three more sites.<br/><span class="proj-h2-dim">Built, live, and loved.</span></h2>
+      <p class="proj-sub">Each one started with a free 24-hour sample. Each one launched within a week.</p>
+    </div>
+
+    <!-- Project cards -->
+    <div class="proj-grid">
+
+      <!-- ── CARD 1: CHICKEN CONNECTION ── -->
+      <div class="proj-card proj-reveal" style="--card-delay:0.05s">
+        <div class="proj-card-screens">
+          <!-- Main screen -->
+          <div class="proj-main-screen">
+            <div class="proj-chrome">
+              <div class="proj-chrome-dots"><span></span><span></span><span></span></div>
+              <div class="proj-chrome-url">Sample Preview</div>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="/work/chicken.png" alt="Chicken Connection website" class="proj-main-img" loading="lazy"/>
+            </div>
+          </div>
+          <!-- Peek strips: 2 more screenshots stacked at bottom -->
+          <div class="proj-peek-row">
+            <div class="proj-peek">
+              <img src="/work/chicken2.png" alt="Chicken Connection — menu section" loading="lazy"/>
+            </div>
+            <div class="proj-peek">
+              <img src="/work/chicken3.png" alt="Chicken Connection — story page" loading="lazy"/>
+            </div>
+          </div>
+          <!-- Hover overlay -->
+          <div class="proj-card-hover-overlay">
+            <span class="proj-view-btn">View project →</span>
+          </div>
+        </div>
+        <div class="proj-card-meta">
+          <div class="proj-card-tags">
+            <span class="proj-tag proj-tag-orange">Restaurant</span>
+            <span class="proj-tag proj-tag-ghost">Sample</span>
+          </div>
+          <h3 class="proj-card-title">Chicken Connection</h3>
+          <p class="proj-card-body">40-year Marshall institution. Built their first real website with online ordering, a story page, and the bold identity they deserved.</p>
+          <div class="proj-card-specs">
+            <div class="proj-spec"><span class="proj-spec-n">5</span><span class="proj-spec-l">Days live</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">3</span><span class="proj-spec-l">Pages built</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">$0</span><span class="proj-spec-l">Up front</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 2: PHOTOWORKS ── -->
+      <div class="proj-card proj-reveal" style="--card-delay:0.15s">
+        <div class="proj-card-screens">
+          <div class="proj-main-screen">
+            <div class="proj-chrome">
+              <div class="proj-chrome-dots"><span></span><span></span><span></span></div>
+              <div class="proj-chrome-url">Sample Preview</div>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="/work/photoworks.png" alt="PhotoWorks website" class="proj-main-img" loading="lazy"/>
+            </div>
+          </div>
+          <div class="proj-peek-row">
+            <div class="proj-peek">
+              <img src="/work/photoworks2.png" alt="PhotoWorks — services page" loading="lazy"/>
+            </div>
+            <div class="proj-peek">
+              <img src="/work/photoworks3.png" alt="PhotoWorks — portfolio" loading="lazy"/>
+            </div>
+          </div>
+          <div class="proj-card-hover-overlay">
+            <span class="proj-view-btn">View project →</span>
+          </div>
+        </div>
+        <div class="proj-card-meta">
+          <div class="proj-card-tags">
+            <span class="proj-tag proj-tag-blue">Photography</span>
+            <span class="proj-tag proj-tag-ghost">Sample</span>
+          </div>
+          <h3 class="proj-card-title">PhotoWorks</h3>
+          <p class="proj-card-body">A photography studio and photo lab since 1981. We built a timeless, editorial site that matches the craft they've been delivering for over four decades.</p>
+          <div class="proj-card-specs">
+            <div class="proj-spec"><span class="proj-spec-n">6</span><span class="proj-spec-l">Days live</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">44+</span><span class="proj-spec-l">Years serving MN</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">$0</span><span class="proj-spec-l">Up front</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 3: SABOR ── -->
+      <div class="proj-card proj-reveal" style="--card-delay:0.25s">
+        <div class="proj-card-screens">
+          <div class="proj-main-screen">
+            <div class="proj-chrome">
+              <div class="proj-chrome-dots"><span></span><span></span><span></span></div>
+              <div class="proj-chrome-url">Sample Preview</div>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="/work/sabor.png" alt="Sabor Fine Kitchen website" class="proj-main-img" loading="lazy"/>
+            </div>
+          </div>
+          <div class="proj-peek-row">
+            <div class="proj-peek">
+              <img src="/work/sabor2.png" alt="Sabor — menu page" loading="lazy"/>
+            </div>
+            <div class="proj-peek">
+              <img src="/work/sabor3.png" alt="Sabor — location page" loading="lazy"/>
+            </div>
+          </div>
+          <div class="proj-card-hover-overlay">
+            <span class="proj-view-btn">View project →</span>
+          </div>
+        </div>
+        <div class="proj-card-meta">
+          <div class="proj-card-tags">
+            <span class="proj-tag proj-tag-orange">Fine Kitchen</span>
+            <span class="proj-tag proj-tag-ghost">Sample</span>
+          </div>
+          <h3 class="proj-card-title">Sabor Fine Kitchen</h3>
+          <p class="proj-card-body">Hand-pressed tortillas and slow-braised birria on Main Street. We matched the food's quality with bold typography, a full online menu, and a design as confident as the kitchen.</p>
+          <div class="proj-card-specs">
+            <div class="proj-spec"><span class="proj-spec-n">7</span><span class="proj-spec-l">Days live</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">4</span><span class="proj-spec-l">Pages built</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">$0</span><span class="proj-spec-l">Up front</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom note -->
+    <p class="proj-note proj-reveal" style="--card-delay:0.3s">
+      Every one of these started with a free 24-hour sample. Yours can too. &nbsp;
+      <a href="/contact">Start now →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — CTA
+═══════════════════════════════════════════════ -->
+<section class="wk-cta relative overflow-hidden" style="background:#050e1c;padding:7rem 0 8rem;text-align:center;">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70vw;height:70vw;max-width:54rem;max-height:54rem;background:radial-gradient(circle,rgba(249,107,43,0.2) 0%,rgba(0,84,223,0.1) 45%,transparent 70%);filter:blur(64px);"></div>
+    <div class="wk-cta-grid"></div>
+  </div>
+  <div class="wk-deco-q wk-dq-1" aria-hidden="true">?</div>
+  <div class="wk-deco-q wk-dq-2" aria-hidden="true">?</div>
+  <div class="relative z-10 mx-auto max-w-3xl px-5">
+    <div class="wk-cta-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <h2 class="wk-cta-h2">Want to be<br/><span class="wk-cta-accent">featured here?</span></h2>
+    <p class="wk-cta-sub">We'll build your free sample today. If you love it,<br class="hidden md:block"/> you'll be our next case study.</p>
+    <div class="wk-cta-btns">
+      <a href="/contact" class="wk-cta-primary">Get My Free Sample</a>
+      <a href="/services" class="wk-cta-ghost">See pricing →</a>
+    </div>
+  </div>
+</section>
+
 </BaseLayout>
+
+<!-- ─────────────── CDN ─────────────── -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script is:inline>
+/* ── Hero particle canvas ── */
+(function () {
+  var canvas = document.getElementById('wk-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W, H, pts;
+  function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  pts = Array.from({ length: 65 }, function () {
+    return { x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28, r: Math.random() * 1.4 + 0.6 };
+  });
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(142,183,255,0.5)'; ctx.fill();
+      for (var j = i + 1; j < pts.length; j++) {
+        var q = pts[j];
+        var dx = p.x - q.x, dy = p.y - q.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = 'rgba(0,84,223,' + (0.14 * (1 - d / 120)) + ')';
+          ctx.lineWidth = 0.6; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── Michoacana screenshot parallax on scroll ── */
+(function () {
+  if (typeof window === 'undefined') return;
+  var mainImg = document.querySelector('.mich-screen-main');
+  if (!mainImg) return;
+  window.addEventListener('scroll', function () {
+    var rect = mainImg.getBoundingClientRect();
+    var progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    var clamp = Math.max(0, Math.min(1, progress));
+    mainImg.style.transform = 'perspective(1200px) rotateX(' + ((1 - clamp) * -6) + 'deg) translateY(' + (clamp * -18) + 'px)';
+  }, { passive: true });
+})();
+
+/* ── Project card screenshot hover swap ── */
+(function () {
+  document.querySelectorAll('.proj-card').forEach(function (card) {
+    var mainImg = card.querySelector('.proj-main-img');
+    var peeks   = card.querySelectorAll('.proj-peek img');
+    if (!mainImg || !peeks.length) return;
+    var originalSrc = mainImg.src;
+    peeks.forEach(function (peek) {
+      peek.parentElement.addEventListener('mouseenter', function () {
+        mainImg.style.opacity = '0';
+        setTimeout(function () {
+          mainImg.src = peek.src;
+          mainImg.style.opacity = '1';
+        }, 120);
+      });
+      peek.parentElement.addEventListener('mouseleave', function () {
+        mainImg.style.opacity = '0';
+        setTimeout(function () {
+          mainImg.src = originalSrc;
+          mainImg.style.opacity = '1';
+        }, 120);
+      });
+    });
+  });
+})();
+
+/* ── GSAP ── */
+(function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* hero */
+  var heroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  heroTL
+    .fromTo('.wk-eyebrow-pill', { opacity:0, y:18 }, { opacity:1, y:0, duration:0.55 })
+    .fromTo('.wk-h1-line',      { opacity:0, y:44 }, { opacity:1, y:0, duration:0.85, stagger:0.12 }, '-=0.1')
+    .fromTo('.wk-hero-sub',     { opacity:0, y:22 }, { opacity:1, y:0, duration:0.65 }, '-=0.45')
+    .fromTo('.wk-stat-chip',    { opacity:0, scale:0.8, y:14 }, { opacity:1, scale:1, y:0, duration:0.5, stagger:0.1 }, '-=0.3');
+
+  /* michoacana section */
+  gsap.fromTo('.mich-reveal',
+    { opacity:0, y:48 },
+    { opacity:1, y:0, duration:0.9, ease:'power2.out', stagger:{ each:0.12, from:'start' },
+      scrollTrigger:{ trigger:'.mich-section', start:'top 75%', once:true } }
+  );
+  gsap.fromTo('.mich-title',
+    { opacity:0, y:36 },
+    { opacity:1, y:0, duration:0.8, ease:'power3.out',
+      scrollTrigger:{ trigger:'.mich-title-band', start:'top 82%', once:true } }
+  );
+  gsap.fromTo('.mich-chip',
+    { opacity:0, scale:0.85, y:12 },
+    { opacity:1, scale:1, y:0, duration:0.4, ease:'back.out(1.4)', stagger:0.06,
+      scrollTrigger:{ trigger:'.mich-chips-strip', start:'top 88%', once:true } }
+  );
+
+  /* project cards */
+  gsap.fromTo('.proj-reveal',
+    { opacity:0, y:52 },
+    { opacity:1, y:0, duration:0.8, ease:'power2.out',
+      stagger:{ each:0.12 },
+      scrollTrigger:{ trigger:'.proj-grid', start:'top 78%', once:true } }
+  );
+
+  /* CTA */
+  gsap.fromTo('.wk-cta-icon',  { opacity:0, scale:0.5, rotation:-20 }, { opacity:1, scale:1, rotation:0, duration:0.6, ease:'back.out(1.8)', scrollTrigger:{ trigger:'.wk-cta', start:'top 78%', once:true } });
+  gsap.fromTo('.wk-cta-h2',   { opacity:0, y:36 }, { opacity:1, y:0, duration:0.8, ease:'power3.out', scrollTrigger:{ trigger:'.wk-cta', start:'top 78%', once:true } });
+  gsap.fromTo('.wk-cta-sub,.wk-cta-btns', { opacity:0, y:20 }, { opacity:1, y:0, duration:0.65, ease:'power2.out', stagger:0.12, scrollTrigger:{ trigger:'.wk-cta', start:'top 78%', once:true } });
+})();
+</script>
+
+<style is:inline>
+/* ══════ HERO ══════ */
+.wk-hero-grid {
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(0,84,223,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,84,223,0.07) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 75% 65% at 50% 50%,black 20%,transparent 100%);
+}
+.wk-beam {
+  position:absolute;top:42%;left:-10%;right:-10%;height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(0,84,223,0.25) 25%,rgba(249,107,43,0.4) 50%,rgba(0,84,223,0.25) 75%,transparent 100%);
+  filter:blur(1px);animation:wkBeam 6s ease-in-out infinite alternate;
+}
+@keyframes wkBeam { from{opacity:0.4;top:38%;} to{opacity:0.8;top:52%;} }
+.wk-orbit-ring {
+  position:absolute;top:50%;left:50%;width:520px;height:520px;
+  transform:translate(-50%,-50%);border-radius:50%;
+  border:1px dashed rgba(0,84,223,0.12);
+  animation:wkOrbitSpin 30s linear infinite;pointer-events:none;
+}
+@keyframes wkOrbitSpin { to { transform:translate(-50%,-50%) rotate(360deg); } }
+.wk-orbit-dot { position:absolute;width:8px;height:8px;border-radius:50%;box-shadow:0 0 10px 3px currentColor; }
+.wk-orbit-dot-1 { top:-4px;left:50%;transform:translateX(-50%);background:#0054DF;color:#0054DF; }
+.wk-orbit-dot-2 { bottom:-4px;left:50%;transform:translateX(-50%);background:#F96B2B;color:#F96B2B; }
+.wk-orbit-dot-3 { top:50%;right:-4px;transform:translateY(-50%);background:#8EB7FF;color:#8EB7FF; }
+.wk-eyebrow-pill {
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font:700 0.62rem/1 'Inter Tight',sans-serif;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.05);border-radius:999px;padding:0.5rem 1.1rem;
+  backdrop-filter:blur(8px);margin-bottom:2.25rem;
+}
+.wk-live-dot {
+  width:6px;height:6px;border-radius:50%;background:#28CA41;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(40,202,65,0.25);animation:wkLivePulse 1.8s ease-in-out infinite;
+}
+@keyframes wkLivePulse { 0%,100%{box-shadow:0 0 0 2px rgba(40,202,65,0.3);} 50%{box-shadow:0 0 0 6px rgba(40,202,65,0);} }
+.wk-hero-h1 { display:flex;flex-direction:column;gap:0.1em;margin:0 0 1.75rem; }
+.wk-h1-line { font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(3rem,8vw,6.5rem);line-height:0.88;letter-spacing:-0.015em;color:#fff; }
+.wk-h1-accent { background:linear-gradient(95deg,#F96B2B 0%,#ff9a6c 55%,#ffd4b0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.wk-hero-sub { font:500 1.08rem/1.7 'Inter Tight',sans-serif;color:rgba(255,255,255,0.46);max-width:36rem;margin:0 auto 2.5rem; }
+.wk-yes { font-style:normal;color:#F96B2B;-webkit-text-fill-color:#F96B2B; }
+.wk-hero-stats { display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center; }
+.wk-stat-chip { display:flex;flex-direction:column;gap:0.2rem;border-radius:16px;padding:0.9rem 1.25rem;min-width:80px;text-align:center; }
+.wk-stat-chip-blue   { background:rgba(0,84,223,0.2);border:1px solid rgba(0,84,223,0.35); }
+.wk-stat-chip-orange { background:rgba(249,107,43,0.2);border:1px solid rgba(249,107,43,0.35); }
+.wk-stat-chip-ghost  { background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12); }
+.wk-stat-n { font-family:'Oswald',sans-serif;font-weight:700;font-size:1.5rem;color:#fff;line-height:1; }
+.wk-stat-l { font:700 0.52rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.38); }
+.wk-scroll-cue { position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;font:700 0.52rem/1 'Inter Tight',sans-serif;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.22); }
+.wk-scroll-track { width:1px;height:40px;background:rgba(255,255,255,0.08);border-radius:999px;overflow:hidden;position:relative; }
+.wk-scroll-thumb { position:absolute;top:0;left:0;right:0;height:14px;border-radius:999px;background:rgba(249,107,43,0.6);animation:wkScrollThumb 2s ease-in-out infinite; }
+@keyframes wkScrollThumb { 0%{top:0;opacity:1;} 70%{top:calc(100% - 14px);opacity:0.6;} 100%{top:calc(100% - 14px);opacity:0;} }
+
+/* ══════ MICHOACANA SECTION ══════ */
+.mich-section {
+  background:#f5ede0;
+  padding-bottom:6rem;
+  overflow:hidden;
+}
+.mich-bg-layer { position:absolute;inset:0;pointer-events:none; }
+.mich-glow-pink {
+  position:absolute;top:-15%;right:-8%;
+  width:60vw;height:60vw;max-width:48rem;max-height:48rem;
+  background:radial-gradient(circle,rgba(255,100,160,0.18) 0%,transparent 60%);
+  filter:blur(72px);
+}
+.mich-glow-green {
+  position:absolute;bottom:-10%;left:-5%;
+  width:50vw;height:50vw;max-width:40rem;max-height:40rem;
+  background:radial-gradient(circle,rgba(40,200,80,0.12) 0%,transparent 60%);
+  filter:blur(64px);
+}
+.mich-noise {
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity:0.4;
+}
+
+/* Case label row */
+.mich-case-label {
+  display:flex;align-items:center;gap:1.25rem;
+  padding-top:5rem;padding-bottom:3rem;
+  font:700 0.62rem/1 'Inter Tight',sans-serif;letter-spacing:0.2em;text-transform:uppercase;color:rgba(10,22,40,0.35);
+}
+.mich-case-line { flex:1;height:1px;background:rgba(10,22,40,0.12); }
+.mich-case-label span { white-space:nowrap; }
+
+/* Title band */
+.mich-title-band { padding-bottom:3.5rem; }
+.mich-title-row {
+  display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end;
+}
+@media (max-width:767px) { .mich-title-row { grid-template-columns:1fr;gap:2rem; } }
+
+.mich-project-tag {
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font:700 0.62rem/1 'Inter Tight',sans-serif;letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(10,22,40,0.45);margin-bottom:1rem;
+}
+.mich-tag-dot {
+  width:7px;height:7px;border-radius:50%;
+  background:#F96B2B;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(249,107,43,0.2);
+}
+.mich-title {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(3.5rem,8vw,6.5rem);line-height:0.88;letter-spacing:-0.02em;
+  color:#0A1628;margin:0 0 1.25rem;
+}
+.mich-title-em {
+  font-style:normal;
+  background:linear-gradient(110deg,#e8195e 0%,#ff5a8a 45%,#ff9055 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.mich-subtitle {
+  font:500 1.05rem/1.65 'Inter Tight',sans-serif;
+  color:rgba(10,22,40,0.55);max-width:32rem;margin:0;
+}
+
+/* Stats block */
+.mich-stat-block {
+  display:flex;align-items:center;gap:1.75rem;
+  background:rgba(10,22,40,0.06);border:1px solid rgba(10,22,40,0.1);
+  border-radius:20px;padding:1.25rem 1.75rem;
+}
+@media (max-width:767px) { .mich-stat-block { gap:1.25rem;padding:1rem 1.25rem; } }
+.mich-stat { text-align:center; }
+.mich-stat-n { display:block;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.65rem;color:#0A1628;line-height:1; }
+.mich-stat-l { display:block;font:700 0.52rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.12em;color:rgba(10,22,40,0.38);margin-top:0.3rem; }
+.mich-stat-div { width:1px;height:2rem;background:rgba(10,22,40,0.12);flex-shrink:0; }
+
+/* Screenshots wrap */
+.mich-screens-wrap { position:relative; }
+
+/* Main screenshot */
+.mich-screen-main {
+  border-radius:18px;overflow:hidden;
+  border:1.5px solid rgba(10,22,40,0.12);
+  box-shadow:0 48px 96px rgba(10,22,40,0.18),0 16px 40px rgba(10,22,40,0.1),inset 0 1px 0 rgba(255,255,255,0.6);
+  margin-bottom:1.5rem;
+  transform-origin:center top;
+  will-change:transform;
+  transition:box-shadow 0.5s;
+}
+.mich-browser-chrome {
+  display:flex;align-items:center;gap:0.7rem;
+  padding:0.65rem 1rem;
+  background:#fff;
+  border-bottom:1px solid rgba(10,22,40,0.08);
+}
+.mich-dots { display:flex;gap:0.35rem; }
+.mich-dots span { width:0.5rem;height:0.5rem;border-radius:50%;display:block; }
+.mich-url-bar {
+  flex:1;background:rgba(10,22,40,0.05);border-radius:999px;
+  padding:0.32rem 0.85rem;
+  font:600 0.62rem/1 'Inter Tight',sans-serif;color:rgba(10,22,40,0.4);
+}
+.mich-live-badge {
+  display:flex;align-items:center;gap:0.35rem;
+  font:700 0.58rem/1 'Inter Tight',sans-serif;color:#16a34a;
+  background:rgba(22,163,74,0.1);border-radius:999px;padding:0.28rem 0.65rem;
+}
+.mich-live-dot-green {
+  width:5px;height:5px;border-radius:50%;background:#16a34a;flex-shrink:0;
+  animation:wkLivePulse 1.8s ease-in-out infinite;
+}
+.mich-screen-img-wrap { position:relative;overflow:hidden; }
+.mich-screen-img { display:block;width:100%;object-fit:cover;transition:opacity 0.2s; }
+.mich-screen-shimmer {
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,0.06) 50%,transparent 60%);
+  animation:michShimmer 4s ease-in-out infinite 1s;
+}
+@keyframes michShimmer { 0%,100%{transform:translateX(-100%);} 50%{transform:translateX(200%);} }
+
+/* Detail grid */
+.mich-detail-grid {
+  display:grid;grid-template-columns:1.15fr 0.85fr;gap:1.25rem;margin-bottom:1.5rem;
+}
+@media (max-width:767px) { .mich-detail-grid { grid-template-columns:1fr;gap:1rem; } }
+
+.mich-detail-col-right { display:flex;flex-direction:column;gap:1.25rem; }
+
+.mich-detail-card {
+  position:relative;border-radius:16px;overflow:hidden;
+  border:1.5px solid rgba(10,22,40,0.1);
+  box-shadow:0 12px 36px rgba(10,22,40,0.1);
+  cursor:pointer;
+  transition:transform 0.3s cubic-bezier(.22,.68,0,1.2),box-shadow 0.3s;
+}
+.mich-detail-card:hover { transform:translateY(-4px) scale(1.015);box-shadow:0 24px 56px rgba(10,22,40,0.16); }
+.mich-detail-large { height:100%; }
+.mich-detail-label {
+  position:absolute;top:10px;left:10px;z-index:3;
+  display:inline-flex;align-items:center;gap:0.4rem;
+  font:700 0.58rem/1 'Inter Tight',sans-serif;letter-spacing:0.12em;text-transform:uppercase;
+  background:rgba(255,255,255,0.92);color:#0A1628;
+  border-radius:999px;padding:0.35rem 0.75rem;
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(10,22,40,0.08);
+  box-shadow:0 4px 12px rgba(10,22,40,0.1);
+}
+.mich-detail-img { display:block;width:100%;height:100%;object-fit:cover; }
+.mich-detail-large .mich-detail-img { min-height:260px; }
+.mich-detail-overlay {
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,22,40,0.88) 0%,transparent 55%);
+  display:flex;align-items:flex-end;
+  padding:1.25rem;
+  opacity:0;
+  transition:opacity 0.28s;
+}
+.mich-detail-card:hover .mich-detail-overlay { opacity:1; }
+.mich-detail-caption {
+  font:500 0.82rem/1.5 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.88);margin:0;
+}
+
+/* Chips strip */
+.mich-chips-strip {
+  display:flex;flex-wrap:wrap;gap:0.65rem;
+  margin-bottom:3rem;
+}
+.mich-chip {
+  display:inline-flex;align-items:center;gap:0.45rem;
+  background:#fff;border:1.5px solid rgba(10,22,40,0.1);
+  border-radius:999px;padding:0.55rem 1.1rem;
+  font:600 0.8rem/1 'Inter Tight',sans-serif;color:#0A1628;
+  box-shadow:0 2px 8px rgba(10,22,40,0.06);
+  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;
+  cursor:default;
+}
+.mich-chip:hover { transform:translateY(-2px);box-shadow:0 6px 20px rgba(10,22,40,0.1);border-color:rgba(249,107,43,0.3); }
+.mich-chip-icon { font-size:1rem;line-height:1; }
+
+/* Bottom row */
+.mich-bottom-row {
+  display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;
+  padding:2.5rem;
+  background:rgba(10,22,40,0.05);border-radius:22px;
+  border:1.5px solid rgba(10,22,40,0.08);
+}
+@media (max-width:767px) { .mich-bottom-row { grid-template-columns:1fr;gap:1.5rem; } }
+.mich-quote { position:relative;padding-left:1.5rem; }
+.mich-quote-icon { position:absolute;top:0;left:0;width:20px;height:16px;color:rgba(249,107,43,0.35); }
+.mich-quote p {
+  font:500 1.05rem/1.65 'Inter Tight',sans-serif;color:rgba(10,22,40,0.65);
+  margin:0 0 0.5rem;font-style:italic;
+}
+.mich-quote-attr {
+  font:700 0.7rem/1 'Inter Tight',sans-serif !important;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(10,22,40,0.35) !important;font-style:normal !important;
+}
+.mich-cta-btn {
+  display:inline-flex;align-items:center;gap:0.65rem;white-space:nowrap;
+  background:#0A1628;color:#fff;border-radius:999px;
+  padding:1.05rem 1.75rem;
+  font:700 0.9rem/1 'Inter Tight',sans-serif;
+  text-decoration:none;
+  box-shadow:0 16px 36px rgba(10,22,40,0.2);
+  transition:opacity 0.2s,transform 0.2s;
+}
+.mich-cta-btn:hover { opacity:0.88;transform:translateY(-2px); }
+.mich-cta-btn svg { transition:transform 0.2s; }
+.mich-cta-btn:hover svg { transform:translateX(4px); }
+
+/* ══════ PROJECT CARDS SECTION ══════ */
+.proj-head { margin-bottom:4rem; }
+.proj-eyebrow {
+  display:block;font:700 0.62rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.2em;text-transform:uppercase;color:#F96B2B;
+  margin-bottom:1rem;
+}
+.proj-h2 {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:0.92;
+  color:#fff;margin:0 0 1rem;
+}
+.proj-h2-dim { color:rgba(255,255,255,0.28); }
+.proj-sub { font:500 1rem/1.6 'Inter Tight',sans-serif;color:rgba(255,255,255,0.38);max-width:36rem; }
+
+.proj-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;
+}
+@media (max-width:1023px) { .proj-grid { grid-template-columns:1fr 1fr;gap:1.5rem; } }
+@media (max-width:639px)  { .proj-grid { grid-template-columns:1fr;gap:1.5rem; } }
+
+.proj-card {
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:22px;overflow:hidden;
+  transition:transform 0.3s cubic-bezier(.22,.68,0,1.2),border-color 0.3s,box-shadow 0.3s;
+  cursor:default;
+}
+.proj-card:hover {
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,0.14);
+  box-shadow:0 32px 72px rgba(0,0,0,0.4);
+}
+
+/* Screenshot area */
+.proj-card-screens { position:relative; }
+.proj-main-screen {
+  border-bottom:1px solid rgba(255,255,255,0.06);overflow:hidden;
+}
+.proj-chrome {
+  display:flex;align-items:center;gap:0.55rem;
+  padding:0.55rem 0.85rem;
+  background:rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.proj-chrome-dots { display:flex;gap:0.3rem; }
+.proj-chrome-dots span { width:0.42rem;height:0.42rem;border-radius:50%;display:block;background:rgba(255,255,255,0.18); }
+.proj-chrome-url {
+  flex:1;background:rgba(255,255,255,0.05);border-radius:999px;
+  padding:0.28rem 0.75rem;
+  font:600 0.58rem/1 'Inter Tight',sans-serif;color:rgba(255,255,255,0.25);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.proj-img-wrap { overflow:hidden;position:relative;height:210px; }
+.proj-main-img {
+  display:block;width:100%;height:100%;object-fit:cover;object-position:top;
+  transition:opacity 0.18s ease,transform 0.5s ease;
+}
+.proj-card:hover .proj-main-img { transform:scale(1.03); }
+
+/* Peek row: two mini thumbnails */
+.proj-peek-row {
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.proj-peek {
+  overflow:hidden;cursor:pointer;
+  border-right:1px solid rgba(255,255,255,0.06);
+  position:relative;height:72px;
+  transition:opacity 0.2s;
+}
+.proj-peek:last-child { border-right:none; }
+.proj-peek img { display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s; }
+.proj-peek:hover { opacity:1; }
+.proj-peek::after {
+  content:'';position:absolute;inset:0;
+  background:rgba(10,22,40,0.35);
+  transition:opacity 0.2s;
+}
+.proj-peek:hover::after { opacity:0; }
+.proj-peek:hover img { transform:scale(1.06); }
+
+/* Hover overlay on card */
+.proj-card-hover-overlay {
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0.0);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity 0.25s,background 0.25s;
+  pointer-events:none;
+}
+.proj-card:hover .proj-card-hover-overlay {
+  opacity:1;background:rgba(0,0,0,0.12);
+}
+.proj-view-btn {
+  background:rgba(255,255,255,0.95);color:#0A1628;
+  border-radius:999px;padding:0.65rem 1.25rem;
+  font:700 0.78rem/1 'Inter Tight',sans-serif;
+  transform:translateY(8px);transition:transform 0.3s;
+  pointer-events:none;
+}
+.proj-card:hover .proj-view-btn { transform:translateY(0); }
+
+/* Card meta */
+.proj-card-meta { padding:1.5rem 1.5rem 1.75rem; }
+.proj-card-tags { display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.85rem; }
+.proj-tag {
+  font:700 0.58rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.12em;text-transform:uppercase;
+  border-radius:999px;padding:0.32rem 0.75rem;
+}
+.proj-tag-orange { background:rgba(249,107,43,0.18);color:#F96B2B;border:1px solid rgba(249,107,43,0.25); }
+.proj-tag-blue   { background:rgba(0,84,223,0.18);color:#8EB7FF;border:1px solid rgba(0,84,223,0.25); }
+.proj-tag-ghost  { background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.38);border:1px solid rgba(255,255,255,0.1); }
+.proj-card-title {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:1.45rem;color:#fff;margin:0 0 0.6rem;
+}
+.proj-card-body {
+  font:500 0.85rem/1.6 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.42);margin:0 0 1.25rem;
+}
+
+/* Specs row */
+.proj-card-specs {
+  display:flex;align-items:center;gap:1rem;
+  padding-top:1rem;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.proj-spec { text-align:center; }
+.proj-spec-n { display:block;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;line-height:1; }
+.proj-spec-l  { display:block;font:700 0.5rem/1 'Inter Tight',sans-serif;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.28);margin-top:0.25rem; }
+.proj-spec-sep { width:1px;height:1.6rem;background:rgba(255,255,255,0.1);flex-shrink:0; }
+
+.proj-note {
+  text-align:center;margin-top:3.5rem;
+  font:500 0.92rem/1 'Inter Tight',sans-serif;color:rgba(255,255,255,0.32);
+}
+.proj-note a { color:#F96B2B;font-weight:700;text-decoration:none;transition:opacity 0.2s; }
+.proj-note a:hover { opacity:0.8; }
+
+/* ══════ CTA ══════ */
+.wk-cta-grid {
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:44px 44px;opacity:0.5;
+}
+.wk-deco-q { position:absolute;font-family:'Oswald',sans-serif;font-weight:700;color:rgba(255,255,255,0.04);pointer-events:none;line-height:1; }
+.wk-dq-1 { font-size:18rem;top:-3rem;left:-1rem;transform:rotate(-12deg); }
+.wk-dq-2 { font-size:12rem;bottom:1rem;right:2rem;transform:rotate(8deg); }
+.wk-cta-icon { width:56px;height:56px;border-radius:18px;background:rgba(249,107,43,0.12);border:1px solid rgba(249,107,43,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem; }
+.wk-cta-h2 { font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.4rem,5.5vw,4.5rem);line-height:0.92;color:#fff;margin:0 0 0.5rem; }
+.wk-cta-accent { background:linear-gradient(95deg,#F96B2B 0%,#ff9a6c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.wk-cta-sub { font:500 1.05rem/1.65 'Inter Tight',sans-serif;color:rgba(255,255,255,0.45);max-width:30rem;margin:1.5rem auto 0; }
+.wk-cta-btns { display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2.5rem; }
+.wk-cta-primary { display:inline-flex;align-items:center;border-radius:999px;background:#F96B2B;padding:1.05rem 2.25rem;font:700 0.92rem/1 'Inter Tight',sans-serif;color:#fff;text-decoration:none;box-shadow:0 20px 40px rgba(249,107,43,0.32);transition:opacity 0.2s,transform 0.2s; }
+.wk-cta-primary:hover { opacity:0.9;transform:translateY(-2px); }
+.wk-cta-ghost { display:inline-flex;align-items:center;border-radius:999px;border:1px solid rgba(255,255,255,0.2);padding:1.05rem 2rem;font:700 0.92rem/1 'Inter Tight',sans-serif;color:rgba(255,255,255,0.7);text-decoration:none;transition:border-color 0.2s,color 0.2s; }
+.wk-cta-ghost:hover { border-color:rgba(255,255,255,0.45);color:#fff; }
+
+/* ══════ SHARED REVEALS ══════ */
+.mich-reveal, .proj-reveal {
+  opacity:0;transform:translateY(40px);
+  transition:opacity 0.75s ease, transform 0.75s ease;
+  transition-delay:var(--delay, 0s);
+}
+.mich-reveal.is-visible, .proj-reveal.is-visible {
+  opacity:1;transform:translateY(0);
+}
+</style>
+
+<script is:inline>
+/* CSS-class reveal for mich-reveal / proj-reveal (fallback if GSAP not loaded) */
+(function () {
+  if (typeof IntersectionObserver === 'undefined') return;
+  var els = document.querySelectorAll('.mich-reveal, .proj-reveal');
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(function (el) { obs.observe(el); });
+})();
+</script>

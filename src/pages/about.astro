@@ -2,10 +2,534 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About — Midvora">
-  <div class="flex items-center justify-center min-h-[60vh]">
-    <div class="text-center">
-      <h1 class="font-display font-bold text-4xl text-[#0A1628] tracking-wide uppercase mb-4">Coming Soon</h1>
-      <p class="font-sans text-[#6B7280]">About — Phase 2</p>
+
+<!-- ══════════════════════════════════════
+     §1 HERO
+══════════════════════════════════════ -->
+<section class="ab2-hero">
+  <div class="ab2-hero-inner">
+    <p class="ab2-eyebrow ab2-hero-ew">The idea behind Midvora</p>
+    <h1 class="ab2-hero-h1">Every local business deserves<br class="hidden md:block"/> to be found online.</h1>
+    <p class="ab2-hero-sub">Not just the ones that can afford a $5,000 agency.</p>
+    <div class="ab2-badges">
+      <span class="ab2-badge ab2-badge-navy">Marshall, MN</span>
+      <span class="ab2-badge ab2-badge-blue">CS Graduate</span>
+      <span class="ab2-badge ab2-badge-orange">Cybersecurity MS</span>
     </div>
   </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     §2 WHAT WE BELIEVE
+══════════════════════════════════════ -->
+<section class="ab2-beliefs">
+  <div class="ab2-beliefs-inner">
+    <p class="ab2-eyebrow ab2-beliefs-ew">What we believe</p>
+
+    <div class="ab2-belief-list">
+
+      <div class="ab2-belief">
+        <div class="ab2-belief-rule" style="background:#0054DF;"></div>
+        <h2 class="ab2-belief-stmt">A restaurant with great food shouldn't lose customers to a competitor with a better website.</h2>
+        <p class="ab2-belief-body">But it happens every day. Someone searches "tacos near me" and the place with the nicer Google listing wins, even if their food is worse. That's not fair. And it's fixable.</p>
+      </div>
+
+      <div class="ab2-belief">
+        <div class="ab2-belief-rule" style="background:#F96B2B;"></div>
+        <h2 class="ab2-belief-stmt">Getting online shouldn't cost three months of rent.</h2>
+        <p class="ab2-belief-body">The average agency charges $3,000 to $10,000. For a small business doing $200K a year, that's a massive risk. We think the price should match the business, not the agency's overhead.</p>
+      </div>
+
+      <div class="ab2-belief">
+        <div class="ab2-belief-rule" style="background:#0054DF;"></div>
+        <h2 class="ab2-belief-stmt">You shouldn't have to pay before you see what you're getting.</h2>
+        <p class="ab2-belief-body">Every other agency asks for a deposit before you see a single pixel. We build your website first. You see it live. Then you decide. That's how trust should work.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     §3 WHAT WE ACTUALLY DO
+══════════════════════════════════════ -->
+<section class="ab2-do">
+  <div class="ab2-do-inner">
+    <div class="ab2-do-head">
+      <p class="ab2-eyebrow">What we do</p>
+      <h2 class="ab2-do-h2">We find businesses that need<br class="hidden md:block"/> help. Then we help them.</h2>
+    </div>
+
+    <div class="ab2-stmt-list">
+      <div class="ab2-stmt" style="border-left-color:#0054DF;">
+        We search Google Maps for businesses with no website or a bad one.
+      </div>
+      <div class="ab2-stmt" style="border-left-color:#0054DF;">
+        We build them a live working sample in 24 hours, using their real name, photos, and info.
+      </div>
+      <div class="ab2-stmt" style="border-left-color:#F96B2B;">
+        We send it to them. Free. No pitch. No contract.
+      </div>
+      <div class="ab2-stmt" style="border-left-color:#0054DF;">
+        If they want it, we launch it. If they don't, no hard feelings.
+      </div>
+      <div class="ab2-stmt" style="border-left-color:#F96B2B;">
+        Then we keep it running: secure, updated, and growing.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     §4 THE NAME
+══════════════════════════════════════ -->
+<section class="ab2-name">
+  <div class="ab2-name-inner">
+    <p class="ab2-eyebrow">The name</p>
+
+    <div class="ab2-name-display">
+      <span class="ab2-name-mid">Mid</span><span class="ab2-name-vora">vora</span>
+    </div>
+
+    <div class="ab2-name-equation">
+      <span class="ab2-name-word">Midwest</span>
+      <span class="ab2-name-sep">+</span>
+      <span class="ab2-name-word">Light</span>
+    </div>
+
+    <p class="ab2-name-body">
+      A light for businesses that deserve to be seen.<br/>
+      Started in Marshall, Minnesota.<br/>
+      Serving every Main Street that needs us.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     §5 WHY US
+══════════════════════════════════════ -->
+<section class="ab2-why">
+  <div class="ab2-why-inner">
+    <div class="ab2-section-head">
+      <p class="ab2-eyebrow">Why us</p>
+      <h2 class="ab2-section-h2">Four things no other<br class="hidden md:block"/> agency does.</h2>
+    </div>
+
+    <div class="ab2-cards-grid">
+
+      <div class="ab2-card">
+        <div class="ab2-card-head">
+          <span class="ab2-card-num">01</span>
+          <div class="ab2-card-icon ab2-icon-orange">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+        </div>
+        <h3 class="ab2-card-title">We show you before you pay</h3>
+        <p class="ab2-card-body">Every project starts with a free working sample. A real site on a real URL. Not a mockup. Not a wireframe. Something you can tap through on your phone.</p>
+      </div>
+
+      <div class="ab2-card">
+        <div class="ab2-card-head">
+          <span class="ab2-card-num">02</span>
+          <div class="ab2-card-icon ab2-icon-blue">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+        </div>
+        <h3 class="ab2-card-title">We deliver in days, not months</h3>
+        <p class="ab2-card-body">5 to 10 days. Not 5 to 10 weeks. AI-powered tools let us build at a speed that traditional agencies can't match.</p>
+      </div>
+
+      <div class="ab2-card">
+        <div class="ab2-card-head">
+          <span class="ab2-card-num">03</span>
+          <div class="ab2-card-icon ab2-icon-orange">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F96B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+        </div>
+        <h3 class="ab2-card-title">We build secure by default</h3>
+        <p class="ab2-card-body">SSL encryption, secure forms, monthly security scans. Built by a cybersecurity specialist, not bolted on as an afterthought.</p>
+      </div>
+
+      <div class="ab2-card">
+        <div class="ab2-card-head">
+          <span class="ab2-card-num">04</span>
+          <div class="ab2-card-icon ab2-icon-blue">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0054DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+        </div>
+        <h3 class="ab2-card-title">We charge what's fair</h3>
+        <p class="ab2-card-body">Starting at $295. No hourly rates. No surprise invoices. No retainers. You know the full cost before we start.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     §6 THE PROCESS
+══════════════════════════════════════ -->
+<section class="ab2-process">
+  <div class="ab2-process-inner">
+    <div class="ab2-section-head">
+      <p class="ab2-eyebrow">How it works</p>
+      <h2 class="ab2-section-h2">From search to launch<br class="hidden md:block"/> in five steps.</h2>
+    </div>
+
+    <div class="ab2-tl">
+
+      {[
+        { n:'1', bg:'#0054DF', title:'We find your business',      body:'We search Google Maps for businesses that need a better online presence. Or you come to us, either way.', isLast:false },
+        { n:'2', bg:'#0054DF', title:'We build your free sample',  body:'Using your real business name, real photos, and real info: a live working website in 24 hours.', isLast:false },
+        { n:'3', bg:'#0054DF', title:'We send it to you',          body:'Walk in, call, or email with your sample link. Share it with your team. Test every page.', isLast:false },
+        { n:'4', bg:'#0054DF', title:'You decide',                 body:"Love it? We launch it and you're live within the week. Don't? You owe us nothing.", isLast:false },
+        { n:'5', bg:'#F96B2B', title:'We keep it running',         body:'Monthly care plans keep your site safe, updated, and growing. Or we hand you the keys. Your call.', isLast:true },
+      ].map((s, i) => (
+        <div class="ab2-tl-row" data-step={i}>
+          <div class="ab2-tl-spine">
+            <div class="ab2-tl-circle" style={`background:${s.bg};`}>{s.n}</div>
+            {!s.isLast && (
+              <div class="ab2-tl-line" style={i === 3 ? 'background:rgba(249,107,43,0.2);' : 'background:rgba(0,84,223,0.15);'}>
+                <div class="ab2-tl-line-fill" style={i === 3 ? 'background:#F96B2B;' : 'background:#0054DF;'}></div>
+              </div>
+            )}
+          </div>
+          <div class="ab2-tl-content">
+            <h3 class="ab2-tl-title">{s.title}</h3>
+            <p class="ab2-tl-body">{s.body}</p>
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     §7 CTA
+══════════════════════════════════════ -->
+<section class="ab2-cta">
+  <div class="ab2-cta-inner">
+    <h2 class="ab2-cta-h2">Ready to see what we<br class="hidden md:block"/> can build for you?</h2>
+    <p class="ab2-cta-sub">It starts with a free sample. No strings.</p>
+    <div class="ab2-cta-btns">
+      <a href="/contact" class="ab2-btn-primary">Get my free sample</a>
+      <a href="tel:+15075304837" class="ab2-btn-ghost">Call (507) 530-4837</a>
+    </div>
+  </div>
+</section>
+
 </BaseLayout>
+
+<!-- CDN -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script is:inline>
+(function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  var ease = 'power2.out';
+
+  /* §1 hero */
+  var heroTL = gsap.timeline({ defaults: { ease: ease } });
+  heroTL
+    .fromTo('.ab2-hero-ew',  { opacity:0, y:16 }, { opacity:1, y:0, duration:0.5 })
+    .fromTo('.ab2-hero-h1',  { opacity:0, y:36 }, { opacity:1, y:0, duration:0.8 }, '-=0.1')
+    .fromTo('.ab2-hero-sub', { opacity:0, y:20 }, { opacity:1, y:0, duration:0.6 }, '-=0.4')
+    .fromTo('.ab2-badge',    { opacity:0, y:14, scale:0.92 }, { opacity:1, y:0, scale:1, duration:0.45, stagger:0.1 }, '-=0.25');
+
+  /* §2 beliefs */
+  gsap.fromTo('.ab2-beliefs-ew', { opacity:0, y:16 },
+    { opacity:1, y:0, duration:0.55, ease:ease,
+      scrollTrigger:{ trigger:'.ab2-beliefs', start:'top 80%', once:true } });
+  gsap.fromTo('.ab2-belief', { opacity:0, y:30 },
+    { opacity:1, y:0, duration:0.7, ease:ease, stagger:0.18,
+      scrollTrigger:{ trigger:'.ab2-belief-list', start:'top 80%', once:true } });
+
+  /* §3 what we do */
+  gsap.fromTo('.ab2-do-head', { opacity:0, y:24 },
+    { opacity:1, y:0, duration:0.65, ease:ease,
+      scrollTrigger:{ trigger:'.ab2-do', start:'top 80%', once:true } });
+  gsap.fromTo('.ab2-stmt', { opacity:0, x:-20 },
+    { opacity:1, x:0, duration:0.55, ease:ease, stagger:0.12,
+      scrollTrigger:{ trigger:'.ab2-stmt-list', start:'top 82%', once:true } });
+
+  /* §4 the name */
+  ScrollTrigger.create({
+    trigger: '.ab2-name',
+    start: 'top 78%',
+    once: true,
+    onEnter: function () {
+      gsap.fromTo('.ab2-name-mid',  { opacity:0, x:-60 }, { opacity:1, x:0, duration:0.75, ease:'power3.out' });
+      gsap.fromTo('.ab2-name-vora', { opacity:0, x:60  }, { opacity:1, x:0, duration:0.75, ease:'power3.out' });
+      gsap.fromTo('.ab2-name-equation,.ab2-name-body', { opacity:0, y:20 },
+        { opacity:1, y:0, duration:0.6, ease:ease, stagger:0.12, delay:0.45 });
+    }
+  });
+
+  /* §5 why us cards */
+  gsap.fromTo('.ab2-why .ab2-section-head', { opacity:0, y:24 },
+    { opacity:1, y:0, duration:0.65, ease:ease,
+      scrollTrigger:{ trigger:'.ab2-why', start:'top 80%', once:true } });
+  gsap.fromTo('.ab2-card', { opacity:0, y:40, scale:0.97 },
+    { opacity:1, y:0, scale:1, duration:0.6, ease:ease, stagger:0.14,
+      scrollTrigger:{ trigger:'.ab2-cards-grid', start:'top 82%', once:true } });
+
+  /* §6 timeline */
+  gsap.fromTo('.ab2-process .ab2-section-head', { opacity:0, y:24 },
+    { opacity:1, y:0, duration:0.65, ease:ease,
+      scrollTrigger:{ trigger:'.ab2-process', start:'top 80%', once:true } });
+  document.querySelectorAll('.ab2-tl-row').forEach(function (row) {
+    gsap.fromTo(row, { opacity:0, y:20 },
+      { opacity:1, y:0, duration:0.55, ease:ease,
+        scrollTrigger:{ trigger:row, start:'top 84%', once:true } });
+    var fill = row.querySelector('.ab2-tl-line-fill');
+    if (fill) {
+      gsap.fromTo(fill, { scaleY:0 }, { scaleY:1, duration:0.5, ease:ease, transformOrigin:'top center',
+        scrollTrigger:{ trigger:row, start:'top 80%', once:true } });
+    }
+  });
+
+  /* §7 cta */
+  gsap.fromTo('.ab2-cta-inner > *', { opacity:0, y:24 },
+    { opacity:1, y:0, duration:0.65, ease:ease, stagger:0.14,
+      scrollTrigger:{ trigger:'.ab2-cta', start:'top 80%', once:true } });
+})();
+</script>
+
+<style is:inline>
+/* ─── SHARED TOKENS ─── */
+.ab2-eyebrow {
+  font:700 0.6rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:#0054DF;display:block;margin-bottom:1.25rem;
+}
+.ab2-section-head { text-align:center;margin-bottom:3.5rem; }
+.ab2-section-h2 {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.0;color:#0A1628;margin:0;
+}
+
+/* ─── §1 HERO ─── */
+.ab2-hero {
+  background:#F8F6F2;
+  padding:clamp(5rem,11vw,8rem) 1.25rem clamp(4rem,8vw,6.5rem);
+  text-align:center;
+}
+.ab2-hero-inner { max-width:52rem;margin:0 auto; }
+.ab2-hero-h1 {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(2.6rem,7vw,5rem);line-height:1.0;
+  letter-spacing:-0.015em;color:#0A1628;
+  margin:0 0 1.5rem;
+}
+.ab2-hero-sub {
+  font:500 1.15rem/1 'Inter Tight',sans-serif;
+  color:#9CA3AF;margin:0 0 2.5rem;
+}
+.ab2-badges { display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center; }
+.ab2-badge {
+  font:700 0.6rem/1 'Inter Tight',sans-serif;
+  letter-spacing:0.14em;text-transform:uppercase;
+  border-radius:999px;padding:0.5rem 1rem;
+}
+.ab2-badge-navy   { background:#0A1628;color:#fff; }
+.ab2-badge-blue   { background:rgba(0,84,223,0.08);color:#0054DF;border:1px solid rgba(0,84,223,0.18); }
+.ab2-badge-orange { background:rgba(249,107,43,0.08);color:#F96B2B;border:1px solid rgba(249,107,43,0.18); }
+
+/* ─── §2 BELIEFS ─── */
+.ab2-beliefs { background:#fff; }
+.ab2-beliefs-inner {
+  max-width:40rem;margin:0 auto;
+  padding:clamp(5rem,9vw,7rem) 1.25rem;
+}
+.ab2-beliefs-ew { margin-bottom:3.5rem; }
+.ab2-belief-list { display:flex;flex-direction:column;gap:4rem; }
+.ab2-belief { position:relative; }
+.ab2-belief-rule {
+  width:3rem;height:2px;border-radius:999px;
+  margin-bottom:1.5rem;
+}
+.ab2-belief-stmt {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(1.5rem,3.5vw,2.2rem);line-height:1.1;
+  color:#0A1628;margin:0 0 1rem;
+}
+.ab2-belief-body {
+  font:500 1rem/1.75 'Inter Tight',sans-serif;
+  color:#6B7280;margin:0;max-width:34rem;
+}
+
+/* ─── §3 WHAT WE DO ─── */
+.ab2-do { background:#F8F6F2; }
+.ab2-do-inner {
+  max-width:40rem;margin:0 auto;
+  padding:clamp(5rem,9vw,7rem) 1.25rem;
+}
+.ab2-do-head { margin-bottom:3rem; }
+.ab2-do-h2 {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;
+  color:#0A1628;margin:0;
+}
+.ab2-stmt-list { display:flex;flex-direction:column;gap:1.5rem; }
+.ab2-stmt {
+  border-left:3px solid;
+  padding-left:1.5rem;
+  font:500 1.05rem/1.7 'Inter Tight',sans-serif;
+  color:#4B5563;
+}
+
+/* ─── §4 THE NAME ─── */
+.ab2-name { background:#fff; }
+.ab2-name-inner {
+  max-width:36rem;margin:0 auto;
+  padding:clamp(5rem,9vw,7rem) 1.25rem;
+  text-align:center;
+}
+.ab2-name-display {
+  display:flex;align-items:baseline;justify-content:center;
+  margin:0 0 1rem;line-height:1;
+  overflow:hidden;
+}
+.ab2-name-mid,
+.ab2-name-vora {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(3.5rem,14vw,7rem);line-height:0.92;
+  letter-spacing:-0.02em;
+}
+.ab2-name-mid  { color:#0A1628; }
+.ab2-name-vora { color:#F96B2B; }
+.ab2-name-equation {
+  display:flex;align-items:center;justify-content:center;
+  gap:0.75rem;margin-bottom:2rem;
+}
+.ab2-name-word {
+  font-family:'Oswald',sans-serif;font-weight:600;
+  font-size:1.2rem;color:#9CA3AF;
+}
+.ab2-name-sep {
+  font:600 1.2rem/1 'Oswald',sans-serif;color:#D1D5DB;
+}
+.ab2-name-body {
+  font:500 1rem/1.75 'Inter Tight',sans-serif;
+  color:#9CA3AF;margin:0;
+}
+
+/* ─── §5 WHY US ─── */
+.ab2-why { background:#F8F6F2; }
+.ab2-why-inner {
+  max-width:56rem;margin:0 auto;
+  padding:clamp(5rem,9vw,7rem) 1.25rem;
+}
+.ab2-cards-grid {
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;
+}
+@media (max-width:639px) { .ab2-cards-grid { grid-template-columns:1fr; } }
+
+.ab2-card {
+  background:#fff;border-radius:24px;padding:2rem 1.75rem;
+  border:1px solid rgba(10,22,40,0.07);
+  box-shadow:0 2px 16px rgba(10,22,40,0.04);
+  transition:transform 0.25s,box-shadow 0.25s;
+}
+.ab2-card:hover { transform:translateY(-4px);box-shadow:0 16px 44px rgba(10,22,40,0.09); }
+.ab2-card-head {
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:1.25rem;
+}
+.ab2-card-num {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:4rem;line-height:1;
+  color:rgba(249,107,43,0.1);letter-spacing:-0.02em;
+}
+.ab2-card-icon {
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.ab2-icon-orange { background:rgba(249,107,43,0.1); }
+.ab2-icon-blue   { background:rgba(0,84,223,0.1); }
+.ab2-card-title {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:1.15rem;color:#0A1628;margin:0 0 0.65rem;
+}
+.ab2-card-body {
+  font:500 0.88rem/1.65 'Inter Tight',sans-serif;color:#6B7280;margin:0;
+}
+
+/* ─── §6 PROCESS ─── */
+.ab2-process { background:#fff; }
+.ab2-process-inner {
+  max-width:36rem;margin:0 auto;
+  padding:clamp(5rem,9vw,7rem) 1.25rem;
+}
+.ab2-tl { display:flex;flex-direction:column;margin-top:3.5rem; }
+.ab2-tl-row { display:flex;gap:1.5rem;align-items:flex-start; }
+.ab2-tl-spine {
+  display:flex;flex-direction:column;align-items:center;
+  flex-shrink:0;width:48px;
+}
+.ab2-tl-circle {
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:1.05rem;
+  color:#fff;flex-shrink:0;
+  box-shadow:0 6px 20px rgba(0,0,0,0.14);
+  position:relative;z-index:1;
+}
+.ab2-tl-line {
+  width:2px;height:4rem;border-radius:999px;
+  overflow:hidden;flex-shrink:0;margin-top:2px;
+}
+.ab2-tl-line-fill { width:100%;height:100%;transform-origin:top center; }
+.ab2-tl-content { padding:0.75rem 0 3rem; }
+.ab2-tl-title {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:1.1rem;color:#0A1628;margin:0 0 0.45rem;
+}
+.ab2-tl-body {
+  font:500 0.88rem/1.65 'Inter Tight',sans-serif;color:#6B7280;margin:0;
+}
+
+/* ─── §7 CTA ─── */
+.ab2-cta { background:#0A1628; }
+.ab2-cta-inner {
+  max-width:40rem;margin:0 auto;
+  padding:clamp(5rem,9vw,7rem) 1.25rem;
+  text-align:center;
+}
+.ab2-cta-h2 {
+  font-family:'Oswald',sans-serif;font-weight:700;
+  font-size:clamp(2rem,5vw,3.4rem);line-height:1.0;
+  color:#fff;margin:0 0 0.75rem;
+}
+.ab2-cta-sub {
+  font:500 1rem/1 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.45);margin:0 0 2.5rem;
+}
+.ab2-cta-btns {
+  display:flex;flex-wrap:wrap;gap:0.85rem;justify-content:center;
+}
+@media (max-width:479px) {
+  .ab2-cta-btns { flex-direction:column; }
+  .ab2-btn-primary,.ab2-btn-ghost { text-align:center;justify-content:center; }
+}
+.ab2-btn-primary {
+  display:inline-flex;align-items:center;border-radius:999px;
+  background:#F96B2B;padding:1rem 2.25rem;
+  font:700 0.9rem/1 'Inter Tight',sans-serif;
+  color:#fff;text-decoration:none;
+  box-shadow:0 16px 36px rgba(249,107,43,0.3);
+  transition:opacity 0.2s,transform 0.2s;
+}
+.ab2-btn-primary:hover { opacity:0.9;transform:translateY(-2px); }
+.ab2-btn-ghost {
+  display:inline-flex;align-items:center;border-radius:999px;
+  border:1px solid rgba(255,255,255,0.18);padding:1rem 2rem;
+  font:700 0.9rem/1 'Inter Tight',sans-serif;
+  color:rgba(255,255,255,0.68);text-decoration:none;
+  transition:border-color 0.2s,color 0.2s,background 0.2s;
+}
+.ab2-btn-ghost:hover { border-color:rgba(255,255,255,0.4);color:#fff;background:rgba(255,255,255,0.05); }
+</style>
