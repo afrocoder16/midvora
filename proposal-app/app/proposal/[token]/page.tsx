@@ -23,7 +23,11 @@ export default async function ProposalPage({
 
   return (
     <main className="min-h-screen bg-cream py-8 sm:py-14">
-      <div className="mx-auto w-full max-w-3xl px-4">
+      <div
+        className={`mx-auto w-full px-4 ${
+          proposal.proposal_kind === "custom_html" ? "max-w-5xl" : "max-w-3xl"
+        }`}
+      >
         <ProposalView proposal={proposal} />
 
         <div className="mt-10">

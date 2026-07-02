@@ -26,17 +26,47 @@ end$$;
 create table if not exists public.proposals (
   id              uuid primary key default gen_random_uuid(),
   token           text not null unique,
+  proposal_kind   text not null default 'template'
+                  check (proposal_kind in ('template', 'uploaded_pdf', 'custom_html')),
   client_name     text not null,
   client_business text,
   client_email    text not null,
+  client_address  text,
+  client_logo_path text,
+  client_logo_mime_type text,
+  brand_primary   text not null default '#1F5D2B',
+  brand_accent    text not null default '#F96B2B',
+  proposal_title  text not null default 'Website Proposal & Agreement',
+  proposal_content jsonb not null default '{}'::jsonb,
+  source_pdf_path text,
+  source_pdf_filename text,
   line_items      jsonb not null default '[]'::jsonb,
   total_price     integer not null default 0,            -- cents
   status          proposal_status not null default 'draft',
-  created_at      timestamptz not null default now()
+  created_at      timestamptz not null default now(),
+  constraint uploaded_pdf_requires_file
+    check (proposal_kind <> 'uploaded_pdf' or source_pdf_path is not null)
 );
 
 create index if not exists proposals_token_idx  on public.proposals (token);
 create index if not exists proposals_status_idx on public.proposals (status);
+create index if not exists proposals_kind_idx   on public.proposals (proposal_kind);
+
+-- Private bucket for proposal logos and uploaded proposal PDFs. Files are read
+-- and written only by server routes using the service-role key.
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values (
+  'proposal-assets',
+  'proposal-assets',
+  false,
+  26214400,
+  array['image/png', 'image/jpeg', 'image/webp', 'image/svg+xml', 'application/pdf']
+)
+on conflict (id) do update
+set
+  public = excluded.public,
+  file_size_limit = excluded.file_size_limit,
+  allowed_mime_types = excluded.allowed_mime_types;
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- signatures
@@ -91,8 +121,7 @@ create trigger trg_proposals_immutable
   before update or delete on public.proposals
   for each row execute function public.enforce_signed_proposal_immutable();
 
--- Signatures are write-once: no UPDATE, no DELETE (except cascade from a
--- non-signed proposal, which the proposal trigger already governs).
+-- Signatures are write-once: no UPDATE and no DELETE.
 create or replace function public.enforce_signature_write_once()
 returns trigger
 language plpgsql
@@ -105,8 +134,94 @@ $$;
 
 drop trigger if exists trg_signatures_write_once on public.signatures;
 create trigger trg_signatures_write_once
-  before update on public.signatures
+  before update or delete on public.signatures
   for each row execute function public.enforce_signature_write_once();
+
+-- Atomically records a signature and flips the proposal to signed inside one
+-- database transaction. The app calls this with the service-role key; browsers
+-- cannot execute it directly.
+create or replace function public.record_proposal_signature(
+  p_proposal_id uuid,
+  p_signer_name text,
+  p_signature_image text,
+  p_signer_ip text,
+  p_signed_at timestamptz
+)
+returns table (
+  id uuid,
+  proposal_id uuid,
+  signer_name text,
+  signature_image text,
+  signed_at timestamptz,
+  signer_ip text,
+  agreed boolean
+)
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_status public.proposal_status;
+  v_signature public.signatures%rowtype;
+begin
+  select p.status
+    into v_status
+    from public.proposals p
+   where p.id = p_proposal_id
+   for update;
+
+  if not found then
+    raise exception 'Proposal not found (id=%).', p_proposal_id
+      using errcode = 'P0002';
+  end if;
+
+  if v_status = 'signed' then
+    raise exception 'This proposal has already been signed (id=%).', p_proposal_id
+      using errcode = '23505';
+  end if;
+
+  insert into public.signatures (
+    proposal_id,
+    signer_name,
+    signature_image,
+    signed_at,
+    signer_ip,
+    agreed
+  )
+  values (
+    p_proposal_id,
+    p_signer_name,
+    p_signature_image,
+    p_signed_at,
+    p_signer_ip,
+    true
+  )
+  returning * into v_signature;
+
+  update public.proposals p
+     set status = 'signed'
+   where p.id = p_proposal_id;
+
+  return query
+  select
+    v_signature.id,
+    v_signature.proposal_id,
+    v_signature.signer_name,
+    v_signature.signature_image,
+    v_signature.signed_at,
+    v_signature.signer_ip,
+    v_signature.agreed;
+exception
+  when unique_violation then
+    raise exception 'This proposal has already been signed (id=%).', p_proposal_id
+      using errcode = '23505';
+end;
+$$;
+
+revoke all on function public.record_proposal_signature(uuid, text, text, text, timestamptz)
+  from public;
+grant execute on function public.record_proposal_signature(uuid, text, text, text, timestamptz)
+  to service_role;
 
 -- ═════════════════════════════════════════════════════════════════════════════
 -- ROW LEVEL SECURITY
