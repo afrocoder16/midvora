@@ -22,10 +22,8 @@ const STATUS_STYLES: Record<string, string> = {
 
 export function AdminProposalsTable({
   proposals,
-  baseUrl,
 }: {
   proposals: ProposalSummary[];
-  baseUrl: string;
 }) {
   if (proposals.length === 0) {
     return (
@@ -52,7 +50,7 @@ export function AdminProposalsTable({
           <ProposalRow
             key={proposal.id}
             proposal={proposal}
-            shareUrl={`${baseUrl.replace(/\/$/, "")}/proposal/${proposal.token}`}
+            shareUrl={`/proposal/${proposal.token}`}
           />
         ))}
       </TableBody>

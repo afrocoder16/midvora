@@ -6,6 +6,7 @@ import {
   sanitizeCustomHtmlContent,
 } from "../lib/custom-html";
 import { DEFAULT_TEMPLATE_CONTENT } from "../lib/proposal-content";
+import { absoluteUrlForOrigin, getRequestOrigin } from "../lib/url";
 import { createProposalSchema, signProposalSchema } from "../lib/validation";
 
 const tinyPngDataUrl =
@@ -206,5 +207,27 @@ describe("signProposalSchema", () => {
     });
 
     expect(result.success).toBe(false);
+  });
+});
+
+describe("proposal URL helpers", () => {
+  it("uses the request origin when no forwarded host is present", () => {
+    const req = new Request("https://preview.example.com/api/admin/proposals");
+
+    expect(getRequestOrigin(req)).toBe("https://preview.example.com");
+    expect(absoluteUrlForOrigin("/proposal/abc", getRequestOrigin(req))).toBe(
+      "https://preview.example.com/proposal/abc"
+    );
+  });
+
+  it("uses forwarded host and proto when the deployment platform provides them", () => {
+    const req = new Request("http://internal.vercel/api/admin/proposals", {
+      headers: {
+        "x-forwarded-host": "sign.midvora.com",
+        "x-forwarded-proto": "https",
+      },
+    });
+
+    expect(getRequestOrigin(req)).toBe("https://sign.midvora.com");
   });
 });

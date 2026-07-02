@@ -12,6 +12,7 @@ import {
   validateLogoFile,
   validatePdfFile,
 } from "@/lib/storage";
+import { absoluteUrlForOrigin, getRequestOrigin } from "@/lib/url";
 import type { ProposalCustomHtmlContent } from "@/lib/types";
 
 export const runtime = "nodejs";
@@ -136,8 +137,7 @@ export async function POST(req: NextRequest) {
     return createProposalInsertErrorResponse(error, proposal_kind);
   }
 
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? new URL(req.url).origin;
-  const shareUrl = `${base.replace(/\/$/, "")}/proposal/${data.token}`;
+  const shareUrl = absoluteUrlForOrigin(`/proposal/${data.token}`, getRequestOrigin(req));
 
   return NextResponse.json({ id: data.id, token: data.token, shareUrl }, { status: 201 });
 }

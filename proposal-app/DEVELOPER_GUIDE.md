@@ -227,7 +227,6 @@ Flow:
 Required:
 
 ```text
-NEXT_PUBLIC_APP_URL
 NEXT_PUBLIC_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY
 SUPABASE_SERVICE_ROLE_KEY
@@ -241,6 +240,10 @@ Optional:
 ```text
 PUPPETEER_EXECUTABLE_PATH
 ```
+
+Proposal share links are generated from the current request origin. Do not force
+`NEXT_PUBLIC_APP_URL` in Vercel preview deployments; doing so can make preview
+admins copy production-domain client links before production has the same build.
 
 `PUPPETEER_EXECUTABLE_PATH` only matters if custom HTML/CSS PDF rendering is
 re-enabled locally.
@@ -515,7 +518,6 @@ npm run build
 Confirm Vercel:
 
 - Root directory: `proposal-app`
-- `NEXT_PUBLIC_APP_URL=https://sign.midvora.com`
 - Supabase service role key is present and server-only.
 - Resend sender is verified.
 

@@ -1,12 +1,10 @@
 # Midvora Proposals
 
 A self-contained Next.js app for sending clients a unique link to read, sign, and
-download a branded proposal. The primary workflow is custom HTML/CSS proposals:
-paste or import AI-generated proposal markup and CSS, preview it in admin, send a
-token-gated link, then generate a signed PDF from the same source after
-acceptance. Finished PDF uploads remain available as a fallback and receive a
-signed certificate page after acceptance. Both the client and `info@Midvora.com`
-get an emailed PDF copy.
+download a branded proposal. The active admin workflow is PDF-first: upload the
+finished proposal PDF, send a token-gated link, and after acceptance Midvora
+appends a signed certificate page to the downloaded copy. Both the client and
+`info@Midvora.com` get an emailed PDF copy.
 
 This lives in `proposal-app/` inside the Midvora website repo and deploys as its
 own Vercel project, separate from the Astro marketing site. Target domain:
@@ -29,20 +27,17 @@ and refactoring notes, read [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md).
 
 ## Proposal Modes
 
-- `custom_html`: main workflow. Admin pastes or imports HTML and CSS, the client
-  views it in a sandboxed iframe, and the signed PDF is printed from the same
-  HTML/CSS with a Midvora certificate page appended.
-- `uploaded_pdf`: fallback for finished PDFs that need exact print fidelity. The
-  client previews the uploaded PDF and the signed PDF appends a certificate page.
+- `uploaded_pdf`: current admin workflow for finished PDFs that need exact print
+  fidelity. The client previews the uploaded PDF and the signed PDF appends a
+  certificate page.
+- `custom_html`: dormant backend support. The admin UI does not expose this mode
+  while the PDF workflow is the active product path.
 - `template`: legacy guided-section mode kept for existing rows, but no longer
   shown as the primary admin creation workflow.
 
-Custom proposal code is HTML/CSS only in v1. JavaScript, forms, iframes, embeds,
-external CSS imports, and remote image/script assets are stripped or blocked. Use
-`{{client_logo_url}}` in an `<img>` tag to place the uploaded client logo. Other
-available placeholders are `{{client_name}}`, `{{client_business}}`,
-`{{client_address}}`, `{{client_email}}`, `{{brand_primary}}`, and
-`{{brand_accent}}`.
+If `custom_html` is re-enabled later, custom proposal code is HTML/CSS only.
+JavaScript, forms, iframes, embeds, external CSS imports, and remote image/script
+assets are stripped or blocked.
 
 ## Routes
 
@@ -93,7 +88,6 @@ cp .env.example .env.local
 
 | Var | Where |
 |---|---|
-| `NEXT_PUBLIC_APP_URL` | `http://localhost:3000` locally; `https://sign.midvora.com` in prod |
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase Settings -> API |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase Settings -> API |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase Settings -> API, server-only secret |
@@ -133,9 +127,12 @@ npm run build
 1. Push this repo to GitHub.
 2. In Vercel, import the repo as a new project.
 3. Set Root Directory to `proposal-app`.
-4. Add all environment variables and set
-   `NEXT_PUBLIC_APP_URL=https://sign.midvora.com`.
+4. Add all environment variables.
 5. Deploy, then add `sign.midvora.com` under Domains.
+
+Proposal share links are generated from the incoming request host. This keeps
+Vercel preview deployments on their preview URL and production links on
+`sign.midvora.com`.
 
 ## Security Notes
 

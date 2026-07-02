@@ -36,10 +36,7 @@ export default async function AdminDashboard() {
           <CardTitle>All proposals</CardTitle>
         </CardHeader>
         <CardContent>
-          <AdminProposalsTable
-            proposals={proposals}
-            baseUrl={process.env.NEXT_PUBLIC_APP_URL ?? ""}
-          />
+          <AdminProposalsTable proposals={proposals} />
         </CardContent>
       </Card>
     </main>

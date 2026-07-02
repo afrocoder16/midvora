@@ -9,7 +9,8 @@ export function CopyLinkButton({ url }: { url: string }) {
   const [copied, setCopied] = useState(false);
 
   async function copy() {
-    await navigator.clipboard.writeText(url);
+    const absoluteUrl = new URL(url, window.location.origin).toString();
+    await navigator.clipboard.writeText(absoluteUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }
