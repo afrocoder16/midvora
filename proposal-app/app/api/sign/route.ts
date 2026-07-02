@@ -4,6 +4,8 @@ import { signProposalSchema } from "@/lib/validation";
 import { getClientIp } from "@/lib/ip";
 import { renderSignedProposalPdf } from "@/lib/pdf";
 import { sendSignedProposalEmail } from "@/lib/email";
+import { normalizeProposal } from "@/lib/proposals";
+import { errorJson, signProposalRpcErrorResponse } from "@/lib/api-errors";
 import type { Proposal, Signature } from "@/lib/types";
 
 // @react-pdf/renderer needs the Node.js runtime (not Edge).
@@ -15,13 +17,13 @@ export async function POST(req: NextRequest) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+    return errorJson("Invalid request body.", 400);
   }
 
   const parsed = signProposalSchema.safeParse(body);
   if (!parsed.success) {
     const first = parsed.error.errors[0]?.message ?? "Invalid input.";
-    return NextResponse.json({ error: first }, { status: 400 });
+    return errorJson(first, 400);
   }
   const { token, signer_name, signature_image } = parsed.data;
 
@@ -35,66 +37,42 @@ export async function POST(req: NextRequest) {
     .maybeSingle<Proposal>();
 
   if (lookupErr) {
-    return NextResponse.json({ error: "Could not load proposal." }, { status: 500 });
+    return errorJson("Could not load proposal.", 500);
   }
   if (!proposal) {
-    return NextResponse.json({ error: "Proposal not found." }, { status: 404 });
+    return errorJson("Proposal not found.", 404);
   }
 
   // 3. Immutability guard: already signed -> reject (idempotent-ish 409).
   if (proposal.status === "signed") {
-    return NextResponse.json(
-      { error: "This proposal has already been signed." },
-      { status: 409 }
-    );
+    return errorJson("This proposal has already been signed.", 409);
   }
 
   // 4. Capture server-side facts the client must NOT supply.
   const signer_ip = getClientIp(req.headers);
   const signed_at = new Date().toISOString();
 
-  // 5. Insert the signature. The unique constraint on proposal_id prevents a
-  //    duplicate from a double-submit / race.
-  const { data: signature, error: sigErr } = await supabase
-    .from("signatures")
-    .insert({
-      proposal_id: proposal.id,
-      signer_name,
-      signature_image,
-      signed_at,
-      signer_ip,
-      agreed: true,
+  // 5. Atomically insert the signature and flip the proposal to 'signed'. The
+  //    database function locks the proposal row, so a double-submit / race can
+  //    only produce one recorded signature.
+  const { data: signature, error: signErr } = await supabase
+    .rpc("record_proposal_signature", {
+      p_proposal_id: proposal.id,
+      p_signer_name: signer_name,
+      p_signature_image: signature_image,
+      p_signer_ip: signer_ip,
+      p_signed_at: signed_at,
     })
-    .select("*")
     .single<Signature>();
 
-  if (sigErr) {
-    // 23505 = unique_violation -> someone already signed in a race.
-    if ((sigErr as { code?: string }).code === "23505") {
-      return NextResponse.json(
-        { error: "This proposal has already been signed." },
-        { status: 409 }
-      );
-    }
-    return NextResponse.json({ error: "Could not save signature." }, { status: 500 });
+  if (signErr) {
+    console.error("[sign] signature rpc failed:", signErr);
+    return signProposalRpcErrorResponse(signErr);
   }
 
-  // 6. Flip the proposal to 'signed'. After this the DB trigger makes it immutable.
-  const { error: statusErr } = await supabase
-    .from("proposals")
-    .update({ status: "signed" })
-    .eq("id", proposal.id);
+  const signedProposal: Proposal = normalizeProposal({ ...proposal, status: "signed" });
 
-  if (statusErr) {
-    return NextResponse.json(
-      { error: "Signature saved but status update failed. Please contact us." },
-      { status: 500 }
-    );
-  }
-
-  const signedProposal: Proposal = { ...proposal, status: "signed" };
-
-  // 7. Generate the signed PDF and email it to client + internal inbox.
+  // 6. Generate the signed PDF and email it to client + internal inbox.
   //    Email failures are logged but do not fail the request — the signature is
   //    already recorded and the client can still download the PDF.
   try {

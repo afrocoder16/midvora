@@ -26,6 +26,7 @@ export function SignedView({
         </p>
         <div className="mt-3 w-full max-w-sm rounded-md border border-input bg-white p-2">
           {/* signature_image is a base64 data URL */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={signature.signature_image}
             alt={`Signature of ${signature.signer_name}`}

@@ -34,7 +34,13 @@ export async function sendSignedProposalEmail({
       </div>
       <p style="margin-top:20px;">Hi ${escapeHtml(proposal.client_name)},</p>
       <p>Thank you for signing your proposal with Midvora. A signed copy is attached as a PDF for your records.</p>
-      <p style="font-size:18px; font-weight:bold; color:#0054DF;">Total: ${formatCents(proposal.total_price)}</p>
+      ${
+        proposal.total_price > 0
+          ? `<p style="font-size:18px; font-weight:bold; color:#0054DF;">Total: ${formatCents(
+              proposal.total_price
+            )}</p>`
+          : ""
+      }
       <p>We'll be in touch shortly with next steps. If you have any questions, just reply to this email or call us.</p>
       <hr style="border:none; border-top:1px solid #E5E7EB; margin:24px 0;" />
       <p style="font-size:12px; color:#6B7280;">
