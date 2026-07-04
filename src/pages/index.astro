@@ -649,6 +649,13 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* Once JS splits a line into transformed spans, background-clip:text no longer
+   paints them — the split script swaps to per-char solid colors instead. */
+.v2-h1-line.is-split {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: #fff;
+}
 .v2-h1 .ch { display: inline-block; will-change: transform; }
 
 .v2-rotator-row {
@@ -660,18 +667,20 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
 .v2-rotator-label { color: rgba(255,255,255,0.4); }
 .v2-rotator {
   position: relative; display: inline-block;
-  overflow: hidden; vertical-align: baseline;
+  /* overflow:hidden makes the box's bottom edge the baseline — pull it back down */
+  overflow: hidden; vertical-align: -0.45em;
   min-width: 9ch; text-align: left;
   color: #F96B2B;
   border-bottom: 2px solid rgba(249,107,43,0.4);
-  padding-bottom: 0.1em;
+  padding-bottom: 0.06em;
 }
 .v2-word { display: inline-block; }
 
 .v2-sub {
   margin: 1.4rem auto 0; max-width: 36rem;
   font: 500 clamp(0.98rem, 1.6vw, 1.1rem)/1.65 'Inter Tight', sans-serif;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.58);
+  text-shadow: 0 1px 14px rgba(3,8,17,0.8);
 }
 
 .v2-ctas {
@@ -1022,10 +1031,10 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
   font-family: 'Oswald', sans-serif; font-weight: 700;
   font-size: clamp(14rem, 30vw, 26rem); line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(142,183,255,0.14);
+  -webkit-text-stroke: 1.5px rgba(142,183,255,0.24);
   pointer-events: none; user-select: none;
 }
-.v2-num-orange { -webkit-text-stroke-color: rgba(249,107,43,0.16); }
+.v2-num-orange { -webkit-text-stroke-color: rgba(249,107,43,0.28); }
 .v2-panel-card {
   position: relative; z-index: 2;
   width: min(100%, 26rem);
@@ -1305,6 +1314,50 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
   margin: 1.4rem 0 0;
   font: 500 0.75rem/1.5 'Inter Tight', sans-serif;
   color: rgba(255,255,255,0.24);
+}
+
+/* ---------- anchor offset under floating nav ---------- */
+section[id] { scroll-margin-top: 5.75rem; }
+
+/* ---------- mobile polish ---------- */
+@media (max-width: 767px) {
+  .v2-hero { padding: 7.25rem 1.1rem 3.75rem; }
+  .v2-holiday {
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.62rem;
+    padding: 0.42rem 0.85rem;
+  }
+  .v2-h1 { margin-top: 1.4rem; }
+  .v2-rotator-row { margin-top: 1.3rem; }
+  .v2-sub { margin-top: 1.1rem; font-size: 0.95rem; }
+  .v2-ctas {
+    margin-top: 1.7rem;
+    width: 100%; max-width: 22rem;
+    flex-direction: column; align-items: stretch;
+  }
+  .v2-btn-primary, .v2-btn-ghost { width: 100%; padding-inline: 1.4rem; }
+  .v2-proof { margin-top: 2.1rem; }
+  .v2-scroll-cue { display: none; }
+  .v2-lede { font-size: 0.94rem; }
+  .ba-footnote { font-size: 0.84rem; }
+  .v2-big-price { -webkit-text-stroke-width: 1.5px; }
+  .v2-price-chips { gap: 0.45rem; }
+  .v2-chip { padding: 0.5rem 0.85rem; font-size: 0.6rem; }
+}
+
+/* very narrow phones */
+@media (max-width: 379px) {
+  .v2-h1 { font-size: 2.95rem; }
+  .v2-cta-h2 { font-size: 2.6rem; }
+  .v2-proof-n { font-size: 1.45rem; }
+}
+
+/* short viewports: keep hero breathable */
+@media (max-height: 740px) and (min-width: 768px) {
+  .v2-scroll-cue { display: none; }
+  .v2-hero { padding-top: 7.5rem; padding-bottom: 4rem; }
 }
 
 /* ---------- reduced motion ---------- */
@@ -1625,13 +1678,23 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
   /* ── split hero headline into chars ── */
   document.querySelectorAll('[data-split]').forEach(function (line) {
     var text = line.textContent;
+    var isGradient = line.classList.contains('v2-h1-orange');
+    var fromC = [249, 107, 43], toC = [255, 192, 122];
     line.setAttribute('aria-label', text);
     line.textContent = '';
-    text.split('').forEach(function (ch) {
+    line.classList.add('is-split');
+    text.split('').forEach(function (ch, i) {
       var s = document.createElement('span');
       s.className = 'ch';
       s.setAttribute('aria-hidden', 'true');
       s.textContent = ch === ' ' ? ' ' : ch;
+      if (isGradient) {
+        var t = text.length > 1 ? i / (text.length - 1) : 0;
+        s.style.color = 'rgb(' +
+          Math.round(fromC[0] + (toC[0] - fromC[0]) * t) + ',' +
+          Math.round(fromC[1] + (toC[1] - fromC[1]) * t) + ',' +
+          Math.round(fromC[2] + (toC[2] - fromC[2]) * t) + ')';
+      }
       line.appendChild(s);
     });
   });
