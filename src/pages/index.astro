@@ -132,27 +132,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="v2-h2 v2-ink">Numbers that make<br/><span class="v2-orange-grad">the offer real.</span></h2>
     </div>
     <div class="v2-stats-row">
-      <div class="v2-stat" data-reveal>
+      <div class="v2-stat" data-reveal style="--acc:#2D7DFF;">
         <p class="v2-stat-n"><span class="stat-counter" data-target="70" data-suffix="%">0%</span></p>
         <div class="v2-stat-bar"></div>
         <p class="v2-stat-t">Cheaper than agencies</p>
         <p class="v2-stat-d">Agencies charge $5k–$15k for the same build. We don't have a Manhattan office.</p>
       </div>
-      <div class="v2-stat" data-reveal>
-        <p class="v2-stat-n v2-stat-orange"><span class="stat-counter" data-target="24" data-suffix="h">0h</span></p>
-        <div class="v2-stat-bar v2-stat-bar-orange"></div>
+      <div class="v2-stat" data-reveal style="--acc:#F96B2B;">
+        <p class="v2-stat-n"><span class="stat-counter" data-target="24" data-suffix="h">0h</span></p>
+        <div class="v2-stat-bar"></div>
         <p class="v2-stat-t">Sample delivered</p>
         <p class="v2-stat-d">A real working homepage — not a mockup, not a wireframe, not a promise.</p>
       </div>
-      <div class="v2-stat" data-reveal>
+      <div class="v2-stat" data-reveal style="--acc:#16C784;">
         <p class="v2-stat-n">$0</p>
         <div class="v2-stat-bar"></div>
         <p class="v2-stat-t">Before approval</p>
         <p class="v2-stat-d">You review the finished sample first. Money only moves when you say yes.</p>
       </div>
-      <div class="v2-stat" data-reveal>
-        <p class="v2-stat-n v2-stat-orange">5–7<span class="v2-stat-unit">days</span></p>
-        <div class="v2-stat-bar v2-stat-bar-orange"></div>
+      <div class="v2-stat" data-reveal style="--acc:#8B5CF6;">
+        <p class="v2-stat-n">5–7<span class="v2-stat-unit">days</span></p>
+        <div class="v2-stat-bar"></div>
         <p class="v2-stat-t">Approval to live</p>
         <p class="v2-stat-d">From "I love it" to fully live on your own domain in under a week.</p>
       </div>
@@ -291,14 +291,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="v2-shell">
     <div class="v2-deliver-head" data-reveal>
       <p class="v2-kicker v2-kicker-blue">In the box</p>
-      <h2 class="v2-h2 v2-ink">Everything a local site<br/><span class="v2-orange-grad">actually needs.</span></h2>
+      <h2 class="v2-h2 v2-ink">Everything a local site<br/><span class="v2-blue-grad">actually needs.</span></h2>
     </div>
 
     <div class="v2-tilt-grid">
 
       <div class="v2-tcard" data-tilt data-reveal>
         <span class="tilt-glare" aria-hidden="true"></span>
-        <div class="v2-tcard-icon v2-ic-blue">
+        <div class="v2-tcard-icon" style="--acc:#2D7DFF;--acc-bg:rgba(45,125,255,0.1);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
         </div>
         <h3>Custom design</h3>
@@ -307,7 +307,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="v2-tcard" data-tilt data-reveal>
         <span class="tilt-glare" aria-hidden="true"></span>
-        <div class="v2-tcard-icon v2-ic-orange">
+        <div class="v2-tcard-icon" style="--acc:#F96B2B;--acc-bg:rgba(249,107,43,0.1);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         </div>
         <h3>Mobile-first build</h3>
@@ -316,7 +316,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="v2-tcard" data-tilt data-reveal>
         <span class="tilt-glare" aria-hidden="true"></span>
-        <div class="v2-tcard-icon v2-ic-blue">
+        <div class="v2-tcard-icon" style="--acc:#14B8A6;--acc-bg:rgba(20,184,166,0.12);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <h3>Google Business setup</h3>
@@ -325,7 +325,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="v2-tcard" data-tilt data-reveal>
         <span class="tilt-glare" aria-hidden="true"></span>
-        <div class="v2-tcard-icon v2-ic-orange">
+        <div class="v2-tcard-icon" style="--acc:#8B5CF6;--acc-bg:rgba(139,92,246,0.12);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
         </div>
         <h3>SEO foundation</h3>
@@ -334,7 +334,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="v2-tcard" data-tilt data-reveal>
         <span class="tilt-glare" aria-hidden="true"></span>
-        <div class="v2-tcard-icon v2-ic-blue">
+        <div class="v2-tcard-icon" style="--acc:#EC4899;--acc-bg:rgba(236,72,153,0.1);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M20 20h1"/></svg>
         </div>
         <h3>Booking, menus &amp; QR</h3>
@@ -343,7 +343,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="v2-tcard" data-tilt data-reveal>
         <span class="tilt-glare" aria-hidden="true"></span>
-        <div class="v2-tcard-icon v2-ic-orange">
+        <div class="v2-tcard-icon" style="--acc:#22C55E;--acc-bg:rgba(34,197,94,0.12);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
         </div>
         <h3>Care &amp; security</h3>
@@ -362,10 +362,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="v2-h2 v2-white">Websites starting<br/>at <span class="v2-orange-grad">$299.</span></h2>
       <p class="v2-lede">No hourly rates. No surprise invoices. No 14-page proposals. You see the finished sample, you see the price, you decide.</p>
       <div class="v2-price-chips">
-        <span class="v2-chip">$0 up front</span>
-        <span class="v2-chip">Free 24h sample</span>
-        <span class="v2-chip">No hidden fees</span>
-        <span class="v2-chip">Month-to-month care</span>
+        <span class="v2-chip" style="--dot:#16C784;">$0 up front</span>
+        <span class="v2-chip" style="--dot:#F96B2B;">Free 24h sample</span>
+        <span class="v2-chip" style="--dot:#22D3EE;">No hidden fees</span>
+        <span class="v2-chip" style="--dot:#A78BFA;">Month-to-month care</span>
       </div>
       <a href="#cta-banner" class="v2-btn-primary v2-btn-mt" data-magnetic>
         <span class="v2-btn-fill" aria-hidden="true"></span>
@@ -392,32 +392,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="v2-ind-grid">
       <a href="/contact" class="v2-ind-card" data-reveal>
-        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#8EB7FF;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 11h18M5 11V7a7 7 0 0 1 14 0v4M2 11h20v2a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4v-2zM12 3v1"/></svg>
+        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#4D9FFF;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M3 11h18M5 11V7a7 7 0 0 1 14 0v4M2 11h20v2a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4v-2zM12 3v1"/></svg>
         <span class="v2-ind-name">Restaurants &amp; cafés</span>
         <span class="v2-ind-sub">Menus, hours, orders</span>
       </a>
       <a href="/contact" class="v2-ind-card" data-reveal>
-        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#8EB7FF;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
+        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#F472B6;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
         <span class="v2-ind-name">Salons &amp; spas</span>
         <span class="v2-ind-sub">Booking, galleries</span>
       </a>
       <a href="/contact" class="v2-ind-card" data-reveal>
-        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#8EB7FF;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#FFC53D;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         <span class="v2-ind-name">Contractors &amp; trades</span>
         <span class="v2-ind-sub">Quotes, project photos</span>
       </a>
       <a href="/contact" class="v2-ind-card" data-reveal>
-        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#8EB7FF;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M6.5 6.5h11v11h-11zM2 9v6M22 9v6M4.5 7.5v9M19.5 7.5v9"/></svg>
+        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#34D399;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M6.5 6.5h11v11h-11zM2 9v6M22 9v6M4.5 7.5v9M19.5 7.5v9"/></svg>
         <span class="v2-ind-name">Gyms &amp; fitness</span>
         <span class="v2-ind-sub">Schedules, sign-ups</span>
       </a>
       <a href="/contact" class="v2-ind-card" data-reveal>
-        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#8EB7FF;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#22D3EE;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="v2-ind-name">Retail &amp; boutiques</span>
         <span class="v2-ind-sub">Products, promos</span>
       </a>
       <a href="/contact" class="v2-ind-card" data-reveal>
-        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#8EB7FF;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14 16.94V12.5l4.2-4.2a1 1 0 0 0 0-1.41l-3.09-3.09a1 1 0 0 0-1.41 0L9.5 8H5.06a1 1 0 0 0-.7 1.7l9.94 9.94a1 1 0 0 0 1.7-.7zM5 19l4-4"/></svg>
+        <svg class="industry-icon" viewBox="0 0 24 24" fill="none" style="stroke:#A78BFA;" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14 16.94V12.5l4.2-4.2a1 1 0 0 0 0-1.41l-3.09-3.09a1 1 0 0 0-1.41 0L9.5 8H5.06a1 1 0 0 0-.7 1.7l9.94 9.94a1 1 0 0 0 1.7-.7zM5 19l4-4"/></svg>
         <span class="v2-ind-name">Auto &amp; repair</span>
         <span class="v2-ind-sub">Services, call-now</span>
       </a>
@@ -491,6 +491,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.v2-blue-grad {
+  background: linear-gradient(100deg, #2D7DFF 0%, #22D3EE 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .v2-lede {
   margin: 1.25rem 0 0; max-width: 34rem;
   font: 500 1rem/1.65 'Inter Tight', sans-serif;
@@ -500,7 +505,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 /* ---------- scroll progress ---------- */
 #scroll-progress {
   position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 80;
-  background: linear-gradient(90deg, #0054DF, #8EB7FF 45%, #F96B2B);
+  background: linear-gradient(90deg, #2D7DFF, #22D3EE 35%, #FFC53D 68%, #F96B2B);
   transform: scaleX(0); transform-origin: 0 50%;
   pointer-events: none;
 }
@@ -548,17 +553,17 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
 .v2-aurora { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.9; }
 .v2-aurora-a {
   top: -25%; left: -12%; width: 70vw; height: 70vw; max-width: 56rem; max-height: 56rem;
-  background: radial-gradient(circle, rgba(0,84,223,0.3) 0%, transparent 62%);
+  background: radial-gradient(circle, rgba(24,102,255,0.38) 0%, transparent 62%);
   animation: auroraDrift 16s ease-in-out infinite;
 }
 .v2-aurora-b {
   bottom: -22%; right: -12%; width: 58vw; height: 58vw; max-width: 48rem; max-height: 48rem;
-  background: radial-gradient(circle, rgba(249,107,43,0.2) 0%, transparent 62%);
+  background: radial-gradient(circle, rgba(249,107,43,0.28) 0%, transparent 62%);
   animation: auroraDrift 20s ease-in-out infinite reverse;
 }
 .v2-aurora-c {
   top: 20%; right: 4%; width: 34vw; height: 34vw; max-width: 30rem; max-height: 30rem;
-  background: radial-gradient(circle, rgba(142,183,255,0.12) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(34,211,238,0.14) 0%, transparent 65%);
   animation: auroraDrift 24s ease-in-out infinite;
 }
 @keyframes auroraDrift {
@@ -797,6 +802,7 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
 .mq-seg i { font-style: normal; font-size: 0.6rem; }
 .v2-mq-orange .mq-seg i { color: rgba(255,255,255,0.5); }
 .v2-mq-navy .mq-seg i { color: rgba(249,107,43,0.7); }
+.v2-mq-navy .mq-seg i:nth-of-type(odd) { color: rgba(34,211,238,0.75); }
 
 /* ---------- STATS ---------- */
 .v2-stats { background: #F8F6F2; padding-block: clamp(4.5rem, 8vw, 7.5rem); }
@@ -806,22 +812,21 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
   gap: 2rem 1.5rem;
 }
 @media (min-width: 1024px) { .v2-stats-row { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 2.5rem; } }
-.v2-stat { text-align: left; }
+.v2-stat { text-align: left; --acc: #0054DF; }
 .v2-stat-n {
   margin: 0;
   font-family: 'Oswald', sans-serif; font-weight: 700;
   font-size: clamp(3rem, 7vw, 4.6rem); line-height: 1;
-  color: #0A1628;
+  color: var(--acc, #0A1628);
 }
-.v2-stat-orange { color: #F96B2B; }
+.v2-stat-orange { --acc: #F96B2B; }
 .v2-stat-unit { font-size: 0.32em; font-family: 'Inter Tight', sans-serif; font-weight: 600; opacity: 0.5; margin-left: 0.3em; }
 .v2-stat-bar {
   height: 3px; width: 100%; margin: 1rem 0 0.9rem;
-  background: linear-gradient(90deg, #0054DF, rgba(0,84,223,0.1));
+  background: linear-gradient(90deg, var(--acc, #0054DF), transparent);
   border-radius: 999px;
   transform-origin: 0 50%;
 }
-.v2-stat-bar-orange { background: linear-gradient(90deg, #F96B2B, rgba(249,107,43,0.1)); }
 .v2-stat-t {
   margin: 0 0 0.4rem;
   font: 700 0.68rem/1 'Inter Tight', sans-serif;
@@ -1143,9 +1148,11 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
   width: 50px; height: 50px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 1.15rem;
+  color: var(--acc, #0054DF);
+  background: var(--acc-bg, rgba(0,84,223,0.09));
 }
-.v2-ic-blue   { background: rgba(0,84,223,0.09); color: #0054DF; }
-.v2-ic-orange { background: rgba(249,107,43,0.1); color: #F96B2B; }
+.v2-ic-blue   { --acc: #0054DF; --acc-bg: rgba(0,84,223,0.09); }
+.v2-ic-orange { --acc: #F96B2B; --acc-bg: rgba(249,107,43,0.1); }
 .v2-tcard h3 {
   margin: 0 0 0.5rem;
   font-family: 'Oswald', sans-serif; font-weight: 700;
@@ -1178,12 +1185,18 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
 @media (min-width: 1024px) { .v2-pricing-grid { grid-template-columns: 1.1fr 1fr; } }
 .v2-price-chips { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .v2-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05);
   padding: 0.6rem 1.05rem;
   font: 700 0.66rem/1 'Inter Tight', sans-serif;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: rgba(255,255,255,0.6);
+}
+.v2-chip::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  background: var(--dot, #F96B2B);
+  box-shadow: 0 0 8px var(--dot, #F96B2B);
 }
 .v2-pricing-figure { text-align: center; }
 .v2-big-price {
@@ -1249,7 +1262,9 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
 .v2-cta-glow {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%);
   width: 62rem; height: 34rem; pointer-events: none;
-  background: radial-gradient(ellipse, rgba(249,107,43,0.12) 0%, transparent 60%);
+  background:
+    radial-gradient(ellipse at 32% 38%, rgba(249,107,43,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 65%, rgba(45,125,255,0.13) 0%, transparent 55%);
 }
 .v2-cta-grid-bg {
   position: absolute; inset: 0; pointer-events: none;
@@ -1319,6 +1334,17 @@ html.fx-cursor input, html.fx-cursor textarea, html.fx-cursor select { cursor: t
 /* ---------- anchor offset under floating nav ---------- */
 section[id] { scroll-margin-top: 5.75rem; }
 
+/* ---------- mobile perf: cut GPU-heavy effects ---------- */
+@media (max-width: 1023px) {
+  .v2-aurora { animation: none !important; filter: blur(40px); }
+  .v2-eyebrow, .v2-holiday, .v2-btn-ghost, .v2-panel-card { backdrop-filter: none; }
+  .v2-mq-orange { box-shadow: none; }
+  .ba-wrap { box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+  .v2-btn-primary { box-shadow: 0 14px 30px rgba(249,107,43,0.32); }
+  .v2-panel-blue, .v2-panel-orange, .v2-panel-green { box-shadow: 0 24px 50px rgba(0,0,0,0.4); }
+  .v2-pricing::before, .v2-transform::before { filter: blur(36px); }
+}
+
 /* ---------- mobile polish ---------- */
 @media (max-width: 767px) {
   .v2-hero { padding: 7.25rem 1.1rem 3.75rem; }
@@ -1373,12 +1399,12 @@ section[id] { scroll-margin-top: 5.75rem; }
 <!-- ═══════════════ SCRIPTS ═══════════════ -->
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script is:inline>
-/* ══════════ WebGL HERO — particle morph (desktop only) ══════════ */
+/* ══════════ WebGL HERO — particle morph (desktop only) ══════════
+   Three.js is injected at runtime only on desktop so phones never
+   download or parse the ~600KB library. */
 (function () {
-  if (typeof THREE === 'undefined') return;
   if (window.innerWidth < 1024) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (new URLSearchParams(window.location.search).has('staticPreview')) return;
@@ -1617,11 +1643,17 @@ section[id] { scroll-margin-top: 5.75rem; }
     renderer.render(scene, camera);
   }
 
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(init);
-  } else {
-    init();
-  }
+  var lib = document.createElement('script');
+  lib.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+  lib.async = true;
+  lib.onload = function () {
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(init);
+    } else {
+      init();
+    }
+  };
+  document.head.appendChild(lib);
 })();
 </script>
 
@@ -1670,6 +1702,17 @@ section[id] { scroll-margin-top: 5.75rem; }
     });
   })();
 
+  /* ── pause marquees while offscreen (mobile GPU relief) ── */
+  (function () {
+    var mz = document.querySelector('.v2-marquee-zone');
+    if (!mz || !('IntersectionObserver' in window)) return;
+    var tracks = mz.querySelectorAll('.mq-track');
+    new IntersectionObserver(function (entries) {
+      var run = entries[0].isIntersecting;
+      tracks.forEach(function (t) { t.style.animationPlayState = run ? 'running' : 'paused'; });
+    }).observe(mz);
+  })();
+
   if (reduced || staticPreview) {
     setCountersFinal();
     return;
@@ -1712,27 +1755,32 @@ section[id] { scroll-margin-top: 5.75rem; }
     .fromTo('.hero-proof-strip', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.35')
     .fromTo('.hero-cue',      { opacity: 0 }, { opacity: 1, duration: 0.8 }, '-=0.2');
 
-  /* ── rotating industry word ── */
+  /* ── rotating industry word ──
+     One reused element (append/remove pattern leaked words on slow phones
+     when tweens got throttled and onComplete never fired). */
   (function () {
     var box = document.getElementById('word-rotator');
     if (!box) return;
-    var words = ['restaurants', 'salons', 'contractors', 'gyms', 'boutiques', 'auto shops'];
+    var word = box.querySelector('.v2-word');
+    if (!word) return;
+    var words  = ['restaurants', 'salons', 'contractors', 'gyms', 'boutiques', 'auto shops'];
+    var colors = ['#F96B2B', '#4D9FFF', '#22D3EE', '#34D399', '#FFC53D', '#F472B6'];
     var idx = 0;
+    word.style.color = colors[0];
     setInterval(function () {
-      var oldWord = box.querySelector('.v2-word');
+      if (document.hidden) return;
       idx = (idx + 1) % words.length;
-      var next = document.createElement('span');
-      next.className = 'v2-word';
-      next.textContent = words[idx];
-      gsap.to(oldWord, {
-        yPercent: -110, opacity: 0, duration: 0.4, ease: 'power2.in',
-        onComplete: function () { oldWord.remove(); }
-      });
-      box.appendChild(next);
-      gsap.fromTo(next,
-        { yPercent: 110, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 0.45, delay: 0.28, ease: 'power2.out' });
-    }, 2400);
+      gsap.timeline()
+        .to(word, { yPercent: -110, opacity: 0, duration: 0.32, ease: 'power2.in', overwrite: 'auto' })
+        .add(function () {
+          word.textContent = words[idx];
+          word.style.color = colors[idx];
+          box.style.borderBottomColor = colors[idx] + '66';
+        })
+        .fromTo(word,
+          { yPercent: 110, opacity: 0 },
+          { yPercent: 0, opacity: 1, duration: 0.4, ease: 'power2.out' });
+    }, 2600);
   })();
 
   /* ── generic reveals ── */
