@@ -43,17 +43,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Price showcase row — the "different" element vs work page -->
     <div class="svc-price-row">
       <div class="svc-price-pill svc-pp-blue">
-        <span class="svc-pp-amount">$299</span>
+        <span class="svc-pp-amount">$700</span>
         <span class="svc-pp-label">Starter</span>
       </div>
       <div class="svc-price-connector" aria-hidden="true">→</div>
       <div class="svc-price-pill svc-pp-orange">
-        <span class="svc-pp-amount">$650</span>
+        <span class="svc-pp-amount">$1,300</span>
         <span class="svc-pp-label">Growth</span>
       </div>
       <div class="svc-price-connector" aria-hidden="true">→</div>
       <div class="svc-price-pill svc-pp-dark">
-        <span class="svc-pp-amount">$1,200</span>
+        <span class="svc-pp-amount">$2,000</span>
         <span class="svc-pp-label">Premium</span>
       </div>
     </div>
@@ -96,7 +96,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="svc-pkg-card">
         <div class="svc-pkg-tag" style="background:rgba(0,84,223,0.1);color:#0054DF;">Get Online</div>
         <div class="svc-pkg-price-row">
-          <span class="svc-pkg-price">$299</span>
+          <span class="svc-pkg-price">$700</span>
           <span class="svc-pkg-cycle">one-time</span>
         </div>
         <p class="svc-pkg-name">Starter</p>
@@ -124,7 +124,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="svc-popular-badge">Most Popular</div>
         <div class="svc-pkg-tag" style="background:rgba(249,107,43,0.1);color:#F96B2B;">Grow Faster</div>
         <div class="svc-pkg-price-row">
-          <span class="svc-pkg-price" style="color:#F96B2B;">$650</span>
+          <span class="svc-pkg-price" style="color:#F96B2B;">$1,300</span>
           <span class="svc-pkg-cycle">one-time</span>
         </div>
         <p class="svc-pkg-name">Growth</p>
@@ -152,7 +152,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="svc-pkg-card">
         <div class="svc-pkg-tag" style="background:#0A1628;color:#fff;">Go All In</div>
         <div class="svc-pkg-price-row">
-          <span class="svc-pkg-price">$1,200</span>
+          <span class="svc-pkg-price">$2,000</span>
           <span class="svc-pkg-cycle">one-time</span>
         </div>
         <p class="svc-pkg-name">Premium</p>
@@ -250,11 +250,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="svc-care-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3.5rem;max-width:52rem;margin-left:auto;margin-right:auto;">
 
-      <!-- Basic Care -->
+      <!-- Monthly Support -->
       <div class="svc-care-card">
-        <p class="svc-care-name">Basic Care</p>
+        <p class="svc-care-name">Monthly Support</p>
         <div class="svc-care-price-row">
-          <span class="svc-care-price">$25</span>
+          <span class="svc-care-price">$50</span>
           <span class="svc-care-mo">/mo</span>
         </div>
         <ul class="svc-care-list">
@@ -278,12 +278,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="svc-care-glow" aria-hidden="true"></div>
         <p class="svc-care-name">Full Care</p>
         <div class="svc-care-price-row">
-          <span class="svc-care-price" style="color:#F96B2B;">$99</span>
+          <span class="svc-care-price" style="color:#F96B2B;">$100</span>
           <span class="svc-care-mo">/mo</span>
         </div>
         <ul class="svc-care-list">
           {[
-            'Everything in Basic Care',
+            'Everything in Monthly Support',
             'SEO management + monthly reports',
             'Social media management',
             'Review monitoring + responses',
@@ -437,7 +437,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         },
         {
           q: 'What happens after my site is live?',
-          a: 'We offer monthly care plans starting at $25/mo for maintenance and security. Or we can hand you the keys and you manage it yourself, your choice.',
+          a: 'We offer monthly support starting at $50/mo for maintenance and security. Or we can hand you the keys and you manage it yourself, your choice.',
         },
       ].map((item, i) => (
         <div class="svc-faq-item" data-faq={i}>
@@ -544,8 +544,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="byo-care-grid">
         {[
           { price: 0,  label: '$0/mo',   name: 'No plan',    desc: "I'll manage it myself.", default: true },
-          { price: 25, label: '$25/mo',  name: 'Basic care', desc: 'Maintenance + security monitoring.' },
-          { price: 99, label: '$99/mo',  name: 'Full care',  desc: 'SEO + social + reviews + GBP.' },
+          { price: 50,  label: '$50/mo',  name: 'Monthly support', desc: 'Maintenance + security monitoring.' },
+          { price: 100, label: '$100/mo', name: 'Full care',       desc: 'SEO + social + reviews + GBP.' },
         ].map(opt => (
           <div class={`byo-care-card ${opt.default ? 'byo-selected' : ''}`} data-price={opt.price} data-type="care">
             <div class="byo-base-radio"><span class="byo-radio-inner"></span></div>
@@ -562,15 +562,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="byo-nudge-text">Before you go custom, check if a package already covers what you need.</p>
       <div class="byo-nudge-grid">
         <div class="byo-nudge-card" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
-          <p class="byo-nudge-name">Starter — $299</p>
+          <p class="byo-nudge-name">Starter — $700</p>
           <p class="byo-nudge-inc">Includes GBP + QR menu free</p>
         </div>
         <div class="byo-nudge-card byo-nudge-featured" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
-          <p class="byo-nudge-name">Growth — $650</p>
+          <p class="byo-nudge-name">Growth — $1,300</p>
           <p class="byo-nudge-inc">Includes photos + social media free</p>
         </div>
         <div class="byo-nudge-card" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
-          <p class="byo-nudge-name">Premium — $1,200</p>
+          <p class="byo-nudge-name">Premium — $2,000</p>
           <p class="byo-nudge-inc">Includes everything free</p>
         </div>
       </div>
