@@ -50,144 +50,117 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     SECTION 2 — FEATURED: LA MICHOACANA ELITE
+     SECTION 2 — LIVE WEBSITES
 ═══════════════════════════════════════════════ -->
 <section class="mich-section relative overflow-hidden">
 
-  <!-- Deep dark background with brand-accurate warm cream -->
   <div class="mich-bg-layer" aria-hidden="true">
     <div class="mich-glow-pink"></div>
     <div class="mich-glow-green"></div>
     <div class="mich-noise"></div>
   </div>
 
-  <!-- ── TOP: Case Study label ── -->
   <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
     <div class="mich-case-label">
       <div class="mich-case-line"></div>
-      <span>Featured Case Study</span>
+      <span>Live Websites</span>
       <div class="mich-case-line"></div>
     </div>
-  </div>
 
-  <!-- ── HERO BAND: big title + tag ── -->
-  <div class="relative z-10 mich-title-band">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8">
-      <div class="mich-title-row">
-        <div class="mich-title-left">
-          <div class="mich-project-tag">
-            <span class="mich-tag-dot"></span>
-            Ice Cream Shop
-          </div>
-          <h2 class="mich-title">La Michoacana<br/><em class="mich-title-em">Elite</em></h2>
-          <p class="mich-subtitle">A full-stack interactive experience — bold brand, live ordering, signature drink builder, and bilingual support. Built in 24 hours. Launched in 7 days.</p>
-        </div>
-        <div class="mich-title-right">
-          <div class="mich-stat-block">
-            <div class="mich-stat"><span class="mich-stat-n">7</span><span class="mich-stat-l">Days to launch</span></div>
-            <div class="mich-stat-div"></div>
-            <div class="mich-stat"><span class="mich-stat-n">24h</span><span class="mich-stat-l">Sample delivered</span></div>
-            <div class="mich-stat-div"></div>
-            <div class="mich-stat"><span class="mich-stat-n">$0</span><span class="mich-stat-l">Up front</span></div>
-          </div>
-        </div>
+    <div class="mich-title-band">
+      <div class="mich-project-tag">
+        <span class="mich-tag-dot"></span>
+        Live Client Work
       </div>
-    </div>
-  </div>
-
-  <!-- ── SCREENSHOT SHOWCASE ── -->
-  <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 mich-screens-wrap">
-
-    <!-- Main hero screenshot — full width, tilted -->
-    <div class="mich-screen-main mich-reveal">
-      <div class="mich-browser-chrome">
-        <div class="mich-dots"><span style="background:#FF5F57"></span><span style="background:#FFBD2E"></span><span style="background:#28CA41"></span></div>
-        <div class="mich-url-bar">Sample Preview</div>
-        <div class="mich-live-badge"><span class="mich-live-dot-green"></span>Sample</div>
-      </div>
-      <div class="mich-screen-img-wrap">
-        <img src="/work/michoacana.png" alt="La Michoacana Elite — hero section" class="mich-screen-img" loading="lazy"/>
-        <div class="mich-screen-shimmer"></div>
-      </div>
+      <h2 class="mich-title">Built, live,<br/><em class="mich-title-em">and loved.</em></h2>
+      <p class="mich-subtitle">Two real websites, live now and helping local businesses connect with their customers.</p>
     </div>
 
-    <!-- Three detail shots in a creative asymmetric grid -->
-    <div class="mich-detail-grid">
+    <div class="live-project-grid grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-7">
 
-      <!-- Shot 2: Menu page — large left -->
-      <div class="mich-detail-card mich-detail-large mich-reveal" style="--delay:0.1s">
-        <div class="mich-detail-label">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20"/></svg>
-          Interactive Menu
+      <!-- ── LIVE: LA MICHOACANA ELITE ── -->
+      <div class="proj-card live-project-card proj-reveal" style="--card-delay:0.05s">
+        <div class="proj-card-screens">
+          <div class="proj-main-screen">
+            <div class="proj-chrome">
+              <div class="proj-chrome-dots"><span></span><span></span><span></span></div>
+              <div class="proj-chrome-url">lamichoacanaelitemn.com</div>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="/work/michoacana.png" alt="La Michoacana Elite website" class="proj-main-img" loading="lazy"/>
+            </div>
+          </div>
+          <div class="proj-peek-row">
+            <div class="proj-peek">
+              <img src="/work/michoacana2.png" alt="La Michoacana Elite — interactive menu" loading="lazy"/>
+            </div>
+            <div class="proj-peek">
+              <img src="/work/michoacana3.png" alt="La Michoacana Elite — drink builder" loading="lazy"/>
+            </div>
+          </div>
+          <a class="proj-card-hover-overlay" href="https://lamichoacanaelitemn.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the La Michoacana Elite website" style="pointer-events:auto;text-decoration:none;">
+            <span class="proj-view-btn">Visit live site →</span>
+          </a>
         </div>
-        <img src="/work/michoacana2.png" alt="La Michoacana Elite — menu page" class="mich-detail-img" loading="lazy"/>
-        <div class="mich-detail-overlay">
-          <p class="mich-detail-caption">Category filters, live pricing, and a design built around their vibrant brand palette.</p>
+        <div class="proj-card-meta">
+          <div class="proj-card-tags">
+            <span class="proj-tag proj-tag-orange">Ice Cream Shop</span>
+            <span class="proj-tag proj-tag-blue">Live</span>
+          </div>
+          <h3 class="proj-card-title">La Michoacana Elite</h3>
+          <p class="proj-card-body">A bold bilingual website with a full interactive menu, signature drink builder, online ordering, and mobile-first experience.</p>
+          <div class="proj-card-specs">
+            <div class="proj-spec"><span class="proj-spec-n">Live</span><span class="proj-spec-l">Website</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">Marshall</span><span class="proj-spec-l">Minnesota</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">Mobile</span><span class="proj-spec-l">Ready</span></div>
+          </div>
         </div>
       </div>
 
-      <!-- Right column: two stacked -->
-      <div class="mich-detail-col-right">
-
-        <!-- Shot 3: Drink builder -->
-        <div class="mich-detail-card mich-reveal" style="--delay:0.2s">
-          <div class="mich-detail-label">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Drink Builder
+      <!-- ── LIVE: LA TAPATIA FOOD TRUCK ── -->
+      <div class="proj-card live-project-card proj-reveal" style="--card-delay:0.15s">
+        <div class="proj-card-screens">
+          <div class="proj-main-screen">
+            <div class="proj-chrome">
+              <div class="proj-chrome-dots"><span></span><span></span><span></span></div>
+              <div class="proj-chrome-url">latapatiafoodtruck.com</div>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="/work/tapatia.png" alt="La Tapatia Food Truck website" class="proj-main-img" loading="lazy"/>
+            </div>
           </div>
-          <img src="/work/michoacana3.png" alt="La Michoacana Elite — drink builder" class="mich-detail-img" loading="lazy"/>
-          <div class="mich-detail-overlay">
-            <p class="mich-detail-caption">Build-your-own feature with real-time preview and ingredient selection.</p>
+          <div class="proj-peek-row">
+            <div class="proj-peek">
+              <img src="/work/tapatia2.png" alt="La Tapatia Food Truck — menu" loading="lazy"/>
+            </div>
+            <div class="proj-peek">
+              <img src="/work/tapatia3.png" alt="La Tapatia Food Truck — about section" loading="lazy"/>
+            </div>
+          </div>
+          <a class="proj-card-hover-overlay" href="https://latapatiafoodtruck.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the La Tapatia Food Truck website" style="pointer-events:auto;text-decoration:none;">
+            <span class="proj-view-btn">Visit live site →</span>
+          </a>
+        </div>
+        <div class="proj-card-meta">
+          <div class="proj-card-tags">
+            <span class="proj-tag proj-tag-orange">Food Truck</span>
+            <span class="proj-tag proj-tag-blue">Live</span>
+          </div>
+          <h3 class="proj-card-title">La Tapatia Food Truck</h3>
+          <p class="proj-card-body">Authentic Mexican street food in Marshall, with a full menu, current location and schedule, and a direct path to book catering.</p>
+          <div class="proj-card-specs">
+            <div class="proj-spec"><span class="proj-spec-n">Live</span><span class="proj-spec-l">Website</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">Marshall</span><span class="proj-spec-l">Minnesota</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">Mobile</span><span class="proj-spec-l">Ready</span></div>
           </div>
         </div>
-
-        <!-- Shot 4: Spin wheel -->
-        <div class="mich-detail-card mich-reveal" style="--delay:0.3s">
-          <div class="mich-detail-label">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v10l4.5 4.5"/></svg>
-            Pick For Me Wheel
-          </div>
-          <img src="/work/michoacana4.png" alt="La Michoacana Elite — spin wheel feature" class="mich-detail-img" loading="lazy"/>
-          <div class="mich-detail-overlay">
-            <p class="mich-detail-caption">Shake your phone or spin — the wheel picks tonight's craving.</p>
-          </div>
-        </div>
-
       </div>
-    </div>
 
-    <!-- Deliverables strip -->
-    <div class="mich-chips-strip mich-reveal" style="--delay:0.15s">
-      {[
-        { icon: '🎨', label: 'Custom brand design' },
-        { icon: '🍦', label: 'Interactive menu' },
-        { icon: '🎯', label: 'Drink builder' },
-        { icon: '🌀', label: 'Pick For Me wheel' },
-        { icon: '🌐', label: 'Bilingual support' },
-        { icon: '📱', label: 'Mobile-first' },
-        { icon: '🛒', label: 'Online ordering' },
-        { icon: '⚡', label: 'Live in 7 days' },
-      ].map(chip => (
-        <div class="mich-chip">
-          <span class="mich-chip-icon">{chip.icon}</span>
-          <span>{chip.label}</span>
-        </div>
-      ))}
     </div>
-
-    <!-- Bottom CTA row -->
-    <div class="mich-bottom-row mich-reveal" style="--delay:0.2s">
-      <div class="mich-quote">
-        <svg class="mich-quote-icon" viewBox="0 0 40 32" fill="none"><path d="M0 32V20C0 8.667 6.667 2 20 0l2.667 4C16.889 5.333 13.778 8.444 13.333 13.333H20V32H0zm20 0V20C20 8.667 26.667 2 40 0l2.667 4C36.889 5.333 33.778 8.444 33.333 13.333H40V32H20z" fill="currentColor"/></svg>
-        <p>We wanted something as bold and fun as we are. Midvora delivered in a day. We couldn't believe it was ours.</p>
-        <p class="mich-quote-attr">— La Michoacana Elite, Marshall MN</p>
-      </div>
-      <a href="/contact" class="mich-cta-btn">
-        Get your free sample
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
   </div>
 </section>
 
@@ -205,14 +178,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <div class="relative z-10 mx-auto max-w-7xl px-5 sm:px-8" style="padding-top:6rem;padding-bottom:7rem;">
 
-    <!-- Section heading -->
+    <!-- More projects heading -->
     <div class="proj-head proj-reveal">
       <p class="proj-eyebrow">More Projects</p>
-      <h2 class="proj-h2">Three more sites.<br/><span class="proj-h2-dim">Built, live, and loved.</span></h2>
-      <p class="proj-sub">Each one started with a free 24-hour sample. Each one launched within a week.</p>
+      <h2 class="proj-h2">More sites coming soon.<br/><span class="proj-h2-dim">Built, live, and loved.</span></h2>
+      <p class="proj-sub">Each one started with a free 24-hour sample. More launches are on the way.</p>
     </div>
 
-    <!-- Project cards -->
+    <!-- Coming-soon project cards -->
     <div class="proj-grid">
 
       <!-- ── CARD 1: CHICKEN CONNECTION ── -->
@@ -250,7 +223,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3 class="proj-card-title">Chicken Connection</h3>
           <p class="proj-card-body">40-year Marshall institution. Built their first real website with online ordering, a story page, and the bold identity they deserved.</p>
           <div class="proj-card-specs">
-            <div class="proj-spec"><span class="proj-spec-n">5</span><span class="proj-spec-l">Days live</span></div>
+            <div class="proj-spec"><span class="proj-spec-n">5</span><span class="proj-spec-l">Days to build</span></div>
             <div class="proj-spec-sep"></div>
             <div class="proj-spec"><span class="proj-spec-n">3</span><span class="proj-spec-l">Pages built</span></div>
             <div class="proj-spec-sep"></div>
@@ -291,7 +264,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3 class="proj-card-title">PhotoWorks</h3>
           <p class="proj-card-body">A photography studio and photo lab since 1981. We built a timeless, editorial site that matches the craft they've been delivering for over four decades.</p>
           <div class="proj-card-specs">
-            <div class="proj-spec"><span class="proj-spec-n">6</span><span class="proj-spec-l">Days live</span></div>
+            <div class="proj-spec"><span class="proj-spec-n">6</span><span class="proj-spec-l">Days to build</span></div>
             <div class="proj-spec-sep"></div>
             <div class="proj-spec"><span class="proj-spec-n">44+</span><span class="proj-spec-l">Years serving MN</span></div>
             <div class="proj-spec-sep"></div>
@@ -332,9 +305,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3 class="proj-card-title">Sabor Fine Kitchen</h3>
           <p class="proj-card-body">Hand-pressed tortillas and slow-braised birria on Main Street. We matched the food's quality with bold typography, a full online menu, and a design as confident as the kitchen.</p>
           <div class="proj-card-specs">
-            <div class="proj-spec"><span class="proj-spec-n">7</span><span class="proj-spec-l">Days live</span></div>
+            <div class="proj-spec"><span class="proj-spec-n">7</span><span class="proj-spec-l">Days to build</span></div>
             <div class="proj-spec-sep"></div>
             <div class="proj-spec"><span class="proj-spec-n">4</span><span class="proj-spec-l">Pages built</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">$0</span><span class="proj-spec-l">Up front</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 4: ANIMAL HEALTH CENTER ── -->
+      <div class="proj-card proj-reveal" style="--card-delay:0.3s">
+        <div class="proj-card-screens">
+          <div class="proj-main-screen">
+            <div class="proj-chrome">
+              <div class="proj-chrome-dots"><span></span><span></span><span></span></div>
+              <div class="proj-chrome-url">Sample Preview</div>
+            </div>
+            <div class="proj-img-wrap">
+              <img src="/work/animal-health.png" alt="Animal Health Center and Pet Resort website" class="proj-main-img" loading="lazy"/>
+            </div>
+          </div>
+          <div class="proj-peek-row">
+            <div class="proj-peek">
+              <img src="/work/animal-health2.png" alt="Animal Health Center — Pet Resort page" loading="lazy"/>
+            </div>
+            <div class="proj-peek">
+              <img src="/work/animal-health3.png" alt="Animal Health Center — livestock page" loading="lazy"/>
+            </div>
+          </div>
+          <a class="proj-card-hover-overlay" href="https://afrocoder16.github.io/Animal-Health-Center/" target="_blank" rel="noopener noreferrer" aria-label="View the Animal Health Center website sample" style="pointer-events:auto;text-decoration:none;">
+            <span class="proj-view-btn">View project →</span>
+          </a>
+        </div>
+        <div class="proj-card-meta">
+          <div class="proj-card-tags">
+            <span class="proj-tag proj-tag-blue">Pet &amp; Livestock Care</span>
+            <span class="proj-tag proj-tag-ghost">Sample</span>
+          </div>
+          <h3 class="proj-card-title">Animal Health Center &amp; Pet Resort</h3>
+          <p class="proj-card-body">A one-stop website for pets and livestock, bringing boarding, daycare, grooming, retail, and veterinary services together under one roof.</p>
+          <div class="proj-card-specs">
+            <div class="proj-spec"><span class="proj-spec-n">7</span><span class="proj-spec-l">Pages built</span></div>
+            <div class="proj-spec-sep"></div>
+            <div class="proj-spec"><span class="proj-spec-n">24h</span><span class="proj-spec-l">Sample delivered</span></div>
             <div class="proj-spec-sep"></div>
             <div class="proj-spec"><span class="proj-spec-n">$0</span><span class="proj-spec-l">Up front</span></div>
           </div>
@@ -907,6 +921,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 .proj-note a { color:#F96B2B;font-weight:700;text-decoration:none;transition:opacity 0.2s; }
 .proj-note a:hover { opacity:0.8; }
+
+/* Bright live-project row */
+.live-project-grid {
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:1.75rem !important;
+  align-items:stretch;
+}
+@media (max-width:767px) {
+  .live-project-grid {
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:1.5rem !important;
+  }
+}
+.live-project-card {
+  background:rgba(255,255,255,0.72);
+  border-color:rgba(10,22,40,0.1);
+  box-shadow:0 24px 64px rgba(10,22,40,0.12);
+}
+.live-project-card:hover {
+  border-color:rgba(10,22,40,0.18);
+  box-shadow:0 32px 72px rgba(10,22,40,0.18);
+}
+.live-project-card .proj-main-screen,
+.live-project-card .proj-peek-row {
+  border-bottom-color:rgba(10,22,40,0.08);
+}
+.live-project-card .proj-chrome {
+  background:rgba(10,22,40,0.04);
+  border-bottom-color:rgba(10,22,40,0.06);
+}
+.live-project-card .proj-chrome-dots span {
+  background:rgba(10,22,40,0.18);
+}
+.live-project-card .proj-chrome-url {
+  background:rgba(10,22,40,0.05);
+  color:rgba(10,22,40,0.42);
+}
+.live-project-card .proj-peek {
+  border-right-color:rgba(10,22,40,0.08);
+}
+.live-project-card .proj-card-title,
+.live-project-card .proj-spec-n {
+  color:#0A1628;
+}
+.live-project-card .proj-card-body {
+  color:rgba(10,22,40,0.58);
+}
+.live-project-card .proj-card-specs {
+  border-top-color:rgba(10,22,40,0.09);
+}
+.live-project-card .proj-spec-l {
+  color:rgba(10,22,40,0.4);
+}
+.live-project-card .proj-spec-sep {
+  background:rgba(10,22,40,0.12);
+}
 
 /* ══════ CTA ══════ */
 .wk-cta-grid {
