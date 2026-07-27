@@ -91,6 +91,7 @@ cp .env.example .env.local
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase Settings -> API |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase Settings -> API |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase Settings -> API, server-only secret |
+| `CRON_SECRET` | long random secret for authenticating the Vercel Cron request |
 | `RESEND_API_KEY` | Resend API Keys |
 | `RESEND_FROM_EMAIL` | verified sender, for example `Midvora <proposals@midvora.com>` |
 | `INTERNAL_NOTIFY_EMAIL` | `info@Midvora.com` |
@@ -98,6 +99,18 @@ cp .env.example .env.local
 
 Secrets are never committed. In production, set them in the Vercel project's
 Environment Variables.
+
+## Database Keep-Alive
+
+[`vercel.json`](./vercel.json) schedules `/api/keep-alive` once per day at
+`08:00 UTC`. The protected route runs a lightweight head/count query against
+the `proposals` table so the Supabase Postgres database registers activity
+without fetching proposal rows.
+
+Set `CRON_SECRET` to a long random value in the Vercel project. Vercel Cron
+sends it to the route as an `Authorization: Bearer <CRON_SECRET>` header.
+Redeploy the proposal app after adding the environment variable or changing
+the cron configuration so the schedule takes effect.
 
 ## Run Locally
 
@@ -127,7 +140,7 @@ npm run build
 1. Push this repo to GitHub.
 2. In Vercel, import the repo as a new project.
 3. Set Root Directory to `proposal-app`.
-4. Add all environment variables.
+4. Add all environment variables, including `CRON_SECRET`.
 5. Deploy, then add `sign.midvora.com` under Domains.
 
 Proposal share links are generated from the incoming request host. This keeps
