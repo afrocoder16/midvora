@@ -48,6 +48,21 @@ export async function uploadProposalPdf(
   return { path, filename: sanitizeFilename(file.name || "proposal.pdf") };
 }
 
+// Best-effort cleanup of a deleted proposal's uploaded files. A storage failure
+// must not fail the delete — the row is already gone at this point.
+export async function removeProposalAssets(
+  supabase: SupabaseClient,
+  paths: (string | null | undefined)[]
+): Promise<void> {
+  const toRemove = paths.filter((path): path is string => Boolean(path));
+  if (toRemove.length === 0) return;
+
+  const { error } = await supabase.storage.from(PROPOSAL_ASSETS_BUCKET).remove(toRemove);
+  if (error) {
+    console.error("[storage] could not remove proposal assets:", error.message);
+  }
+}
+
 export async function downloadProposalAsset(
   supabase: SupabaseClient,
   path: string

@@ -52,6 +52,7 @@ assets are stripped or blocked.
 | `/admin` | Supabase Auth | Create proposals, copy share link, list all proposals |
 | `/admin/login` | public | Email/password sign in |
 | `/api/admin/proposals` | Supabase Auth POST | Create a sent proposal and generate token |
+| `/api/admin/proposals/[id]` | Supabase Auth DELETE | Permanently delete a proposal, its signature, and its uploaded assets |
 
 ## Supabase Setup
 
@@ -62,6 +63,7 @@ assets are stripped or blocked.
    - signed-proposal immutability triggers
    - write-once signature triggers
    - `record_proposal_signature`, a service-role-only signing function
+   - `admin_delete_proposal`, a service-role-only delete function
    - private Storage bucket `proposal-assets`
    - RLS policies where anon can read/write nothing directly
 3. Create your admin user under Authentication -> Users -> Add user.
@@ -151,7 +153,8 @@ Vercel preview deployments on their preview URL and production links on
 
 - Tokens are 256-bit random and never sequential.
 - IP and timestamp are captured server-side when signing.
-- Signed proposals and signatures are immutable at the database level.
+- Signed proposals and signatures are immutable at the database level. The one
+  exception is the admin-only delete route, meant for clearing out test rows.
 - Admin routes are guarded by middleware and Supabase Auth.
 - Proposal assets are private and only served through token-gated server routes.
 - Custom proposal code is sanitized and rendered with a strict Content Security
@@ -171,6 +174,7 @@ proposal-app/
 |       +-- proposal/[token]/logo/route.ts
 |       +-- proposal/[token]/source-pdf/route.ts
 |       +-- admin/proposals/route.ts
+|       +-- admin/proposals/[id]/route.ts
 +-- components/
 +-- lib/
 +-- supabase/schema.sql

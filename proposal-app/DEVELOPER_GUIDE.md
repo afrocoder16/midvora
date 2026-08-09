@@ -61,11 +61,15 @@ Core tables:
 Core database function:
 
 - `public.record_proposal_signature(...)`
+- `public.admin_delete_proposal(...)`
 
 Important invariants:
 
-- Signed proposals cannot be edited or deleted.
-- Signature rows are write-once.
+- Signed proposals can never be edited.
+- Signature rows are write-once (no updates).
+- A signed proposal can only be deleted through `admin_delete_proposal`, which
+  sets the transaction-local flag `app.allow_admin_delete` that both triggers
+  check. Ad-hoc deletes, even with the service-role key, are still refused.
 - Signing is atomic: signature insert and proposal status update happen in one DB
   function.
 - One signature per proposal is enforced by a unique constraint.
@@ -263,6 +267,7 @@ supabase/migrations/20260629_hybrid_proposals.sql
 supabase/migrations/20260629_atomic_signing.sql
 supabase/migrations/20260629_custom_html_proposals.sql
 supabase/migrations/20260702_fix_signing_rpc_ambiguous_id.sql
+supabase/migrations/20260809_admin_delete_proposals.sql
 ```
 
 The most important migration for current PDF signing reliability is:
@@ -305,7 +310,8 @@ Do not remove dormant modes without also updating:
 - Browser never writes directly to Supabase tables.
 - Assets are stored in a private Supabase bucket.
 - Source PDFs and logos are served only through token-gated routes.
-- Signatures and signed proposals are immutable at the DB level.
+- Signatures and signed proposals are immutable at the DB level; the only way to
+  remove one is the admin-authenticated `DELETE /api/admin/proposals/[id]`.
 
 Security-sensitive files:
 

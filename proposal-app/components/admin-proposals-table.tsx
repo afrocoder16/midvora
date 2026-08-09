@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Download } from "lucide-react";
 import { CopyLinkButton } from "@/components/copy-link-button";
+import { DeleteProposalButton } from "@/components/delete-proposal-button";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -106,6 +107,11 @@ function ProposalRow({ proposal, shareUrl }: { proposal: ProposalSummary; shareU
             </Button>
           )}
           <CopyLinkButton url={shareUrl} />
+          <DeleteProposalButton
+            proposalId={proposal.id}
+            clientName={proposal.client_name}
+            status={proposal.status}
+          />
         </div>
       </TableCell>
     </TableRow>

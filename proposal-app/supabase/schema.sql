@@ -87,20 +87,26 @@ create table if not exists public.signatures (
 create index if not exists signatures_proposal_idx on public.signatures (proposal_id);
 
 -- ═════════════════════════════════════════════════════════════════════════════
--- IMMUTABILITY: a proposal that is 'signed' can never be edited or deleted.
+-- IMMUTABILITY: a proposal that is 'signed' can never be EDITED.
 -- A signature row can never be modified once written.
 -- Enforced with triggers so it holds regardless of which client makes the call.
+--
+-- The one exception is a deliberate admin delete via admin_delete_proposal()
+-- (below), used to clear out test/sample rows. It flips the transaction-local
+-- setting `app.allow_admin_delete`, which both triggers check. Ad-hoc DELETEs —
+-- even with the service-role key — never set it and are still refused.
 -- ═════════════════════════════════════════════════════════════════════════════
 
--- Block UPDATE/DELETE on a proposal once it is signed.
--- The single allowed transition is the draft/sent -> signed flip itself.
+-- Block UPDATE on a proposal once it is signed, and block DELETE unless the
+-- admin delete path is active.
 create or replace function public.enforce_signed_proposal_immutable()
 returns trigger
 language plpgsql
 as $$
 begin
   if (tg_op = 'DELETE') then
-    if old.status = 'signed' then
+    if old.status = 'signed'
+       and coalesce(current_setting('app.allow_admin_delete', true), 'off') <> 'on' then
       raise exception 'A signed proposal cannot be deleted (id=%).', old.id;
     end if;
     return old;
@@ -121,12 +127,18 @@ create trigger trg_proposals_immutable
   before update or delete on public.proposals
   for each row execute function public.enforce_signed_proposal_immutable();
 
--- Signatures are write-once: no UPDATE and no DELETE.
+-- Signatures are write-once: no UPDATE ever, and no DELETE outside the admin
+-- delete cascade.
 create or replace function public.enforce_signature_write_once()
 returns trigger
 language plpgsql
 as $$
 begin
+  if tg_op = 'DELETE'
+     and coalesce(current_setting('app.allow_admin_delete', true), 'off') = 'on' then
+    return old;
+  end if;
+
   raise exception 'Signatures are immutable once recorded (proposal_id=%).',
     coalesce(old.proposal_id, new.proposal_id);
 end;
@@ -136,6 +148,31 @@ drop trigger if exists trg_signatures_write_once on public.signatures;
 create trigger trg_signatures_write_once
   before update or delete on public.signatures
   for each row execute function public.enforce_signature_write_once();
+
+-- Deletes a proposal (and its signature, via cascade). The only path allowed to
+-- remove a signed proposal. Called server-side with the service-role key.
+create or replace function public.admin_delete_proposal(p_proposal_id uuid)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_deleted integer;
+begin
+  perform set_config('app.allow_admin_delete', 'on', true);
+
+  delete from public.proposals p where p.id = p_proposal_id;
+  get diagnostics v_deleted = row_count;
+
+  perform set_config('app.allow_admin_delete', 'off', true);
+
+  return v_deleted > 0;
+end;
+$$;
+
+revoke all on function public.admin_delete_proposal(uuid) from public;
+grant execute on function public.admin_delete_proposal(uuid) to service_role;
 
 -- Atomically records a signature and flips the proposal to signed inside one
 -- database transaction. The app calls this with the service-role key; browsers
