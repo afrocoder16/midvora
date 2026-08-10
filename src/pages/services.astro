@@ -107,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             'Mobile-ready on all phones',
             'Contact form + Google Maps',
             'SSL security included',
-            'Google Business Profile setup — FREE',
+            'Basic SEO setup',
             'Live in 7 days',
           ].map(f => (
             <li class="svc-pkg-item svc-check-blue">
@@ -135,8 +135,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             'Up to 8 pages',
             'Online ordering (Square / Toast)',
             'Update menu from your phone',
+            'Instagram feed',
             'English + Spanish language option',
-            'SEO management — FREE 3 months',
             'Live in 10 days',
           ].map(f => (
             <li class="svc-pkg-item svc-check-orange">
@@ -163,9 +163,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             'Up to 12 pages',
             'Interactive features + loyalty cards',
             'Your own admin panel',
-            'Photography session included',
+            'Blog section',
             'Advanced SEO + analytics',
-            'FREE 3 months SEO + review management',
+            'Live in 14 days',
           ].map(f => (
             <li class="svc-pkg-item svc-check-blue">
               <svg class="svc-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
@@ -199,10 +199,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="svc-addon-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem;">
       {[
-        { icon: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z', name: 'Google Business Profile', price: '$125', color: '#0054DF' },
-        { icon: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.5 2h9a5.5 5.5 0 0 1 5.5 5.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z', name: 'Social Media Kit', price: '$175', color: '#F96B2B' },
-        { icon: 'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z', name: 'Photography Session', price: '$249', color: '#0054DF' },
-        { icon: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5', name: 'Logo & Brand Kit', price: '$300', color: '#F96B2B' },
+        { icon: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z', name: 'Google Business Profile', price: '$50', color: '#0054DF' },
+        { icon: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.5 2h9a5.5 5.5 0 0 1 5.5 5.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2z', name: 'Social Media Kit', price: '$150', color: '#F96B2B' },
+        { icon: 'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z', name: 'Photography Session', price: '$200', color: '#0054DF' },
+        { icon: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5', name: 'Logo & Brand Kit', price: '$50', color: '#F96B2B' },
         { icon: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 10H2M12 10v9', name: 'Email Marketing Setup', price: '$175', color: '#0054DF' },
         { icon: 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z', name: 'QR Code Menu', price: '$49', color: '#F96B2B' },
         { icon: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z', name: 'Event Website', price: '$250', color: '#0054DF' },
@@ -331,10 +331,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- Bundle 1 -->
       <div class="svc-bundle-card">
         <p class="svc-bundle-name">Get Online</p>
-        <p class="svc-bundle-includes">Starter website + Google Business Profile setup</p>
+        <p class="svc-bundle-includes">Starter website + Google Business Profile setup + QR code menu</p>
         <div class="svc-bundle-price-row">
-          <span class="svc-bundle-price">$449</span>
-          <span class="svc-bundle-save">Save $75</span>
+          <span class="svc-bundle-price">$575</span>
+          <span class="svc-bundle-save">Save $49</span>
         </div>
         <a href="/contact" class="svc-bundle-link" style="color:#0054DF;">Get started &rarr;</a>
       </div>
@@ -346,7 +346,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="svc-bundle-includes">Growth website + GBP + photography + QR menu</p>
         <div class="svc-bundle-price-row">
           <span class="svc-bundle-price" style="color:#F96B2B;">$999</span>
-          <span class="svc-bundle-save">Save $175</span>
+          <span class="svc-bundle-save">Save $75</span>
         </div>
         <a href="/contact" class="svc-bundle-link" style="color:#F96B2B;">Get started &rarr;</a>
       </div>
@@ -357,8 +357,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="svc-bundle-name" style="color:#fff;">Full Digital Presence</p>
         <p class="svc-bundle-includes" style="color:rgba(255,255,255,0.55);">Premium site + GBP + social kit + photos + logo + email</p>
         <div class="svc-bundle-price-row">
-          <span class="svc-bundle-price" style="color:#fff;">$2,200</span>
-          <span class="svc-bundle-save" style="background:rgba(74,222,128,0.15);color:#4ade80;">Save $224</span>
+          <span class="svc-bundle-price" style="color:#fff;">$1,799</span>
+          <span class="svc-bundle-save" style="background:rgba(74,222,128,0.15);color:#4ade80;">Save $125</span>
         </div>
         <a href="/contact" class="svc-bundle-link" style="color:#F96B2B;">Get started &rarr;</a>
       </div>
@@ -496,9 +496,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="byo-base-grid">
         {[
-          { price: 149,  name: 'Landing page',  desc: '1–3 pages. Simple, fast online presence.' },
-          { price: 295,  name: 'Standard site',  desc: '5 pages. The most popular starting point.', default: true },
-          { price: 495,  name: 'Full site',       desc: '8+ pages. For businesses with a lot to show.' },
+          { price: 249,  name: 'Landing page',  desc: '1 page. Simple, fast online presence.' },
+          { price: 395,  name: 'Small site',     desc: '3 pages. Just the essentials.' },
+          { price: 525,  name: 'Standard site',  desc: '5 pages. The most popular starting point.', default: true },
+          { price: 775,  name: 'Full site',      desc: '8 pages. For businesses with a lot to show.' },
         ].map(opt => (
           <div class={`byo-base-card ${opt.default ? 'byo-selected' : ''}`} data-price={opt.price} data-type="base">
             <div class="byo-base-radio"><span class="byo-radio-inner"></span></div>
@@ -519,15 +520,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="byo-feat-grid">
         {[
           { name: 'Online ordering',         price: 150, note: 'Square / Toast' },
-          { name: 'Google Business Profile', price: 125, note: 'GBP setup' },
-          { name: 'Photography session',     price: 249, note: 'Pro photos' },
+          { name: 'Google Business Profile', price: 50,  note: 'GBP setup' },
+          { name: 'Photography session',     price: 200, note: 'Pro photos' },
           { name: 'QR code menu',            price: 49,  note: 'Scan to view' },
           { name: 'Instagram feed',          price: 50,  note: 'Auto-updates' },
           { name: 'Blog section',            price: 100, note: 'News + posts' },
           { name: 'Bilingual (EN + ES)',       price: 100, note: 'Full Spanish' },
-          { name: 'Logo & brand kit',        price: 300, note: 'Custom identity' },
+          { name: 'Logo & brand kit',        price: 50,  note: 'Custom identity' },
           { name: 'Email marketing',         price: 175, note: 'Campaigns' },
-          { name: 'Social media kit',        price: 175, note: 'Templates' },
+          { name: 'Social media kit',        price: 150, note: 'Templates' },
         ].map(feat => (
           <div class="byo-feat-card" data-price={feat.price} data-type="feature">
             <div class="byo-feat-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/></svg></div>
@@ -569,15 +570,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="byo-nudge-grid">
         <div class="byo-nudge-card" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
           <p class="byo-nudge-name">Starter — $525</p>
-          <p class="byo-nudge-inc">Includes GBP + QR menu free</p>
+          <p class="byo-nudge-inc">5 pages · live in 7 days</p>
         </div>
         <div class="byo-nudge-card byo-nudge-featured" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
           <p class="byo-nudge-name">Growth — $775</p>
-          <p class="byo-nudge-inc">Includes photos + social media free</p>
+          <p class="byo-nudge-inc">8 pages · online ordering · live in 10 days</p>
         </div>
         <div class="byo-nudge-card" onclick="document.getElementById('svc-packages').scrollIntoView({behavior:'smooth'})">
           <p class="byo-nudge-name">Premium — $1,299</p>
-          <p class="byo-nudge-inc">Includes everything free</p>
+          <p class="byo-nudge-inc">12 pages · admin panel · live in 14 days</p>
         </div>
       </div>
     </div>
@@ -591,7 +592,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="byo-bar-left">
       <p class="byo-bar-label">Your package</p>
       <div class="byo-bar-total-row">
-        <span class="byo-bar-total" id="byo-total-display">$295</span>
+        <span class="byo-bar-total" id="byo-total-display">$525</span>
         <span class="byo-bar-monthly" id="byo-monthly-display" style="display:none;"></span>
       </div>
     </div>
@@ -768,7 +769,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 /* ── Builder state machine ── */
 (function () {
-  var state = { base: 295, features: [], monthly: 0 };
+  var state = { base: 525, features: [], monthly: 0 };
 
   /* ── Floating button visibility ── */
   var floatBtn = document.getElementById('byo-float-btn');
@@ -796,7 +797,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   function getTotal() { return state.base + state.features.reduce(function (a, b) { return a + b; }, 0); }
 
-  var currentDisplayed = 295;
+  var currentDisplayed = 525;
   function updateDisplay() {
     var target = getTotal();
     if (typeof gsap !== 'undefined') {
@@ -1497,6 +1498,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   grid-template-columns:repeat(3,1fr);
   gap:0.85rem;
   margin-top:1.25rem;
+}
+.byo-base-grid { grid-template-columns:repeat(4,1fr); }
+@media (max-width:900px) {
+  .byo-base-grid { grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:639px) {
   .byo-base-grid,
