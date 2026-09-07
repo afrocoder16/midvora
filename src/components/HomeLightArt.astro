@@ -1,0 +1,36 @@
+---
+import { Picture } from 'astro:assets';
+import firstLight from '../assets/midvora-first-light.png';
+import goldenHour from '../assets/midvora-golden-hour.png';
+---
+<figure class="home-light-art" data-light="daylight" data-motion-zone>
+  <div class="home-art-heading"><span><i></i> A study in light</span><button class="home-motion-toggle" type="button" aria-pressed="false" hidden><span data-motion-icon aria-hidden="true">Ⅱ</span><span data-motion-label>Pause motion</span></button></div>
+  <div class="home-art-stage">
+    <div class="home-art-drift">
+    <div class="home-art-image home-art-daylight">
+      <Picture src={firstLight} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1100, 1402]} sizes="(max-width: 700px) 115vw, (max-width: 1000px) 75vw, 65vw" width={1402} height={1122} alt="A sculptural ribbon of cobalt glass embraces an amber sun, casting blue and orange light over ivory prairie contours." loading="eager" fetchpriority="high" decoding="async" />
+    </div>
+    <div class="home-art-image home-art-golden" aria-hidden="true">
+      <Picture src={goldenHour} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1100, 1402]} sizes="(max-width: 700px) 115vw, (max-width: 1000px) 75vw, 65vw" width={1402} height={1122} alt="" loading="eager" fetchpriority="low" decoding="async" />
+    </div>
+    <svg class="home-ring-light" viewBox="0 0 1402 1122" aria-hidden="true" fill="none">
+      <path class="home-ring-ray ray-left" d="M579 184C395 91 184 191 188 479C173 764 359 952 559 814C721 703 789 337 579 184Z" />
+      <path class="home-ring-ray ray-right" d="M1002 238C784 161 644 361 648 626C651 878 859 962 1077 844C1280 734 1284 357 1002 238Z" />
+      <path class="home-ring-ray ray-left ray-soft" d="M579 184C395 91 184 191 188 479C173 764 359 952 559 814C721 703 789 337 579 184Z" />
+      <path class="home-ring-ray ray-right ray-soft" d="M1002 238C784 161 644 361 648 626C651 878 859 962 1077 844C1280 734 1284 357 1002 238Z" />
+    </svg>
+    <span class="home-art-ember" aria-hidden="true"></span>
+    </div>
+    <span class="home-art-coordinate" aria-hidden="true">44.45° N<br />95.79° W</span>
+  </div>
+  <figcaption class="home-art-caption"><p>Midwest is where we start.{' '}<br /><strong>Light is what we bring.</strong></p><div class="home-light-switch" role="group" aria-label="Artwork lighting"><button type="button" data-light-mode="daylight" aria-pressed="true"><span aria-hidden="true">☼</span> Daylight</button><button type="button" data-light-mode="golden" aria-pressed="false"><span aria-hidden="true">◒</span> Golden hour</button></div></figcaption>
+</figure>
+<script>
+  const art = document.querySelector<HTMLElement>('.home-light-art');
+  const lightButtons = art?.querySelectorAll<HTMLButtonElement>('[data-light-mode]');
+  lightButtons?.forEach(button => button.addEventListener('click', () => {
+    if (!art) return;
+    art.dataset.light = button.dataset.lightMode;
+    lightButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  }));
+</script>

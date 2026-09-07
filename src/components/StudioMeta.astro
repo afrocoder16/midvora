@@ -1,0 +1,5 @@
+---
+interface Props { label: string; }
+const { label } = Astro.props;
+---
+<div class="studio-meta"><p class="home-eyebrow"><span class="home-status-dot"></span>{label}</p><button class="home-motion-toggle" type="button" aria-pressed="false" hidden><span data-motion-icon aria-hidden="true">Ⅱ</span><span data-motion-label>Pause motion</span></button></div>

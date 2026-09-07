@@ -1,18 +1,25 @@
 ---
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
+import '../styles/home.css';
+import '../styles/home-art.css';
+import '../styles/home-motion.css';
+import '../styles/studio.css';
+import '../styles/scroll-art.css';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  home?: boolean;
 }
 
 const {
   title,
   description = 'Midvora — Modern digital solutions for local businesses. Website design, SEO, photography, social media, and cybersecurity from the Midwest.',
   ogImage = '/img/og-image.png',
+  home = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, 'https://midvora.com');
@@ -47,19 +54,16 @@ const ogImageURL = `https://midvora.com${ogImage}`;
     <meta name="twitter:image" content={ogImageURL} />
 
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
-  <body class="bg-[#F8F6F2] min-h-screen flex flex-col">
-    <Nav />
-    <main class="flex-1">
+  <body class:list={['home-page min-h-screen flex flex-col', { 'studio-page': !home }]}>
+    <SiteHeader />
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <SiteFooter />
   </body>
 </html>
+<script>
+  import '../scripts/home-motion';
+</script>

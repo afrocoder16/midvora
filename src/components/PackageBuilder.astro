@@ -1,0 +1,39 @@
+---
+import { bases, extras, money } from '../data/services';
+---
+<section id="build-your-own" class="studio-section builder-section">
+  <div class="home-shell">
+    <div class="studio-section-head" data-home-reveal><div><p class="home-eyebrow">A little more this. A little less that.</p><h2>Make it<br /><em>your own.</em></h2></div><p>Have a smaller project or something specific in mind? Choose the pieces and see your estimate come together.</p></div>
+    <form class="package-builder" action="/contact" method="get" id="package-builder">
+      <input type="hidden" name="package" value="custom" />
+      <div class="builder-options">
+        <fieldset><legend><span>01</span> Your starting point</legend><div class="builder-bases">{bases.map(base => <label class="builder-base"><input type="radio" name="base" value={base.id} checked={base.id === 'standard'} /><span><strong>{base.name}</strong><small>{base.detail}</small><b>{money(base.price)}</b></span></label>)}</div></fieldset>
+        <fieldset><legend><span>02</span> The little extras</legend><p class="builder-hint">Every extra is optional. Compare the packages above for features already included.</p><div class="builder-extras">{extras.map(extra => <label class="builder-extra"><input type="checkbox" name="extra" value={extra.id} /><span><strong>{extra.name}</strong><small>{extra.detail}</small></span><b>+{money(extra.price)}</b></label>)}</div></fieldset>
+        <fieldset><legend><span>03</span> Keep growing</legend><label class="builder-extra builder-care"><input type="checkbox" name="care" value="full" /><span><strong>Add Full Care</strong><small>SEO reports, social media, reviews, and Google Business Profile optimization.</small></span><b>$50/mo</b></label><p class="builder-hint">Optional. Month to month, or $540/year. Website packages already include hosting, security, and weekly maintenance.</p></fieldset>
+      </div>
+      <aside class="builder-receipt"><span class="receipt-star" aria-hidden="true">✳</span><p class="home-eyebrow">Made around you</p><h3>A good place<br /><em>to begin.</em></h3><div class="receipt-selection" id="builder-selection"><span>Standard site</span><strong>$525</strong></div><div class="receipt-total"><span>Your estimate</span><output id="builder-total" aria-live="polite">$525</output><small id="builder-monthly" hidden>+ $50/month for Full Care</small></div><p>You’ll see the sample and confirm the scope before any payment.</p><button class="home-button home-button-blue" type="submit">Make this my starting point <span aria-hidden="true">↗</span></button><a href="#svc-packages">Compare the ready-made packages ↑</a><noscript><p>Your selections will travel with your request. We’ll confirm the total with you.</p></noscript></aside>
+    </form>
+  </div>
+</section>
+<script>
+  import { bases, extras, money } from '../data/services';
+  const builder = document.querySelector<HTMLFormElement>('#package-builder');
+  builder?.addEventListener('change', () => {
+    const values = new FormData(builder);
+    const base = bases.find(item => item.id === values.get('base')) || bases[2];
+    const selected = extras.filter(item => values.getAll('extra').includes(item.id));
+    const total = document.querySelector<HTMLOutputElement>('#builder-total');
+    const monthly = document.querySelector<HTMLElement>('#builder-monthly');
+    const selection = document.querySelector<HTMLElement>('#builder-selection');
+    if (total) total.textContent = money(base.price + selected.reduce((sum, item) => sum + item.price, 0));
+    if (monthly) monthly.hidden = values.get('care') !== 'full';
+    if (selection) {
+      selection.replaceChildren();
+      [base, ...selected].forEach(item => {
+        const name = document.createElement('span'); name.textContent = item.name;
+        const price = document.createElement('strong'); price.textContent = money(item.price);
+        selection.append(name, price);
+      });
+    }
+  });
+</script>

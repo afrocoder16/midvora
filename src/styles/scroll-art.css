@@ -1,0 +1,25 @@
+/* The browser interpolates the artwork transforms in scroll-art.ts. */
+[data-scroll-scene] :is(.home-work-window,.collection-window) { transform-origin: center bottom; }
+[data-scroll-scene] .process-flight-path path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.home-page .process-flight-path { animation: none; }
+
+/* An ink stroke settles under each editorial heading as it enters the page. */
+[data-scroll-ink] {
+  background-image: linear-gradient(currentColor,currentColor);
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  background-size: 100% 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.home-page[data-motion='running'] [data-scroll-ink] { background-size: 0% 1px; transition: background-size 1s cubic-bezier(.2,.75,.25,1) .12s; }
+.home-page[data-motion='running'] [data-scroll-ink].ink-drawn { background-size: 100% 1px; }
+
+/* Crisp mobile highlights avoid repainting blurred SVG and backdrop layers. */
+@media (max-width: 700px), (pointer: coarse) {
+  .home-art-drift { animation-name: sculpturePhone; }
+  .home-ring-ray.ray-soft { display: none; }
+  .process-plane { filter: none; }
+  .home-page .home-header-inner { backdrop-filter: none; background: #fffef9; }
+}
+@keyframes sculpturePhone { 0%,100% { transform: translateY(3px); } 50% { transform: translateY(-5px); } }

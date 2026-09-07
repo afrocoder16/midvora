@@ -1,15 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import StudioArt from '../components/StudioArt.astro';
+import StudioMeta from '../components/StudioMeta.astro';
 ---
-<BaseLayout title="Page Not Found — Midvora">
-<section style="min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1.25rem;background:#F8F6F2;">
-  <div style="max-width:32rem;">
-    <p style="font:700 0.62rem/1 'Inter Tight',sans-serif;letter-spacing:0.22em;text-transform:uppercase;color:#0054DF;margin-bottom:1.25rem;">404</p>
-    <h1 style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.5rem,6vw,4rem);line-height:1;color:#0A1628;margin:0 0 1rem;">Page not found.</h1>
-    <p style="font:500 1rem/1.65 'Inter Tight',sans-serif;color:#6B7280;margin:0 0 2.5rem;">The page you're looking for doesn't exist. Let's get you back on track.</p>
-    <a href="/" style="display:inline-flex;align-items:center;gap:0.5rem;border-radius:999px;background:#F96B2B;padding:0.9rem 2rem;font:700 0.9rem/1 'Inter Tight',sans-serif;color:#fff;text-decoration:none;box-shadow:0 16px 36px rgba(249,107,43,0.28);">
-      Back to home
-    </a>
-  </div>
-</section>
+<BaseLayout title="A Little Detour — Page Not Found | Midvora" description="This page wandered off. Find your way back to Midvora’s websites, work, and studio.">
+<section id="hero" class="studio-hero lost-hero"><div class="home-shell"><StudioMeta label="404 / A little detour" /><div class="studio-hero-grid"><div class="studio-hero-copy"><h1>This page<br />wandered <em>off.</em></h1><p>The page you’re looking for isn’t here. There’s still plenty of good stuff this way.</p><div class="studio-actions"><a href="/" class="home-button home-button-blue">Back to the light <span aria-hidden="true">↗</span></a><a href="/work" class="home-text-link">Explore our work ↗</a></div></div><StudioArt kind="lost" /></div></div></section>
 </BaseLayout>

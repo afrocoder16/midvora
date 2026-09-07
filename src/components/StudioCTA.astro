@@ -1,0 +1,5 @@
+---
+interface Props { eyebrow?: string; title?: string; accent?: string; }
+const { eyebrow = 'A little hello goes a long way', title = 'Your next chapter.', accent = 'Let’s make it a good one.' } = Astro.props;
+---
+<section class="studio-cta home-section" data-motion-zone><div class="home-shell studio-cta-inner"><div data-home-reveal><p class="home-eyebrow">{eyebrow}</p><h2>{title}<br /><em>{accent}</em></h2><p>A free working homepage sample. Made for your business. In your hands in 24 hours.</p><div class="studio-actions"><a class="home-button home-button-blue" href="/contact#sample-form">Let’s make something good <span aria-hidden="true">↗</span></a><a class="home-text-link" href="tel:+15075304837">Or give us a call <span aria-hidden="true">↗</span></a></div></div><div class="cta-sun-art" aria-hidden="true"><div class="studio-turn">{Array.from({length: 12}, (_, i) => <i style={`--ray:${i}`}></i>)}</div><span>GOOD THINGS<br /><em>start here.</em></span></div></div></section>

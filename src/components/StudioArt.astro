@@ -1,0 +1,22 @@
+---
+interface Props { kind: 'build' | 'hello' | 'lost'; }
+const { kind } = Astro.props;
+---
+<div class={`studio-art studio-art-${kind}`} aria-hidden="true" data-motion-zone>
+  <div class="studio-art-grid"></div><div class="studio-art-orbit"></div>
+  {kind === 'build' && <>
+    <div class="build-sun studio-float"></div>
+    <div class="build-sheet sheet-third"></div><div class="build-sheet sheet-second"></div>
+    <div class="build-window studio-float"><div class="build-window-bar"><i></i><i></i><i></i><span>your next big thing</span></div><div class="build-window-content"><span>A BUSINESS LIKE NO OTHER</span><strong>Make<br />yourself<br /><em>known.</em></strong><span class="build-mini-cta">FIND YOUR PEOPLE ↗</span><div class="build-window-sun"></div></div></div>
+    <div class="build-type-card studio-float"><span>GOOD TYPE. GREAT CHARACTER.</span><strong>Aa<em>Bb</em></strong><div><i></i><i></i><i></i></div></div>
+    <span class="art-sticker">Thoughtfully<br /><em>put together.</em></span><span class="art-corner-label">DESIGN / BUILD / CARE</span>
+  </>}
+  {kind === 'hello' && <>
+    <div class="hello-orbit orbit-a"></div><div class="hello-orbit orbit-b"></div>
+    <div class="hello-envelope studio-float"><div class="envelope-back"></div><div class="hello-letter"><span>TO YOUR NEXT CHAPTER</span><strong>Hello,<br /><em>possibility.</em></strong><div class="letter-lines"><i></i><i></i></div><span class="letter-sun">✳</span></div><div class="envelope-front"></div><div class="envelope-seal">m<span>.</span></div></div>
+    <span class="hello-postmark">MARSHALL, MN<br /><strong>44.45° N</strong><span>WITH A LITTLE LOCAL LOVE</span></span><span class="art-corner-label">ONE HELLO. A WHOLE NEW BEGINNING.</span>
+  </>}
+  {kind === 'lost' && <>
+    <div class="lost-numbers"><span>4</span><span class="lost-zero studio-float"></span><span>4</span></div><div class="lost-sun studio-float"></div><span class="art-corner-label">A SMALL DETOUR / A BRIGHT WAY BACK</span>
+  </>}
+</div>

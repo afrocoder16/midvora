@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../public/img/new logo.png';
+
+const links = [
+  { href: '/services', label: 'What we do' },
+  { href: '/work', label: 'Our work' },
+  { href: '/about', label: 'The studio' },
+  { href: '/contact', label: 'Let’s talk' },
+];
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const sampleHref = currentPath === '/' || currentPath === '/contact' ? '#sample-form' : '/contact#sample-form';
+---
+<a href="#main-content" class="home-skip">Skip to content</a>
+<header class="home-header">
+  <div class="home-shell home-header-inner">
+    <a class="home-brand-link" href="/" aria-label="Midvora home"><span class="home-brand-crop"><Image src={logo} format="webp" widths={[140, 280]} sizes="140px" alt="Midvora" width={280} height={280} loading="eager" decoding="async" /></span></a>
+    <nav class="home-desktop-nav" aria-label="Main navigation">
+      {links.map(link => <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a>)}
+    </nav>
+    <a class="home-header-cta" href={sampleHref}>Get a free sample <span aria-hidden="true">↗</span></a>
+    <button class="home-menu-toggle" type="button" aria-expanded="false" aria-controls="home-menu" aria-label="Open navigation"><span></span><span></span></button>
+  </div>
+  <nav id="home-menu" class="home-mobile-nav" aria-label="Mobile navigation" hidden>
+    {links.map((link, i) => <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}><small>0{i + 1}</small>{link.label}<span aria-hidden="true">↗</span></a>)}
+    <a href={sampleHref} class="home-mobile-sample">Get my free sample <span aria-hidden="true">↗</span></a>
+    <p>From Marshall, MN. For your next chapter.</p>
+  </nav>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.home-menu-toggle');
+  const menu = document.querySelector<HTMLElement>('#home-menu');
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menu.hidden = !open;
+    };
+    toggle.addEventListener('click', () => setOpen(menu.hidden));
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); }
+    });
+    document.addEventListener('click', event => {
+      if (event.target instanceof Element && !event.target.closest('.home-header')) setOpen(false);
+    });
+    document.addEventListener('focusin', event => {
+      if (event.target instanceof Element && !event.target.closest('.home-header')) setOpen(false);
+    });
+    window.matchMedia('(min-width: 1000px)').addEventListener('change', event => { if (event.matches) setOpen(false); });
+  }
+</script>
