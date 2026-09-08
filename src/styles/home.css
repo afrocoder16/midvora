@@ -19,6 +19,10 @@
   font-family: 'Midvora Inter Tight', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Keep directional symbols typographic on iOS instead of blue-square emoji. */
+.home-page { font-variant-emoji: text; }
+.home-page :is(a, button, [aria-hidden='true']) { font-variant-emoji: text; }
 .home-page [hidden] { display: none !important; }
 .home-page button, .home-page input, .home-page select { font: inherit; }
 .home-page button, .home-page label:has(input[type='radio']) { -webkit-tap-highlight-color: transparent; }

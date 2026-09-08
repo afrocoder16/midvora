@@ -21,7 +21,7 @@ const projects = [
           <h1>Your business.<br />In a whole<br /><em>new light.</em></h1>
           <p class="home-hero-description">Good businesses deserve to be seen.<br class="home-desktop-break" /> We make websites with the character, craft, and care to make that happen.</p>
           <div class="home-hero-actions">
-            <a href="#sample-form" class="home-button home-button-blue">Bring my website to life <span aria-hidden="true">↗</span></a>
+            <a href="#sample-form" class="home-button home-button-blue">Bring my website to life <span aria-hidden="true">↗︎</span></a>
             <a href="#selected-work" class="home-text-link">Explore our work <span aria-hidden="true">↓</span></a>
           </div>
           <p class="home-hero-note"><span aria-hidden="true">✓</span> Your first look is on us. Free sample in 24 hours.</p>
@@ -35,13 +35,13 @@ const projects = [
 
   <section id="selected-work" class="home-work home-section">
     <div class="home-shell">
-      <div class="home-section-heading"><div><p class="home-eyebrow">01 / A few local originals</p><h2>Different businesses.<br /><em>Distinctly their own.</em></h2></div><a href="/work" class="home-text-link">All our work <span aria-hidden="true">↗</span></a></div>
+      <div class="home-section-heading"><div><p class="home-eyebrow">01 / A few local originals</p><h2>Different businesses.<br /><em>Distinctly their own.</em></h2></div><a href="/work" class="home-text-link">All our work <span aria-hidden="true">↗︎</span></a></div>
       <div class="home-work-grid">
         {projects.map((project, i) => <article class={`home-work-card ${project.color}`}>
           <a href={project.url} target="_blank" rel="noopener noreferrer" class="home-work-image">
             <div class="home-work-image-top"><span>0{i + 1} / {project.category}</span><span class="home-live"><i></i> Live site</span></div>
             <div class="home-work-window"><div class="home-work-chrome" aria-hidden="true"><i></i><i></i><i></i></div><img src={project.image} alt={`${project.name} homepage`} width="1200" height={i === 2 ? 684 : 575} loading="lazy" decoding="async" /></div>
-            <span class="home-work-arrow" aria-hidden="true">↗</span>
+            <span class="home-work-arrow" aria-hidden="true">↗︎</span>
             <span class="sr-only">Opens in a new tab</span>
           </a>
           <div class="home-work-caption"><div><h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></h3><p>{project.type}</p></div><span>Marshall, MN</span></div>
@@ -57,7 +57,7 @@ const projects = [
 
   <section id="cta-banner" class="home-contact home-section">
     <div class="home-shell home-contact-grid">
-      <div class="home-contact-copy"><p class="home-eyebrow">04 / Your next chapter starts here</p><h2>Let’s make<br />you <em>the one</em><br />they remember<span>.</span></h2><p>Get a free homepage sample made for your business. No payment details. No pressure. Just a good place to start.</p><a href="tel:+15075304837" class="home-contact-call">More of a phone person? <strong>(507) 530-4837 ↗</strong></a><div class="home-contact-spark" aria-hidden="true">✳</div></div>
+      <div class="home-contact-copy"><p class="home-eyebrow">04 / Your next chapter starts here</p><h2>Let’s make<br />you <em>the one</em><br />they remember<span>.</span></h2><p>Get a free homepage sample made for your business. No payment details. No pressure. Just a good place to start.</p><a href="tel:+15075304837" class="home-contact-call">More of a phone person? <strong>(507) 530-4837 ↗︎</strong></a><div class="home-contact-spark" aria-hidden="true">✳</div></div>
       <form id="sample-form" class="home-form">
         <div class="home-form-heading"><h3>Meet your next website.</h3><span>FREE SAMPLE</span></div><p>A little about you. Then we get to work.</p>
         <label for="business-name">Business name<input id="business-name" name="businessName" autocomplete="organization" placeholder="The name above your door" required maxlength="160" /></label>
@@ -67,7 +67,7 @@ const projects = [
         </div>
         <label for="business-contact">Email or phone<input id="business-contact" name="contact" placeholder="Where should we send your sample?" required maxlength="200" /></label>
         <div class="home-honeypot" aria-hidden="true"><label>Leave this empty<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" /></label></div>
-        <button type="submit" class="home-button home-button-blue"><span data-submit-label>Make my free sample</span><span aria-hidden="true">↗</span></button>
+        <button type="submit" class="home-button home-button-blue"><span data-submit-label>Make my free sample</span><span aria-hidden="true">↗︎</span></button>
         <p class="home-form-fine">$0 until you approve. Your sample is yours to keep.</p><p id="form-status" class="home-form-status" role="status" aria-live="polite" hidden></p>
       </form>
     </div>

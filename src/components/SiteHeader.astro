@@ -18,12 +18,12 @@ const sampleHref = currentPath === '/' || currentPath === '/contact' ? '#sample-
     <nav class="home-desktop-nav" aria-label="Main navigation">
       {links.map(link => <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a>)}
     </nav>
-    <a class="home-header-cta" href={sampleHref}>Get a free sample <span aria-hidden="true">↗</span></a>
+    <a class="home-header-cta" href={sampleHref}>Get a free sample <span aria-hidden="true">↗︎</span></a>
     <button class="home-menu-toggle" type="button" aria-expanded="false" aria-controls="home-menu" aria-label="Open navigation"><span></span><span></span></button>
   </div>
   <nav id="home-menu" class="home-mobile-nav" aria-label="Mobile navigation" hidden>
-    {links.map((link, i) => <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}><small>0{i + 1}</small>{link.label}<span aria-hidden="true">↗</span></a>)}
-    <a href={sampleHref} class="home-mobile-sample">Get my free sample <span aria-hidden="true">↗</span></a>
+    {links.map((link, i) => <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}><small>0{i + 1}</small>{link.label}<span aria-hidden="true">↗︎</span></a>)}
+    <a href={sampleHref} class="home-mobile-sample">Get my free sample <span aria-hidden="true">↗︎</span></a>
     <p>From Marshall, MN. For your next chapter.</p>
   </nav>
 </header>
