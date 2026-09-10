@@ -13,6 +13,11 @@ on:
       - "tsconfig.json"
       - ".github/workflows/deploy-hostinger.yml"
   workflow_dispatch:
+    inputs:
+      clean_slate:
+        description: "Wipe public_html before uploading (use once to clear stray/leftover files)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -56,7 +61,7 @@ jobs:
           protocol: ftp
           local-dir: ./dist/
           server-dir: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
-          dangerous-clean-slate: false
+          dangerous-clean-slate: ${{ github.event.inputs.clean_slate == 'true' }}
           exclude: |
             **/.git*
             **/.git*/**
