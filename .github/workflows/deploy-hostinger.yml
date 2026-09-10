@@ -18,6 +18,10 @@ on:
         description: "Wipe public_html before uploading (use once to clear stray/leftover files)"
         type: boolean
         default: false
+      diagnose_ftp:
+        description: "List the FTP account's directory layout instead of deploying (troubleshooting only)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -33,25 +37,52 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      - name: Diagnose FTP directory layout
+        if: github.event.inputs.diagnose_ftp == 'true'
+        env:
+          FTP_SERVER: ${{ secrets.CPANEL_FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.CPANEL_FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.CPANEL_FTP_PORT }}
+          FTP_SERVER_DIR: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
+        run: |
+          echo "=== account root ==="
+          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/" --user "$FTP_USERNAME:$FTP_PASSWORD"
+          echo "=== configured server-dir ($FTP_SERVER_DIR) ==="
+          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/$FTP_SERVER_DIR" --user "$FTP_USERNAME:$FTP_PASSWORD"
+          echo "=== domains/ (if present) ==="
+          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/domains/" --user "$FTP_USERNAME:$FTP_PASSWORD"
+          echo "=== domains/midvora.com/ (if present) ==="
+          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/domains/midvora.com/" --user "$FTP_USERNAME:$FTP_PASSWORD"
+          echo "=== domains/midvora.com/public_html/ (if present) ==="
+          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/domains/midvora.com/public_html/" --user "$FTP_USERNAME:$FTP_PASSWORD"
+          echo "=== done ==="
+
       - name: Checkout repository
+        if: github.event.inputs.diagnose_ftp != 'true'
         uses: actions/checkout@v4
 
       - name: Set up Node.js
+        if: github.event.inputs.diagnose_ftp != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
 
       - name: Install dependencies
+        if: github.event.inputs.diagnose_ftp != 'true'
         run: npm ci
 
       - name: Build Astro site
+        if: github.event.inputs.diagnose_ftp != 'true'
         run: npm run build
 
       - name: Verify build output
+        if: github.event.inputs.diagnose_ftp != 'true'
         run: test -f dist/index.html
 
       - name: Upload dist to Hostinger over FTP
+        if: github.event.inputs.diagnose_ftp != 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.CPANEL_FTP_SERVER }}
