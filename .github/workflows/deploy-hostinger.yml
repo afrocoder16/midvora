@@ -46,16 +46,26 @@ jobs:
           FTP_PORT: ${{ secrets.CPANEL_FTP_PORT }}
           FTP_SERVER_DIR: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
         run: |
-          echo "=== account root ==="
-          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/" --user "$FTP_USERNAME:$FTP_PASSWORD"
-          echo "=== configured server-dir ($FTP_SERVER_DIR) ==="
-          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/$FTP_SERVER_DIR" --user "$FTP_USERNAME:$FTP_PASSWORD"
-          echo "=== domains/ (if present) ==="
-          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/domains/" --user "$FTP_USERNAME:$FTP_PASSWORD"
-          echo "=== domains/midvora.com/ (if present) ==="
-          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/domains/midvora.com/" --user "$FTP_USERNAME:$FTP_PASSWORD"
-          echo "=== domains/midvora.com/public_html/ (if present) ==="
-          curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/domains/midvora.com/public_html/" --user "$FTP_USERNAME:$FTP_PASSWORD"
+          set +e
+          echo "=== login banner / real home directory (PWD reply) ==="
+          curl -s -v --list-only "ftp://$FTP_SERVER:$FTP_PORT/" --user "$FTP_USERNAME:$FTP_PASSWORD" 2>&1 | grep -E "^< 2(2[07]|57)"
+
+          try() {
+            echo "=== $1 ==="
+            curl -s --list-only "ftp://$FTP_SERVER:$FTP_PORT/$1" --user "$FTP_USERNAME:$FTP_PASSWORD"
+            code=$?
+            if [ $code -ne 0 ]; then echo "(curl exit $code - not accessible from here)"; fi
+          }
+
+          try ""
+          try "$FTP_SERVER_DIR"
+          try "../"
+          try "../../"
+          try "domains/"
+          try "domains/midvora.com/"
+          try "domains/midvora.com/public_html/"
+          try "public_html/domains/"
+          try "public_html/domains/midvora.com/public_html/"
           echo "=== done ==="
 
       - name: Checkout repository
