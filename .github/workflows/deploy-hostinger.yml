@@ -1,4 +1,4 @@
-name: Deploy root site to cPanel
+name: Deploy root site to Hostinger
 
 on:
   push:
@@ -11,19 +11,19 @@ on:
       - "package.json"
       - "package-lock.json"
       - "tsconfig.json"
-      - ".github/workflows/deploy-cpanel.yml"
+      - ".github/workflows/deploy-hostinger.yml"
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: cpanel-production
+  group: hostinger-production
   cancel-in-progress: true
 
 jobs:
   deploy:
-    name: Build Astro site and upload to cPanel
+    name: Build Astro site and upload to Hostinger
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -46,14 +46,14 @@ jobs:
       - name: Verify build output
         run: test -f dist/index.html
 
-      - name: Upload dist to cPanel over FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Upload dist to Hostinger over FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.CPANEL_FTP_SERVER }}
           username: ${{ secrets.CPANEL_FTP_USERNAME }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           port: ${{ secrets.CPANEL_FTP_PORT }}
-          protocol: ftps
+          protocol: ftp
           local-dir: ./dist/
           server-dir: ${{ secrets.CPANEL_FTP_SERVER_DIR }}
           dangerous-clean-slate: false
