@@ -29,6 +29,26 @@ export const liveProjects = [
     images: ['/work/tapatia-1.webp', '/work/tapatia-2.webp', '/work/tapatia-3.webp'],
     accent: 'orange',
   },
+  {
+    title: 'Aruma Tacos & Tequila',
+    category: 'Restaurant',
+    location: 'Marshall, Minnesota',
+    description: 'A dark, high-energy restaurant experience built around fresh fire, fine tequila, reservations, and late-night dining.',
+    url: 'https://arumatacosmn.com/',
+    displayUrl: 'arumatacosmn.com',
+    images: ['/work/aruma-1.webp', '/work/aruma-2.webp', '/work/aruma-3.webp'],
+    accent: 'blue',
+  },
+  {
+    title: 'Mariachi Fiesta',
+    category: 'Restaurant',
+    location: 'Marshall, Minnesota',
+    description: 'A colorful, welcoming restaurant site with weekly features, an interactive menu, online ordering, and local personality.',
+    url: 'https://eatmariachi.com/',
+    displayUrl: 'eatmariachi.com',
+    images: ['/work/mariachi-fiesta-1.webp', '/work/mariachi-fiesta-2.webp', '/work/mariachi-fiesta-3.webp'],
+    accent: 'pink',
+  },
 ];
 
 export const previewProjects = [
@@ -49,24 +69,6 @@ export const previewProjects = [
     url: 'https://afrocoder16.github.io/hagere/',
     displayUrl: 'afrocoder16.github.io/hagere',
     images: ['/work/hagere-1.webp', '/work/hagere-2.webp', '/work/hagere-3.webp'],
-  },
-  {
-    title: 'Aruma Tacos & Tequila',
-    category: 'Restaurant',
-    location: 'Marshall, Minnesota',
-    description: 'A dark, high-energy restaurant concept designed around fresh fire, fine tequila, reservations, and late-night dining.',
-    url: 'https://afrocoder16.github.io/Aruma-Tacos-/',
-    displayUrl: 'afrocoder16.github.io/Aruma-Tacos-',
-    images: ['/work/aruma-1.webp', '/work/aruma-2.webp', '/work/aruma-3.webp'],
-  },
-  {
-    title: 'Mariachi Fiesta',
-    category: 'Restaurant',
-    location: 'Marshall, Minnesota',
-    description: 'A colorful, welcoming restaurant site with weekly features, an interactive menu, online ordering, and local personality.',
-    url: 'https://afrocoder16.github.io/Mariachi-Fiesta/',
-    displayUrl: 'afrocoder16.github.io/Mariachi-Fiesta',
-    images: ['/work/mariachi-fiesta-1.webp', '/work/mariachi-fiesta-2.webp', '/work/mariachi-fiesta-3.webp'],
   },
   {
     title: 'Rural Route 3 Auto',
