@@ -41,6 +41,7 @@ if (form && submit && label && status && success) {
       });
       const result = await response.json();
       if (!response.ok || !result.success) throw new Error('Submission failed');
+      window.dispatchEvent(new CustomEvent('midvora:sample-request-success', { detail: { source: 'contact' } }));
       form.hidden = true;
       success.hidden = false;
       const heading = success.querySelector('h2');

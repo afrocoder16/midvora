@@ -97,6 +97,7 @@ const projects = [
         });
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error('Submission failed');
+        window.dispatchEvent(new CustomEvent('midvora:sample-request-success', { detail: { source: 'home' } }));
         status.textContent = 'You’re on the list! We’ll reach out about your free sample within 24 hours.';
         status.dataset.state = 'success';
         form.reset();
