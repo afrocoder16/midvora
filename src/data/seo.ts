@@ -26,6 +26,7 @@ export const businessSchema = {
   contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', telephone: '+1-507-530-4837', email: 'info@midvora.com', areaServed: 'US', availableLanguage: 'English' },
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' }],
   priceRange: '$300-$1,299',
+  sameAs: ['https://www.facebook.com/p/Midvora-61591870345093/', 'https://www.instagram.com/midvora_tech/'],
   knowsAbout: ['Web design', 'Small business websites', 'Local business websites', 'Website hosting and maintenance'],
 };
 

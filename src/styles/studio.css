@@ -233,3 +233,8 @@
   .helping-cta { width: 100%; justify-content: center; }
   .helping-note .home-button { width: 100%; justify-content: center; }
 }
+
+/* Footer: where to find us on social. */
+.home-footer .footer-social { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.home-footer .home-footer-top .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; min-height: 44px; padding: 0; border: 1px solid #c3cbb6; border-radius: 50%; color: #2d3a25; background: transparent; transition: background-color .2s, color .2s, border-color .2s, transform .2s; }
+.home-footer .home-footer-top .footer-social a:hover, .home-footer .home-footer-top .footer-social a:focus-visible { background: #2447d4; border-color: #2447d4; color: #fff; transform: translateY(-2px); }
