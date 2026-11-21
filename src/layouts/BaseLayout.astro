@@ -8,55 +8,99 @@ import '../styles/home-art.css';
 import '../styles/home-motion.css';
 import '../styles/studio.css';
 import '../styles/scroll-art.css';
+import { SITE_URL, BUSINESS_ID, WEBSITE_ID, abs, businessSchema, websiteSchema, breadcrumbSchema } from '../data/seo';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
   home?: boolean;
+  noindex?: boolean;
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
+  breadcrumb?: [string, string][];
+  schema?: Record<string, unknown>[];
 }
 
 const {
   title,
-  description = 'Midvora — Modern digital solutions for local businesses. Website design, SEO, photography, social media, and cybersecurity from the Midwest.',
+  description = 'Custom websites for local businesses in Minnesota, South Dakota, and North Dakota. Built in Marshall, MN, with hosting, security, and weekly care included.',
   ogImage = '/img/og-image.png',
   home = false,
+  noindex = false,
+  pageType = 'WebPage',
+  breadcrumb = [],
+  schema = [],
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, 'https://midvora.com');
-const ogImageURL = `https://midvora.com${ogImage}`;
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
+const pageUrl = canonicalURL.toString();
+const ogImageURL = abs(ogImage);
+const ogImageAlt = 'Midvora. From the Midwest. For the World.';
+const robots = noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
+// Structured data: who we are, what this page is, where it sits, plus anything page-specific.
+const crumbs: [string, string][] = breadcrumb.length ? [['Home', '/'], ...breadcrumb] : [];
+const graph = noindex ? [] : [
+  businessSchema,
+  websiteSchema,
+  {
+    '@type': pageType,
+    '@id': `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: title,
+    description,
+    inLanguage: 'en-US',
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': BUSINESS_ID },
+    primaryImageOfPage: { '@type': 'ImageObject', url: ogImageURL },
+    ...(crumbs.length ? { breadcrumb: { '@id': `${pageUrl}#breadcrumb` } } : {}),
+  },
+  ...(crumbs.length ? [breadcrumbSchema(pageUrl, crumbs)] : []),
+  ...schema,
+];
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
     <meta name="description" content={description} />
-    <PostHog />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#2447d4" />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <PostHog />
 
     <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=2" />
     <link rel="shortcut icon" href="/favicon.ico?v=2" />
     <link rel="apple-touch-icon" href="/favicon.png?v=2" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Midvora" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <title>{title}</title>
     <link rel="preload" href="/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {!noindex && <script type="application/ld+json" set:html={jsonLd} />}
   </head>
   <body class:list={['home-page min-h-screen flex flex-col', { 'studio-page': !home }]}>
     <SiteHeader />

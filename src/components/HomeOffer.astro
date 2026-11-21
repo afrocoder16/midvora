@@ -1,15 +1,15 @@
 ---
-const offerRibbon = ['24-hour free sample', '$0 until you approve', 'Websites from $525', 'Made in the Midwest'];
+const offerRibbon = ['Websites from $300', '24-hour free sample', '$0 until you approve', 'Free options for new businesses & churches', 'Made in the Midwest'];
 const craftRibbon = ['Custom design', 'Mobile first', 'Hosting included', 'Security included', 'Weekly maintenance'];
 const stats = [
-  { number: '70%+', target: 70, prefix: '', suffix: '%+', name: 'Less than a $2,500 build', copy: 'Our $525 starting price leaves more of your budget for the business itself.', color: 'blue' },
+  { number: '70%+', target: 70, prefix: '', suffix: '%+', name: 'Less than a $2,500 build', copy: 'Websites from $300, and packages from $525, leave more of your budget for the business itself.', color: 'blue' },
   { number: '24h', target: 24, prefix: '', suffix: 'h', name: 'Your sample, in your hands', copy: 'A real working homepage, designed around your business. Free to explore.', color: 'orange' },
   { number: '$0', target: 0, prefix: '$', suffix: '', name: 'Before you say yes', copy: 'See the direction. Try the sample. Decide when it feels right.', color: 'green' },
   { number: '5–7', target: undefined, prefix: '', suffix: '', name: 'Days from approval to live', copy: 'For Starter websites, with your content ready. We handle the details.', color: 'violet' },
 ];
 ---
 <div class="home-ribbons" data-motion-zone>
-  <p class="sr-only">Free 24-hour sample, websites from $525. Custom design, hosting, security, and weekly maintenance included.</p>
+  <p class="sr-only">Free 24-hour sample, websites from $300, and free builds for new businesses and churches. Custom design, hosting, security, and weekly maintenance included.</p>
   <div class="home-ribbon home-ribbon-offer" aria-hidden="true"><div class="home-ribbon-track">{[0, 1].map(() => <div class="home-ribbon-segment">{offerRibbon.map(item => <><span>{item}</span><i>✳</i></>)}</div>)}</div></div>
   <div class="home-ribbon home-ribbon-craft" aria-hidden="true"><div class="home-ribbon-track">{[0, 1].map(() => <div class="home-ribbon-segment">{craftRibbon.map(item => <><span>{item}</span><i>✳</i></>)}</div>)}</div></div>
 </div>
@@ -22,6 +22,6 @@ const stats = [
         <div class="home-offer-rule" aria-hidden="true"></div><h3>{stat.name}</h3><p class="home-offer-copy">{stat.copy}</p>
       </article>)}
     </div>
-    <div class="home-offer-foot"><span>Good work. Clear numbers. A little less guesswork.</span><a href="#pricing">See what $525 includes <span aria-hidden="true">↗︎</span></a></div>
+    <div class="home-offer-foot"><span>Good work. Clear numbers. A little less guesswork.</span><a href="#pricing">See what’s included <span aria-hidden="true">↗︎</span></a></div>
   </div>
 </section>

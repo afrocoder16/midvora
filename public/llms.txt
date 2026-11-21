@@ -1,0 +1,22 @@
+# Midvora
+
+> Midvora is an independent web design studio in Marshall, Minnesota. We build fast, custom websites for local businesses across Minnesota, South Dakota, and North Dakota, with hosting, security, and weekly maintenance included.
+
+## Pages
+
+- [Home](https://midvora.com/): What Midvora does, how it works, and how to get a free working sample in 24 hours.
+- [Services and pricing](https://midvora.com/services/): Website packages (Starter $525, Growth $775, Premium $1,299 for the first year), small 1-2 page websites from $300, and yearly care plans after the first year (Care $300, Care Plus $500).
+- [Our work](https://midvora.com/work/): Live websites built for restaurants, retailers, and local services.
+- [About the studio](https://midvora.com/about/): Who we are and why we build websites for local businesses.
+- [Contact](https://midvora.com/contact/): Request a free working sample.
+
+## Help for people just starting out
+
+- New businesses and churches can ask about a free first website: https://midvora.com/services/#helping
+
+## Contact
+
+- Email: info@midvora.com
+- Phone: (507) 530-4837
+- Address: 107 E Main, Marshall, MN 56258
+- Hours: Monday to Friday, 8am to 6pm Central

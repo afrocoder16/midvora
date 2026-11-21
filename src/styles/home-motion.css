@@ -136,3 +136,17 @@
   .home-page *, .home-page *::before, .home-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .home-scroll-progress { display: none; }
 }
+
+/* Pricing band: the whole ladder at a glance, and a hand for those just starting out. */
+.home-pricing-ladder { display: flex; flex-wrap: wrap; gap: 12px 0; margin: 26px 0 4px; padding: 0; list-style: none; max-width: 520px; }
+.home-pricing-ladder li { display: flex; flex-direction: column; gap: 2px; padding: 2px 22px 2px 0; margin-right: 22px; border-right: 1px solid #ffffff3d; }
+.home-pricing-ladder li:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+.home-pricing-ladder strong { font-size: 30px; line-height: 1.1; font-weight: 600; letter-spacing: -.04em; color: #fff4e0; }
+.home-pricing-ladder span { font-size: 13px; letter-spacing: .02em; color: #dfe7ff; }
+.home-pricing-help { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 14px; font-size: 16px; font-weight: 600; color: #ffe3c4; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #ffe3c46b; }
+.home-pricing-help:hover { text-decoration-color: #ffe3c4; }
+@media (max-width: 700px) {
+  .home-pricing-ladder { max-width: none; }
+  .home-pricing-ladder li { padding-right: 16px; margin-right: 16px; }
+  .home-pricing-ladder strong { font-size: 26px; }
+}

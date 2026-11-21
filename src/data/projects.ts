@@ -49,6 +49,36 @@ export const liveProjects = [
     images: ['/work/mariachi-fiesta-1.webp', '/work/mariachi-fiesta-2.webp', '/work/mariachi-fiesta-3.webp'],
     accent: 'pink',
   },
+  {
+    title: 'Hagere Ethiopian Restaurant',
+    category: 'Restaurant',
+    location: 'Sioux Falls, South Dakota',
+    description: 'A warm, editorial home for Ethiopian cooking, coffee, and culture, with a full menu to explore and easy catering requests.',
+    url: 'https://eathagere.com/',
+    displayUrl: 'eathagere.com',
+    images: ['/work/hagere-1.webp', '/work/hagere-2.webp', '/work/hagere-3.webp'],
+    accent: 'orange',
+  },
+  {
+    title: 'Marshall Decorating Center',
+    category: 'Paint · Flooring · Home décor',
+    location: 'Marshall, Minnesota',
+    description: 'A warm, photo-led storefront for paint, flooring, window treatments, and décor, with clear departments and one-tap calling and directions.',
+    url: 'https://marshalldecoratingcenter.com/',
+    displayUrl: 'marshalldecoratingcenter.com',
+    images: ['/work/marshall-decorating-1.webp', '/work/marshall-decorating-2.webp', '/work/marshall-decorating-3.webp'],
+    accent: 'orange',
+  },
+  {
+    title: 'Hindi Store',
+    category: 'Grocery · Deli',
+    location: 'Marshall, Minnesota',
+    description: 'A bold, storefront-style home for the deli menu, text-to-order, catering requests, and everything a neighbor needs to find the door.',
+    url: 'https://hindustore.vercel.app/',
+    displayUrl: 'hindustore.vercel.app',
+    images: ['/work/hindi-store-1.webp', '/work/hindi-store-2.webp', '/work/hindi-store-3.webp'],
+    accent: 'orange',
+  },
 ];
 
 export const previewProjects = [
@@ -62,15 +92,6 @@ export const previewProjects = [
     images: ['/work/sabor-1.webp', '/work/sabor-2.webp', '/work/sabor-3.webp'],
   },
   {
-    title: 'Hagere Ethiopian Restaurant',
-    category: 'Restaurant',
-    location: 'Sioux Falls, South Dakota',
-    description: 'A warm editorial experience that brings Ethiopian cooking, coffee, culture, and hospitality to the foreground.',
-    url: 'https://afrocoder16.github.io/hagere/',
-    displayUrl: 'afrocoder16.github.io/hagere',
-    images: ['/work/hagere-1.webp', '/work/hagere-2.webp', '/work/hagere-3.webp'],
-  },
-  {
     title: 'Rural Route 3 Auto',
     category: 'Auto repair',
     location: 'Marshall, Minnesota',
@@ -78,5 +99,14 @@ export const previewProjects = [
     url: 'https://afrocoder16.github.io/rural_route_3/',
     displayUrl: 'afrocoder16.github.io/rural_route_3',
     images: ['/work/rural-route-3.webp', '/work/rural-route-1.webp', '/work/rural-route-2.webp'],
+  },
+  {
+    title: 'Treasured Times',
+    category: 'Gifts · Scrapbooking · Engraving',
+    location: 'Marshall, Minnesota',
+    description: 'A handcrafted, small-town storefront for custom engraving, card classes, and Christian gifts, built for browsing and booking.',
+    url: 'https://afrocoder16.github.io/Treasured-Times/',
+    displayUrl: 'afrocoder16.github.io/Treasured-Times',
+    images: ['/work/treasured-times-1.webp', '/work/treasured-times-2.webp', '/work/treasured-times-3.webp'],
   },
 ];

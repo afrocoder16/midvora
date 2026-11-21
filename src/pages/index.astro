@@ -12,12 +12,12 @@ const projects = [
   { name: 'Animal Health Center', short: 'Animal Health', type: 'Big care. A welcoming new home.', category: 'Pet care & retail', image: '/work/animal.webp', url: 'https://marshallanimalhealth.com/', domain: 'marshallanimalhealth.com', color: 'sage' },
 ];
 ---
-<BaseLayout home title="Midvora — Your Business, in a Whole New Light." description="Distinctive websites for local businesses. Built in Marshall, Minnesota. Get a free working homepage sample in 24 hours. Website packages from $525.">
+<BaseLayout home title="Marshall, MN Web Design for Local Businesses | Midvora" description="Custom websites for local businesses in Minnesota, South Dakota, and North Dakota. From $300, with a free working sample in 24 hours. Marshall, MN.">
   <section id="hero" class="home-hero">
     <div class="home-shell">
       <div class="home-hero-grid">
         <div class="home-hero-copy">
-          <p class="home-eyebrow"><span class="home-status-dot"></span> Independent web studio · Marshall, MN</p>
+          <p class="home-eyebrow"><span class="home-status-dot"></span> Independent web design studio · Marshall, MN</p>
           <h1>Your business.<br />In a whole<br /><em>new light.</em></h1>
           <p class="home-hero-description">Good businesses deserve to be seen.<br class="home-desktop-break" /> We make websites with the character, craft, and care to make that happen.</p>
           <div class="home-hero-actions">
@@ -25,6 +25,7 @@ const projects = [
             <a href="#selected-work" class="home-text-link">Explore our work <span aria-hidden="true">↓</span></a>
           </div>
           <p class="home-hero-note"><span aria-hidden="true">✓</span> Your first look is on us. Free sample in 24 hours.</p>
+          <p class="home-hero-price"><strong>Websites from $300.</strong> Free options for new businesses &amp; churches too. <a href="/services/#helping">See what we do <span aria-hidden="true">↗︎</span></a></p>
         </div>
         <HomeLightArt />
       </div>
@@ -35,7 +36,7 @@ const projects = [
 
   <section id="selected-work" class="home-work home-section">
     <div class="home-shell">
-      <div class="home-section-heading"><div><p class="home-eyebrow">01 / A few local originals</p><h2>Different businesses.<br /><em>Distinctly their own.</em></h2></div><a href="/work" class="home-text-link">All our work <span aria-hidden="true">↗︎</span></a></div>
+      <div class="home-section-heading"><div><p class="home-eyebrow">01 / A few local originals</p><h2>Different businesses.<br /><em>Distinctly their own.</em></h2></div><a href="/work/" class="home-text-link">All our work <span aria-hidden="true">↗︎</span></a></div>
       <div class="home-work-grid">
         {projects.map((project, i) => <article class={`home-work-card ${project.color}`}>
           <a href={project.url} target="_blank" rel="noopener noreferrer" class="home-work-image">

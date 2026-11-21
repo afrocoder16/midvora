@@ -1,4 +1,6 @@
+# Midvora: every public page is open to search engines.
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://midvora.com/sitemap-index.xml

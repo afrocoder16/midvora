@@ -21,11 +21,6 @@
       var link = target instanceof Element && target.closest('a[href="#sample-form"]');
       if (link) posthog.capture('contact_cta_clicked', { placement: 'home_hero' });
     });
-    document.addEventListener('submit', function (event) {
-      if (event.target && event.target.id === 'package-builder') {
-        posthog.capture('package_builder_submitted');
-      }
-    });
     window.addEventListener('midvora:sample-request-success', function (event) {
       posthog.capture('sample_request_submitted', { source: event.detail.source });
     });

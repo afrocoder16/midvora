@@ -1,4 +1,4 @@
-import { bases, extras, packages, bundles, money } from '../data/services';
+import { packages, helpingOffers, money } from '../data/services';
 
 const form = document.querySelector<HTMLFormElement>('#sample-form');
 const submit = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
@@ -8,15 +8,10 @@ const success = document.querySelector<HTMLElement>('#contact-success');
 const params = new URLSearchParams(location.search);
 const packageId = params.get('package');
 let selection = '';
-if (packageId === 'custom' && bases.some(base => base.id === params.get('base'))) {
-  const base = bases.find(base => base.id === params.get('base'))!;
-  const selected = extras.filter(extra => params.getAll('extra').includes(extra.id));
-  selection = [base.name, ...selected.map(extra => extra.name)].join(' + ') + ' · ' + money(base.price + selected.reduce((sum, extra) => sum + extra.price, 0)) + ' estimate';
-  if (params.get('care') === 'full') selection += ' + Full Care at $50/month';
-} else {
-  const choice = [...packages, ...bundles].find(item => item.id === packageId);
-  if (choice) selection = choice.name + ' · ' + money(choice.price);
-}
+const pkg = packages.find(item => item.id === packageId);
+const offer = helpingOffers.find(item => item.id === packageId);
+if (pkg) selection = pkg.name + ' · ' + money(pkg.price);
+else if (offer) selection = offer.summary;
 if (selection) {
   const summary = document.querySelector<HTMLElement>('#request-summary');
   const summaryText = document.querySelector<HTMLElement>('#request-summary-text');
